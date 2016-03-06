@@ -2,7 +2,7 @@ import UIKit
 
 class RootView: UIView {
     
-    lazy var startButton: UIButton = {
+    lazy var stopButton: UIButton = {
         var temporyButton : UIButton = UIButton()
         temporyButton.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
         temporyButton.center = CGPoint(x: 160, y: 100)
@@ -18,7 +18,7 @@ class RootView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(startButton)
+        addSubview(stopButton)
         backgroundColor = .whiteColor()
     }
 
