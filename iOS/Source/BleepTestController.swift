@@ -1,8 +1,9 @@
 import UIKit
 
-class RootController: BaseViewController {
+class BleepTestController: BaseViewController {
+    
     override func loadView() {
-        let view = RootView(frame: UIScreen.mainScreen().bounds)
+        let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
         self.view = view
     }
 

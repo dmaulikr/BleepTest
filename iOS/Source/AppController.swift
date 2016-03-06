@@ -18,7 +18,7 @@ extension AppController: UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         guard let window = self.window else { fatalError("Window not found") }
 
-        window.rootViewController = RootController(fetcher: self.fetcher)
+        window.rootViewController = BleepTestController(fetcher: self.fetcher)
         window.makeKeyAndVisible()
 
         return true
