@@ -4,7 +4,7 @@ class BleepTestView: UIView {
     
     let buttonSize = CGSize(width: 200, height: 50)
     let cornerRadius : CGFloat = 5
-    let borderWidth : CGFloat = 1
+    let borderWidth : CGFloat = 2
     
     lazy var stopButton : UIButton = {
         var temporyButton : UIButton = UIButton()
@@ -60,7 +60,7 @@ class BleepTestView: UIView {
             views: viewsDictionary
         )
         let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-75-[stopButton(50)]-(>=300)-[startButton(50)]-50-|",
+            "V:|-50-[stopButton(50)]-(>=300)-[startButton(50)]-50-|",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
             views: viewsDictionary
@@ -84,7 +84,6 @@ class BleepTestView: UIView {
         self.addConstraints(startButtonHorizontalSizeConstraints)
 
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
