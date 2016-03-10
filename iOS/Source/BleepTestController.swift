@@ -9,8 +9,28 @@ class BleepTestController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        notificationObservers()
+    }
+    
+    private func notificationObservers(){
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "bleepTestStarted:",
+            name: startTestNotificationKey,
+            object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "bleepTestStoped:",
+            name: stopTestNotificationKey,
+            object: nil)
+    }
+    
+    @objc private func bleepTestStoped(notification: NSNotification){
 
     }
     
+    @objc private func bleepTestStarted(notification: NSNotification){
+
+    }
     
 }

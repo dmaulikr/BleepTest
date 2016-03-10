@@ -128,12 +128,19 @@ class BleepTestView: UIView {
     func startButtonAction(sender:UIButton!){
         startButton.removeFromSuperview()
         createRunningBleepTest()
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            startTestNotificationKey,
+            object: self)
+
     }
     
     func stopButtonAction(sender:UIButton!){
         stopButton.removeFromSuperview()
         pauseButton.removeFromSuperview()
         createStartBleepTest()
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            stopTestNotificationKey,
+            object: self)
     }
 
 }
