@@ -123,6 +123,8 @@ class BleepTestView: UIView {
             ))
     }
     
+    // MARK: Button Actions
+    
     func startButtonAction(sender:UIButton!){
         startButton.removeFromSuperview()
         createRunningBleepTest()
