@@ -8,7 +8,7 @@ class BleepTestController: BaseViewController {
     var level : Int!
     var lap : Int!
     var timer : NSTimer!
-    var beepSoundEffect: AVPlayer!
+    var beepSoundEffect : AVAudioPlayer!
     
     override func loadView() {
         let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
@@ -64,11 +64,13 @@ class BleepTestController: BaseViewController {
     }
     
     private func beep(){
-        let path = NSBundle.mainBundle().pathForResource("beep.wav", ofType:nil)!
-        let url = NSURL(fileURLWithPath: path)
+        let sound =  NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("beep", ofType: "wav")!)
+        let session:AVAudioSession = AVAudioSession.sharedInstance()
         
-        let sound =  AVPlayer(URL: url)
-        beepSoundEffect = sound
+        try! beepSoundEffect = AVAudioPlayer(contentsOfURL: sound)
+        try! session.setCategory(AVAudioSessionCategoryPlayback)
+        try! session.setActive(true)
+        beepSoundEffect.prepareToPlay()
         beepSoundEffect.play()
     }
     
