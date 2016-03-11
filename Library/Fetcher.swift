@@ -30,7 +30,7 @@ public class Fetcher : NSObject {
         let filePath = NSBundle.mainBundle().pathForResource(localFilePath.URLByDeletingPathExtension?.absoluteString, ofType: localFilePath.pathExtension)!
         let data = NSData(contentsOfFile: filePath)!
         let json = try! NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String: AnyObject]
-        self.data.performInNewBackgroundContext { backgroundContext in            
+        self.data.performInNewBackgroundContext { backgroundContext in
             Sync.changes(json["bleepTest"] as! Array, inEntityNamed: "TestLevel", predicate: nil, parent: nil, inContext: backgroundContext, dataStack: self.data, completion: { error in
                 completion(error)
             })
@@ -48,15 +48,14 @@ public class Fetcher : NSObject {
             }
         }
     }
-    
-    func changeNotification(notification: NSNotification) {
-        let updatedObjects = notification.userInfo?[NSUpdatedObjectsKey]
-        let deletedObjects = notification.userInfo?[NSDeletedObjectsKey]
-        let insertedObjects = notification.userInfo?[NSInsertedObjectsKey]
-        print("updatedObjects: \(updatedObjects)")
-        print("deletedObjects: \(deletedObjects)")
-        print("insertedObjects: \(insertedObjects)")
+
+    public func fetchTestLevels(completion: (NSError?) -> Void) -> [TestLevel] {
+        let request = NSFetchRequest(entityName: "TestLevel")
+        request.sortDescriptors = [NSSortDescriptor(key: "level", ascending: true)]
+        let levels = (try! data.mainContext.executeFetchRequest(request) as! [TestLevel])
+        return levels
     }
+    
 }
 
 // MARK: DATASource helpers

@@ -2,6 +2,7 @@ import UIKit
 
 class BleepTestController: BaseViewController {
     
+
     override func loadView() {
         let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
         self.view = view
@@ -26,11 +27,12 @@ class BleepTestController: BaseViewController {
     }
     
     @objc private func bleepTestStoped(notification: NSNotification){
-
+        
     }
     
     @objc private func bleepTestStarted(notification: NSNotification){
-
+        let levels = fetcher.fetchTestLevels{_ in}
+        print(levels.count)
     }
     
 }

@@ -12,6 +12,7 @@ class AppController: UIResponder {
 
         return fetcher
     }()
+    
 }
 
 extension AppController: UIApplicationDelegate {
@@ -39,3 +40,4 @@ extension AppController: UIApplicationDelegate {
         }
     }
 }
+
