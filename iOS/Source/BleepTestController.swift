@@ -1,8 +1,13 @@
 import UIKit
+import SwiftyTimer
 
 class BleepTestController: BaseViewController {
+    var levels : [TestLevel]!
+    var testLevel : TestLevel!
+    var level : Int!
+    var lap : Int!
+    var timer : NSTimer!
     
-
     override func loadView() {
         let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
         self.view = view
@@ -26,13 +31,47 @@ class BleepTestController: BaseViewController {
             object: nil)
     }
     
+    private func levelRun(i : Int){
+        if (i != levels.count){
+            testLevel = levels[i]
+            lap = 0
+            print("Level \(testLevel.level)")
+            print("laps \(testLevel.laps)")
+            runLap()
+        }
+    }
+    
+    private func runLap(){
+        if(Int(testLevel.laps) == lap){
+            level = level + 1
+            levelRun(level)
+        } else {
+            runningLap()
+        }
+    }
+    
+    private func runningLap(){
+        let lapTime = Double(testLevel.lapTime)
+        timer = NSTimer.after(lapTime.seconds){
+            self.lapFinished()
+        }
+        timer.start()
+    }
+    
+    private func lapFinished(){
+        lap = lap + 1
+        print("Lap \(lap) finished.")
+        runLap()
+    }
+    
     @objc private func bleepTestStoped(notification: NSNotification){
-        
+        timer.invalidate()
     }
     
     @objc private func bleepTestStarted(notification: NSNotification){
-        let levels = fetcher.fetchTestLevels{_ in}
-        print(levels.count)
+        levels = fetcher.fetchTestLevels{_ in}
+        level = 0
+        levelRun(level)
     }
     
 }
