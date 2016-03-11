@@ -1,5 +1,6 @@
 import UIKit
 import SwiftyTimer
+import AVFoundation
 
 class BleepTestController: BaseViewController {
     var levels : [TestLevel]!
@@ -7,6 +8,7 @@ class BleepTestController: BaseViewController {
     var level : Int!
     var lap : Int!
     var timer : NSTimer!
+    var beepSoundEffect: AVPlayer!
     
     override func loadView() {
         let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
@@ -30,7 +32,7 @@ class BleepTestController: BaseViewController {
             name: stopTestNotificationKey,
             object: nil)
     }
-    
+
     private func levelRun(i : Int){
         if (i != levels.count){
             testLevel = levels[i]
@@ -38,6 +40,8 @@ class BleepTestController: BaseViewController {
             print("Level \(testLevel.level)")
             print("laps \(testLevel.laps)")
             runLap()
+        } else{
+            beep()
         }
     }
     
@@ -46,6 +50,7 @@ class BleepTestController: BaseViewController {
             level = level + 1
             levelRun(level)
         } else {
+            beep()
             runningLap()
         }
     }
@@ -56,6 +61,15 @@ class BleepTestController: BaseViewController {
             self.lapFinished()
         }
         timer.start()
+    }
+    
+    private func beep(){
+        let path = NSBundle.mainBundle().pathForResource("beep.wav", ofType:nil)!
+        let url = NSURL(fileURLWithPath: path)
+        
+        let sound =  AVPlayer(URL: url)
+        beepSoundEffect = sound
+        beepSoundEffect.play()
     }
     
     private func lapFinished(){
