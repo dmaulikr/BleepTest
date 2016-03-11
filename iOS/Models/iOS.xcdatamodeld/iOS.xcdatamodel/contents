@@ -7,11 +7,11 @@
             </userInfo>
         </attribute>
         <attribute name="laps" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="lapTime" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="lapTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="speed" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TestLevel" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="TestLevel" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>
