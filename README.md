@@ -1,6 +1,6 @@
-# PROJECT_NAME
+# BleepTest
 
-PROJECT_DESCRIPTION
+An bleep test application.
 
 ## Running the project
 

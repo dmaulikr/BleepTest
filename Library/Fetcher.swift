@@ -6,21 +6,35 @@ import Sync
 import DATASource
 import CoreData
 
-public class Fetcher {
+public class Fetcher : NSObject {
     private var data: DATAStack
     private var networking: Networking
-
+    private var localFilePath : NSURL
+    
     // MARK: - Initializers
 
-    init(baseURL: String, modelName: String) {
+    init(baseURL: String, modelName: String, localFilePath: NSURL) {
         self.data = DATAStack(modelName: modelName)
         self.networking = Networking(baseURL: baseURL)
+        self.localFilePath = localFilePath
     }
 
     // MARK: - Public methods
 
     public func persistWithCompletion(completion: () -> ()) {
         data.persistWithCompletion(completion)
+    }
+    
+    public func fetchLocalData(completion: (NSError?) -> Void){
+        
+        let filePath = NSBundle.mainBundle().pathForResource(localFilePath.URLByDeletingPathExtension?.absoluteString, ofType: localFilePath.pathExtension)!
+        let data = NSData(contentsOfFile: filePath)!
+        let json = try! NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String: AnyObject]
+        self.data.performInNewBackgroundContext { backgroundContext in
+            Sync.changes(json["bleepTest"] as! Array, inEntityNamed: "TestLevel", predicate: nil, parent: nil, inContext: backgroundContext, dataStack: self.data, completion: { error in
+                completion(error)
+            })
+        }
     }
 
     public func someResource(completion: (error: NSError?) -> ()) {
@@ -34,6 +48,14 @@ public class Fetcher {
             }
         }
     }
+
+    public func fetchTestLevels(completion: (NSError?) -> Void) -> [TestLevel] {
+        let request = NSFetchRequest(entityName: "TestLevel")
+        request.sortDescriptors = [NSSortDescriptor(key: "level", ascending: true)]
+        let levels = (try! data.mainContext.executeFetchRequest(request) as! [TestLevel])
+        return levels
+    }
+    
 }
 
 // MARK: DATASource helpers

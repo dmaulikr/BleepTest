@@ -1,0 +1,25 @@
+{
+"bleepTest": [
+        {
+            "id": "120",
+            "level": 1,
+            "laps": 8,
+            "lap_time":8.4,
+            "speed":8.5
+        },
+        {
+            "id": "220",
+            "level": 2,
+            "laps": 8,
+            "lap_time":8.0,
+            "speed":9.0
+        },
+        {
+            "id": "320",
+            "level": 3,
+            "laps": 9,
+            "lap_time":7.5,
+            "speed":9.5
+        }
+    ]
+}
