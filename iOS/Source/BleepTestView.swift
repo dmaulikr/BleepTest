@@ -112,7 +112,7 @@ class BleepTestView: UIView {
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-20-[levelLabel]-(>=20)-[lapLabel]-20-|",
+            "H:|-30-[levelLabel]-(>=20)-[lapLabel]-30-|",
             options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary
