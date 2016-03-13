@@ -90,12 +90,12 @@ class BleepTestView: UIView {
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-100-[levelLabel]-(>=200)-|",
+            "V:|-(>=50)-[stopButton(50)]-20-[pauseButton(50)]-50-|",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(>=50)-[stopButton(50)]-20-[pauseButton(50)]-50-|",
+            "V:|-100-[levelLabel]-(>=200)-|",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
             views: viewsDictionary))
@@ -113,7 +113,7 @@ class BleepTestView: UIView {
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-20-[levelLabel]-(>=20)-[lapLabel]-20-|",
-            options: NSLayoutFormatOptions.AlignAllLeading,
+            options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary
             ))
@@ -171,11 +171,21 @@ class BleepTestView: UIView {
             selector: "updateLevel:",
             name: leveledUpNotificationKey,
             object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "updateLap:",
+            name: lapedUpNotificationKey,
+            object: nil)
     }
     
     func updateLevel(notification : NSNotification){
         let level = notification.userInfo!["level"]
         levelLabel.text = "Level: \(level!)"
+    }
+    
+    func updateLap(notification : NSNotification){
+        let level = notification.userInfo!["lap"]
+        lapLabel.text = "Lap: \(level!)"
     }
 
 }
