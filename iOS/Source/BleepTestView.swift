@@ -165,6 +165,7 @@ class BleepTestView: UIView {
             stopTestNotificationKey,
             object: self)
     }
+    
     private func notificationObservers(){
         NSNotificationCenter.defaultCenter().addObserver(
             self,
@@ -176,6 +177,11 @@ class BleepTestView: UIView {
             selector: "updateLap:",
             name: lapedUpNotificationKey,
             object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "bleepTestStoped:",
+            name: stopTestNotificationKey,
+            object: nil)
     }
     
     func updateLevel(notification : NSNotification){
@@ -186,6 +192,12 @@ class BleepTestView: UIView {
     func updateLap(notification : NSNotification){
         let level = notification.userInfo!["lap"]
         lapLabel.text = "Lap: \(level!)"
+    }
+    
+    func bleepTestStoped(notification : NSNotification){
+        stopButton.removeFromSuperview()
+        pauseButton.removeFromSuperview()
+        createStartBleepTest()
     }
 
 }

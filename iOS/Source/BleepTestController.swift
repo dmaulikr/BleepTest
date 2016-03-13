@@ -48,6 +48,9 @@ class BleepTestController: BaseViewController {
             runLap()
         } else{
             beep()
+            NSNotificationCenter.defaultCenter().postNotificationName(
+                stopTestNotificationKey,
+                object: self)
         }
     }
     
@@ -84,7 +87,6 @@ class BleepTestController: BaseViewController {
             lapedUpNotificationKey,
             object: nil,
             userInfo: ["lap" : String(lap+1)])
-    //    print("Lap \(lap) finished.")
         runLap()
     }
     
