@@ -4,9 +4,10 @@ import UIKit
 class AppController: UIResponder {
 
     var window: UIWindow?
+    var navController: UINavigationController?
+
 
     private lazy var fetcher: Fetcher = {
-
         let url = NSURL(string: "levelsData.json")!
         let fetcher = Fetcher(baseURL: "https://server.com", modelName: "iOS", localFilePath: url)
 
@@ -23,8 +24,9 @@ extension AppController: UIApplicationDelegate {
         if(!isAppAlreadyLaunchedOnce()){
             self.fetcher.fetchLocalData{ _ in }
         }
-        
-        window.rootViewController = BleepTestController(fetcher: self.fetcher)
+        navController = NavigationController()
+        self.navController!.pushViewController(BleepTestController(fetcher: self.fetcher), animated: false)
+        self.window!.rootViewController = navController
         window.makeKeyAndVisible()
 
         return true
