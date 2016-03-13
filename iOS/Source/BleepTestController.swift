@@ -37,7 +37,10 @@ class BleepTestController: BaseViewController {
         if (i != levels.count){
             testLevel = levels[i]
             lap = 0
-            print("Level \(testLevel.level)")
+          //  let levelDictionary = ["level" : String(testLevel.level)]
+            NSNotificationCenter.defaultCenter().postNotificationName(leveledUpNotificationKey,
+                object: nil,
+                userInfo: ["level" : String(testLevel.level)])
             print("laps \(testLevel.laps)")
             runLap()
         } else{
