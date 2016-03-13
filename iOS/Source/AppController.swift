@@ -4,18 +4,20 @@ import UIKit
 class AppController: UIResponder {
 
     var window: UIWindow?
-
+    var navController: UINavigationController?
+    
     private lazy var fetcher: Fetcher = {
-
         let url = NSURL(string: "levelsData.json")!
         let fetcher = Fetcher(baseURL: "https://server.com", modelName: "iOS", localFilePath: url)
 
         return fetcher
     }()
     
+    
 }
 
 extension AppController: UIApplicationDelegate {
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         guard let window = self.window else { fatalError("Window not found") }
@@ -23,8 +25,10 @@ extension AppController: UIApplicationDelegate {
         if(!isAppAlreadyLaunchedOnce()){
             self.fetcher.fetchLocalData{ _ in }
         }
-        
-        window.rootViewController = BleepTestController(fetcher: self.fetcher)
+
+        navController = NavigationController()
+        self.navController!.pushViewController(BleepTestController(fetcher: self.fetcher), animated: false)
+        self.window!.rootViewController = navController
         window.makeKeyAndVisible()
 
         return true
@@ -39,5 +43,6 @@ extension AppController: UIApplicationDelegate {
             return false
         }
     }
+    
 }
 

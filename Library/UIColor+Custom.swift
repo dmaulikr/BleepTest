@@ -8,6 +8,9 @@ extension UIColor {
     class func italyGreenColor() -> UIColor {
         return UIColor(hex: "#009246")
     }
+    class func italyRedColor() -> UIColor{
+        return UIColor(hex: "#ce2b37")
+    }
     class func italyBrownColor() -> UIColor {
         return UIColor(hex :"#653606")
     }
