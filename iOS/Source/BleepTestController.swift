@@ -94,9 +94,15 @@ class BleepTestController: BaseViewController {
     
     @objc private func bleepTestStoped(notification: NSNotification){
         timer.invalidate()
+        timer = NSTimer.after(10.seconds){
+            UIApplication.sharedApplication().idleTimerDisabled = false
+            self.timer.invalidate()
+        }
+        timer.start()
     }
     
     @objc private func bleepTestStarted(notification: NSNotification){
+        UIApplication.sharedApplication().idleTimerDisabled = true
         levels = fetcher.fetchTestLevels{_ in}
         level = 0
         levelRun(level)
