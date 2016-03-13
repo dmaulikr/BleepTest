@@ -21,12 +21,12 @@ class BleepTestView: UIView {
     lazy var startButton : UIButton = {
         var temporyButton : UIButton = UIButton()
         temporyButton.setTitle("Start", forState: UIControlState.Normal)
-        temporyButton.setTitleColor(.italyGreenColour(), forState: UIControlState.Normal)
+        temporyButton.setTitleColor(.italyGreenColor(), forState: UIControlState.Normal)
         temporyButton.addTarget(self, action: "startButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         temporyButton.backgroundColor = .clearColor()
         temporyButton.layer.cornerRadius = self.cornerRadius
         temporyButton.layer.borderWidth = self.borderWidth
-        temporyButton.layer.borderColor = UIColor.italyGreenColour().CGColor
+        temporyButton.layer.borderColor = UIColor.italyGreenColor().CGColor
         temporyButton.translatesAutoresizingMaskIntoConstraints = false
         return temporyButton
     }()
@@ -43,18 +43,27 @@ class BleepTestView: UIView {
         return temporyButton
     }()
 
-    
-    lazy var stageLabel : UILabel = {
+    lazy var levelLabel : UILabel = {
         var temporyLabel : UILabel = UILabel()
-     //   temporyLabel.
+        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 30)
+        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
+        temporyLabel.textColor = UIColor.italyBrownColor()
+        return temporyLabel
+    }()
+    
+    lazy var lapLabel : UILabel = {
+        var temporyLabel : UILabel = UILabel()
+        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 30)
+        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
+        temporyLabel.textColor = UIColor.italyBrownColor()
         return temporyLabel
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         createStartBleepTest()
         backgroundColor = .whiteColor()
+        notificationObservers()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -64,12 +73,16 @@ class BleepTestView: UIView {
     //This is the view when the bleep test is running
     func createRunningBleepTest(){
         let viewsDictionary = [
+            "levelLabel":levelLabel,
+            "lapLabel":lapLabel,
             "stopButton":stopButton,
             "pauseButton":pauseButton,
             "superview":self
         ]
         addSubview(stopButton)
         addSubview(pauseButton)
+        addSubview(levelLabel)
+        addSubview(lapLabel)
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:[superview]-(<=1)-[stopButton]",
             options: NSLayoutFormatOptions.AlignAllCenterX,
@@ -82,15 +95,25 @@ class BleepTestView: UIView {
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-100-[levelLabel]-(>=200)-|",
+            options: NSLayoutFormatOptions.AlignAllLeading,
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:[stopButton(200)]",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
             views: viewsDictionary
             ))
-
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:[pauseButton(200)]",
             options: NSLayoutFormatOptions.AlignAllLeading,
+            metrics: nil,
+            views: viewsDictionary
+            ))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-30-[levelLabel]-(>=20)-[lapLabel]-30-|",
+            options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary
             ))
@@ -141,6 +164,40 @@ class BleepTestView: UIView {
         NSNotificationCenter.defaultCenter().postNotificationName(
             stopTestNotificationKey,
             object: self)
+    }
+    
+    private func notificationObservers(){
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "updateLevel:",
+            name: leveledUpNotificationKey,
+            object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "updateLap:",
+            name: lapedUpNotificationKey,
+            object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "bleepTestStoped:",
+            name: stopTestNotificationKey,
+            object: nil)
+    }
+    
+    func updateLevel(notification : NSNotification){
+        let level = notification.userInfo!["level"]
+        levelLabel.text = "Level: \(level!)"
+    }
+    
+    func updateLap(notification : NSNotification){
+        let level = notification.userInfo!["lap"]
+        lapLabel.text = "Lap: \(level!)"
+    }
+    
+    func bleepTestStoped(notification : NSNotification){
+        stopButton.removeFromSuperview()
+        pauseButton.removeFromSuperview()
+        createStartBleepTest()
     }
 
 }
