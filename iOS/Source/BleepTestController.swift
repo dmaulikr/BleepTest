@@ -13,11 +13,21 @@ class BleepTestController: BaseViewController {
     override func loadView() {
         let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
         self.view = view
+        addMenuButton()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         notificationObservers()
+    }
+    
+    func addMenuButton(){
+        var menuButton = UIButton()
+        menuButton = UIButton.menuButton()
+        menuButton.addTarget(self, action: Selector("menuAction:"), forControlEvents: UIControlEvents.TouchUpInside)
+        let menuBarButton = UIBarButtonItem()
+        menuBarButton.customView = menuButton
+        self.navigationItem.leftBarButtonItem = menuBarButton
     }
     
     private func notificationObservers(){
@@ -106,6 +116,10 @@ class BleepTestController: BaseViewController {
         levels = fetcher.fetchTestLevels{_ in}
         level = 0
         levelRun(level)
+    }
+    
+    func menuAction(sender:UIButton!){
+        print("Menu!")
     }
     
 }
