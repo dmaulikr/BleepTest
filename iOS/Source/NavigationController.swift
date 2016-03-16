@@ -7,8 +7,7 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
         self.navigationBar.barTintColor = UIColor.italyRedColor()
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-
-    }
+   }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
