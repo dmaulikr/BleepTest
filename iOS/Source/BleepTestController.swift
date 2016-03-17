@@ -9,10 +9,12 @@ class BleepTestController: BaseViewController {
     var lap : Int!
     var timer : NSTimer!
     var beepSoundEffect : AVAudioPlayer!
+
     
     override func loadView() {
         let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
         self.view = view
+        self.title = "Bleep Test"
         addMenuButton()
     }
 
@@ -119,7 +121,7 @@ class BleepTestController: BaseViewController {
     }
     
     func menuAction(sender:UIButton!){
-        print("Menu!")
+        self.navigationController!.pushViewController(MenuTableController(fetcher: self.fetcher), animated: false)
     }
     
 }
