@@ -44,4 +44,13 @@ extension MenuTableController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 55
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        switch (indexPath.section){
+            case 0: print("Push to the stats view")
+            case 1: print("Push to the instrucions view")
+            case 2: print("Rate application")
+            default:fatalError("Unknown number of sections")
+        }
+    }
 }
