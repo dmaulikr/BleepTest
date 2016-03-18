@@ -16,7 +16,7 @@ class MenuTableController: BaseTableViewController {
 
 extension MenuTableController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,7 +26,12 @@ extension MenuTableController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier(MenuTableController.CellIdentifier, forIndexPath: indexPath) as! MenuTableViewCell
         cell.selectionStyle = .None
-        cell.cellLabel.text = "About"
+        switch (indexPath.section){
+            case 0: cell.cellLabel.text = "My stats log"
+            case 1: cell.cellLabel.text = "Instructions"
+            case 2: cell.cellLabel.text = "Rate the application"
+            default:fatalError("Unknown number of sections")
+        }
         return cell
     }
 }
@@ -35,6 +40,6 @@ extension MenuTableController {
 
 extension MenuTableController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60
+        return 55
     }
 }

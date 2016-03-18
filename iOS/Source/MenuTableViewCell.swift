@@ -5,7 +5,7 @@ class MenuTableViewCell: UITableViewCell {
     lazy var cellLabel : UILabel = {
         var temporyLabel : UILabel = UILabel()
         temporyLabel.translatesAutoresizingMaskIntoConstraints = false
-        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 25)
+        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 20)
         temporyLabel.textColor = .whiteColor()
         return temporyLabel
     }()
