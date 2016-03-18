@@ -6,10 +6,12 @@ class MenuTableController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Menu"
         
         self.tableView = UITableView(frame: self.tableView.frame, style: .Grouped)
         self.tableView.registerClass(MenuTableViewCell.self, forCellReuseIdentifier: MenuTableController.CellIdentifier)
     }
+    
 }
 
 // MARK: - UITableViewDataSource
