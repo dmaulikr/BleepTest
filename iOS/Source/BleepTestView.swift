@@ -70,6 +70,16 @@ class BleepTestView: UIView {
         return temporyLabel
     }()
     
+
+    lazy var vO2MaxLabel : UILabel = {
+        var temporyLabel : UILabel = UILabel()
+        temporyLabel.text = "VO2 max: 0"
+        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 23)
+        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
+        temporyLabel.textColor = UIColor.italyBrownColor()
+        return temporyLabel
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         createStartBleepTest()
@@ -87,19 +97,33 @@ class BleepTestView: UIView {
             "levelLabel":levelLabel,
             "lapLabel":lapLabel,
             "distanceLabel":distanceLabel,
+            "vO2MaxLabel":vO2MaxLabel,
             "superview":self
         ]
         addSubview(levelLabel)
         addSubview(lapLabel)
         addSubview(distanceLabel)
+        addSubview(vO2MaxLabel)
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-100-[levelLabel]-30-[distanceLabel]-(>=200)-|",
+            "V:|-100-[levelLabel]-30-[distanceLabel]-30-[vO2MaxLabel]-(>=200)-|",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-30-[levelLabel]-(>=20)-[lapLabel]-30-|",
             options: NSLayoutFormatOptions.AlignAllCenterY,
+            metrics: nil,
+            views: viewsDictionary
+            ))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-30-[levelLabel]-(>=20)-[lapLabel]-30-|",
+            options: NSLayoutFormatOptions.AlignAllCenterY,
+            metrics: nil,
+            views: viewsDictionary
+            ))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-30-[vO2MaxLabel]-30-|",
+            options: NSLayoutFormatOptions.AlignAllBaseline,
             metrics: nil,
             views: viewsDictionary
             ))
@@ -216,8 +240,10 @@ class BleepTestView: UIView {
     func updateLap(notification : NSNotification){
         let level = notification.userInfo!["lap"]
         let distance = notification.userInfo!["distance"]
+        let vO2Max = notification.userInfo!["VO2Max"]
         lapLabel.text = "Lap: \(level!)"
         distanceLabel.text = "Total distance: \(distance!)m"
+        vO2MaxLabel.text = "VO2 max: \(vO2Max!)"
     }
     
     func bleepTestStoped(notification : NSNotification){
