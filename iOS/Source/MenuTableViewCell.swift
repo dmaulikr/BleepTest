@@ -22,7 +22,7 @@ class MenuTableViewCell: UITableViewCell {
         ]
         contentView.addSubview(cellLabel)
         contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-30-[cellLabel]-(>=30)-|",
+            "H:|-20-[cellLabel]-(>=20)-|",
             options: [],
             metrics: nil,
             views: viewsDictionary

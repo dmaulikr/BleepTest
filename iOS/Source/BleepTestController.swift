@@ -121,7 +121,8 @@ class BleepTestController: BaseViewController {
     }
     
     func menuAction(sender:UIButton!){
-        self.navigationController!.pushViewController(MenuTableController(fetcher: self.fetcher), animated: false)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+        self.navigationController!.pushViewController(MenuTableController(fetcher: self.fetcher), animated: true)
     }
     
 }
