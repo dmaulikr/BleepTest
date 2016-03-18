@@ -6,14 +6,15 @@ class MenuTableViewCell: UITableViewCell {
         var temporyLabel : UILabel = UILabel()
         temporyLabel.translatesAutoresizingMaskIntoConstraints = false
         temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 20)
-        temporyLabel.textColor = .whiteColor()
+        temporyLabel.textColor = UIColor.italyGreenColor()
         return temporyLabel
     }()
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = UIColor.italyGreenColor()
+        contentView.backgroundColor = .whiteColor()
         addCellLabel()
+        accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
     }
     func addCellLabel(){
         let viewsDictionary = [
