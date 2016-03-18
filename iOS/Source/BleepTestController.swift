@@ -9,7 +9,7 @@ class BleepTestController: BaseViewController {
     var lap : Int!
     var timer : NSTimer!
     var beepSoundEffect : AVAudioPlayer!
-
+    var distance : Int!
     
     override func loadView() {
         let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
@@ -49,6 +49,7 @@ class BleepTestController: BaseViewController {
         if (i != levels.count){
             testLevel = levels[i]
             lap = 0
+            let vO2Max = 3.46 * (Double(testLevel.level)+Double(lap) / (Double(testLevel.level) * 0.4325 + 7.0048)) + 12.2
             NSNotificationCenter.defaultCenter().postNotificationName(
                 leveledUpNotificationKey,
                 object: nil,
@@ -56,7 +57,12 @@ class BleepTestController: BaseViewController {
             NSNotificationCenter.defaultCenter().postNotificationName(
                 lapedUpNotificationKey,
                 object: nil,
-                userInfo: ["lap" : String(lap+1)])
+                userInfo: [
+                    "lap":String(lap+1),
+                    "distance":String(distance),
+                    "VO2Max":String(format: "%.3f", vO2Max)
+                    ])
+            
             runLap()
         } else{
             beep()
@@ -97,10 +103,16 @@ class BleepTestController: BaseViewController {
     
     private func lapFinished(){
         lap = lap + 1
+        distance = distance + 20
+        let vO2Max = 3.46 * (Double(level+lap) / (Double(level) * 0.4325 + 7.0048)) + 12.2
         NSNotificationCenter.defaultCenter().postNotificationName(
             lapedUpNotificationKey,
             object: nil,
-            userInfo: ["lap" : String(lap+1)])
+            userInfo: [
+                "lap" : String(lap+1),
+                "distance":String(distance),
+                "VO2Max":String(format: "%.3f", vO2Max)
+            ])
         runLap()
     }
     
@@ -117,6 +129,7 @@ class BleepTestController: BaseViewController {
         UIApplication.sharedApplication().idleTimerDisabled = true
         levels = fetcher.fetchTestLevels{_ in}
         level = 0
+        distance = 0
         levelRun(level)
     }
     
