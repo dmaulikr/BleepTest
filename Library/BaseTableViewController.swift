@@ -7,7 +7,6 @@ public class BaseTableViewController: UITableViewController {
 
     public init(fetcher: Fetcher) {
         self.fetcher = fetcher
-
         super.init(nibName: nil, bundle: nil)
     }
 

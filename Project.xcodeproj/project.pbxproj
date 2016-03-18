@@ -19,6 +19,9 @@
 		146E27AA1BCD51F200959BBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 146E27A11BCD51F200959BBA /* Images.xcassets */; };
 		146E27AC1BCD51F200959BBA /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E27A41BCD51F200959BBA /* AppController.swift */; };
 		1483128E1B92C11500266943 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1483128D1B92C11500266943 /* Tests.swift */; };
+		950D12231C9AEF4400133A25 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D12221C9AEF4400133A25 /* MenuTableViewCell.swift */; };
+		950D12251C9AF31400133A25 /* MenuTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D12241C9AF31400133A25 /* MenuTableController.swift */; };
+		95394C481C997A3E00FD24E5 /* UIButton+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95394C471C997A3E00FD24E5 /* UIButton+Custom.swift */; };
 		95406FF01C93343900567215 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 95406FEF1C93343900567215 /* beep.wav */; };
 		95D7B0041C8CBC3E004690D5 /* BleepTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */; };
 		95D7B0061C8CBC68004690D5 /* BleepTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7B0051C8CBC68004690D5 /* BleepTestView.swift */; };
@@ -46,12 +49,15 @@
 		1483128C1B92C11500266943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1483128D1B92C11500266943 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6A34B165B3DDF602D1210F42 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		950D12221C9AEF4400133A25 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		950D12241C9AF31400133A25 /* MenuTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableController.swift; sourceTree = "<group>"; };
+		95394C471C997A3E00FD24E5 /* UIButton+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Custom.swift"; sourceTree = "<group>"; };
 		95406FEF1C93343900567215 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = beep.wav; path = ../../beep.wav; sourceTree = "<group>"; };
 		95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestController.swift; sourceTree = "<group>"; };
 		95D7B0051C8CBC68004690D5 /* BleepTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestView.swift; sourceTree = "<group>"; };
 		95EBE9F01C9064D600A57377 /* levelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = levelsData.json; path = ../../levelsData.json; sourceTree = "<group>"; };
 		95EBE9F81C908DC100A57377 /* TestLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLevel.swift; sourceTree = "<group>"; };
-		95EC432C1C95CB2A0052F2D4 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		95EC432C1C95CB2A0052F2D4 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = ../iOS/Source/NavigationController.swift; sourceTree = "<group>"; };
 		95FAAFAD1C91D47E00F5374F /* NSNotificationCenterKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterKeys.swift; sourceTree = "<group>"; };
 		A7007EA8FF8BABCFC3034674 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,9 +87,11 @@
 				141A6FD41BDE2DAB00CB6E82 /* BaseTableViewController.swift */,
 				141A6FD51BDE2DAB00CB6E82 /* BaseViewController.swift */,
 				1404F3991BDE45CD0008377F /* BaseCollectionViewController.swift */,
+				95EC432C1C95CB2A0052F2D4 /* NavigationController.swift */,
 				141A6FD61BDE2DAB00CB6E82 /* Fetcher.swift */,
 				141A6FD71BDE2DAB00CB6E82 /* UIColor+Custom.swift */,
 				141A6FD81BDE2DAB00CB6E82 /* UIFont+Custom.swift */,
+				95394C471C997A3E00FD24E5 /* UIButton+Custom.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -126,7 +134,8 @@
 				146E27A41BCD51F200959BBA /* AppController.swift */,
 				95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */,
 				95D7B0051C8CBC68004690D5 /* BleepTestView.swift */,
-				95EC432C1C95CB2A0052F2D4 /* NavigationController.swift */,
+				950D12221C9AEF4400133A25 /* MenuTableViewCell.swift */,
+				950D12241C9AF31400133A25 /* MenuTableController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -332,8 +341,10 @@
 			files = (
 				141A6FDB1BDE2DAB00CB6E82 /* Fetcher.swift in Sources */,
 				146E27AC1BCD51F200959BBA /* AppController.swift in Sources */,
+				95394C481C997A3E00FD24E5 /* UIButton+Custom.swift in Sources */,
 				141A6FDC1BDE2DAB00CB6E82 /* UIColor+Custom.swift in Sources */,
 				95D7B0041C8CBC3E004690D5 /* BleepTestController.swift in Sources */,
+				950D12251C9AF31400133A25 /* MenuTableController.swift in Sources */,
 				95D7B0061C8CBC68004690D5 /* BleepTestView.swift in Sources */,
 				141A6FDD1BDE2DAB00CB6E82 /* UIFont+Custom.swift in Sources */,
 				141A6FD91BDE2DAB00CB6E82 /* BaseTableViewController.swift in Sources */,
@@ -341,6 +352,7 @@
 				95EC432D1C95CB2B0052F2D4 /* NavigationController.swift in Sources */,
 				141A6FDA1BDE2DAB00CB6E82 /* BaseViewController.swift in Sources */,
 				95EBE9F91C908DC100A57377 /* TestLevel.swift in Sources */,
+				950D12231C9AEF4400133A25 /* MenuTableViewCell.swift in Sources */,
 				95FAAFAE1C91D47E00F5374F /* NSNotificationCenterKeys.swift in Sources */,
 				1404F39A1BDE45CD0008377F /* BaseCollectionViewController.swift in Sources */,
 			);

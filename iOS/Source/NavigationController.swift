@@ -5,13 +5,13 @@ class NavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationBar.barTintColor = UIColor.italyRedColor()
+        navigationBar.barTintColor = .italyRedColor()
+        navigationBar.tintColor = .whiteColor()
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-
-    }
+   }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
 }
