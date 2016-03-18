@@ -61,6 +61,15 @@ class BleepTestView: UIView {
         return temporyLabel
     }()
     
+    lazy var distanceLabel : UILabel = {
+        var temporyLabel : UILabel = UILabel()
+        temporyLabel.text = "Total distance: 0m"
+        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 23)
+        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
+        temporyLabel.textColor = UIColor.italyBrownColor()
+        return temporyLabel
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         createStartBleepTest()
@@ -77,12 +86,14 @@ class BleepTestView: UIView {
         let viewsDictionary = [
             "levelLabel":levelLabel,
             "lapLabel":lapLabel,
+            "distanceLabel":distanceLabel,
             "superview":self
         ]
         addSubview(levelLabel)
         addSubview(lapLabel)
+        addSubview(distanceLabel)
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-100-[levelLabel]-(>=200)-|",
+            "V:|-100-[levelLabel]-30-[distanceLabel]-(>=200)-|",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
             views: viewsDictionary))
@@ -204,7 +215,9 @@ class BleepTestView: UIView {
     
     func updateLap(notification : NSNotification){
         let level = notification.userInfo!["lap"]
+        let distance = notification.userInfo!["distance"]
         lapLabel.text = "Lap: \(level!)"
+        distanceLabel.text = "Total distance: \(distance!)m"
     }
     
     func bleepTestStoped(notification : NSNotification){
