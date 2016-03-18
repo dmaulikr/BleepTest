@@ -7,11 +7,15 @@ class MenuTableController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Menu"
-        
-        self.tableView = UITableView(frame: self.tableView.frame, style: .Grouped)
-        self.tableView.registerClass(MenuTableViewCell.self, forCellReuseIdentifier: MenuTableController.CellIdentifier)
+        setUpTableView()
     }
     
+    private func setUpTableView(){
+        self.tableView = UITableView(frame: self.tableView.frame, style: .Grouped)
+        self.tableView.backgroundView = nil
+        self.tableView.backgroundColor = .whiteColor()
+        self.tableView.registerClass(MenuTableViewCell.self, forCellReuseIdentifier: MenuTableController.CellIdentifier)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -32,7 +36,7 @@ extension MenuTableController {
             case 0: cell.cellLabel.text = "My stats log"
             case 1: cell.cellLabel.text = "Instructions"
             case 2: cell.cellLabel.text = "Rate the application"
-            default:fatalError("Unknown number of sections")
+            default: fatalError("Unknown number of sections")
         }
         return cell
     }
@@ -50,7 +54,7 @@ extension MenuTableController {
             case 0: print("Push to the stats view")
             case 1: print("Push to the instrucions view")
             case 2: print("Rate application")
-            default:fatalError("Unknown number of sections")
+            default: fatalError("Unknown number of sections")
         }
     }
 }
