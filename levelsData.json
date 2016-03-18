@@ -4,7 +4,7 @@
             "id": "120",
             "level": 1,
             "laps": 8,
-            "lap_time":8.4,
+            "lap_time":8.47,
             "speed":8.5
         },
         {
@@ -17,9 +17,135 @@
         {
             "id": "320",
             "level": 3,
-            "laps": 9,
-            "lap_time":7.5,
+            "laps": 8,
+            "lap_time":7.58,
             "speed":9.5
+        },
+        {
+            "id": "420",
+            "level": 4,
+            "laps": 9,
+            "lap_time":7.2,
+            "speed":10.0
+        },
+        {
+            "id": "520",
+            "level": 5,
+            "laps": 9,
+            "lap_time":6.86,
+            "speed":10.5
+        },
+        {
+            "id": "620",
+            "level": 6,
+            "laps": 10,
+            "lap_time":6.55,
+            "speed":11.0
+        },
+        {
+            "id": "720",
+            "level": 7,
+            "laps": 10,
+            "lap_time":6.26,
+            "speed":11.5
+        },
+        {
+            "id": "820",
+            "level": 8,
+            "laps": 10,
+            "lap_time":6.0,
+            "speed":12.0
+        },
+        {
+            "id": "920",
+            "level": 9,
+            "laps": 11,
+            "lap_time":5.76,
+            "speed":12.5
+        },
+        {
+            "id": "1020",
+            "level": 10,
+            "laps": 11,
+            "lap_time":5.54,
+            "speed":13.0
+        },
+        {
+            "id": "1120",
+            "level": 11,
+            "laps": 12,
+            "lap_time":5.33,
+            "speed":13.5
+        },
+        {
+            "id": "1220",
+            "level": 12,
+            "laps": 12,
+            "lap_time":5.14,
+            "speed":14.0
+        },
+        {
+            "id": "1320",
+            "level": 13,
+            "laps": 13,
+            "lap_time":4.97,
+            "speed":14.5
+        },
+        {
+            "id": "1420",
+            "level": 14,
+            "laps": 13,
+            "lap_time":4.80,
+            "speed":15.0
+        },
+        {
+            "id": "1520",
+            "level": 15,
+            "laps": 13,
+            "lap_time":4.65,
+            "speed":15.5
+        },
+        {
+            "id": "1620",
+            "level": 16,
+            "laps": 14,
+            "lap_time":4.5,
+            "speed":16.0
+        },
+        {
+            "id": "1720",
+            "level": 17,
+            "laps": 14,
+            "lap_time":4.36,
+            "speed":16.5
+        },
+        {
+            "id": "1820",
+            "level": 18,
+            "laps": 15,
+            "lap_time":4.24,
+            "speed":17.0
+        },
+        {
+            "id": "1920",
+            "level": 19,
+            "laps": 15,
+            "lap_time":4.11,
+            "speed":17.5
+        },
+        {
+            "id": "2020",
+            "level": 20,
+            "laps": 15,
+            "lap_time":4.0,
+            "speed":18.0
+        },
+        {
+            "id": "2120",
+            "level": 21,
+            "laps": 16,
+            "lap_time":3.89,
+            "speed":18.5
         }
     ]
 }
