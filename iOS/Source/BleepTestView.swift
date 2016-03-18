@@ -45,6 +45,7 @@ class BleepTestView: UIView {
 
     lazy var levelLabel : UILabel = {
         var temporyLabel : UILabel = UILabel()
+        temporyLabel.text = "Level: 0"
         temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 30)
         temporyLabel.translatesAutoresizingMaskIntoConstraints = false
         temporyLabel.textColor = UIColor.italyBrownColor()
@@ -53,6 +54,7 @@ class BleepTestView: UIView {
     
     lazy var lapLabel : UILabel = {
         var temporyLabel : UILabel = UILabel()
+        temporyLabel.text = "Lap: 0"
         temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 30)
         temporyLabel.translatesAutoresizingMaskIntoConstraints = false
         temporyLabel.textColor = UIColor.italyBrownColor()
@@ -64,10 +66,32 @@ class BleepTestView: UIView {
         createStartBleepTest()
         backgroundColor = .whiteColor()
         notificationObservers()
+        addBleepTestLabels()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func addBleepTestLabels(){
+        let viewsDictionary = [
+            "levelLabel":levelLabel,
+            "lapLabel":lapLabel,
+            "superview":self
+        ]
+        addSubview(levelLabel)
+        addSubview(lapLabel)
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-100-[levelLabel]-(>=200)-|",
+            options: NSLayoutFormatOptions.AlignAllLeading,
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-30-[levelLabel]-(>=20)-[lapLabel]-30-|",
+            options: NSLayoutFormatOptions.AlignAllCenterY,
+            metrics: nil,
+            views: viewsDictionary
+            ))
     }
     
     //This is the view when the bleep test is running
@@ -95,11 +119,6 @@ class BleepTestView: UIView {
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-100-[levelLabel]-(>=200)-|",
-            options: NSLayoutFormatOptions.AlignAllLeading,
-            metrics: nil,
-            views: viewsDictionary))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:[stopButton(200)]",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
@@ -108,12 +127,6 @@ class BleepTestView: UIView {
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:[pauseButton(200)]",
             options: NSLayoutFormatOptions.AlignAllLeading,
-            metrics: nil,
-            views: viewsDictionary
-            ))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-30-[levelLabel]-(>=20)-[lapLabel]-30-|",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary
             ))
