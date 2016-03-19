@@ -28,8 +28,8 @@ public class Fetcher : NSObject {
     public func fetchLocalData(completion: (NSError?) -> Void){
         
         let filePath = NSBundle.mainBundle().pathForResource(localFilePath.URLByDeletingPathExtension?.absoluteString, ofType: localFilePath.pathExtension)!
-        let data = NSData(contentsOfFile: filePath)!
-        let json = try! NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String: AnyObject]
+        let jsonData = NSData(contentsOfFile: filePath)!
+        let json = try! NSJSONSerialization.JSONObjectWithData(jsonData, options: []) as! [String: AnyObject]
         self.data.performInNewBackgroundContext { backgroundContext in
             Sync.changes(json["bleepTest"] as! Array, inEntityNamed: "TestLevel", predicate: nil, parent: nil, inContext: backgroundContext, dataStack: self.data, completion: { error in
                 completion(error)
