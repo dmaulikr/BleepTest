@@ -18,9 +18,9 @@ class MenuTableController: BaseTableViewController {
     }
 }
 
-// MARK: - UITableViewDataSource
-
 extension MenuTableController {
+    // MARK: - UITableViewDataSource
+
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 3
     }
@@ -42,9 +42,9 @@ extension MenuTableController {
     }
 }
 
-// MARK: - UITableViewDelegate
-
 extension MenuTableController {
+    // MARK: - UITableViewDelegate
+
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 55
     }

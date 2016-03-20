@@ -16,6 +16,7 @@ class MenuTableViewCell: UITableViewCell {
         addCellLabel()
         accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
     }
+    
     func addCellLabel(){
         let viewsDictionary = [
             "cellLabel" : cellLabel,

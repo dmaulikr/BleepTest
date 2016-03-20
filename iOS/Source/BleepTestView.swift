@@ -193,6 +193,8 @@ class BleepTestView: UIView {
             object: self)
     }
     
+    // MARK: Notifications
+    
     private func notificationObservers(){
         NSNotificationCenter.defaultCenter().addObserver(
             self,

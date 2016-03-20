@@ -32,6 +32,8 @@ class BleepTestController: BaseViewController {
         self.navigationItem.leftBarButtonItem = menuBarButton
     }
     
+    //MARK: Notification
+    
     private func notificationObservers(){
         NSNotificationCenter.defaultCenter().addObserver(
             self,
@@ -44,6 +46,32 @@ class BleepTestController: BaseViewController {
             name: stopTestNotificationKey,
             object: nil)
     }
+    
+    func bleepTestStoped(notification: NSNotification){
+        timer.invalidate()
+        timer = NSTimer.after(10.seconds){
+            UIApplication.sharedApplication().idleTimerDisabled = false
+            self.timer.invalidate()
+        }
+        timer.start()
+    }
+    
+    func bleepTestStarted(notification: NSNotification){
+        UIApplication.sharedApplication().idleTimerDisabled = true
+        levels = fetcher.fetchTestLevels{_ in}
+        level = 0
+        distance = 0
+        levelRun(level)
+    }
+    
+    //MARK: Bar Button Action
+    
+    func menuAction(sender:UIButton!){
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+        self.navigationController!.pushViewController(MenuTableController(fetcher: self.fetcher), animated: true)
+    }
+    
+    // MARK: Bleep Test Logic
 
     private func levelRun(i : Int){
         if (i != levels.count){
@@ -114,28 +142,6 @@ class BleepTestController: BaseViewController {
                 "VO2Max":String(format: "%.3f", vO2Max)
             ])
         runLap()
-    }
-    
-    @objc private func bleepTestStoped(notification: NSNotification){
-        timer.invalidate()
-        timer = NSTimer.after(10.seconds){
-            UIApplication.sharedApplication().idleTimerDisabled = false
-            self.timer.invalidate()
-        }
-        timer.start()
-    }
-    
-    @objc private func bleepTestStarted(notification: NSNotification){
-        UIApplication.sharedApplication().idleTimerDisabled = true
-        levels = fetcher.fetchTestLevels{_ in}
-        level = 0
-        distance = 0
-        levelRun(level)
-    }
-    
-    func menuAction(sender:UIButton!){
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
-        self.navigationController!.pushViewController(MenuTableController(fetcher: self.fetcher), animated: true)
     }
     
 }
