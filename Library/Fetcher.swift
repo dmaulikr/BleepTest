@@ -56,11 +56,19 @@ public class Fetcher : NSObject {
         return levels
     }
     
+    public func fetchCompletedTest(completion: (NSError?) -> Void) -> [CompletedTest] {
+        let request = NSFetchRequest(entityName: "CompletedTest")
+        request.sortDescriptors = [NSSortDescriptor(key: "createdDate", ascending: false)]
+        let tests = (try! data.mainContext.executeFetchRequest(request) as! [CompletedTest])
+        return tests
+    }
+    
 }
 
-// MARK: DATASource helpers
 
 extension Fetcher {
+    // MARK: DATASource helpers
+    
     public func dataSource(tableView: UITableView, cellIdentifier: String, fetchRequest: NSFetchRequest, sectionName: String? = nil, configuration: (cell: UITableViewCell, item: NSManagedObject, indexPath: NSIndexPath) -> ()) -> DATASource {
         return DATASource(tableView: tableView, cellIdentifier: cellIdentifier, fetchRequest: fetchRequest, mainContext: self.data.mainContext, sectionName: sectionName, configuration: configuration)
     }
