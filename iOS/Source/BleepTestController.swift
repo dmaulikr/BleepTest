@@ -10,6 +10,8 @@ class BleepTestController: BaseViewController {
     var timer : NSTimer!
     var beepSoundEffect : AVAudioPlayer!
     var distance : Int!
+    var vO2Max : Double!
+    var writer = Writer()
     
     override func loadView() {
         let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
@@ -48,6 +50,9 @@ class BleepTestController: BaseViewController {
     }
     
     func bleepTestStoped(notification: NSNotification){
+        //Saving the bleeptest need to add 1 to the lap and level.
+        writer.saveBleepTest((level+1), lap: (lap+1), vo2Max: vO2Max, distance: distance)
+        //Removing the timer that idle is enabled
         timer.invalidate()
         timer = NSTimer.after(10.seconds){
             UIApplication.sharedApplication().idleTimerDisabled = false
@@ -77,7 +82,7 @@ class BleepTestController: BaseViewController {
         if (i != levels.count){
             testLevel = levels[i]
             lap = 0
-            let vO2Max = 3.46 * (Double(testLevel.level)+Double(lap+1) / ((Double(testLevel.level) * 0.4325 + 7.0048))) + 12.2
+             vO2Max = 3.46 * (Double(testLevel.level)+Double(lap+1) / ((Double(testLevel.level) * 0.4325 + 7.0048))) + 12.2
             NSNotificationCenter.defaultCenter().postNotificationName(
                 leveledUpNotificationKey,
                 object: nil,
@@ -132,7 +137,7 @@ class BleepTestController: BaseViewController {
     private func lapFinished(){
         lap = lap + 1
         distance = distance + 20
-        let vO2Max = 3.46 * (Double(testLevel.level)+Double(lap+1) / ((Double(testLevel.level) * 0.4325 + 7.0048))) + 12.2
+        vO2Max = 3.46 * (Double(testLevel.level)+Double(lap+1) / ((Double(testLevel.level) * 0.4325 + 7.0048))) + 12.2
         NSNotificationCenter.defaultCenter().postNotificationName(
             lapedUpNotificationKey,
             object: nil,
