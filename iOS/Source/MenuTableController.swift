@@ -15,6 +15,7 @@ class MenuTableController: BaseTableViewController {
         self.tableView.backgroundView = nil
         self.tableView.backgroundColor = .whiteColor()
         self.tableView.registerClass(MenuTableCell.self, forCellReuseIdentifier: MenuTableController.CellIdentifier)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
     }
 }
 
