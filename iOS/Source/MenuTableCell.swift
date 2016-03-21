@@ -1,6 +1,6 @@
 import UIKit
 
-class MenuTableViewCell: UITableViewCell {
+class MenuTableCell: UITableViewCell {
     
     lazy var cellLabel : UILabel = {
         var temporyLabel : UILabel = UILabel()
