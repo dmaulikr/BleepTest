@@ -9,13 +9,23 @@ class CompletedTestTableController: UITableViewController {
     let kOpenCellHeight: CGFloat = 183
     let kRowsCount = 10
     var cellHeights = [CGFloat]()
+    private lazy var fetcher: Fetcher = {
+        let url = NSURL(string: "levelsData.json")!
+        let fetcher = Fetcher(baseURL: "https://server.com", modelName: "iOS", localFilePath: url)
+        return fetcher
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Test Times"
-        self.fetchCurrentObjects()
+        fetchCurrentObjects()
         createCellHeightsArray()
         self.tableView.backgroundColor = .customLightBlueColor()
+    }
+    
+    //MARK: Fetch completed test items
+    func fetchCurrentObjects() {
+        items = fetcher.fetchCompletedTest{_ in}
     }
     
     // MARK: configure
@@ -23,10 +33,6 @@ class CompletedTestTableController: UITableViewController {
         for _ in 0...kRowsCount {
             cellHeights.append(kCloseCellHeight)
         }
-    }
-    
-    func fetchCurrentObjects() {
-       // items = fetcher.fetchCompletedTest{_ in}
     }
 }
 
@@ -65,7 +71,6 @@ extension CompletedTestTableController {
     // MARK: - UITableViewDelegate
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! FoldingCell
         
         if cell.isAnimating() {
