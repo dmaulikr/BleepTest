@@ -39,7 +39,7 @@ class CompletedTestTableController: UITableViewController {
 extension CompletedTestTableController {
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.items.count
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
