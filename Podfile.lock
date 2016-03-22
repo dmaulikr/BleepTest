@@ -5,6 +5,7 @@ PODS:
   - DATASource (5.6.0)
   - DATAStack (4.2.0):
     - TestCheck (~> 0.3.0)
+  - FoldingCell (0.7.3)
   - Hex (3.0.0)
   - JSON (4.0.2)
   - NetworkActivityIndicator (0.1.5)
@@ -29,6 +30,7 @@ PODS:
 
 DEPENDENCIES:
   - DATASource
+  - FoldingCell (~> 0.7.3)
   - Hex
   - Networking
   - SwiftyTimer
@@ -39,6 +41,7 @@ SPEC CHECKSUMS:
   DATAObjectIDs: 33db74dd1c858c2d22a45a4013c95f1082182e4e
   DATASource: f189ace5ed4859501c9c48599625a1fe664d900f
   DATAStack: b831724a52d67cc0cf098cf53774b8fdeab22a25
+  FoldingCell: 8d7674d9ff51ae40408b99a17798bc0ec20a3654
   Hex: ee430da9c4412d9196366ae5327f279021dc03eb
   JSON: d08f22c3e523be050d5d5f40bca43ec02d95b2cc
   NetworkActivityIndicator: 875f05ba205b67394890527923fd03a7572e17cc

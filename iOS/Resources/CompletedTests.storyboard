@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Completed Test Table Controller-->
+        <scene sceneID="Nf4-lj-7s9">
+            <objects>
+                <tableViewController storyboardIdentifier="viewController" id="2qy-sJ-GDw" customClass="CompletedTestTableController" customModule="BleepTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="gSs-SO-ZGM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="286" id="Kmf-7Z-2ig" customClass="CompletedTestTableCell" customModule="BleepTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="286"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kmf-7Z-2ig" id="Qyz-rd-yzY">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="286"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3N-gc-stQ" userLabel="Foreground" customClass="RotatedView" customModule="BleepTest" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="7" width="560" height="61"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="61" id="QEr-Mh-8hf"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ff-3c-dgc" userLabel="Contener">
+                                            <rect key="frame" x="20" y="83" width="560" height="181"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Gs-nn-Deg" userLabel="FirstContanerView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="61"/>
+                                                    <color key="backgroundColor" red="0.36470588240000001" green="0.29411764709999999" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="61" id="zve-TG-UtK"/>
+                                                    </constraints>
+                                                </view>
+                                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXN-LB-jZC" userLabel="SecondContanerView" customClass="RotatedView" customModule="BleepTest" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="60" width="560" height="61"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="61" id="kc3-fA-0dJ"/>
+                                                    </constraints>
+                                                </view>
+                                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4E-dU-fL8" userLabel="ThirdContanerView" customClass="RotatedView" customModule="BleepTest" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="120" width="560" height="61"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="61" id="klP-aO-2T9"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="0Gs-nn-Deg" firstAttribute="top" secondItem="0ff-3c-dgc" secondAttribute="top" id="0Sm-tq-bSr"/>
+                                                <constraint firstAttribute="trailing" secondItem="eXN-LB-jZC" secondAttribute="trailing" id="0gz-Xq-N84"/>
+                                                <constraint firstAttribute="trailing" secondItem="e4E-dU-fL8" secondAttribute="trailing" id="3gM-KX-NWz"/>
+                                                <constraint firstItem="eXN-LB-jZC" firstAttribute="top" secondItem="0ff-3c-dgc" secondAttribute="top" constant="60" identifier="yPosition" id="6or-wG-4Xh"/>
+                                                <constraint firstAttribute="trailing" secondItem="0Gs-nn-Deg" secondAttribute="trailing" id="HT3-no-fwL"/>
+                                                <constraint firstItem="eXN-LB-jZC" firstAttribute="leading" secondItem="0ff-3c-dgc" secondAttribute="leading" id="OKY-of-By7"/>
+                                                <constraint firstAttribute="height" constant="181" id="S9M-UP-F3L"/>
+                                                <constraint firstItem="e4E-dU-fL8" firstAttribute="top" secondItem="0ff-3c-dgc" secondAttribute="top" constant="120" identifier="yPosition" id="YDe-yK-sI8"/>
+                                                <constraint firstItem="0Gs-nn-Deg" firstAttribute="leading" secondItem="0ff-3c-dgc" secondAttribute="leading" id="gB1-Qi-h5G"/>
+                                                <constraint firstItem="e4E-dU-fL8" firstAttribute="leading" secondItem="0ff-3c-dgc" secondAttribute="leading" id="kEa-Eb-RyR"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="0ff-3c-dgc" firstAttribute="top" secondItem="Qyz-rd-yzY" secondAttribute="top" constant="83" identifier="ContainerViewTop" id="IeC-RF-xVh"/>
+                                        <constraint firstAttribute="trailing" secondItem="B3N-gc-stQ" secondAttribute="trailing" constant="20" id="KHX-KF-yaK"/>
+                                        <constraint firstItem="B3N-gc-stQ" firstAttribute="top" secondItem="Qyz-rd-yzY" secondAttribute="top" constant="7" identifier="ForegroundViewTop" id="M74-3m-n4X"/>
+                                        <constraint firstItem="0ff-3c-dgc" firstAttribute="leading" secondItem="Qyz-rd-yzY" secondAttribute="leading" constant="20" id="Ncu-FY-MQV"/>
+                                        <constraint firstAttribute="trailing" secondItem="0ff-3c-dgc" secondAttribute="trailing" constant="20" id="Tao-89-rm4"/>
+                                        <constraint firstItem="B3N-gc-stQ" firstAttribute="leading" secondItem="Qyz-rd-yzY" secondAttribute="leading" constant="20" id="vpH-Vg-A5T"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.85277035359999998" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backViewColor">
+                                        <color key="value" red="0.96862745100000003" green="0.93725490199999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="itemCount">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="containerView" destination="0ff-3c-dgc" id="QJz-n4-0bp"/>
+                                    <outlet property="foregroundView" destination="B3N-gc-stQ" id="pIF-Np-nIO"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2qy-sJ-GDw" id="dk1-rS-3wc"/>
+                            <outlet property="delegate" destination="2qy-sJ-GDw" id="A2p-eP-bLH"/>
+                        </connections>
+                    </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="400"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xu6-yt-HCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="43" y="295.5"/>
+        </scene>
+    </scenes>
+</document>
