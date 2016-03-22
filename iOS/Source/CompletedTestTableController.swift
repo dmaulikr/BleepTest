@@ -5,8 +5,8 @@ import DATAStack
 class CompletedTestTableController: UITableViewController {
     static let CellIdentifier = "CellID"
     var items = [CompletedTest]()
-    let kCloseCellHeight: CGFloat = 61
-    let kOpenCellHeight: CGFloat = 183
+    let kCloseCellHeight: CGFloat = 100
+    let kOpenCellHeight: CGFloat = 256
     let kRowsCount = 10
     var cellHeights = [CGFloat]()
     private lazy var fetcher: Fetcher = {
@@ -20,7 +20,7 @@ class CompletedTestTableController: UITableViewController {
         self.title = "Test Times"
         fetchCurrentObjects()
         createCellHeightsArray()
-        self.tableView.backgroundColor = .customLightBlueColor()
+        self.tableView.backgroundColor = .customBlueColor()
     }
     
     //MARK: Fetch completed test items

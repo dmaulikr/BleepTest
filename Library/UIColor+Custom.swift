@@ -12,7 +12,7 @@ extension UIColor {
         return UIColor(hex: "#4A90E2")
     }
     class func customLightBlueColor() -> UIColor {
-        return UIColor(hex: "#8899A9")
+        return UIColor(hex: "#87a6fd")
     }
     class func italyBrownColor() -> UIColor {
         return UIColor(hex :"#653606")
