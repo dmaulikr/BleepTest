@@ -17,7 +17,7 @@ class BleepTestController: BaseViewController {
         let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
         self.view = view
         self.title = "Bleep Test"
-        addMenuButton()
+     //   addMenuButton()
     }
 
     override func viewDidLoad() {
