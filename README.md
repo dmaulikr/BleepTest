@@ -1,6 +1,6 @@
 # BleepTest
 
-An bleep test application.
+A bleep test application.
 
 ## Running the project
 
