@@ -23,6 +23,12 @@ class CompletedTestTableController: UITableViewController {
         self.tableView.backgroundColor = .customBlueColor()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        fetchCurrentObjects()
+        createCellHeightsArray()
+        tableView.reloadData()
+    }
+    
     //MARK: Fetch completed test items
     func fetchCurrentObjects() {
         items = fetcher.fetchCompletedTest{_ in}
