@@ -28,8 +28,6 @@ extension AppController: UIApplicationDelegate {
         }
 
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-//        self.navController!.pushViewController(BleepTestController(fetcher: self.fetcher), animated: false)
-//        self.window!.rootViewController = navController
         window.rootViewController = TabBarController(fetcher: self.fetcher)
         window.makeKeyAndVisible()
 
