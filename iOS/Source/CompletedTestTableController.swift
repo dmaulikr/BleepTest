@@ -77,7 +77,7 @@ extension CompletedTestTableController {
                 lapLabel.text = String(data.lap)
             }
             if let distanceLabel = cell.viewWithTag(103) as? UILabel{
-                distanceLabel.text = String(data.distance)
+                distanceLabel.text = "\(String(data.distance))m"
             }
             if let vo2MaxLabel = cell.viewWithTag(104) as? UILabel{
                 vo2MaxLabel.text = String(format: "%.3f", data.vo2Max)
