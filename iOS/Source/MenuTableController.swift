@@ -52,9 +52,14 @@ extension MenuTableController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         switch (indexPath.section){
-            case 0: self.navigationController!.pushViewController(CompletedTestTableController(fetcher: self.fetcher), animated: true)
-            case 1: print("Push to the instrucions view")
-            case 2: print("Rate application")
+            case 0:
+                let storyboard = UIStoryboard(name: "CompletedTests", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("viewController")
+                self.navigationController!.pushViewController(vc, animated: true)
+            case 1:
+                print("Push to the instrucions view")
+            case 2:
+                print("Rate application")
             default: fatalError("Unknown number of sections")
         }
     }
