@@ -26,6 +26,7 @@
 		9527A6D41CA03B23001E7942 /* CompletedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527A6D31CA03B23001E7942 /* CompletedTest.swift */; };
 		9527A6D71CA056C7001E7942 /* CompletedTestTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527A6D61CA056C7001E7942 /* CompletedTestTableCell.swift */; };
 		95394C481C997A3E00FD24E5 /* UIButton+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95394C471C997A3E00FD24E5 /* UIButton+Custom.swift */; };
+		953A5EF41CA42DDC003960FC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A5EF31CA42DDC003960FC /* TabBarController.swift */; };
 		95406FF01C93343900567215 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 95406FEF1C93343900567215 /* beep.wav */; };
 		95D7B0041C8CBC3E004690D5 /* BleepTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */; };
 		95D7B0061C8CBC68004690D5 /* BleepTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7B0051C8CBC68004690D5 /* BleepTestView.swift */; };
@@ -62,6 +63,7 @@
 		9527A6D31CA03B23001E7942 /* CompletedTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTest.swift; sourceTree = "<group>"; };
 		9527A6D61CA056C7001E7942 /* CompletedTestTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTestTableCell.swift; sourceTree = "<group>"; };
 		95394C471C997A3E00FD24E5 /* UIButton+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Custom.swift"; sourceTree = "<group>"; };
+		953A5EF31CA42DDC003960FC /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		95406FEF1C93343900567215 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = beep.wav; path = ../../beep.wav; sourceTree = "<group>"; };
 		95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestController.swift; sourceTree = "<group>"; };
 		95D7B0051C8CBC68004690D5 /* BleepTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				141A6FD71BDE2DAB00CB6E82 /* UIColor+Custom.swift */,
 				141A6FD81BDE2DAB00CB6E82 /* UIFont+Custom.swift */,
 				95394C471C997A3E00FD24E5 /* UIButton+Custom.swift */,
+				953A5EF31CA42DDC003960FC /* TabBarController.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				141A6FDD1BDE2DAB00CB6E82 /* UIFont+Custom.swift in Sources */,
 				141A6FD91BDE2DAB00CB6E82 /* BaseTableViewController.swift in Sources */,
 				145F81CD1BDE2CFD0016A9E0 /* iOS.xcdatamodeld in Sources */,
+				953A5EF41CA42DDC003960FC /* TabBarController.swift in Sources */,
 				95EC432D1C95CB2B0052F2D4 /* NavigationController.swift in Sources */,
 				141A6FDA1BDE2DAB00CB6E82 /* BaseViewController.swift in Sources */,
 				9527A6D01CA0126C001E7942 /* Writer.swift in Sources */,
