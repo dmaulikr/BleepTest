@@ -6,7 +6,7 @@ class CompletedTestTableController: UITableViewController {
     static let CellIdentifier = "CellID"
     var items = [CompletedTest]()
     let kCloseCellHeight: CGFloat = 100
-    let kOpenCellHeight: CGFloat = 256
+    let kOpenCellHeight: CGFloat = 218
     let kRowsCount = 10
     var cellHeights = [CGFloat]()
     private lazy var fetcher: Fetcher = {
@@ -43,6 +43,10 @@ extension CompletedTestTableController {
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let data = self.items[indexPath.row]
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "d/M/yyyy"
+        dateFormatter.stringFromDate(NSDate())
         
         if cell is FoldingCell {
             let foldingCell = cell as! FoldingCell
@@ -53,12 +57,36 @@ extension CompletedTestTableController {
             } else {
                 foldingCell.selectedAnimation(true, animated: false, completion: nil)
             }
+            
+            if let dateLabel = cell.viewWithTag(100) as? UILabel {
+                dateLabel.text = dateFormatter.stringFromDate(data.createdDate)
+            }
+            if let dateLabel = cell.viewWithTag(10) as? UILabel{
+                dateLabel.text = dateFormatter.stringFromDate(data.createdDate)
+            }
+            if let levelLabel = cell.viewWithTag(101) as? UILabel{
+                levelLabel.text = String(data.level)
+            }
+            if let levelLabel = cell.viewWithTag(11) as? UILabel{
+                levelLabel.text = String(data.level)
+            }
+            if let lapLabel = cell.viewWithTag(102) as? UILabel{
+                lapLabel.text = String(data.lap)
+            }
+            if let lapLabel = cell.viewWithTag(12) as? UILabel{
+                lapLabel.text = String(data.lap)
+            }
+            if let distanceLabel = cell.viewWithTag(103) as? UILabel{
+                distanceLabel.text = String(data.distance)
+            }
+            if let vo2MaxLabel = cell.viewWithTag(104) as? UILabel{
+                vo2MaxLabel.text = String(format: "%.3f", data.vo2Max)
+            }
         }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FoldingCell", forIndexPath: indexPath)
-        
         return cell
     }
     
