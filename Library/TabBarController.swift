@@ -15,25 +15,17 @@ class TabBarController: UITabBarController {
     
      init(fetcher: Fetcher) {
         self.fetcher = fetcher
-        
         super.init(nibName: nil, bundle: nil)
+        self.setUpTabBar()
     }
     
      required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func setUpTabBar(){
+        UITabBar.appearance().barTintColor = UIColor.whiteColor()
 
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-    override func viewWillAppear(animated: Bool) {
-        
         let item1 = BleepTestController(fetcher: self.fetcher)
         let icon1 = UITabBarItem(title: "Bleep Test", image:nil, selectedImage:nil)
         item1.tabBarItem = icon1
@@ -42,19 +34,18 @@ class TabBarController: UITabBarController {
         navigationController1.navigationBar.tintColor = .whiteColor()
         navigationController1.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
 
-        
         let storyboard = UIStoryboard(name: "CompletedTests", bundle: nil)
         let item2 = storyboard.instantiateViewControllerWithIdentifier("viewController")
-        let icon2 = UITabBarItem(title: "My stats", image:nil, selectedImage:nil)
-        item2.tabBarItem = icon2
         let navigationController2 = UINavigationController(rootViewController: item2)
         navigationController2.navigationBar.barTintColor = .customBlueColor()
         navigationController2.navigationBar.tintColor = .whiteColor()
         navigationController2.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-
+        navigationController2.title = "My Times"
+        
         let controllers = [navigationController1, navigationController2]
         self.viewControllers = controllers
     }
+    
 }
 
 extension TabBarController{

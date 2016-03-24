@@ -17,9 +17,9 @@ class CompletedTestTableController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Test Times"
         fetchCurrentObjects()
         createCellHeightsArray()
+        self.title = "My Times"
         self.tableView.backgroundColor = .customBlueColor()
     }
     
