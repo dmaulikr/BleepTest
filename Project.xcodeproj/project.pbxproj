@@ -50,7 +50,7 @@
 		146E27A01BCD51F200959BBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		146E27A11BCD51F200959BBA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		146E27A21BCD51F200959BBA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		146E27A41BCD51F200959BBA /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
+		146E27A41BCD51F200959BBA /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppController.swift; path = Source/AppController.swift; sourceTree = "<group>"; };
 		148312891B92C11500266943 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1483128C1B92C11500266943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1483128D1B92C11500266943 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
@@ -112,6 +112,7 @@
 		146E278A1BCD51C800959BBA /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				146E27A41BCD51F200959BBA /* AppController.swift */,
 				146E279B1BCD51F200959BBA /* Models */,
 				146E279E1BCD51F200959BBA /* Resources */,
 				146E27A31BCD51F200959BBA /* Source */,
@@ -147,13 +148,9 @@
 		146E27A31BCD51F200959BBA /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				146E27A41BCD51F200959BBA /* AppController.swift */,
-				95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */,
-				95D7B0051C8CBC68004690D5 /* BleepTestView.swift */,
-				950D12221C9AEF4400133A25 /* MenuTableCell.swift */,
-				950D12241C9AF31400133A25 /* MenuTableController.swift */,
-				9527A6D11CA038DB001E7942 /* CompletedTestTableController.swift */,
-				9527A6D61CA056C7001E7942 /* CompletedTestTableCell.swift */,
+				953A5EF21CA42C6D003960FC /* CompletedTest */,
+				953A5EF11CA42C61003960FC /* Menu */,
+				953A5EF01CA42C4C003960FC /* BleepTest */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -194,6 +191,33 @@
 				6A34B165B3DDF602D1210F42 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		953A5EF01CA42C4C003960FC /* BleepTest */ = {
+			isa = PBXGroup;
+			children = (
+				95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */,
+				95D7B0051C8CBC68004690D5 /* BleepTestView.swift */,
+			);
+			name = BleepTest;
+			sourceTree = "<group>";
+		};
+		953A5EF11CA42C61003960FC /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				950D12221C9AEF4400133A25 /* MenuTableCell.swift */,
+				950D12241C9AF31400133A25 /* MenuTableController.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		953A5EF21CA42C6D003960FC /* CompletedTest */ = {
+			isa = PBXGroup;
+			children = (
+				9527A6D11CA038DB001E7942 /* CompletedTestTableController.swift */,
+				9527A6D61CA056C7001E7942 /* CompletedTestTableCell.swift */,
+			);
+			name = CompletedTest;
 			sourceTree = "<group>";
 		};
 		95D8E4411CA15B5D0084F939 /* FoldingCell */ = {
