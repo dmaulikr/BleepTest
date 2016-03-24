@@ -34,7 +34,6 @@
 		95D8E4431CA15B5D0084F939 /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D8E4421CA15B5D0084F939 /* FoldingCell.swift */; };
 		95EBE9F11C9064D600A57377 /* levelsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 95EBE9F01C9064D600A57377 /* levelsData.json */; };
 		95EBE9F91C908DC100A57377 /* TestLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBE9F81C908DC100A57377 /* TestLevel.swift */; };
-		95EC432D1C95CB2B0052F2D4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EC432C1C95CB2A0052F2D4 /* NavigationController.swift */; };
 		95FAAFAE1C91D47E00F5374F /* NSNotificationCenterKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FAAFAD1C91D47E00F5374F /* NSNotificationCenterKeys.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +70,6 @@
 		95D8E4421CA15B5D0084F939 /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
 		95EBE9F01C9064D600A57377 /* levelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = levelsData.json; path = ../../levelsData.json; sourceTree = "<group>"; };
 		95EBE9F81C908DC100A57377 /* TestLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLevel.swift; sourceTree = "<group>"; };
-		95EC432C1C95CB2A0052F2D4 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = ../iOS/Source/NavigationController.swift; sourceTree = "<group>"; };
 		95FAAFAD1C91D47E00F5374F /* NSNotificationCenterKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterKeys.swift; sourceTree = "<group>"; };
 		A7007EA8FF8BABCFC3034674 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +99,6 @@
 				141A6FD41BDE2DAB00CB6E82 /* BaseTableViewController.swift */,
 				141A6FD51BDE2DAB00CB6E82 /* BaseViewController.swift */,
 				1404F3991BDE45CD0008377F /* BaseCollectionViewController.swift */,
-				95EC432C1C95CB2A0052F2D4 /* NavigationController.swift */,
 				141A6FD61BDE2DAB00CB6E82 /* Fetcher.swift */,
 				9527A6CF1CA0126C001E7942 /* Writer.swift */,
 				141A6FD71BDE2DAB00CB6E82 /* UIColor+Custom.swift */,
@@ -415,7 +412,6 @@
 				141A6FD91BDE2DAB00CB6E82 /* BaseTableViewController.swift in Sources */,
 				145F81CD1BDE2CFD0016A9E0 /* iOS.xcdatamodeld in Sources */,
 				953A5EF41CA42DDC003960FC /* TabBarController.swift in Sources */,
-				95EC432D1C95CB2B0052F2D4 /* NavigationController.swift in Sources */,
 				141A6FDA1BDE2DAB00CB6E82 /* BaseViewController.swift in Sources */,
 				9527A6D01CA0126C001E7942 /* Writer.swift in Sources */,
 				9527A6D41CA03B23001E7942 /* CompletedTest.swift in Sources */,
