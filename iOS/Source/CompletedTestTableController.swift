@@ -19,7 +19,7 @@ class CompletedTestTableController: UITableViewController {
         super.viewDidLoad()
         fetchCurrentObjects()
         createCellHeightsArray()
-        self.title = "My Times"
+        self.title = "Stats"
         self.tableView.backgroundColor = .customBlueColor()
     }
     
