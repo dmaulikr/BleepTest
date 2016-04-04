@@ -11,7 +11,7 @@ class CompletedTestTableController: UITableViewController {
     var cellHeights = [CGFloat]()
     private lazy var fetcher: Fetcher = {
         let url = NSURL(string: "levelsData.json")!
-        let fetcher = Fetcher(baseURL: "https://server.com", modelName: "iOS", localFilePath: url)
+        let fetcher = Fetcher(modelName: "iOS", localFilePath: url)
         return fetcher
     }()
     

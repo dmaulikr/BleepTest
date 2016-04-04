@@ -9,7 +9,7 @@ class BleepTestView: UIView {
         var temporyButton : UIButton = UIButton()
         temporyButton.setTitle("Stop", forState: UIControlState.Normal)
         temporyButton.setTitleColor(.redColor(), forState: UIControlState.Normal)
-        temporyButton.addTarget(self, action: "stopButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        temporyButton.addTarget(self, action: #selector(BleepTestView.stopButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         temporyButton.backgroundColor = .clearColor()
         temporyButton.layer.cornerRadius = self.cornerRadius
         temporyButton.layer.borderWidth = self.borderWidth
@@ -22,7 +22,7 @@ class BleepTestView: UIView {
         var temporyButton : UIButton = UIButton()
         temporyButton.setTitle("Start", forState: UIControlState.Normal)
         temporyButton.setTitleColor(.italyGreenColor(), forState: UIControlState.Normal)
-        temporyButton.addTarget(self, action: "startButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        temporyButton.addTarget(self, action: #selector(BleepTestView.startButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         temporyButton.backgroundColor = .clearColor()
         temporyButton.layer.cornerRadius = self.cornerRadius
         temporyButton.layer.borderWidth = self.borderWidth
@@ -198,17 +198,17 @@ class BleepTestView: UIView {
     private func notificationObservers(){
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: "updateLevel:",
+            selector: #selector(BleepTestView.updateLevel(_:)),
             name: leveledUpNotificationKey,
             object: nil)
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: "updateLap:",
+            selector: #selector(BleepTestView.updateLap(_:)),
             name: lapedUpNotificationKey,
             object: nil)
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: "bleepTestStoped:",
+            selector: #selector(BleepTestView.bleepTestStoped(_:)),
             name: stopTestNotificationKey,
             object: nil)
     }

@@ -28,7 +28,7 @@ class BleepTestController: BaseViewController {
     func addMenuButton(){
         var menuButton = UIButton()
         menuButton = UIButton.menuButton()
-        menuButton.addTarget(self, action: Selector("menuAction:"), forControlEvents: UIControlEvents.TouchUpInside)
+        menuButton.addTarget(self, action: #selector(BleepTestController.menuAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         let menuBarButton = UIBarButtonItem()
         menuBarButton.customView = menuButton
         self.navigationItem.leftBarButtonItem = menuBarButton
@@ -39,12 +39,12 @@ class BleepTestController: BaseViewController {
     private func notificationObservers(){
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: "bleepTestStarted:",
+            selector: #selector(BleepTestController.bleepTestStarted(_:)),
             name: startTestNotificationKey,
             object: nil)
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: "bleepTestStoped:",
+            selector: #selector(BleepTestController.bleepTestStoped(_:)),
             name: stopTestNotificationKey,
             object: nil)
     }
