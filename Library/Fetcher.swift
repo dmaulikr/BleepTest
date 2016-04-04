@@ -1,6 +1,5 @@
 import Foundation
 import DATAStack
-import Networking
 import JSON
 import Sync
 import DATASource
@@ -8,14 +7,12 @@ import CoreData
 
 public class Fetcher : NSObject {
     private var data: DATAStack
-    private var networking: Networking
     private var localFilePath : NSURL
     
     // MARK: - Initializers
 
-    init(baseURL: String, modelName: String, localFilePath: NSURL) {
+    init(modelName: String, localFilePath: NSURL) {
         self.data = DATAStack(modelName: modelName)
-        self.networking = Networking(baseURL: baseURL)
         self.localFilePath = localFilePath
     }
 
@@ -26,7 +23,6 @@ public class Fetcher : NSObject {
     }
     
     public func fetchLocalData(completion: (NSError?) -> Void){
-        
         let filePath = NSBundle.mainBundle().pathForResource(localFilePath.URLByDeletingPathExtension?.absoluteString, ofType: localFilePath.pathExtension)!
         let jsonData = NSData(contentsOfFile: filePath)!
         let json = try! NSJSONSerialization.JSONObjectWithData(jsonData, options: []) as! [String: AnyObject]
@@ -34,18 +30,6 @@ public class Fetcher : NSObject {
             Sync.changes(json["bleepTest"] as! Array, inEntityNamed: "TestLevel", predicate: nil, parent: nil, inContext: backgroundContext, dataStack: self.data, completion: { error in
                 completion(error)
             })
-        }
-    }
-
-    public func someResource(completion: (error: NSError?) -> ()) {
-        self.networking.GET("/someResource") { JSON, error in
-            if let JSON = JSON as? [[String : AnyObject]] {
-                Sync.changes(JSON, inEntityNamed: "SomeEntityName", dataStack: self.data, completion: { error in
-                    completion(error: error)
-                })
-            } else {
-                completion(error: error)
-            }
         }
     }
 
