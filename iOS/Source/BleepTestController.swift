@@ -11,7 +11,6 @@ class BleepTestController: BaseViewController {
     var beepSoundEffect : AVAudioPlayer!
     var distance : Int!
     var vO2Max : Double!
-    var writer = Writer()
     
     override func loadView() {
         let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
@@ -40,9 +39,7 @@ class BleepTestController: BaseViewController {
     }
     
     func bleepTestStoped(notification: NSNotification){
-        //Saving the bleeptest need to add 1 to the lap and level.
         writer.saveBleepTest((level+1), lap: (lap+1), vo2Max: vO2Max, distance: distance)
-        //Removing the timer that idle is enabled
         timer.invalidate()
         timer = NSTimer.after(10.seconds){
             UIApplication.sharedApplication().idleTimerDisabled = false

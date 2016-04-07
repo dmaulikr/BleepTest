@@ -4,7 +4,13 @@ import CoreData
 
 public class Writer : NSObject {
 
-    let dataStack = DATAStack(modelName:"iOS")
+    private var dataStack: DATAStack
+    
+    // MARK: - Initializers
+    
+    init(modelName: String) {
+        self.dataStack = DATAStack(modelName: modelName)
+    }
     
     public func saveBleepTest(level:Int, lap:Int, vo2Max:Double, distance:Int){
         self.dataStack.performInNewBackgroundContext { backgroundContext in

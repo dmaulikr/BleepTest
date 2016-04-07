@@ -13,7 +13,10 @@ class AppController: UIResponder {
         return fetcher
     }()
     
-    
+    private lazy var writer: Writer = {
+        let writer = Writer(modelName: "iOS")
+        return writer
+    }()
 }
 
 extension AppController: UIApplicationDelegate {
@@ -28,7 +31,7 @@ extension AppController: UIApplicationDelegate {
         }
 
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        window.rootViewController = TabBarController(fetcher: self.fetcher)
+        window.rootViewController = TabBarController(fetcher: self.fetcher, writer:self.writer)
         window.makeKeyAndVisible()
 
         return true
