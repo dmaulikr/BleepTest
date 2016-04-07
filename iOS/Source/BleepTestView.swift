@@ -120,8 +120,6 @@ class BleepTestView: UIView {
     //This is the view when the bleep test is running
     func createRunningBleepTest(){
         let viewsDictionary = [
-            "levelLabel":levelLabel,
-            "lapLabel":lapLabel,
             "stopButton":stopButton,
             "superview":self
         ]
