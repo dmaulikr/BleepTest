@@ -28,7 +28,7 @@ class TabBarController: UITabBarController {
     func setUpTabBar(){
         UITabBar.appearance().barTintColor = UIColor.whiteColor()
 
-        let item1 = BleepTestController(fetcher: self.fetcher, writer: self.writer)
+        let item1 = HomeController(fetcher: self.fetcher, writer: self.writer)
         let icon1 = UITabBarItem(title: "Bleep Test", image:UIImage(named:"BleepTest"), selectedImage:UIImage(named:"BleepTest"))
         item1.tabBarItem = icon1
         let navigationController1 = UINavigationController(rootViewController: item1)

@@ -1,14 +1,12 @@
-//
-//  HomeController.swift
-//  Project
-//
-//  Created by Ieuan Peace on 03/04/2016.
-//
-//
-
 import UIKit
 
-class HomeController: UIViewController {
+class HomeController: BaseViewController {
+    
+    override func loadView() {
+        let view = HomeView(frame: UIScreen.mainScreen().bounds)
+        self.view = view
+        self.title = "Bleep Test"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
