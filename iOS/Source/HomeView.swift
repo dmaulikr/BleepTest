@@ -6,8 +6,7 @@ class HomeView: UIView {
         var temporyButton : StartButtonView = StartButtonView()
         temporyButton.setTitle("Start", forState: UIControlState.Normal)
         temporyButton.setTitleColor(.whiteColor(), forState: UIControlState.Normal)
-        temporyButton.backgroundColor = .clearColor()
-        temporyButton.layer.borderColor = UIColor.redColor().CGColor
+        temporyButton.addTarget(self, action: #selector(startButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         temporyButton.translatesAutoresizingMaskIntoConstraints = false
         return temporyButton
     }()
@@ -47,4 +46,9 @@ class HomeView: UIView {
             ))
     }
     
+    func startButtonAction(sender:UIButton!){
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            startTestNotificationKey,
+            object: self)
+    }
 }
