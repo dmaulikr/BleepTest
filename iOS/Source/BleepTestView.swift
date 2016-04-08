@@ -5,15 +5,11 @@ class BleepTestView: UIView {
     let cornerRadius : CGFloat = 5
     let borderWidth : CGFloat = 2
     
-    lazy var stopButton : UIButton = {
-        var temporyButton : UIButton = UIButton()
+    lazy var stopButton : StopButton = {
+        var temporyButton : StopButton = StopButton()
         temporyButton.setTitle("Stop", forState: UIControlState.Normal)
-        temporyButton.setTitleColor(.redColor(), forState: UIControlState.Normal)
+        temporyButton.setTitleColor(.whiteColor(), forState: UIControlState.Normal)
         temporyButton.addTarget(self, action: #selector(stopButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        temporyButton.backgroundColor = .clearColor()
-        temporyButton.layer.cornerRadius = self.cornerRadius
-        temporyButton.layer.borderWidth = self.borderWidth
-        temporyButton.layer.borderColor = UIColor.redColor().CGColor
         temporyButton.translatesAutoresizingMaskIntoConstraints = false
         return temporyButton
     }()
@@ -120,12 +116,12 @@ class BleepTestView: UIView {
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(>=50)-[stopButton(50)]-120-|",
+            "V:|-(>=50)-[stopButton(100)]-120-|",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[stopButton(200)]",
+            "H:[stopButton(100)]",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
             views: viewsDictionary
