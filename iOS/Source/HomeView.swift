@@ -2,8 +2,8 @@ import UIKit
 
 class HomeView: UIView {
 
-    lazy var startButton : StartButtonView = {
-        var temporyButton : StartButtonView = StartButtonView()
+    lazy var startButton : StartButton = {
+        var temporyButton : StartButton = StartButton()
         temporyButton.setTitle("Start", forState: UIControlState.Normal)
         temporyButton.setTitleColor(.whiteColor(), forState: UIControlState.Normal)
         temporyButton.addTarget(self, action: #selector(startButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
