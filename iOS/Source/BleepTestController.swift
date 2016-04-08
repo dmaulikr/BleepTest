@@ -21,16 +21,14 @@ class BleepTestController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         notificationObservers()
+        startBleepTest()
     }
-    
-    //MARK: Notification
-    
+}
+
+
+//MARK: Notification
+extension BleepTestController{
     private func notificationObservers(){
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: #selector(BleepTestController.bleepTestStarted(_:)),
-            name: startTestNotificationKey,
-            object: nil)
         NSNotificationCenter.defaultCenter().addObserver(
             self,
             selector: #selector(BleepTestController.bleepTestStoped(_:)),
@@ -47,8 +45,12 @@ class BleepTestController: BaseViewController {
         }
         timer.start()
     }
+}
+
+// MARK: Bleep Test Logic
+extension BleepTestController{
     
-    func bleepTestStarted(notification: NSNotification){
+    private func startBleepTest(){
         UIApplication.sharedApplication().idleTimerDisabled = true
         levels = fetcher.fetchTestLevels{_ in}
         level = 0
@@ -56,8 +58,6 @@ class BleepTestController: BaseViewController {
         levelRun(level)
     }
     
-    // MARK: Bleep Test Logic
-
     private func levelRun(i : Int){
         if (i != levels.count){
             testLevel = levels[i]
@@ -128,5 +128,5 @@ class BleepTestController: BaseViewController {
             ])
         runLap()
     }
-    
 }
+

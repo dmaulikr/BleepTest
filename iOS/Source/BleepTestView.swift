@@ -17,19 +17,6 @@ class BleepTestView: UIView {
         temporyButton.translatesAutoresizingMaskIntoConstraints = false
         return temporyButton
     }()
-    
-    lazy var startButton : UIButton = {
-        var temporyButton : UIButton = UIButton()
-        temporyButton.setTitle("Start", forState: UIControlState.Normal)
-        temporyButton.setTitleColor(.italyGreenColor(), forState: UIControlState.Normal)
-        temporyButton.addTarget(self, action: #selector(BleepTestView.startButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        temporyButton.backgroundColor = .clearColor()
-        temporyButton.layer.cornerRadius = self.cornerRadius
-        temporyButton.layer.borderWidth = self.borderWidth
-        temporyButton.layer.borderColor = UIColor.italyGreenColor().CGColor
-        temporyButton.translatesAutoresizingMaskIntoConstraints = false
-        return temporyButton
-    }()
 
     lazy var levelLabel : UILabel = {
         var temporyLabel : UILabel = UILabel()
@@ -70,7 +57,7 @@ class BleepTestView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        createStartBleepTest()
+        createRunningBleepTest()
         backgroundColor = .whiteColor()
         notificationObservers()
         addBleepTestLabels()
@@ -145,47 +132,10 @@ class BleepTestView: UIView {
             ))
     }
     
-    //Inital view when the bleep test hasent started
-    func createStartBleepTest(){
-        let viewsDictionary = [
-            "startButton":startButton,
-            "superview":self
-        ]
-        addSubview(startButton)
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[superview]-(<=1)-[startButton]",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
-            metrics: nil,
-            views: viewsDictionary
-            ))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(>=20)-[startButton(50)]-120-|",
-            options: NSLayoutFormatOptions.AlignAllLeading,
-            metrics: nil,
-            views: viewsDictionary
-            ))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[startButton(200)]",
-            options: NSLayoutFormatOptions.AlignAllLeading,
-            metrics: nil,
-            views: viewsDictionary
-            ))
-    }
-    
     // MARK: Button Actions
-    
-    func startButtonAction(sender:UIButton!){
-        startButton.removeFromSuperview()
-        createRunningBleepTest()
-        NSNotificationCenter.defaultCenter().postNotificationName(
-            startTestNotificationKey,
-            object: self)
-
-    }
     
     func stopButtonAction(sender:UIButton!){
         stopButton.removeFromSuperview()
-        createStartBleepTest()
         NSNotificationCenter.defaultCenter().postNotificationName(
             stopTestNotificationKey,
             object: self)
@@ -227,7 +177,6 @@ class BleepTestView: UIView {
     
     func bleepTestStoped(notification : NSNotification){
         stopButton.removeFromSuperview()
-        createStartBleepTest()
     }
 
 }
