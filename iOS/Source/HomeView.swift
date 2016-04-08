@@ -45,7 +45,10 @@ class HomeView: UIView {
             views: viewsDictionary
             ))
     }
-    
+}
+
+//MARK: Actions
+extension HomeView{
     func startButtonAction(sender:UIButton!){
         NSNotificationCenter.defaultCenter().postNotificationName(
             startTestNotificationKey,
