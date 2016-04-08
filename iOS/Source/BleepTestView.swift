@@ -14,6 +14,15 @@ class BleepTestView: UIView {
         return temporyButton
     }()
 
+    lazy var pauseButton : PauseButton = {
+        var temporyButton : PauseButton = PauseButton()
+        temporyButton.setTitle("Pause", forState: UIControlState.Normal)
+        temporyButton.setTitleColor(.whiteColor(), forState: UIControlState.Normal)
+        temporyButton.addTarget(self, action: #selector(pauseButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        temporyButton.translatesAutoresizingMaskIntoConstraints = false
+        return temporyButton
+    }()
+
     lazy var levelLabel : UILabel = {
         var temporyLabel : UILabel = UILabel()
         temporyLabel.text = "Level: 0"
@@ -112,14 +121,14 @@ class BleepTestView: UIView {
     func createRunningBleepTest(){
         let viewsDictionary = [
             "stopButton":stopButton,
+            "pauseButton":pauseButton,
             "superview":self
         ]
         addSubview(stopButton)
-        addSubview(levelLabel)
-        addSubview(lapLabel)
+        addSubview(pauseButton)
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[superview]-(<=1)-[stopButton]",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+            "H:|-30-[pauseButton(100)]-(>=20)-[stopButton(100)]-30-|",
+            options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary
             ))
@@ -129,11 +138,10 @@ class BleepTestView: UIView {
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[stopButton(100)]",
+            "V:[pauseButton(100)]",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
-            views: viewsDictionary
-            ))
+            views: viewsDictionary))
     }
 }
 
@@ -183,5 +191,8 @@ extension BleepTestView{
         NSNotificationCenter.defaultCenter().postNotificationName(
             stopTestNotificationKey,
             object: self)
+    }
+    func pauseButtonAction(sender:UIButton!){
+
     }
 }

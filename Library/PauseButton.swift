@@ -1,9 +1,9 @@
 import UIKit
 
-class StopButton: UIButton {
+class PauseButton: UIButton {
     override func drawRect(rect: CGRect) {
         let path = UIBezierPath(ovalInRect: rect)
-        UIColor.redColor().setFill()
+        UIColor.customBlueColor().setFill()
         path.fill()
     }
 }

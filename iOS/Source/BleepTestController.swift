@@ -31,7 +31,7 @@ extension BleepTestController{
     private func notificationObservers(){
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: #selector(BleepTestController.bleepTestStoped(_:)),
+            selector: #selector(bleepTestStoped(_:)),
             name: stopTestNotificationKey,
             object: nil)
     }
