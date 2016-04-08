@@ -131,18 +131,10 @@ class BleepTestView: UIView {
             views: viewsDictionary
             ))
     }
-    
-    // MARK: Button Actions
-    
-    func stopButtonAction(sender:UIButton!){
-        stopButton.removeFromSuperview()
-        NSNotificationCenter.defaultCenter().postNotificationName(
-            stopTestNotificationKey,
-            object: self)
-    }
-    
-    // MARK: Notifications
-    
+}
+
+// MARK: Notifications
+extension BleepTestView{
     private func notificationObservers(){
         NSNotificationCenter.defaultCenter().addObserver(
             self,
@@ -178,5 +170,14 @@ class BleepTestView: UIView {
     func bleepTestStoped(notification : NSNotification){
         stopButton.removeFromSuperview()
     }
+}
 
+// MARK: Button Actions
+extension BleepTestView{
+    func stopButtonAction(sender:UIButton!){
+        stopButton.removeFromSuperview()
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            stopTestNotificationKey,
+            object: self)
+    }
 }
