@@ -9,7 +9,7 @@ class BleepTestView: UIView {
         var temporyButton : UIButton = UIButton()
         temporyButton.setTitle("Stop", forState: UIControlState.Normal)
         temporyButton.setTitleColor(.redColor(), forState: UIControlState.Normal)
-        temporyButton.addTarget(self, action: #selector(BleepTestView.stopButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        temporyButton.addTarget(self, action: #selector(stopButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         temporyButton.backgroundColor = .clearColor()
         temporyButton.layer.cornerRadius = self.cornerRadius
         temporyButton.layer.borderWidth = self.borderWidth
@@ -138,17 +138,17 @@ extension BleepTestView{
     private func notificationObservers(){
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: #selector(BleepTestView.updateLevel(_:)),
+            selector: #selector(updateLevel(_:)),
             name: leveledUpNotificationKey,
             object: nil)
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: #selector(BleepTestView.updateLap(_:)),
+            selector: #selector(updateLap(_:)),
             name: lapedUpNotificationKey,
             object: nil)
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: #selector(BleepTestView.bleepTestStoped(_:)),
+            selector: #selector(bleepTestStoped(_:)),
             name: stopTestNotificationKey,
             object: nil)
     }
