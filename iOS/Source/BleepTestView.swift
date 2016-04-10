@@ -22,38 +22,73 @@ class BleepTestView: UIView {
         temporyButton.translatesAutoresizingMaskIntoConstraints = false
         return temporyButton
     }()
-
+    
+    lazy var levelTitleLabel : UILabel = {
+        var temporyLabel : UILabel = UILabel()
+        temporyLabel.text = "Level"
+        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 10)
+        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
+        temporyLabel.textColor = UIColor.grayColor()
+        return temporyLabel
+    }()
+    
     lazy var levelLabel : UILabel = {
         var temporyLabel : UILabel = UILabel()
-        temporyLabel.text = "Level: 0"
+        temporyLabel.text = "0"
         temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 30)
         temporyLabel.translatesAutoresizingMaskIntoConstraints = false
         temporyLabel.textColor = UIColor.italyBrownColor()
+        return temporyLabel
+    }()
+    
+    lazy var lapTitleLabel : UILabel = {
+        var temporyLabel : UILabel = UILabel()
+        temporyLabel.text = "Lap"
+        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 10)
+        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
+        temporyLabel.textColor = UIColor.grayColor()
         return temporyLabel
     }()
     
     lazy var lapLabel : UILabel = {
         var temporyLabel : UILabel = UILabel()
-        temporyLabel.text = "Lap: 0"
+        temporyLabel.text = "0"
         temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 30)
         temporyLabel.translatesAutoresizingMaskIntoConstraints = false
         temporyLabel.textColor = UIColor.italyBrownColor()
         return temporyLabel
     }()
     
+    lazy var distanceTitleLabel : UILabel = {
+        var temporyLabel : UILabel = UILabel()
+        temporyLabel.text = "Distance"
+        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 10)
+        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
+        temporyLabel.textColor = UIColor.grayColor()
+        return temporyLabel
+    }()
+    
     lazy var distanceLabel : UILabel = {
         var temporyLabel : UILabel = UILabel()
-        temporyLabel.text = "Total distance: 0m"
+        temporyLabel.text = "0m"
         temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 23)
         temporyLabel.translatesAutoresizingMaskIntoConstraints = false
         temporyLabel.textColor = UIColor.italyBrownColor()
         return temporyLabel
     }()
     
+    lazy var vO2MaxTitleLabel : UILabel = {
+        var temporyLabel : UILabel = UILabel()
+        temporyLabel.text = "Maximum Oxygen Uptake"
+        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 10)
+        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
+        temporyLabel.textColor = UIColor.grayColor()
+        return temporyLabel
+    }()
 
     lazy var vO2MaxLabel : UILabel = {
         var temporyLabel : UILabel = UILabel()
-        temporyLabel.text = "VO2 max: 0"
+        temporyLabel.text = "0"
         temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 23)
         temporyLabel.translatesAutoresizingMaskIntoConstraints = false
         temporyLabel.textColor = UIColor.italyBrownColor()
@@ -86,35 +121,55 @@ class BleepTestView: UIView {
             "lapLabel":lapLabel,
             "distanceLabel":distanceLabel,
             "vO2MaxLabel":vO2MaxLabel,
+            "levelTitleLabel":levelTitleLabel,
+            "lapTitleLabel":lapTitleLabel,
+            "distanceTitleLabel":distanceTitleLabel,
+            "vO2MaxTitleLabel":vO2MaxTitleLabel,
             "superview":self
         ]
         addSubview(levelLabel)
         addSubview(lapLabel)
         addSubview(distanceLabel)
         addSubview(vO2MaxLabel)
+        addSubview(levelTitleLabel)
+        addSubview(lapTitleLabel)
+        addSubview(distanceTitleLabel)
+        addSubview(vO2MaxTitleLabel)
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-100-[levelLabel]-30-[distanceLabel]-30-[vO2MaxLabel]-(>=200)-|",
+            "V:|-70-[levelLabel]-70-[distanceLabel]-(>=200)-|",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-30-[levelLabel]-(>=20)-[lapLabel]-30-|",
+            "V:|-40-[levelTitleLabel]-90-[distanceTitleLabel]-(>=200)-|",
+            options: NSLayoutFormatOptions.AlignAllLeading,
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-60-[levelLabel]-(>=20)-[lapLabel]-60-|",
             options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-30-[levelLabel]-(>=20)-[lapLabel]-30-|",
+            "H:|-60-[distanceLabel]-(>=20)-[vO2MaxLabel]-60-|",
             options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-30-[vO2MaxLabel]-30-|",
-            options: NSLayoutFormatOptions.AlignAllBaseline,
+            "H:|-40-[levelTitleLabel]-(>=20)-[lapTitleLabel]-70-|",
+            options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary
             ))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-40-[distanceTitleLabel]-(>=20)-[vO2MaxTitleLabel]-30-|",
+            options: NSLayoutFormatOptions.AlignAllCenterY,
+            metrics: nil,
+            views: viewsDictionary
+            ))
+
     }
     
     //This is the view when the bleep test is running
@@ -133,7 +188,7 @@ class BleepTestView: UIView {
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(>=50)-[stopButton(100)]-120-|",
+            "V:|-(>=50)-[stopButton(100)]-40-|",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
             views: viewsDictionary))
@@ -167,16 +222,16 @@ extension BleepTestView{
     
     func updateLevel(notification : NSNotification){
         let level = notification.userInfo!["level"]
-        levelLabel.text = "Level: \(level!)"
+        levelLabel.text = level as? String
     }
     
     func updateLap(notification : NSNotification){
-        let level = notification.userInfo!["lap"]
+        let lap = notification.userInfo!["lap"]
         let distance = notification.userInfo!["distance"]
         let vO2Max = notification.userInfo!["VO2Max"]
-        lapLabel.text = "Lap: \(level!)"
-        distanceLabel.text = "Total distance: \(distance!)m"
-        vO2MaxLabel.text = "VO2 max: \(vO2Max!)"
+        lapLabel.text = lap as? String
+        distanceLabel.text = "\(distance!)m"
+        vO2MaxLabel.text = "\(vO2Max!)"
     }
     
     func bleepTestStoped(notification : NSNotification){
@@ -192,6 +247,7 @@ extension BleepTestView{
             stopTestNotificationKey,
             object: self)
     }
+    
     func pauseButtonAction(sender:UIButton!){
 
     }
