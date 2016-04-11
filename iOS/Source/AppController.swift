@@ -9,7 +9,6 @@ class AppController: UIResponder {
     private lazy var fetcher: Fetcher = {
         let url = NSURL(string: "levelsData.json")!
         let fetcher = Fetcher(modelName: "iOS", localFilePath: url)
-
         return fetcher
     }()
     
