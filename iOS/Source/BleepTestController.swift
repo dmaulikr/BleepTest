@@ -21,10 +21,12 @@ class BleepTestController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         notificationObservers()
-        startBleepTest()
+        timer = NSTimer.after(0.5.seconds){
+            self.startBleepTest()
+        }
+        timer.start()
     }
 }
-
 
 //MARK: Notification
 extension BleepTestController{
@@ -97,6 +99,11 @@ extension BleepTestController{
     
     private func runningLap(){
         let lapTime = Double(testLevel.lapTime)
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            startedNewLapNotificationKey,
+            object: nil,
+            userInfo: ["lap":lapTime]
+        )
         timer = NSTimer.after(lapTime.seconds){
             self.lapFinished()
         }

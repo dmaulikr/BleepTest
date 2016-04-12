@@ -32,6 +32,7 @@
 		95406FF01C93343900567215 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 95406FEF1C93343900567215 /* beep.wav */; };
 		9548A8221CB14F5000BAF914 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548A8211CB14F5000BAF914 /* HomeView.swift */; };
 		9548A8241CB14FEA00BAF914 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548A8231CB14FEA00BAF914 /* HomeController.swift */; };
+		957A805B1CBBEE2700C257EC /* LapProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A805A1CBBEE2600C257EC /* LapProgressIndicator.swift */; };
 		957BEBA51CB69D250057F14F /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957BEBA41CB69D250057F14F /* StartButton.swift */; };
 		95D7B0041C8CBC3E004690D5 /* BleepTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */; };
 		95D7B0061C8CBC68004690D5 /* BleepTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7B0051C8CBC68004690D5 /* BleepTestView.swift */; };
@@ -73,6 +74,7 @@
 		95406FEF1C93343900567215 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = beep.wav; path = ../../beep.wav; sourceTree = "<group>"; };
 		9548A8211CB14F5000BAF914 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9548A8231CB14FEA00BAF914 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		957A805A1CBBEE2600C257EC /* LapProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LapProgressIndicator.swift; sourceTree = "<group>"; };
 		957BEBA41CB69D250057F14F /* StartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartButton.swift; path = ../iOS/Source/StartButton.swift; sourceTree = "<group>"; };
 		95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestController.swift; sourceTree = "<group>"; };
 		95D7B0051C8CBC68004690D5 /* BleepTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				957BEBA41CB69D250057F14F /* StartButton.swift */,
 				952659BD1CB7E89F00631953 /* StopButton.swift */,
 				952659BF1CB7FA4A00631953 /* PauseButton.swift */,
+				957A805A1CBBEE2600C257EC /* LapProgressIndicator.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				95D7B0061C8CBC68004690D5 /* BleepTestView.swift in Sources */,
 				95D8E4431CA15B5D0084F939 /* FoldingCell.swift in Sources */,
 				9527A6D21CA038DB001E7942 /* CompletedTestTableController.swift in Sources */,
+				957A805B1CBBEE2700C257EC /* LapProgressIndicator.swift in Sources */,
 				141A6FDD1BDE2DAB00CB6E82 /* UIFont+Custom.swift in Sources */,
 				141A6FD91BDE2DAB00CB6E82 /* BaseTableViewController.swift in Sources */,
 				145F81CD1BDE2CFD0016A9E0 /* iOS.xcdatamodeld in Sources */,

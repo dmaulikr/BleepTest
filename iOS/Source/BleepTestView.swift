@@ -5,6 +5,15 @@ class BleepTestView: UIView {
     let cornerRadius : CGFloat = 5
     let borderWidth : CGFloat = 2
     
+    lazy var lapProgressIndicator : LapProgressIndicator = {
+        let circleWidth = CGFloat(100)
+        let circleHeight = circleWidth
+        var temporyView : LapProgressIndicator = LapProgressIndicator()
+        temporyView = LapProgressIndicator(frame: CGRect(x: 0, y: 0, width: circleWidth, height: circleHeight))
+        temporyView.translatesAutoresizingMaskIntoConstraints = false
+        return temporyView
+    }()
+    
     lazy var stopButton : StopButton = {
         var temporyButton : StopButton = StopButton()
         temporyButton.setTitle("Stop", forState: UIControlState.Normal)
@@ -95,6 +104,7 @@ class BleepTestView: UIView {
         return temporyLabel
     }()
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         createRunningBleepTest()
@@ -139,12 +149,14 @@ class BleepTestView: UIView {
             "V:|-70-[levelLabel]-70-[distanceLabel]-(>=200)-|",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
-            views: viewsDictionary))
+            views: viewsDictionary
+            ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:|-40-[levelTitleLabel]-90-[distanceTitleLabel]-(>=200)-|",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
-            views: viewsDictionary))
+            views: viewsDictionary
+            ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-60-[levelLabel]-(>=20)-[lapLabel]-60-|",
             options: NSLayoutFormatOptions.AlignAllCenterY,
@@ -169,18 +181,57 @@ class BleepTestView: UIView {
             metrics: nil,
             views: viewsDictionary
             ))
-
     }
     
     //This is the view when the bleep test is running
     func createRunningBleepTest(){
+        addLapProgressIndicator()
+        addButtonsToView()
+    }
+    
+    func addLapProgressIndicator(){
+        let viewsDictionary = [
+            "lapProgressIndicator":lapProgressIndicator,
+            "superview":self
+        ]
+        
+        addSubview(lapProgressIndicator)
+        
+        //setting the size of the LapProgressIndicator View
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:[lapProgressIndicator(100)]",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[lapProgressIndicator(100)]",
+            options: NSLayoutFormatOptions.AlignAllCenterY,
+            metrics: nil,
+            views: viewsDictionary))
+        
+        //Centering the LapProgressIndicator View
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:[superview]-(<=1)-[lapProgressIndicator]",
+            options: NSLayoutFormatOptions.AlignAllCenterY,
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[superview]-(<=1)-[lapProgressIndicator]",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary))
+    }
+    
+    func addButtonsToView(){
         let viewsDictionary = [
             "stopButton":stopButton,
             "pauseButton":pauseButton,
             "superview":self
         ]
+        
         addSubview(stopButton)
         addSubview(pauseButton)
+        
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|-30-[pauseButton(100)]-(>=20)-[stopButton(100)]-30-|",
             options: NSLayoutFormatOptions.AlignAllCenterY,
@@ -218,6 +269,11 @@ extension BleepTestView{
             selector: #selector(bleepTestStoped(_:)),
             name: stopTestNotificationKey,
             object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(lapStarted(_:)),
+            name: startedNewLapNotificationKey,
+            object: nil)
     }
     
     func updateLevel(notification : NSNotification){
@@ -237,7 +293,13 @@ extension BleepTestView{
     func bleepTestStoped(notification : NSNotification){
         stopButton.removeFromSuperview()
     }
+    
+    func lapStarted(notification: NSNotification){
+        let lap = notification.userInfo!["lap"]?.doubleValue
+        lapProgressIndicator.animateCircle(lap!)
+    }
 }
+
 
 // MARK: Button Actions
 extension BleepTestView{
@@ -249,6 +311,6 @@ extension BleepTestView{
     }
     
     func pauseButtonAction(sender:UIButton!){
-
+        // TODO: Pause Button Action
     }
 }
