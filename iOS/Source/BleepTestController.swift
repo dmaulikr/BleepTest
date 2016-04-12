@@ -63,11 +63,15 @@ extension BleepTestController{
         if (i != levels.count){
             testLevel = levels[i]
             lap = 0
-             vO2Max = 3.46 * (Double(testLevel.level)+Double(lap+1) / ((Double(testLevel.level) * 0.4325 + 7.0048))) + 12.2
+            vO2Max = 3.46 * (Double(testLevel.level)+Double(lap+1) / ((Double(testLevel.level) * 0.4325 + 7.0048))) + 12.2
             NSNotificationCenter.defaultCenter().postNotificationName(
                 leveledUpNotificationKey,
                 object: nil,
-                userInfo: ["level" : String(testLevel.level)])
+                userInfo: [
+                    "level" : String(testLevel.level),
+                    "numberOfLaps" : testLevel.laps,
+                    "lapTime" : testLevel.lapTime
+                ])
             NSNotificationCenter.defaultCenter().postNotificationName(
                 lapedUpNotificationKey,
                 object: nil,

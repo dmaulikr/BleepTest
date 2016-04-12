@@ -1,6 +1,6 @@
 import UIKit
 
-class LapProgressIndicator: UIView {
+class LevelProgressIndicator: UIView {
     var circleLayer: CAShapeLayer!
     
     override init(frame: CGRect) {
@@ -8,11 +8,10 @@ class LapProgressIndicator: UIView {
         self.backgroundColor = UIColor.clearColor()
         
         let circlePath = UIBezierPath(
-            arcCenter:
-                CGPoint(
-                    x: frame.size.width / 2.0,
-                    y: frame.size.height / 2.0
-                ),
+            arcCenter: CGPoint(
+                x: frame.size.width / 2.0,
+                y: frame.size.height / 2.0
+            ),
             radius: (
                 frame.size.width - 10)/2,
                 startAngle: 0.0,
@@ -22,9 +21,9 @@ class LapProgressIndicator: UIView {
         
         circleLayer = CAShapeLayer()
         circleLayer.path = circlePath.CGPath
-        circleLayer.fillColor = UIColor.lightGrayColor().CGColor
-        circleLayer.strokeColor = UIColor.redColor().CGColor
-        circleLayer.lineWidth = 5.0;
+        circleLayer.fillColor = UIColor.clearColor().CGColor
+        circleLayer.strokeColor = UIColor.orangeColor().CGColor
+        circleLayer.lineWidth = 5.0
         circleLayer.strokeEnd = 0.0
         
         layer.addSublayer(circleLayer)
@@ -50,4 +49,5 @@ class LapProgressIndicator: UIView {
         circleLayer.strokeEnd = 1.0
         circleLayer.addAnimation(animation, forKey: "animateCircle")
     }
+
 }

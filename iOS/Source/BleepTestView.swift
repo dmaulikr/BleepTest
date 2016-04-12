@@ -4,12 +4,30 @@ class BleepTestView: UIView {
     
     let cornerRadius : CGFloat = 5
     let borderWidth : CGFloat = 2
-    
+
     lazy var lapProgressIndicator : LapProgressIndicator = {
         let circleWidth = CGFloat(100)
         let circleHeight = circleWidth
         var temporyView : LapProgressIndicator = LapProgressIndicator()
         temporyView = LapProgressIndicator(frame: CGRect(x: 0, y: 0, width: circleWidth, height: circleHeight))
+        temporyView.translatesAutoresizingMaskIntoConstraints = false
+        return temporyView
+    }()
+    
+    lazy var levelProgressIndicator : LevelProgressIndicator = {
+        let circleWidth = CGFloat(80)
+        let circleHeight = circleWidth
+        var temporyView : LevelProgressIndicator = LevelProgressIndicator()
+        temporyView = LevelProgressIndicator(frame: CGRect(x: 0, y: 0, width: circleWidth, height: circleHeight))
+        temporyView.translatesAutoresizingMaskIntoConstraints = false
+        return temporyView
+    }()
+    
+    lazy var circleView : CircleView = {
+        let circleWidth = CGFloat(60)
+        let circleHeight = circleWidth
+        var temporyView : CircleView = CircleView()
+        temporyView = CircleView(frame: CGRect(x: 0, y: 0, width: circleWidth, height: circleHeight))
         temporyView.translatesAutoresizingMaskIntoConstraints = false
         return temporyView
     }()
@@ -104,7 +122,6 @@ class BleepTestView: UIView {
         return temporyLabel
     }()
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         createRunningBleepTest()
@@ -112,6 +129,7 @@ class BleepTestView: UIView {
         notificationObservers()
         addBleepTestLabels()
         setStatusBarBackgroundColor(UIColor.customBlueColor())
+        addCircleView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -187,6 +205,7 @@ class BleepTestView: UIView {
     func createRunningBleepTest(){
         addLapProgressIndicator()
         addButtonsToView()
+        addLevelProgressIndicator()
     }
     
     func addLapProgressIndicator(){
@@ -249,6 +268,72 @@ class BleepTestView: UIView {
             metrics: nil,
             views: viewsDictionary))
     }
+    
+    func addLevelProgressIndicator(){
+        let viewsDictionary = [
+            "levelProgressIndicator":levelProgressIndicator,
+            "superview":self
+        ]
+        
+        addSubview(levelProgressIndicator)
+        
+        //setting the size of the LapProgressIndicator View
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:[levelProgressIndicator(80)]",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[levelProgressIndicator(80)]",
+            options: NSLayoutFormatOptions.AlignAllCenterY,
+            metrics: nil,
+            views: viewsDictionary))
+        
+        //Centering the LapProgressIndicator View
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:[superview]-(<=1)-[levelProgressIndicator]",
+            options: NSLayoutFormatOptions.AlignAllCenterY,
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[superview]-(<=1)-[levelProgressIndicator]",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary))
+    }
+    
+    func addCircleView(){
+        let viewsDictionary = [
+            "circleView":circleView,
+            "superview":self
+        ]
+        
+        addSubview(circleView)
+        
+        //setting the size of the LapProgressIndicator View
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:[circleView(60)]",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[circleView(60)]",
+            options: NSLayoutFormatOptions.AlignAllCenterY,
+            metrics: nil,
+            views: viewsDictionary))
+        
+        //Centering the LapProgressIndicator View
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:[superview]-(<=1)-[circleView]",
+            options: NSLayoutFormatOptions.AlignAllCenterY,
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[superview]-(<=1)-[circleView]",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary))
+    }
 }
 
 // MARK: Notifications
@@ -278,7 +363,11 @@ extension BleepTestView{
     
     func updateLevel(notification : NSNotification){
         let level = notification.userInfo!["level"]
+        let numberOfLaps = notification.userInfo!["numberOfLaps"]?.doubleValue
+        let lapTime = notification.userInfo!["lapTime"]?.doubleValue
         levelLabel.text = level as? String
+        let levelTime = numberOfLaps! * lapTime!
+        levelProgressIndicator.animateCircle(levelTime)
     }
     
     func updateLap(notification : NSNotification){
