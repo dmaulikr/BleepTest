@@ -14,8 +14,8 @@ class LevelProgressIndicator: UIView {
             ),
             radius: (
                 frame.size.width - 10)/2,
-                startAngle: 0.0,
-                endAngle: CGFloat(M_PI * 2.0),
+                startAngle: CGFloat(-M_PI_2),
+                endAngle: CGFloat((M_PI * 2.0) - M_PI_2),
                 clockwise: true
         )
         
