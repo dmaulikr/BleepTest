@@ -147,36 +147,36 @@ class BleepTestView: UIView {
         addSubview(vO2MaxTitleLabel)
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:|-70-[levelLabel]-70-[distanceLabel]-(>=200)-|",
-            options: NSLayoutFormatOptions.AlignAllLeading,
+            options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:|-40-[levelTitleLabel]-90-[distanceTitleLabel]-(>=200)-|",
-            options: NSLayoutFormatOptions.AlignAllLeading,
+            options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-60-[levelLabel]-(>=20)-[lapLabel]-60-|",
+            "H:|-30-[levelLabel]-(>=20)-[lapLabel]-30-|",
             options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-60-[distanceLabel]-(>=20)-[vO2MaxLabel]-60-|",
+            "H:|-30-[distanceLabel]-(>=20)-[vO2MaxLabel]-30-|",
             options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-40-[levelTitleLabel]-(>=20)-[lapTitleLabel]-70-|",
+            "H:|-30-[levelTitleLabel]-(>=20)-[lapTitleLabel]-30-|",
             options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-40-[distanceTitleLabel]-(>=20)-[vO2MaxTitleLabel]-30-|",
+            "H:|-30-[distanceTitleLabel]-(>=20)-[vO2MaxTitleLabel]-30-|",
             options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary
@@ -299,7 +299,6 @@ extension BleepTestView{
         lapProgressIndicator.animateCircle(lap!)
     }
 }
-
 
 // MARK: Button Actions
 extension BleepTestView{

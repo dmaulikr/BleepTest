@@ -51,7 +51,6 @@ extension BleepTestController{
 
 // MARK: Bleep Test Logic
 extension BleepTestController{
-    
     private func startBleepTest(){
         UIApplication.sharedApplication().idleTimerDisabled = true
         levels = fetcher.fetchTestLevels{_ in}
@@ -75,9 +74,8 @@ extension BleepTestController{
                 userInfo: [
                     "lap":String(lap+1),
                     "distance":String(distance),
-                    "VO2Max":String(format: "%.3f", vO2Max)
+                    "VO2Max":String(format: "%.1f", vO2Max)
                     ])
-            
             runLap()
         } else{
             beep()
@@ -131,7 +129,7 @@ extension BleepTestController{
             userInfo: [
                 "lap" : String(lap+1),
                 "distance":String(distance),
-                "VO2Max":String(format: "%.3f", vO2Max)
+                "VO2Max":String(format: "%.1f", vO2Max)
             ])
         runLap()
     }
