@@ -46,6 +46,7 @@ extension BleepTestController{
             self.timer.invalidate()
         }
         timer.start()
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
