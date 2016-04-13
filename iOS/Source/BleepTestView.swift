@@ -41,75 +41,51 @@ class BleepTestView: UIView {
         return temporyButton
     }()
     
-    lazy var levelTitleLabel : UILabel = {
-        var temporyLabel : UILabel = UILabel()
+    lazy var levelTitleLabel : SmallTitleLabel = {
+        var temporyLabel : SmallTitleLabel = SmallTitleLabel()
         temporyLabel.text = "Level"
-        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 10)
-        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
-        temporyLabel.textColor = UIColor.grayColor()
         return temporyLabel
     }()
     
-    lazy var levelLabel : UILabel = {
-        var temporyLabel : UILabel = UILabel()
+    lazy var levelLabel : LargeContentLabel = {
+        var temporyLabel : LargeContentLabel = LargeContentLabel()
         temporyLabel.text = "0"
-        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 40)
-        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
-        temporyLabel.textColor = UIColor.italyBrownColor()
         return temporyLabel
     }()
     
-    lazy var lapTitleLabel : UILabel = {
-        var temporyLabel : UILabel = UILabel()
+    lazy var lapTitleLabel : SmallTitleLabel = {
+        var temporyLabel : SmallTitleLabel = SmallTitleLabel()
         temporyLabel.text = "Lap"
-        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 10)
-        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
-        temporyLabel.textColor = UIColor.grayColor()
         return temporyLabel
     }()
     
-    lazy var lapLabel : UILabel = {
-        var temporyLabel : UILabel = UILabel()
+    lazy var lapLabel : LargeContentLabel = {
+        var temporyLabel : LargeContentLabel = LargeContentLabel()
         temporyLabel.text = "0"
-        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 40)
-        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
-        temporyLabel.textColor = UIColor.italyBrownColor()
         return temporyLabel
     }()
     
-    lazy var distanceTitleLabel : UILabel = {
-        var temporyLabel : UILabel = UILabel()
+    lazy var distanceTitleLabel : SmallTitleLabel = {
+        var temporyLabel : SmallTitleLabel = SmallTitleLabel()
         temporyLabel.text = "Distance"
-        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 10)
-        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
-        temporyLabel.textColor = UIColor.grayColor()
         return temporyLabel
     }()
     
-    lazy var distanceLabel : UILabel = {
-        var temporyLabel : UILabel = UILabel()
+    lazy var distanceLabel : MediumContentLabel = {
+        var temporyLabel : MediumContentLabel = MediumContentLabel()
         temporyLabel.text = "0m"
-        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 23)
-        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
-        temporyLabel.textColor = UIColor.italyBrownColor()
         return temporyLabel
     }()
     
-    lazy var vO2MaxTitleLabel : UILabel = {
-        var temporyLabel : UILabel = UILabel()
+    lazy var vO2MaxTitleLabel : SmallTitleLabel = {
+        var temporyLabel : SmallTitleLabel = SmallTitleLabel()
         temporyLabel.text = "Maximum Oxygen Uptake"
-        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 10)
-        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
-        temporyLabel.textColor = UIColor.grayColor()
         return temporyLabel
     }()
 
-    lazy var vO2MaxLabel : UILabel = {
-        var temporyLabel : UILabel = UILabel()
+    lazy var vO2MaxLabel : MediumContentLabel = {
+        var temporyLabel : MediumContentLabel = MediumContentLabel()
         temporyLabel.text = "0"
-        temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 23)
-        temporyLabel.translatesAutoresizingMaskIntoConstraints = false
-        temporyLabel.textColor = UIColor.italyBrownColor()
         return temporyLabel
     }()
     

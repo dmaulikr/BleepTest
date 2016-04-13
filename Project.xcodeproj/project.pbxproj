@@ -29,6 +29,9 @@
 		9527A6D71CA056C7001E7942 /* CompletedTestTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527A6D61CA056C7001E7942 /* CompletedTestTableCell.swift */; };
 		95394C481C997A3E00FD24E5 /* UIButton+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95394C471C997A3E00FD24E5 /* UIButton+Custom.swift */; };
 		953A5EF41CA42DDC003960FC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A5EF31CA42DDC003960FC /* TabBarController.swift */; };
+		953DD2751CBE766800A49A98 /* SmallTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2741CBE766700A49A98 /* SmallTitleLabel.swift */; };
+		953DD2771CBE77F100A49A98 /* MediumContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2761CBE77F100A49A98 /* MediumContentLabel.swift */; };
+		953DD2791CBE84C100A49A98 /* LargeContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2781CBE84C100A49A98 /* LargeContentLabel.swift */; };
 		95406FF01C93343900567215 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 95406FEF1C93343900567215 /* beep.wav */; };
 		9548A8221CB14F5000BAF914 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548A8211CB14F5000BAF914 /* HomeView.swift */; };
 		9548A8241CB14FEA00BAF914 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548A8231CB14FEA00BAF914 /* HomeController.swift */; };
@@ -73,6 +76,9 @@
 		9527A6D61CA056C7001E7942 /* CompletedTestTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTestTableCell.swift; sourceTree = "<group>"; };
 		95394C471C997A3E00FD24E5 /* UIButton+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Custom.swift"; sourceTree = "<group>"; };
 		953A5EF31CA42DDC003960FC /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = ../../Library/TabBarController.swift; sourceTree = "<group>"; };
+		953DD2741CBE766700A49A98 /* SmallTitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallTitleLabel.swift; sourceTree = "<group>"; };
+		953DD2761CBE77F100A49A98 /* MediumContentLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumContentLabel.swift; sourceTree = "<group>"; };
+		953DD2781CBE84C100A49A98 /* LargeContentLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeContentLabel.swift; sourceTree = "<group>"; };
 		95406FEF1C93343900567215 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = beep.wav; path = ../../beep.wav; sourceTree = "<group>"; };
 		9548A8211CB14F5000BAF914 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9548A8231CB14FEA00BAF914 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -126,6 +132,9 @@
 				957A805A1CBBEE2600C257EC /* LapProgressIndicator.swift */,
 				954986E51CBD3F36003AB758 /* LevelProgressIndicator.swift */,
 				954986E71CBD4BE4003AB758 /* CircleView.swift */,
+				953DD2741CBE766700A49A98 /* SmallTitleLabel.swift */,
+				953DD2761CBE77F100A49A98 /* MediumContentLabel.swift */,
+				953DD2781CBE84C100A49A98 /* LargeContentLabel.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -441,6 +450,7 @@
 				141A6FDB1BDE2DAB00CB6E82 /* Fetcher.swift in Sources */,
 				952659BE1CB7E89F00631953 /* StopButton.swift in Sources */,
 				952659C01CB7FA4A00631953 /* PauseButton.swift in Sources */,
+				953DD2751CBE766800A49A98 /* SmallTitleLabel.swift in Sources */,
 				146E27AC1BCD51F200959BBA /* AppController.swift in Sources */,
 				95394C481C997A3E00FD24E5 /* UIButton+Custom.swift in Sources */,
 				141A6FDC1BDE2DAB00CB6E82 /* UIColor+Custom.swift in Sources */,
@@ -461,11 +471,13 @@
 				141A6FDA1BDE2DAB00CB6E82 /* BaseViewController.swift in Sources */,
 				9527A6D01CA0126C001E7942 /* Writer.swift in Sources */,
 				9527A6D41CA03B23001E7942 /* CompletedTest.swift in Sources */,
+				953DD2791CBE84C100A49A98 /* LargeContentLabel.swift in Sources */,
 				95EBE9F91C908DC100A57377 /* TestLevel.swift in Sources */,
 				950D12231C9AEF4400133A25 /* MenuTableCell.swift in Sources */,
 				9548A8241CB14FEA00BAF914 /* HomeController.swift in Sources */,
 				954986E61CBD3F36003AB758 /* LevelProgressIndicator.swift in Sources */,
 				95FAAFAE1C91D47E00F5374F /* NSNotificationCenterKeys.swift in Sources */,
+				953DD2771CBE77F100A49A98 /* MediumContentLabel.swift in Sources */,
 				1404F39A1BDE45CD0008377F /* BaseCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
