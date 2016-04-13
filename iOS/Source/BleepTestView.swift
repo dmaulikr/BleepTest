@@ -95,19 +95,11 @@ class BleepTestView: UIView {
         backgroundColor = .whiteColor()
         notificationObservers()
         addStatsLabels()
-        setStatusBarBackgroundColor(UIColor.customBlueColor())
         addLevelsLables()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setStatusBarBackgroundColor(color: UIColor) {
-        guard  let statusBar = UIApplication.sharedApplication().valueForKey("statusBarWindow")?.valueForKey("statusBar") as? UIView else {
-            return
-        }
-        statusBar.backgroundColor = color
     }
     
     func addStatsLabels(){

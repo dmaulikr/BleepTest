@@ -16,3 +16,10 @@ public class BaseCollectionViewController: UICollectionViewController {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+// MARK: Status Bar
+extension BaseCollectionViewController{
+    public func setStatusBarHidden(boolen: Bool){
+        UIApplication.sharedApplication().statusBarHidden = boolen;
+    }
+}

@@ -20,11 +20,15 @@ class BleepTestController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStatusBarHidden(true)
         notificationObservers()
         timer = NSTimer.after(0.5.seconds){
             self.startBleepTest()
         }
         timer.start()
+    }
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 }
 
@@ -46,6 +50,7 @@ extension BleepTestController{
             self.timer.invalidate()
         }
         timer.start()
+        setStatusBarHidden(false)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

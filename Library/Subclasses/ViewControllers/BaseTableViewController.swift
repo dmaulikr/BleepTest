@@ -16,3 +16,10 @@ public class BaseTableViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+// MARK: Status Bar
+extension BaseTableViewController{
+    public func setStatusBarHidden(boolen: Bool){
+        UIApplication.sharedApplication().statusBarHidden = boolen;
+    }
+}
