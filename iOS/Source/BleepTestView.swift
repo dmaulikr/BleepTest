@@ -34,8 +34,6 @@ class BleepTestView: UIView {
     
     lazy var stopButton : StopButton = {
         var temporyButton : StopButton = StopButton()
-        temporyButton.setTitle("Stop", forState: UIControlState.Normal)
-        temporyButton.setTitleColor(.whiteColor(), forState: UIControlState.Normal)
         temporyButton.addTarget(self, action: #selector(stopButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         temporyButton.translatesAutoresizingMaskIntoConstraints = false
         return temporyButton
@@ -43,8 +41,6 @@ class BleepTestView: UIView {
 
     lazy var pauseButton : PauseButton = {
         var temporyButton : PauseButton = PauseButton()
-        temporyButton.setTitle("Pause", forState: UIControlState.Normal)
-        temporyButton.setTitleColor(.whiteColor(), forState: UIControlState.Normal)
         temporyButton.addTarget(self, action: #selector(pauseButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         temporyButton.translatesAutoresizingMaskIntoConstraints = false
         return temporyButton
