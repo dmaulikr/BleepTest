@@ -27,6 +27,7 @@ class LevelProgressIndicator: UIView {
         circleLayer.strokeEnd = 0.0
         
         layer.addSublayer(circleLayer)
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder aDecoder: NSCoder) {

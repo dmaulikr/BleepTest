@@ -10,7 +10,6 @@ class BleepTestView: UIView {
         let circleHeight = circleWidth
         var temporyView : LapProgressIndicator = LapProgressIndicator()
         temporyView = LapProgressIndicator(frame: CGRect(x: 0, y: 0, width: circleWidth, height: circleHeight))
-        temporyView.translatesAutoresizingMaskIntoConstraints = false
         return temporyView
     }()
     
@@ -19,7 +18,6 @@ class BleepTestView: UIView {
         let circleHeight = circleWidth
         var temporyView : LevelProgressIndicator = LevelProgressIndicator()
         temporyView = LevelProgressIndicator(frame: CGRect(x: 0, y: 0, width: circleWidth, height: circleHeight))
-        temporyView.translatesAutoresizingMaskIntoConstraints = false
         return temporyView
     }()
     
@@ -28,21 +26,18 @@ class BleepTestView: UIView {
         let circleHeight = circleWidth
         var temporyView : CircleView = CircleView()
         temporyView = CircleView(frame: CGRect(x: 0, y: 0, width: circleWidth, height: circleHeight))
-        temporyView.translatesAutoresizingMaskIntoConstraints = false
         return temporyView
     }()
     
     lazy var stopButton : StopButton = {
         var temporyButton : StopButton = StopButton()
         temporyButton.addTarget(self, action: #selector(stopButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        temporyButton.translatesAutoresizingMaskIntoConstraints = false
         return temporyButton
     }()
 
     lazy var pauseButton : PauseButton = {
         var temporyButton : PauseButton = PauseButton()
         temporyButton.addTarget(self, action: #selector(pauseButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        temporyButton.translatesAutoresizingMaskIntoConstraints = false
         return temporyButton
     }()
     
@@ -199,8 +194,6 @@ class BleepTestView: UIView {
             options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary))
-        
-        //Centering the LapProgressIndicator View
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:[superview]-(<=1)-[lapProgressIndicator]",
             options: NSLayoutFormatOptions.AlignAllCenterY,
@@ -296,13 +289,13 @@ class BleepTestView: UIView {
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(>=0)-[levelTitleLabel]-10-[levelLabel]-(>=0)-|",
+            "V:|-(>=0)-[levelTitleLabel]-5-[levelLabel]-(>=0)-|",
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(>=0)-[lapTitleLabel]-10-[lapLabel]-(>=0)-|",
+            "V:|-(>=0)-[lapTitleLabel]-5-[lapLabel]-(>=0)-|",
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary

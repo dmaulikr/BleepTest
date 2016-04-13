@@ -11,6 +11,7 @@ class StopButton: UIButton {
         super.init(frame: frame)
         self.setTitle("Stop", forState: UIControlState.Normal)
         self.setTitleColor(.whiteColor(), forState: UIControlState.Normal)
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder aDecoder: NSCoder) {

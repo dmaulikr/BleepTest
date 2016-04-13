@@ -23,6 +23,7 @@ class CircleView: UIView {
         circleLayer.path = circlePath.CGPath
         circleLayer.fillColor = UIColor.customBlueColor().CGColor
         layer.addSublayer(circleLayer)
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder aDecoder: NSCoder) {
