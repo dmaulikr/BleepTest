@@ -5,5 +5,5 @@ use_frameworks!
 pod 'Sync'
 pod 'DATASource'
 pod 'Hex'
-pod 'SwiftyTimer'
 pod 'FoldingCell', '~> 0.7.3'
+pod 'SwiftyTimer'

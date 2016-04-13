@@ -1,6 +1,5 @@
 import Foundation
 import DATAStack
-import JSON
 import Sync
 import DATASource
 import CoreData

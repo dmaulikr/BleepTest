@@ -10,11 +10,13 @@ import UIKit
 
 class TabBarController: UITabBarController {
     internal var fetcher: Fetcher
+    internal var writer: Writer
     
     // MARK: - Initializers
     
-     init(fetcher: Fetcher) {
+    init(fetcher: Fetcher, writer: Writer) {
         self.fetcher = fetcher
+        self.writer = writer
         super.init(nibName: nil, bundle: nil)
         self.setUpTabBar()
     }
@@ -26,7 +28,7 @@ class TabBarController: UITabBarController {
     func setUpTabBar(){
         UITabBar.appearance().barTintColor = UIColor.whiteColor()
 
-        let item1 = BleepTestController(fetcher: self.fetcher)
+        let item1 = HomeController(fetcher: self.fetcher, writer: self.writer)
         let icon1 = UITabBarItem(title: "Bleep Test", image:UIImage(named:"BleepTest"), selectedImage:UIImage(named:"BleepTest"))
         item1.tabBarItem = icon1
         let navigationController1 = UINavigationController(rootViewController: item1)

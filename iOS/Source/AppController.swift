@@ -9,11 +9,13 @@ class AppController: UIResponder {
     private lazy var fetcher: Fetcher = {
         let url = NSURL(string: "levelsData.json")!
         let fetcher = Fetcher(modelName: "iOS", localFilePath: url)
-
         return fetcher
     }()
     
-    
+    private lazy var writer: Writer = {
+        let writer = Writer(modelName: "iOS")
+        return writer
+    }()
 }
 
 extension AppController: UIApplicationDelegate {
@@ -28,7 +30,7 @@ extension AppController: UIApplicationDelegate {
         }
 
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        window.rootViewController = TabBarController(fetcher: self.fetcher)
+        window.rootViewController = TabBarController(fetcher: self.fetcher, writer:self.writer)
         window.makeKeyAndVisible()
 
         return true
