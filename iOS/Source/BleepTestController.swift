@@ -21,12 +21,14 @@ class BleepTestController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStatusBarHidden(true)
+        UIApplication.sharedApplication().idleTimerDisabled = true
         notificationObservers()
         timer = NSTimer.after(0.5.seconds){
             self.startBleepTest()
         }
         timer.start()
     }
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
@@ -58,7 +60,6 @@ extension BleepTestController{
 // MARK: Bleep Test Logic
 extension BleepTestController{
     private func startBleepTest(){
-        UIApplication.sharedApplication().idleTimerDisabled = true
         levels = fetcher.fetchTestLevels{_ in}
         level = 0
         distance = 0
