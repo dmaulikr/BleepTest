@@ -8,16 +8,21 @@ class HomeView: UIView {
         return temporyLabel
     }()
     
-    lazy var lapDistanceLabel : MediumContentLabel = {
-        var temporyLabel : MediumContentLabel = MediumContentLabel()
-        temporyLabel.text = "20m"
-        return temporyLabel
+    lazy var lapDistanceSegmentController : UISegmentedControl = {
+        let items = ["15m", "20m"]
+        let segmentedControl = UISegmentedControl(items: items)
+        let font = UIFont.systemFontOfSize(18)
+        segmentedControl.setTitleTextAttributes([NSFontAttributeName: font], forState: UIControlState.Normal)
+        segmentedControl.selectedSegmentIndex = 1
+        segmentedControl.layer.cornerRadius = 5.0
+        segmentedControl.tintColor = UIColor.italyBrownColor()
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        return segmentedControl
     }()
     
     lazy var startButton : StartButton = {
         var temporyButton : StartButton = StartButton()
         temporyButton.addTarget(self, action: #selector(startButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        temporyButton.translatesAutoresizingMaskIntoConstraints = false
         return temporyButton
     }()
     
@@ -34,12 +39,12 @@ class HomeView: UIView {
     func addUIComponentsToView(){
         let viewsDictionary = [
             "lapDistanceTitleLabel":lapDistanceTitleLabel,
-            "lapDistanceLabel":lapDistanceLabel,
+            "lapDistanceSegmentController":lapDistanceSegmentController,
             "startButton":startButton,
             "superview":self
         ]
         addSubview(lapDistanceTitleLabel)
-        addSubview(lapDistanceLabel)
+        addSubview(lapDistanceSegmentController)
         addSubview(startButton)
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:[superview]-(<=1)-[startButton]",
@@ -48,12 +53,12 @@ class HomeView: UIView {
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(>=50)-[lapDistanceTitleLabel]-80-[startButton(100)]-80-|",
+            "V:|-(>=50)-[startButton(100)]-80-|",
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(>=50)-[lapDistanceLabel]-260-|",
+            "V:|-(>=50)-[lapDistanceSegmentController(35)]-260-|",
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
@@ -64,13 +69,7 @@ class HomeView: UIView {
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-20-[lapDistanceTitleLabel]-(>=80)-|",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
-            metrics: nil,
-            views: viewsDictionary
-            ))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-(>=80)-[lapDistanceLabel]-20-|",
+            "H:|-20-[lapDistanceTitleLabel]-(>=20)-[lapDistanceSegmentController(100)]-20-|",
             options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary
