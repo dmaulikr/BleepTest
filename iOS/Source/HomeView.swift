@@ -5,8 +5,9 @@ class HomeView: UIView {
     lazy var typeOfBleepTestSegment : UISegmentedControl = {
         let items = ["Single", "Team"]
         let segmentedControl = UISegmentedControl(items: items)
-        let font = UIFont.systemFontOfSize(25)
+        let font = UIFont.systemFontOfSize(18)
         segmentedControl.setTitleTextAttributes([NSFontAttributeName: font], forState: UIControlState.Normal)
+        segmentedControl.addTarget(self, action: #selector(typeSegment(_:)), forControlEvents: UIControlEvents.ValueChanged)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.layer.cornerRadius = 5.0
         segmentedControl.tintColor = UIColor.italyBrownColor()
@@ -100,6 +101,13 @@ class HomeView: UIView {
             views: viewsDictionary
             ))
     }
+    
+    func singleBleepTestView(){
+        print("single")
+    }
+    func teamBleepTestView(){
+        print("team")
+    }
 }
 
 //MARK: Actions
@@ -108,5 +116,16 @@ extension HomeView{
         NSNotificationCenter.defaultCenter().postNotificationName(
             startTestNotificationKey,
             object: self)
+    }
+    
+    func typeSegment(sender:UISegmentedControl!){
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            typeChangedNotificationKey,
+            object: self)
+        if(typeOfBleepTestSegment.selectedSegmentIndex == 0){
+            singleBleepTestView()
+        } else{
+            teamBleepTestView()
+        }
     }
 }
