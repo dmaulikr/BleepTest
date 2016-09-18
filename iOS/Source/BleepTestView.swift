@@ -177,27 +177,24 @@ class BleepTestView: UIView {
     func addButtonsToView(){
         let viewsDictionary = [
             "stopButton":stopButton,
-            "pauseButton":pauseButton,
             "superview":self
         ]
         
         addSubview(stopButton)
-        addSubview(pauseButton)
-        
+
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-30-[pauseButton(100)]-(>=20)-[stopButton(100)]-30-|",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
-            metrics: nil,
-            views: viewsDictionary
-            ))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(>=50)-[pauseButton(100)]-20-|",
+            "V:|-(>=50)-[stopButton(100)]-30-|",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[stopButton(100)]",
-            options: NSLayoutFormatOptions.AlignAllLeading,
+            "H:[stopButton(100)]",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[superview]-(<=1)-[stopButton(100)]",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
     }
