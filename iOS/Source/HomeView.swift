@@ -31,11 +31,15 @@ class HomeView: UIView {
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[superview]-(<=1)-[startButton(100)]",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
+            "V:|-(>=50)-[startButton(100)]-60-|",
+            options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
             views: viewsDictionary))
-
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:[startButton(100)]",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary))
     }
     
     func singleBleepTestView(){
