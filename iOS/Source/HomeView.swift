@@ -23,7 +23,7 @@ class HomeView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addUIComponentsToView()
+        addStableUIComponentsToView()
         backgroundColor = .whiteColor()
     }
     
@@ -31,7 +31,7 @@ class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addUIComponentsToView(){
+    func addStableUIComponentsToView(){
         let viewsDictionary = [
             "typeOfBleepTestSegment":typeOfBleepTestSegment,
             "startButton":startButton,
