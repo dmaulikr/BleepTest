@@ -31,6 +31,17 @@ class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func typeSegment(sender:UISegmentedControl!){
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            typeChangedNotificationKey,
+            object: self)
+        if(typeOfBleepTestSegment.selectedSegmentIndex == 0){
+            singleBleepTestView()
+        } else{
+            teamBleepTestView()
+        }
+    }
+    
     func addStableUIComponentsToView(){
         let viewsDictionary = [
             "typeOfBleepTestSegment":typeOfBleepTestSegment,
