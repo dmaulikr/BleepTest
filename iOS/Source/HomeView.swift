@@ -112,7 +112,7 @@ class HomeView: UIView {
     }
     
     func teamBleepTestView(){
-        print("team")
+        singleRunnerLabel.hidden = true
     }
 }
 
