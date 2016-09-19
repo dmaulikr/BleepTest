@@ -40,6 +40,7 @@
 		9548A8221CB14F5000BAF914 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548A8211CB14F5000BAF914 /* HomeView.swift */; };
 		9548A8241CB14FEA00BAF914 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548A8231CB14FEA00BAF914 /* HomeController.swift */; };
 		95A90EBC1CC28A270062C448 /* MediumTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A90EBB1CC28A270062C448 /* MediumTitleLabel.swift */; };
+		95BE7C281D908B530070DFFE /* MediumBlackLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */; };
 		95D7B0041C8CBC3E004690D5 /* BleepTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */; };
 		95D7B0061C8CBC68004690D5 /* BleepTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7B0051C8CBC68004690D5 /* BleepTestView.swift */; };
 		95D8E4401CA157380084F939 /* CompletedTests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D8E43F1CA157380084F939 /* CompletedTests.storyboard */; };
@@ -88,6 +89,7 @@
 		9548A8211CB14F5000BAF914 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9548A8231CB14FEA00BAF914 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		95A90EBB1CC28A270062C448 /* MediumTitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumTitleLabel.swift; sourceTree = "<group>"; };
+		95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumBlackLabel.swift; sourceTree = "<group>"; };
 		95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestController.swift; sourceTree = "<group>"; };
 		95D7B0051C8CBC68004690D5 /* BleepTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestView.swift; sourceTree = "<group>"; };
 		95D8E43F1CA157380084F939 /* CompletedTests.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CompletedTests.storyboard; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				953DD28C1CBE949500A49A98 /* MediumContentLabel.swift */,
 				953DD28D1CBE949500A49A98 /* SmallTitleLabel.swift */,
 				95A90EBB1CC28A270062C448 /* MediumTitleLabel.swift */,
+				95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				95FAAFAE1C91D47E00F5374F /* NSNotificationCenterKeys.swift in Sources */,
 				953DD29D1CBE949500A49A98 /* SmallTitleLabel.swift in Sources */,
 				953DD2A61CBE94BE00A49A98 /* StartButton.swift in Sources */,
+				95BE7C281D908B530070DFFE /* MediumBlackLabel.swift in Sources */,
 				953DD2A21CBE949500A49A98 /* LapProgressIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
