@@ -85,12 +85,7 @@ class HomeView: UIView {
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
-    }
-    
-    func typeSegment(sender:UISegmentedControl!){
-        NSNotificationCenter.defaultCenter().postNotificationName(
-            typeChangedNotificationKey,
-            object: self)
+        
         if(typeOfBleepTestSegment.selectedSegmentIndex == 0){
             singleBleepTestView()
         } else{
