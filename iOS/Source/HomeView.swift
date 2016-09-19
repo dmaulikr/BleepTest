@@ -88,13 +88,27 @@ class HomeView: UIView {
         
         if(typeOfBleepTestSegment.selectedSegmentIndex == 0){
             singleBleepTestView()
-        } else{
+        } else {
             teamBleepTestView()
         }
     }
     
     func singleBleepTestView(){
-        print("single")
+        let viewsDictionary = [
+            "singleRunnerLabel" : singleRunnerLabel,
+        ]
+        singleRunnerLabel.hidden = false
+        addSubview(singleRunnerLabel)
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-180-[singleRunnerLabel(40)]-(>=300)-|",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views:viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-30-[singleRunnerLabel]-(>=30)-|",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary))
     }
     
     func teamBleepTestView(){
