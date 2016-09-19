@@ -15,6 +15,12 @@ class HomeView: UIView {
         return segmentedControl
     }()
     
+    lazy var singleRunnerLabel : MediumBlackLabel = {
+        let label : MediumBlackLabel = MediumBlackLabel()
+        label.text = "Runner"
+        return label
+    }()
+    
     lazy var startButton : StartButton = {
         var temporyButton : StartButton = StartButton()
         temporyButton.addTarget(self, action: #selector(startButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
