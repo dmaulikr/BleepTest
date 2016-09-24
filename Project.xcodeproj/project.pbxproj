@@ -37,6 +37,7 @@
 		953DD2A61CBE94BE00A49A98 /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2A51CBE94BE00A49A98 /* StartButton.swift */; };
 		953DD2A81CBE976900A49A98 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2A71CBE976900A49A98 /* TabBarController.swift */; };
 		953F4E821D96F358004BAD1E /* MedumBlueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953F4E811D96F358004BAD1E /* MedumBlueLabel.swift */; };
+		953F4E841D9719E7004BAD1E /* PinkRedOutlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953F4E831D9719E7004BAD1E /* PinkRedOutlineButton.swift */; };
 		95406FF01C93343900567215 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 95406FEF1C93343900567215 /* beep.wav */; };
 		9548A8221CB14F5000BAF914 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548A8211CB14F5000BAF914 /* HomeView.swift */; };
 		9548A8241CB14FEA00BAF914 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548A8231CB14FEA00BAF914 /* HomeController.swift */; };
@@ -87,6 +88,7 @@
 		953DD2A51CBE94BE00A49A98 /* StartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
 		953DD2A71CBE976900A49A98 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		953F4E811D96F358004BAD1E /* MedumBlueLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedumBlueLabel.swift; sourceTree = "<group>"; };
+		953F4E831D9719E7004BAD1E /* PinkRedOutlineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinkRedOutlineButton.swift; sourceTree = "<group>"; };
 		95406FEF1C93343900567215 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = beep.wav; path = ../../beep.wav; sourceTree = "<group>"; };
 		9548A8211CB14F5000BAF914 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9548A8231CB14FEA00BAF914 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				953DD2A51CBE94BE00A49A98 /* StartButton.swift */,
 				953DD2881CBE949500A49A98 /* PauseButton.swift */,
 				953DD2891CBE949500A49A98 /* StopButton.swift */,
+				953F4E831D9719E7004BAD1E /* PinkRedOutlineButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				146E27AC1BCD51F200959BBA /* AppController.swift in Sources */,
 				953DD2A01CBE949500A49A98 /* BaseViewController.swift in Sources */,
 				9527A6D71CA056C7001E7942 /* CompletedTestTableCell.swift in Sources */,
+				953F4E841D9719E7004BAD1E /* PinkRedOutlineButton.swift in Sources */,
 				953DD29E1CBE949500A49A98 /* BaseCollectionViewController.swift in Sources */,
 				953DD2A11CBE949500A49A98 /* CircleView.swift in Sources */,
 				953DD2A31CBE949500A49A98 /* LevelProgressIndicator.swift in Sources */,
