@@ -52,18 +52,10 @@ class HomeView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func typeSegment(sender:UISegmentedControl!){
-        NSNotificationCenter.defaultCenter().postNotificationName(
-            typeChangedNotificationKey,
-            object: self)
-        if(typeOfBleepTestSegment.selectedSegmentIndex == 0){
-            singleBleepTestView()
-        } else{
-            teamBleepTestView()
-        }
-    }
-    
+}
+
+//MARK: Static UI views which are alwas displayed
+extension HomeView{
     func addStableUIComponentsToView(){
         let viewsDictionary = [
             "typeOfBleepTestSegment":typeOfBleepTestSegment,
@@ -115,7 +107,10 @@ class HomeView: UIView {
             teamBleepTestView()
         }
     }
-    
+}
+
+//MARK: Single bleep test view
+extension HomeView{
     func singleBleepTestView(){
         let viewsDictionary = [
             "singleRunnerLabel" : singleRunnerLabel,
@@ -137,10 +132,27 @@ class HomeView: UIView {
         singleRunnerLabel.hidden = false
         singleRunnerNameLabel.hidden = false
     }
-    
+}
+
+//MARK: Team bleep test view
+extension HomeView{
     func teamBleepTestView(){
         singleRunnerNameLabel.hidden = true
         singleRunnerLabel.hidden = true
+    }
+}
+
+//MARK: UISegmentedControl
+extension HomeView{
+    func typeSegment(sender:UISegmentedControl!){
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            typeChangedNotificationKey,
+            object: self)
+        if(typeOfBleepTestSegment.selectedSegmentIndex == 0){
+            singleBleepTestView()
+        } else{
+            teamBleepTestView()
+        }
     }
 }
 
