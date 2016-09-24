@@ -21,6 +21,14 @@ class HomeView: UIView {
         return label
     }()
     
+    lazy var singleRunnerNameLabel : MedumBlueLabel = {
+        let label : MedumBlueLabel = MedumBlueLabel()
+        let underlineAttribute = [NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue]
+        let underlineAttributedString = NSAttributedString(string: "Me", attributes: underlineAttribute)
+        label.attributedText = underlineAttributedString
+        return label
+    }()
+    
     lazy var startButton : StartButton = {
         var temporyButton : StartButton = StartButton()
         temporyButton.addTarget(self, action: #selector(startButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
