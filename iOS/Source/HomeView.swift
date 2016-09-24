@@ -68,14 +68,16 @@ class HomeView: UIView {
         let viewsDictionary = [
             "typeOfBleepTestSegment":typeOfBleepTestSegment,
             "startButton":startButton,
+            "changeButton":changeButton,
             "superview":self
         ]
         
         addSubview(startButton)
         addSubview(typeOfBleepTestSegment)
+        addSubview(changeButton)
         
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-120-[typeOfBleepTestSegment(40)]-(>=300)-|",
+            "V:|-120-[typeOfBleepTestSegment(40)]-100-[changeButton(40)]-(>=180)-|",
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
@@ -84,7 +86,12 @@ class HomeView: UIView {
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
             views: viewsDictionary))
-
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:[changeButton(150)]",
+            options: NSLayoutFormatOptions.AlignAllBaseline,
+            metrics: nil,
+            views:viewsDictionary
+            ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:[superview]-(<=1)-[startButton(100)]",
             options: NSLayoutFormatOptions.AlignAllCenterX,
@@ -92,7 +99,7 @@ class HomeView: UIView {
             views: viewsDictionary
             ))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(>=50)-[startButton(100)]-60-|",
+            "V:|-(>=50)-[startButton(100)]-80-|",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
             views: viewsDictionary))
