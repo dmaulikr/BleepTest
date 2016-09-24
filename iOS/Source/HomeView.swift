@@ -104,22 +104,27 @@ class HomeView: UIView {
     func singleBleepTestView(){
         let viewsDictionary = [
             "singleRunnerLabel" : singleRunnerLabel,
+            "singleRunnerNameLabel" : singleRunnerNameLabel
         ]
-        singleRunnerLabel.hidden = false
         addSubview(singleRunnerLabel)
+        addSubview(singleRunnerNameLabel)
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:|-180-[singleRunnerLabel(40)]-(>=300)-|",
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views:viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-30-[singleRunnerLabel]-(>=30)-|",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+            "H:|-30-[singleRunnerLabel]-(>=10)-[singleRunnerNameLabel]-30-|",
+            options: NSLayoutFormatOptions.AlignAllBaseline,
             metrics: nil,
             views: viewsDictionary))
+        
+        singleRunnerLabel.hidden = false
+        singleRunnerNameLabel.hidden = false
     }
     
     func teamBleepTestView(){
+        singleRunnerNameLabel.hidden = true
         singleRunnerLabel.hidden = true
     }
 }
