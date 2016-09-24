@@ -35,6 +35,14 @@ class HomeView: UIView {
         return temporyButton
     }()
     
+    lazy var changeButton : PinkRedOutlineButton = {
+        var temporyButton : PinkRedOutlineButton = PinkRedOutlineButton()
+        temporyButton.setTitle("Change", forState: UIControlState.Normal)
+        temporyButton.addTarget(self, action: #selector(changeButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        temporyButton.titleLabel!.font =  UIFont(name: temporyButton.titleLabel!.font.fontName, size: 18)
+        return temporyButton
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addStableUIComponentsToView()
@@ -135,5 +143,9 @@ extension HomeView{
         NSNotificationCenter.defaultCenter().postNotificationName(
             startTestNotificationKey,
             object: self)
+    }
+    
+    func changeButtonAction(sender:UIButton!){
+        print("Change button pressed")
     }
 }
