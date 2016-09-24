@@ -23,7 +23,7 @@ class LapProgressIndicator: UIView {
         circleLayer = CAShapeLayer()
         circleLayer.path = circlePath.CGPath
         circleLayer.fillColor = UIColor.clearColor().CGColor
-        circleLayer.strokeColor = UIColor.redColor().CGColor
+        circleLayer.strokeColor = UIColor.customRedColor().CGColor
         circleLayer.lineWidth = 5.0;
         circleLayer.strokeEnd = 0.0
         

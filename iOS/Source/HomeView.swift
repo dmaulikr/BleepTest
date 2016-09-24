@@ -10,7 +10,7 @@ class HomeView: UIView {
         segmentedControl.addTarget(self, action: #selector(typeSegment(_:)), forControlEvents: UIControlEvents.ValueChanged)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.layer.cornerRadius = 5.0
-        segmentedControl.tintColor = UIColor.blueColor()
+        segmentedControl.tintColor = UIColor.customBlueColor()
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         return segmentedControl
     }()
