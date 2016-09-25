@@ -6,7 +6,7 @@ class StopButton: UIButton {
         if(highlighted){
             UIColor.lightGrayColor().setFill()
         } else{
-           UIColor.redColor().setFill()
+           UIColor.customRedColor().setFill()
         }
         path.fill()
     }
