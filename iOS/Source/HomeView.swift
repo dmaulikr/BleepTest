@@ -15,17 +15,13 @@ class HomeView: UIView {
         return segmentedControl
     }()
     
-    lazy var singleRunnerLabel : MediumBlackLabel = {
+    lazy var titleLabel : MediumBlackLabel = {
         let label : MediumBlackLabel = MediumBlackLabel()
-        label.text = "Runner"
         return label
     }()
     
-    lazy var singleRunnerNameLabel : MedumBlueLabel = {
+    lazy var nameLabel : MedumBlueLabel = {
         let label : MedumBlueLabel = MedumBlueLabel()
-        let underlineAttribute = [NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue]
-        let underlineAttributedString = NSAttributedString(string: "Me", attributes: underlineAttribute)
-        label.attributedText = underlineAttributedString
         return label
     }()
     
@@ -61,26 +57,35 @@ extension HomeView{
             "typeOfBleepTestSegment":typeOfBleepTestSegment,
             "startButton":startButton,
             "changeButton":changeButton,
+            "titleLabel" : titleLabel,
+            "nameLabel" : nameLabel,
             "superview":self
         ]
         
         addSubview(startButton)
         addSubview(typeOfBleepTestSegment)
         addSubview(changeButton)
+        addSubview(titleLabel)
+        addSubview(nameLabel)
         
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-120-[typeOfBleepTestSegment(40)]-100-[changeButton(40)]-(>=180)-|",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+            "V:|-120-[typeOfBleepTestSegment(40)]-40-[titleLabel]-40-[changeButton(40)]-(>=100)-|",
+            options: NSLayoutFormatOptions(rawValue: 0),
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-20-[typeOfBleepTestSegment(>=280)]-20-|",
-            options: NSLayoutFormatOptions.AlignAllLeading,
+            "H:|-30-[typeOfBleepTestSegment]-30-|",
+            options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[changeButton(150)]",
-            options: NSLayoutFormatOptions.AlignAllBaseline,
+            "H:|-30-[titleLabel]-(>=10)-[nameLabel]-30-|",
+            options: NSLayoutFormatOptions.AlignAllCenterY,
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-60-[changeButton]-60-|",
+            options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views:viewsDictionary
             ))
@@ -112,23 +117,6 @@ extension HomeView{
 //MARK: Single bleep test view
 extension HomeView{
     func singleBleepTestView(){
-        let viewsDictionary = [
-            "singleRunnerLabel" : singleRunnerLabel,
-            "singleRunnerNameLabel" : singleRunnerNameLabel
-        ]
-        addSubview(singleRunnerLabel)
-        addSubview(singleRunnerNameLabel)
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-180-[singleRunnerLabel(40)]-(>=300)-|",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
-            metrics: nil,
-            views:viewsDictionary))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-30-[singleRunnerLabel]-(>=10)-[singleRunnerNameLabel]-30-|",
-            options: NSLayoutFormatOptions.AlignAllBaseline,
-            metrics: nil,
-            views: viewsDictionary))
-        
         singleRunnerLabel.hidden = false
         singleRunnerNameLabel.hidden = false
     }
