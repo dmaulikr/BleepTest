@@ -1,6 +1,12 @@
 import UIKit
 
+protocol HomeViewDelegate: class {
+    func didChangeButtonPressed(sender: HomeView)
+}
+
 class HomeView: UIView {
+    
+    weak var delegate:HomeViewDelegate?
     
     lazy var typeOfBleepTestSegment : UISegmentedControl = {
         let items = ["Single", "Team"]
@@ -143,6 +149,6 @@ extension HomeView{
     }
     
     func changeButtonAction(sender:UIButton!){
-        print("Change button pressed")
+        delegate?.didChangeButtonPressed(self)
     }
 }

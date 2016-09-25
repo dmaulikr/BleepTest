@@ -6,6 +6,7 @@ class HomeController: BaseViewController {
         let view = HomeView(frame: UIScreen.mainScreen().bounds)
         self.view = view
         self.title = "Bleep Test"
+        view.delegate = self
     }
 
     override func viewDidLoad() {
@@ -27,5 +28,12 @@ extension HomeController{
     
     func bleepTestStarted(notification: NSNotification){
         self.navigationController?.presentViewController(BleepTestController(fetcher: fetcher, writer: writer), animated: true, completion: nil)
+    }
+}
+
+
+extension HomeController : HomeViewDelegate{
+    func didChangeButtonPressed(sender: HomeView) {
+        print("Change button pressed delegate")
     }
 }
