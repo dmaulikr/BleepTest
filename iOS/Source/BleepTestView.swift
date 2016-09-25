@@ -1,9 +1,14 @@
 import UIKit
 
+protocol BleepTestViewDelegate: class {
+    func didStopButtonPressed(sender: BleepTestView)
+}
+
 class BleepTestView: UIView {
     
     let cornerRadius : CGFloat = 5
     let borderWidth : CGFloat = 2
+    weak var delegate:BleepTestViewDelegate?
 
     lazy var lapProgressIndicator : LapProgressIndicator = {
         let circleWidth = CGFloat(260)
@@ -339,10 +344,7 @@ extension BleepTestView{
 // MARK: Button Actions
 extension BleepTestView{
     func stopButtonAction(sender:UIButton!){
-        stopButton.removeFromSuperview()
-        NSNotificationCenter.defaultCenter().postNotificationName(
-            stopTestNotificationKey,
-            object: self)
+        delegate?.didStopButtonPressed(self)
     }
     
     func pauseButtonAction(sender:UIButton!){
