@@ -9,7 +9,19 @@ class PinkRedOutlineButton: UIButton {
         self.layer.borderWidth = 2;
         self.layer.borderColor = UIColor.pinkRedColor().CGColor
         self.setTitleColor(UIColor.pinkRedColor(), forState: UIControlState.Normal)
+        self.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Highlighted)
         self.backgroundColor = UIColor.clearColor()
+    }
+    
+    override var highlighted: Bool {
+        didSet {
+            switch highlighted {
+            case true:
+                layer.borderColor = UIColor.lightGrayColor().CGColor
+            case false:
+                layer.borderColor = UIColor.pinkRedColor().CGColor
+            }
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
