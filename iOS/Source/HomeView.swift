@@ -2,6 +2,7 @@ import UIKit
 
 protocol HomeViewDelegate: class {
     func didChangeButtonPressed(sender: HomeView)
+    func didStartButtonPressed(sender: HomeView)
 }
 
 class HomeView: UIView {
@@ -143,9 +144,7 @@ extension HomeView{
 //MARK: Actions
 extension HomeView{
     func startButtonAction(sender:UIButton!){
-        NSNotificationCenter.defaultCenter().postNotificationName(
-            startTestNotificationKey,
-            object: self)
+        delegate?.didStartButtonPressed(self)
     }
     
     func changeButtonAction(sender:UIButton!){
