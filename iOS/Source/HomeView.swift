@@ -114,22 +114,6 @@ extension HomeView{
     }
 }
 
-//MARK: Single bleep test view
-extension HomeView{
-    func singleBleepTestView(){
-        singleRunnerLabel.hidden = false
-        singleRunnerNameLabel.hidden = false
-    }
-}
-
-//MARK: Team bleep test view
-extension HomeView{
-    func teamBleepTestView(){
-        singleRunnerNameLabel.hidden = true
-        singleRunnerLabel.hidden = true
-    }
-}
-
 //MARK: UISegmentedControl
 extension HomeView{
     func typeSegment(sender:UISegmentedControl!){
@@ -142,6 +126,17 @@ extension HomeView{
             teamBleepTestView()
         }
     }
+    
+    func singleBleepTestView(){
+        titleLabel.text = "Runner:"
+        nameLabel.text = "Me"
+    }
+
+    func teamBleepTestView(){
+        nameLabel.text = "Manchester FC"
+        titleLabel.text = "Team:"
+    }
+
 }
 
 //MARK: Actions
