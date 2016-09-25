@@ -3,7 +3,11 @@ import UIKit
 class PauseButton: UIButton {
     override func drawRect(rect: CGRect) {
         let path = UIBezierPath(ovalInRect: rect)
-        UIColor.customBlueColor().setFill()
+        if(highlighted){
+            UIColor.lightGrayColor().setFill()
+        } else{
+            UIColor.customBlueColor().setFill()
+        }
         path.fill()
     }
     
@@ -16,5 +20,16 @@ class PauseButton: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override var highlighted: Bool {
+        didSet {
+            switch highlighted {
+            case true:
+                setNeedsDisplay()
+            case false:
+                setNeedsDisplay()
+            }
+        }
     }
 }
