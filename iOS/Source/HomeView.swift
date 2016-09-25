@@ -69,7 +69,7 @@ extension HomeView{
         addSubview(nameLabel)
         
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-120-[typeOfBleepTestSegment(40)]-40-[titleLabel]-40-[changeButton(40)]-(>=100)-|",
+            "V:|-120-[typeOfBleepTestSegment(40)]-50-[titleLabel]-50-[changeButton(40)]-50-[startButton(100)]-(>=80)-|",
             options: NSLayoutFormatOptions(rawValue: 0),
             metrics: nil,
             views: viewsDictionary))
@@ -95,11 +95,6 @@ extension HomeView{
             metrics: nil,
             views: viewsDictionary
             ))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(>=50)-[startButton(100)]-80-|",
-            options: NSLayoutFormatOptions.AlignAllLeading,
-            metrics: nil,
-            views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:[startButton(100)]",
             options: NSLayoutFormatOptions.AlignAllCenterX,
