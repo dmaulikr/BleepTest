@@ -50,6 +50,7 @@
 		95EBE9F11C9064D600A57377 /* levelsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 95EBE9F01C9064D600A57377 /* levelsData.json */; };
 		95EBE9F91C908DC100A57377 /* TestLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBE9F81C908DC100A57377 /* TestLevel.swift */; };
 		95F4C8E31DA18D2B0034E37A /* CreateSinglePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */; };
+		95F4C8E51DA199F20034E37A /* CreateSinglePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C8E41DA199F20034E37A /* CreateSinglePlayerView.swift */; };
 		95FAAFAE1C91D47E00F5374F /* NSNotificationCenterKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FAAFAD1C91D47E00F5374F /* NSNotificationCenterKeys.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		95EBE9F01C9064D600A57377 /* levelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = levelsData.json; path = ../../levelsData.json; sourceTree = "<group>"; };
 		95EBE9F81C908DC100A57377 /* TestLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLevel.swift; sourceTree = "<group>"; };
 		95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSinglePlayerController.swift; sourceTree = "<group>"; };
+		95F4C8E41DA199F20034E37A /* CreateSinglePlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSinglePlayerView.swift; sourceTree = "<group>"; };
 		95FAAFAD1C91D47E00F5374F /* NSNotificationCenterKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterKeys.swift; sourceTree = "<group>"; };
 		A7007EA8FF8BABCFC3034674 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -368,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */,
+				95F4C8E41DA199F20034E37A /* CreateSinglePlayerView.swift */,
 			);
 			name = CreateSinglePlayer;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				95EBE9F91C908DC100A57377 /* TestLevel.swift in Sources */,
 				950D12231C9AEF4400133A25 /* MenuTableCell.swift in Sources */,
 				9548A8241CB14FEA00BAF914 /* HomeController.swift in Sources */,
+				95F4C8E51DA199F20034E37A /* CreateSinglePlayerView.swift in Sources */,
 				95FAAFAE1C91D47E00F5374F /* NSNotificationCenterKeys.swift in Sources */,
 				953DD29D1CBE949500A49A98 /* SmallTitleLabel.swift in Sources */,
 				95F4C8E31DA18D2B0034E37A /* CreateSinglePlayerController.swift in Sources */,
