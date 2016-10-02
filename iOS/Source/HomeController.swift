@@ -17,7 +17,7 @@ class HomeController: BaseViewController {
 
 extension HomeController : HomeViewDelegate{
     func didChangeButtonPressed(sender: HomeView) {
-        print("Change button pressed delegate")
+        self.navigationController?.presentViewController(CreateSinglePlayerController(fetcher: fetcher, writer: writer), animated: true, completion: nil)
     }
     func didStartButtonPressed(sender: HomeView) {
         self.navigationController?.presentViewController(BleepTestController(fetcher: fetcher, writer: writer), animated: true, completion: nil)
