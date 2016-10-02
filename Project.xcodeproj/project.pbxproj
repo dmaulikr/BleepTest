@@ -374,8 +374,8 @@
 		95F4C8E11DA189280034E37A /* CreateSinglePlayer */ = {
 			isa = PBXGroup;
 			children = (
-				95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */,
 				95F4C8E41DA199F20034E37A /* CreateSinglePlayerView.swift */,
+				95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */,
 			);
 			name = CreateSinglePlayer;
 			sourceTree = "<group>";
