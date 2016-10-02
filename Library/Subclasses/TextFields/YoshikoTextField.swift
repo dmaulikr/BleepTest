@@ -119,7 +119,7 @@ import UIKit
             placeholderLabel.text = placeholder?.uppercaseString
             placeholderLabel.textColor = activeBorderColor
         } else {
-            placeholderLabel.font = placeholderFontFromFontAndPercentageOfOriginalSize(font: font!, percentageOfOriginalSize: placeholderFontScale)
+            placeholderLabel.font = placeholderFontFromFontAndPercentageOfOriginalSize(font: font!, percentageOfOriginalSize: placeholderFontScale * 1.5)
             placeholderLabel.textColor = placeholderColor
         }
     }
