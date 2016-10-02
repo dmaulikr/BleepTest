@@ -33,6 +33,15 @@ public class TextFieldEffects : UITextField {
         case TextDisplay
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     /**
     Closure executed when an animation has been completed.
      */
