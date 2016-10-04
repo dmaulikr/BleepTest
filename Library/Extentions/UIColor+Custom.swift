@@ -23,4 +23,7 @@ extension UIColor {
     class func italyBrownColor() -> UIColor {
         return UIColor(hex :"#653606")
     }
+    class func veryLightGrayColor() -> UIColor {
+        return UIColor(hex :"#f2f2f2")
+    }
 }
