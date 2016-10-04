@@ -4,12 +4,15 @@ class CreateSinglePlayerView: UIView {
 
     lazy var userNameTextField: YoshikoTextField = {
         let temporyTextField: YoshikoTextField = YoshikoTextField(frame: CGRect(x: 0, y: 0, width: 250, height: 55))
+        temporyTextField.placeholder = "Username   e.g. John Smith"
+        temporyTextField.placeholderUpdated = "Username"
         return temporyTextField
     }()
     
     lazy var ageTextField: YoshikoTextField = {
         let temporyTextField: YoshikoTextField = YoshikoTextField(frame: CGRect(x: 0, y: 0, width: 250, height: 55))
-        temporyTextField.placeholder = "Age   eg 27"
+        temporyTextField.placeholder = "Age   e.g. 27"
+        temporyTextField.placeholderUpdated = "Age"
         return temporyTextField
     }()
     
