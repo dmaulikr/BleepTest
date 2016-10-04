@@ -180,9 +180,9 @@ import UIKit
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.inactiveBorderColor = .lightGrayColor()
+        self.inactiveBorderColor = UIColor.veryLightGrayColor()
         self.activeBorderColor = UIColor.pinkRedColor()
-        self.placeholderColor = UIColor.whiteColor()
+        self.placeholderColor = UIColor.grayColor()
     }
     
     required public init?(coder aDecoder: NSCoder) {
