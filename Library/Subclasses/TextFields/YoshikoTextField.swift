@@ -126,7 +126,7 @@ import UIKit
             placeholderLabel.font = placeholderFontFromFontAndPercentageOfOriginalSize(font: font!, percentageOfOriginalSize: placeholderFontScale * 0.8)
             placeholderLabel.textColor = activeBorderColor
         } else {
-            placeholderLabel.font = placeholderFontFromFontAndPercentageOfOriginalSize(font: font!, percentageOfOriginalSize: placeholderFontScale * 1.5)
+            placeholderLabel.font = placeholderFontFromFontAndPercentageOfOriginalSize(font: font!, percentageOfOriginalSize: placeholderFontScale * 1.2)
             placeholderLabel.textColor = placeholderColor
         }
     }
