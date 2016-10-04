@@ -13,6 +13,7 @@ class CreateSinglePlayerView: UIView {
         let temporyTextField: YoshikoTextField = YoshikoTextField(frame: CGRect(x: 0, y: 0, width: 250, height: 55))
         temporyTextField.placeholder = "Age   e.g. 27"
         temporyTextField.placeholderUpdated = "Age"
+        temporyTextField.keyboardType = UIKeyboardType.NumberPad
         return temporyTextField
     }()
     
