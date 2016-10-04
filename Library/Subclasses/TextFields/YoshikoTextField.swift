@@ -92,8 +92,14 @@ import UIKit
             updatePlaceholder()
         }
     }
+    
+    public var placeholderUpdated: String? {
+        didSet {
+            updatePlaceholder()
+        }
+    }
 
-    // MARK: Private 
+    // MARK: Private
 
     private func updateBorder() {
         borderLayer.frame = rectForBounds(bounds)
@@ -111,12 +117,13 @@ import UIKit
 
     private func updatePlaceholder() {
         placeholderLabel.frame = placeholderRectForBounds(bounds)
+        placeholderLabel.text = placeholderUpdated
         placeholderLabel.text = placeholder
         placeholderLabel.textAlignment = textAlignment
 
         if isFirstResponder() || text!.isNotEmpty {
+            placeholderLabel.text = placeholderUpdated?.uppercaseString
             placeholderLabel.font = placeholderFontFromFontAndPercentageOfOriginalSize(font: font!, percentageOfOriginalSize: placeholderFontScale * 0.8)
-            placeholderLabel.text = placeholder?.uppercaseString
             placeholderLabel.textColor = activeBorderColor
         } else {
             placeholderLabel.font = placeholderFontFromFontAndPercentageOfOriginalSize(font: font!, percentageOfOriginalSize: placeholderFontScale * 1.5)
