@@ -5,7 +5,7 @@ class LargeContentLabel: UILabel {
         super.init(frame: frame)
         self.font = UIFont(name: self.font.fontName, size: 40)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.textColor = UIColor.italyBrownColor()
+        self.textColor = UIColor.blackColor()
     }
     
     required init?(coder aDecoder: NSCoder) {
