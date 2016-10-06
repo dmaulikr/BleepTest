@@ -76,8 +76,8 @@ class BleepTestView: UIView {
         return temporyLabel
     }()
     
-    lazy var distanceLabel : MediumContentLabel = {
-        var temporyLabel : MediumContentLabel = MediumContentLabel()
+    lazy var distanceLabel : MediumBlackLabel = {
+        var temporyLabel : MediumBlackLabel = MediumBlackLabel()
         temporyLabel.text = "0m"
         return temporyLabel
     }()
@@ -88,8 +88,8 @@ class BleepTestView: UIView {
         return temporyLabel
     }()
 
-    lazy var vO2MaxLabel : MediumContentLabel = {
-        var temporyLabel : MediumContentLabel = MediumContentLabel()
+    lazy var vO2MaxLabel : MediumBlackLabel = {
+        var temporyLabel : MediumBlackLabel = MediumBlackLabel()
         temporyLabel.text = "0"
         return temporyLabel
     }()
