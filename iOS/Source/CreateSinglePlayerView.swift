@@ -1,6 +1,12 @@
 import UIKit
 
 class CreateSinglePlayerView: UIView {
+    
+    lazy var titleLabel : MediumBlackLabel = {
+        var temporyLabel : MediumBlackLabel = MediumBlackLabel()
+        temporyLabel.text = "Create user"
+        return temporyLabel
+    }()
 
     lazy var userNameTextField: YoshikoTextField = {
         let temporyTextField: YoshikoTextField = YoshikoTextField(frame: CGRect(x: 0, y: 0, width: 250, height: 55))
@@ -40,18 +46,22 @@ class CreateSinglePlayerView: UIView {
             "userNameTextField": userNameTextField,
             "ageTextField": ageTextField,
             "createButton": createButton,
+            "titleLabel": titleLabel,
             "superview": self
         ]
 
         addSubview(userNameTextField)
         addSubview(ageTextField)
         addSubview(createButton)
+        addSubview(titleLabel)
         
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:|-100-[userNameTextField(55)]-15-[ageTextField(55)]-80-[createButton(40)]-(>=20)-|",
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[superview]-(<=1)-[titleLabel]",
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
