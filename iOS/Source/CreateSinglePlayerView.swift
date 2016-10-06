@@ -17,6 +17,14 @@ class CreateSinglePlayerView: UIView {
         return temporyTextField
     }()
     
+    lazy var createButton : PinkRedOutlineButton = {
+        var temporyButton : PinkRedOutlineButton = PinkRedOutlineButton()
+        temporyButton.setTitle("Create", forState: UIControlState.Normal)
+        temporyButton.addTarget(self, action: #selector(createButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        temporyButton.titleLabel!.font =  UIFont(name: temporyButton.titleLabel!.font.fontName, size: 18)
+        return temporyButton
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         createView()
@@ -31,14 +39,19 @@ class CreateSinglePlayerView: UIView {
         let viewsDictionary = [
             "userNameTextField": userNameTextField,
             "ageTextField": ageTextField,
+            "createButton": createButton,
             "superview": self
         ]
 
         addSubview(userNameTextField)
         addSubview(ageTextField)
+        addSubview(createButton)
         
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-100-[userNameTextField(55)]-30-[ageTextField(55)]-(>=20)-|",
+            "V:|-100-[userNameTextField(55)]-15-[ageTextField(55)]-80-[createButton(40)]-(>=20)-|",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary))
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
@@ -62,7 +75,22 @@ class CreateSinglePlayerView: UIView {
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[superview]-(<=1)-[createButton]",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:[createButton(100)]",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary))
+    }
+}
+
+//MARK: Action
+extension CreateSinglePlayerView{
+    func createButtonAction(sender:UIButton){
         
     }
-    
 }
