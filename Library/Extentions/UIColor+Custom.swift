@@ -2,9 +2,6 @@ import UIKit
 import Hex
 
 extension UIColor {
-    class func customColor() -> UIColor {
-        return UIColor(hex: "FF4B47")
-    }
     class func customGreenColor() -> UIColor {
         return UIColor(hex: "#86c06d")
     }
@@ -19,9 +16,6 @@ extension UIColor {
     }
     class func customRedColor() -> UIColor {
         return UIColor(hex: "#cc0000")
-    }
-    class func italyBrownColor() -> UIColor {
-        return UIColor(hex :"#653606")
     }
     class func veryLightGrayColor() -> UIColor {
         return UIColor(hex :"#f2f2f2")
