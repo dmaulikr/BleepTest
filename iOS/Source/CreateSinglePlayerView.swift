@@ -2,6 +2,11 @@ import UIKit
 
 class CreateSinglePlayerView: UIView {
     
+    lazy var closeButton : CloseButton = {
+        var tempryLabel : CloseButton = CloseButton()
+        return tempryLabel
+    }()
+    
     lazy var titleLabel : MediumBlackLabel = {
         var temporyLabel : MediumBlackLabel = MediumBlackLabel()
         temporyLabel.text = "Create user"
@@ -43,6 +48,7 @@ class CreateSinglePlayerView: UIView {
 
     func createView(){
         let viewsDictionary = [
+            "closeButton": closeButton,
             "userNameTextField": userNameTextField,
             "ageTextField": ageTextField,
             "createButton": createButton,
@@ -54,6 +60,18 @@ class CreateSinglePlayerView: UIView {
         addSubview(ageTextField)
         addSubview(createButton)
         addSubview(titleLabel)
+        addSubview(closeButton)
+        
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-10-[closeButton(20)]-(>=20)-|",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-(>=20)-[closeButton(20)]-10-|",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary))
         
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:|-60-[titleLabel]-40-[userNameTextField(55)]-15-[ageTextField(55)]-80-[createButton(40)]-(>=20)-|",
