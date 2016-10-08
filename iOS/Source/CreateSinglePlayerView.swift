@@ -1,6 +1,12 @@
 import UIKit
 
+protocol CreateSinglePlayerViewDelegate: class {
+    func didCloseButtonPressed(sender: CreateSinglePlayerView)
+}
+
 class CreateSinglePlayerView: UIView {
+    
+    weak var delegate:CreateSinglePlayerViewDelegate?
     
     lazy var closeButton : CloseButton = {
         var temporyButton : CloseButton = CloseButton()
@@ -123,5 +129,6 @@ extension CreateSinglePlayerView{
         
     }
     func closeButtonAction(sender:UIButton){
+        delegate?.didCloseButtonPressed(self)
     }
 }
