@@ -63,18 +63,18 @@ class CreateSinglePlayerView: UIView {
         addSubview(closeButton)
         
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-10-[closeButton(20)]-(>=20)-|",
+            "V:|-15-[closeButton(20)]-(>=20)-|",
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-(>=20)-[closeButton(20)]-10-|",
+            "H:|-15-[closeButton(20)]-(>=20)-|",
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
         
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-60-[titleLabel]-40-[userNameTextField(55)]-15-[ageTextField(55)]-80-[createButton(40)]-(>=20)-|",
+            "V:|-50-[titleLabel]-40-[userNameTextField(55)]-15-[ageTextField(55)]-90-[createButton(40)]-(>=20)-|",
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
