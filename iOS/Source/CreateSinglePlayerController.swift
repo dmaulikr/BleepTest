@@ -17,5 +17,7 @@ class CreateSinglePlayerController: BaseViewController {
 
 extension CreateSinglePlayerController : CreateSinglePlayerViewDelegate {
     func didCloseButtonPressed(sender: CreateSinglePlayerView) {
+        setStatusBarHidden(false)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
