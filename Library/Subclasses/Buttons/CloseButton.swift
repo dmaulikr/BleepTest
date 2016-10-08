@@ -1,22 +1,14 @@
 import UIKit
 
 class CloseButton: UIButton {
-    override func drawRect(rect: CGRect) {
-        let path = UIBezierPath(ovalInRect: rect)
-        if(highlighted){
-            UIColor.lightGrayColor().setFill()
-        } else{
-            UIColor.veryLightGrayColor().setFill()
-        }
-        path.fill()
-    }
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setTitle("X", forState:UIControlState.Normal)
-        self.setTitleColor(.whiteColor(), forState: UIControlState.Normal)
-        self.titleLabel?.font = UIFont(name: (self.titleLabel?.font.fontName)!, size: 15)
         self.translatesAutoresizingMaskIntoConstraints = false
+        
+        let closeImage = UIImage(named: "Close") as UIImage?
+        self.setImage(closeImage, forState: UIControlState.Normal)
     }
     
     override var highlighted: Bool {
