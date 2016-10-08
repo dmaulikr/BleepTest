@@ -3,8 +3,9 @@ import UIKit
 class CreateSinglePlayerView: UIView {
     
     lazy var closeButton : CloseButton = {
-        var tempryLabel : CloseButton = CloseButton()
-        return tempryLabel
+        var temporyButton : CloseButton = CloseButton()
+        temporyButton.addTarget(self, action: #selector(closeButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        return temporyButton
     }()
     
     lazy var titleLabel : MediumBlackLabel = {
@@ -120,5 +121,7 @@ class CreateSinglePlayerView: UIView {
 extension CreateSinglePlayerView{
     func createButtonAction(sender:UIButton){
         
+    }
+    func closeButtonAction(sender:UIButton){
     }
 }
