@@ -6,13 +6,11 @@ import CoreData
 
 public class Fetcher : NSObject {
     private var data: DATAStack
-    private var localFilePath : NSURL
     
     // MARK: - Initializers
 
-    init(modelName: String, localFilePath: NSURL) {
-        self.data = DATAStack(modelName: modelName)
-        self.localFilePath = localFilePath
+    init(dataStack: DATAStack) {
+        self.data = dataStack
     }
 
     // MARK: - Public methods
@@ -22,7 +20,8 @@ public class Fetcher : NSObject {
     }
     
     public func fetchLocalData(completion: (NSError?) -> Void){
-        let filePath = NSBundle.mainBundle().pathForResource(localFilePath.URLByDeletingPathExtension?.absoluteString, ofType: localFilePath.pathExtension)!
+        let url = NSURL(string: "levelsData.json")!
+        let filePath = NSBundle.mainBundle().pathForResource(url.URLByDeletingPathExtension?.absoluteString, ofType: url.pathExtension)!
         let jsonData = NSData(contentsOfFile: filePath)!
         let json = try! NSJSONSerialization.JSONObjectWithData(jsonData, options: []) as! [String: AnyObject]
         self.data.performInNewBackgroundContext { backgroundContext in
