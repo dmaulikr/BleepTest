@@ -4,16 +4,15 @@ import CoreData
 
 public class Writer : NSObject {
 
-    private var dataStack: DATAStack
+    private var data: DATAStack
     
     // MARK: - Initializers
-    
-    init(modelName: String) {
-        self.dataStack = DATAStack(modelName: modelName)
+    init(dataStack: DATAStack) {
+        self.data = dataStack
     }
     
     public func saveBleepTest(level:Int, lap:Int, vo2Max:Double, distance:Int){
-        self.dataStack.performInNewBackgroundContext { backgroundContext in
+        self.data.performInNewBackgroundContext { backgroundContext in
             let entity = NSEntityDescription.entityForName("CompletedTest", inManagedObjectContext: backgroundContext)!
             let object = NSManagedObject(entity: entity, insertIntoManagedObjectContext: backgroundContext)
             object.setValue(level, forKey: "level")
