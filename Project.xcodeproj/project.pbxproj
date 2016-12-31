@@ -53,6 +53,8 @@
 		95F4C8E51DA199F20034E37A /* CreateSinglePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C8E41DA199F20034E37A /* CreateSinglePlayerView.swift */; };
 		95F4C9491DA1B0860034E37A /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C9471DA1B0860034E37A /* TextFieldsEffects.swift */; };
 		95F4C94A1DA1B0860034E37A /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C9481DA1B0860034E37A /* YoshikoTextField.swift */; };
+		95F7B6F71DF849E50092114C /* WriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F7B6F61DF849E50092114C /* WriterTests.swift */; };
+		95F7B6FA1DF852E40092114C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F7B6F81DF84A060092114C /* Player.swift */; };
 		95FAAFAE1C91D47E00F5374F /* NSNotificationCenterKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FAAFAD1C91D47E00F5374F /* NSNotificationCenterKeys.swift */; };
 		D34B122C43B6A071B208D42F /* Pods_BleepTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD5174EE16E4872C492972F2 /* Pods_BleepTest.framework */; };
 /* End PBXBuildFile section */
@@ -77,7 +79,6 @@
 		146E27A41BCD51F200959BBA /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppController.swift; path = Source/AppController.swift; sourceTree = "<group>"; };
 		148312891B92C11500266943 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1483128C1B92C11500266943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1483128D1B92C11500266943 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		1F6D16D938269E8889A9CE2D /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6A34B165B3DDF602D1210F42 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		767205427B29E91A7EC7FF6A /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +125,8 @@
 		95F4C8E41DA199F20034E37A /* CreateSinglePlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSinglePlayerView.swift; sourceTree = "<group>"; };
 		95F4C9471DA1B0860034E37A /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
 		95F4C9481DA1B0860034E37A /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
+		95F7B6F61DF849E50092114C /* WriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriterTests.swift; sourceTree = "<group>"; };
+		95F7B6F81DF84A060092114C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		95FAAFAD1C91D47E00F5374F /* NSNotificationCenterKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterKeys.swift; sourceTree = "<group>"; };
 		FD5174EE16E4872C492972F2 /* Pods_BleepTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BleepTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -174,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				145F81CB1BDE2CFD0016A9E0 /* iOS.xcdatamodeld */,
+				95F7B6F81DF84A060092114C /* Player.swift */,
 				95EBE9F81C908DC100A57377 /* TestLevel.swift */,
 				9527A6D31CA03B23001E7942 /* CompletedTest.swift */,
 			);
@@ -232,9 +236,9 @@
 		1483128A1B92C11500266943 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1483128D1B92C11500266943 /* Tests.swift */,
 				1483128C1B92C11500266943 /* Info.plist */,
 				954215111DD9F76800F73DAF /* PlayerTest.swift */,
+				95F7B6F61DF849E50092114C /* WriterTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -651,6 +655,7 @@
 				9527A6D21CA038DB001E7942 /* CompletedTestTableController.swift in Sources */,
 				953DD29B1CBE949500A49A98 /* LargeContentLabel.swift in Sources */,
 				145F81CD1BDE2CFD0016A9E0 /* iOS.xcdatamodeld in Sources */,
+				95F7B6FA1DF852E40092114C /* Player.swift in Sources */,
 				953DD2981CBE949500A49A98 /* Fetcher.swift in Sources */,
 				9527A6D41CA03B23001E7942 /* CompletedTest.swift in Sources */,
 				95EBE9F91C908DC100A57377 /* TestLevel.swift in Sources */,
@@ -671,7 +676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1483128E1B92C11500266943 /* Tests.swift in Sources */,
+				95F7B6F71DF849E50092114C /* WriterTests.swift in Sources */,
 				954215121DD9F76900F73DAF /* PlayerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
