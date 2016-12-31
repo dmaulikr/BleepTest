@@ -20,4 +20,6 @@ extension CreateSinglePlayerController : CreateSinglePlayerViewDelegate {
         setStatusBarHidden(false)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    func didCreateButtonPressed(sender: CreateSinglePlayerView, age:Int, userName:NSString){
+    }
 }
