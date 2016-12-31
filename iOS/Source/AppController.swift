@@ -1,4 +1,5 @@
 import UIKit
+import DATAStack
 
 @UIApplicationMain
 class AppController: UIResponder {
@@ -7,13 +8,14 @@ class AppController: UIResponder {
     var navController: UINavigationController?
     
     private lazy var fetcher: Fetcher = {
-        let url = NSURL(string: "levelsData.json")!
-        let fetcher = Fetcher(modelName: "iOS", localFilePath: url)
+        let data = DATAStack(modelName: "iOS", bundle: NSBundle.mainBundle(), storeType:.SQLite)
+        let fetcher = Fetcher(dataStack: data)
         return fetcher
     }()
     
     private lazy var writer: Writer = {
-        let writer = Writer(modelName: "iOS")
+        let data = DATAStack(modelName: "iOS", bundle: NSBundle.mainBundle(), storeType:.SQLite)
+        let writer = Writer(dataStack: data)
         return writer
     }()
 }
