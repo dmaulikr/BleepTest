@@ -23,4 +23,14 @@ public class Writer : NSObject {
             try! backgroundContext.save()
         }
     }
+    
+    public func createPlayer(username:String, age:Int){
+        self.data.performInNewBackgroundContext { backgroundContext in
+            let entity = NSEntityDescription.entityForName("Player", inManagedObjectContext: backgroundContext)!
+            let object = NSManagedObject(entity: entity, insertIntoManagedObjectContext: backgroundContext)
+            object.setValue(username, forKey: "username")
+            object.setValue(age, forKey: "age")
+            try! backgroundContext.save()
+        }
+    }
 }
