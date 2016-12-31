@@ -21,5 +21,7 @@ extension CreateSinglePlayerController : CreateSinglePlayerViewDelegate {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     func didCreateButtonPressed(sender: CreateSinglePlayerView, age:Int, userName:NSString){
+        writer.createPlayer(userName as String, age:age)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
