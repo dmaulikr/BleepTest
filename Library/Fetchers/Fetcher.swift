@@ -45,6 +45,13 @@ public class Fetcher : NSObject {
         return tests
     }
     
+    public func fetchUsers(completion: (NSError?) -> Void) -> [Player] {
+        let request = NSFetchRequest(entityName: "Player")
+        request.sortDescriptors = [NSSortDescriptor(key: "username", ascending: false)]
+        let players = (try! data.mainContext.executeFetchRequest(request) as! [Player])
+        return players
+    }
+    
 }
 
 
