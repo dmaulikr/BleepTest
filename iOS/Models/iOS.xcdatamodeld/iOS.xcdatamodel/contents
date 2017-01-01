@@ -9,6 +9,7 @@
     </entity>
     <entity name="Player" representedClassName="Player" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="dateAdded" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="TestLevel" representedClassName="TestLevel" syncable="YES">
@@ -24,7 +25,7 @@
     </entity>
     <elements>
         <element name="CompletedTest" positionX="-63" positionY="18" width="128" height="120"/>
-        <element name="Player" positionX="-63" positionY="36" width="128" height="75"/>
+        <element name="Player" positionX="-63" positionY="36" width="128" height="90"/>
         <element name="TestLevel" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

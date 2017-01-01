@@ -30,6 +30,7 @@ public class Writer : NSObject {
             let object = NSManagedObject(entity: entity, insertIntoManagedObjectContext: backgroundContext)
             object.setValue(username, forKey: "username")
             object.setValue(age, forKey: "age")
+            object.setValue(NSDate(), forKey:  "dateAdded")
             try! backgroundContext.save()
         }
     }
