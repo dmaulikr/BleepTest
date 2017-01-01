@@ -47,7 +47,7 @@ public class Fetcher : NSObject {
     
     public func fetchUsers(completion: (NSError?) -> Void) -> [Player] {
         let request = NSFetchRequest(entityName: "Player")
-        request.sortDescriptors = [NSSortDescriptor(key: "username", ascending: false)]
+        request.sortDescriptors = [NSSortDescriptor(key: "dateAdded", ascending: true)]
         let players = (try! data.mainContext.executeFetchRequest(request) as! [Player])
         return players
     }
