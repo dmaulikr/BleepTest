@@ -3,14 +3,19 @@ import UIKit
 class HomeController: BaseViewController {
     
     override func loadView() {
-        let view = HomeView(frame: UIScreen.mainScreen().bounds)
         self.view = view
         self.title = "Bleep Test"
+        let view = HomeView(frame: UIScreen.mainScreen().bounds, playerName: fetchPlayerName())
         view.delegate = self
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    func fetchPlayerName() -> String {
+        let players = fetcher.fetchUsers{_ in}
+        if (players.count > 0) {
+            let player = players[players.count - 1]
+            return player.username
+        }
+        return "No player"
     }
 
 }

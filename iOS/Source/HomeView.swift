@@ -7,8 +7,8 @@ protocol HomeViewDelegate: class {
 
 class HomeView: UIView {
     
-    weak var delegate:HomeViewDelegate?
-    private var player:Player?
+    weak var delegate: HomeViewDelegate?
+    var playerName: String?
     
     lazy var titleLabel : MediumBlackLabel = {
         let label : MediumBlackLabel = MediumBlackLabel()
@@ -32,7 +32,8 @@ class HomeView: UIView {
         return temporyButton
     }()
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, playerName: String) {
+        self.playerName = playerName
         super.init(frame: frame)
         addStableUIComponentsToView()
         backgroundColor = .whiteColor()
