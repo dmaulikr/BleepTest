@@ -1,11 +1,11 @@
 import UIKit
 
-class MediumContentLabel: UILabel {
+class MediumBlackLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.font = UIFont(name: self.font.fontName, size: 23)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.textColor = UIColor.italyBrownColor()
+        self.textColor = UIColor.blackColor()
     }
     
     required init?(coder aDecoder: NSCoder) {

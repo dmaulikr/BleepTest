@@ -1,9 +1,14 @@
-use_frameworks!
+target 'BleepTest' do
+	use_frameworks!
 
-# link_with 'iOS', 'tvOS', 'watchOS'
+	# link_with 'iOS', 'tvOS', 'watchOS'
+	pod 'Sync'
+	pod 'DATASource'
+	pod 'Hex'
+	pod 'FoldingCell', '~> 0.7.3'
+	pod 'SwiftyTimer'
 
-pod 'Sync'
-pod 'DATASource'
-pod 'Hex'
-pod 'FoldingCell', '~> 0.7.3'
-pod 'SwiftyTimer'
+	target 'Tests' do
+	      inherit! :search_paths
+	end
+end

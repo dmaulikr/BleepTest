@@ -3,29 +3,33 @@ import UIKit
 class HomeController: BaseViewController {
     
     override func loadView() {
-        let view = HomeView(frame: UIScreen.mainScreen().bounds)
-        self.view = view
         self.title = "Bleep Test"
+        let view = HomeView(frame: UIScreen.mainScreen().bounds, playerName: fetchPlayerName())
+        self.view = view
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        notificationObservers()
+    
+    override func viewDidAppear(animated: Bool) {
+        let view = HomeView(frame: UIScreen.mainScreen().bounds, playerName: fetchPlayerName())
+        self.view = view
+        view.delegate = self
+    }
+    
+    func fetchPlayerName() -> String {
+        let players = fetcher.fetchUsers{_ in}
+        if (players.count > 0) {
+            let player = players[players.count - 1]
+            return player.username
+        }
+        return "No player"
     }
 
 }
 
-//MARK: Notifications
-extension HomeController{
-    func notificationObservers(){
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: #selector(bleepTestStarted(_:)),
-            name: startTestNotificationKey,
-            object: nil)
+extension HomeController : HomeViewDelegate{
+    func didChangeButtonPressed(sender: HomeView) {
+        self.navigationController?.presentViewController(CreateSinglePlayerController(fetcher: fetcher, writer: writer), animated: true, completion: nil)
     }
-    
-    func bleepTestStarted(notification: NSNotification){
+    func didStartButtonPressed(sender: HomeView) {
         self.navigationController?.presentViewController(BleepTestController(fetcher: fetcher, writer: writer), animated: true, completion: nil)
     }
 }

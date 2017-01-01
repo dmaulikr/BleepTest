@@ -6,7 +6,7 @@ class MenuTableCell: UITableViewCell {
         var temporyLabel : UILabel = UILabel()
         temporyLabel.translatesAutoresizingMaskIntoConstraints = false
         temporyLabel.font = UIFont(name: temporyLabel.font.fontName, size: 20)
-        temporyLabel.textColor = UIColor.italyGreenColor()
+        temporyLabel.textColor = UIColor.customGreenColor()
         return temporyLabel
     }()
 

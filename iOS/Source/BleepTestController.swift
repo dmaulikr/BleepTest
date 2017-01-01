@@ -14,6 +14,7 @@ class BleepTestController: BaseViewController {
     
     override func loadView() {
         let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
+        view.delegate = self
         self.view = view
         self.title = "Bleep Test"
     }
@@ -22,7 +23,6 @@ class BleepTestController: BaseViewController {
         super.viewDidLoad()
         setStatusBarHidden(true)
         UIApplication.sharedApplication().idleTimerDisabled = true
-        notificationObservers()
         timer = NSTimer.after(0.5.seconds){
             self.startBleepTest()
         }
@@ -34,17 +34,9 @@ class BleepTestController: BaseViewController {
     }
 }
 
-//MARK: Notification
-extension BleepTestController{
-    private func notificationObservers(){
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: #selector(bleepTestStoped(_:)),
-            name: stopTestNotificationKey,
-            object: nil)
-    }
-    
-    func bleepTestStoped(notification: NSNotification){
+// MARK: BleepTestViewDelegate
+extension BleepTestController :BleepTestViewDelegate {
+    func didStopButtonPressed(sender: BleepTestView) {
         writer.saveBleepTest((level+1), lap: (lap+1), vo2Max: vO2Max, distance: distance)
         timer.invalidate()
         timer = NSTimer.after(10.seconds){

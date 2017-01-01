@@ -1,9 +1,14 @@
 import UIKit
 
+protocol BleepTestViewDelegate: class {
+    func didStopButtonPressed(sender: BleepTestView)
+}
+
 class BleepTestView: UIView {
     
     let cornerRadius : CGFloat = 5
     let borderWidth : CGFloat = 2
+    weak var delegate:BleepTestViewDelegate?
 
     lazy var lapProgressIndicator : LapProgressIndicator = {
         let circleWidth = CGFloat(260)
@@ -71,8 +76,8 @@ class BleepTestView: UIView {
         return temporyLabel
     }()
     
-    lazy var distanceLabel : MediumContentLabel = {
-        var temporyLabel : MediumContentLabel = MediumContentLabel()
+    lazy var distanceLabel : MediumBlackLabel = {
+        var temporyLabel : MediumBlackLabel = MediumBlackLabel()
         temporyLabel.text = "0m"
         return temporyLabel
     }()
@@ -83,8 +88,8 @@ class BleepTestView: UIView {
         return temporyLabel
     }()
 
-    lazy var vO2MaxLabel : MediumContentLabel = {
-        var temporyLabel : MediumContentLabel = MediumContentLabel()
+    lazy var vO2MaxLabel : MediumBlackLabel = {
+        var temporyLabel : MediumBlackLabel = MediumBlackLabel()
         temporyLabel.text = "0"
         return temporyLabel
     }()
@@ -177,27 +182,24 @@ class BleepTestView: UIView {
     func addButtonsToView(){
         let viewsDictionary = [
             "stopButton":stopButton,
-            "pauseButton":pauseButton,
             "superview":self
         ]
         
         addSubview(stopButton)
-        addSubview(pauseButton)
-        
+
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-30-[pauseButton(100)]-(>=20)-[stopButton(100)]-30-|",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
-            metrics: nil,
-            views: viewsDictionary
-            ))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(>=50)-[pauseButton(100)]-20-|",
+            "V:|-(>=50)-[stopButton(100)]-30-|",
             options: NSLayoutFormatOptions.AlignAllLeading,
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[stopButton(100)]",
-            options: NSLayoutFormatOptions.AlignAllLeading,
+            "H:[stopButton(100)]",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:[superview]-(<=1)-[stopButton(100)]",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
     }
@@ -342,10 +344,7 @@ extension BleepTestView{
 // MARK: Button Actions
 extension BleepTestView{
     func stopButtonAction(sender:UIButton!){
-        stopButton.removeFromSuperview()
-        NSNotificationCenter.defaultCenter().postNotificationName(
-            stopTestNotificationKey,
-            object: self)
+        delegate?.didStopButtonPressed(self)
     }
     
     func pauseButtonAction(sender:UIButton!){
