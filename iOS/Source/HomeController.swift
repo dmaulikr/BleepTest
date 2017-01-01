@@ -3,9 +3,14 @@ import UIKit
 class HomeController: BaseViewController {
     
     override func loadView() {
-        self.view = view
         self.title = "Bleep Test"
         let view = HomeView(frame: UIScreen.mainScreen().bounds, playerName: fetchPlayerName())
+        self.view = view
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let view = HomeView(frame: UIScreen.mainScreen().bounds, playerName: fetchPlayerName())
+        self.view = view
         view.delegate = self
     }
     
