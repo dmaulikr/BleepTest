@@ -35,6 +35,7 @@ class HomeView: UIView {
     init(frame: CGRect, playerName: String) {
         self.playerName = playerName
         super.init(frame: frame)
+        populateUserInterface()
         addStableUIComponentsToView()
         backgroundColor = .whiteColor()
     }
@@ -89,6 +90,8 @@ extension HomeView{
             views: viewsDictionary))
     }
     
+    func populateUserInterface(){
+        nameLabel.text = playerName
     }
 }
 
