@@ -8,19 +8,7 @@ protocol HomeViewDelegate: class {
 class HomeView: UIView {
     
     weak var delegate:HomeViewDelegate?
-    
-    lazy var typeOfBleepTestSegment : UISegmentedControl = {
-        let items = ["Single", "Team"]
-        let segmentedControl = UISegmentedControl(items: items)
-        let font = UIFont.systemFontOfSize(18)
-        segmentedControl.setTitleTextAttributes([NSFontAttributeName: font], forState: UIControlState.Normal)
-        segmentedControl.addTarget(self, action: #selector(typeSegment(_:)), forControlEvents: UIControlEvents.ValueChanged)
-        segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.layer.cornerRadius = 5.0
-        segmentedControl.tintColor = UIColor.customBlueColor()
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        return segmentedControl
-    }()
+    private var player:Player?
     
     lazy var titleLabel : MediumBlackLabel = {
         let label : MediumBlackLabel = MediumBlackLabel()
@@ -61,7 +49,6 @@ class HomeView: UIView {
 extension HomeView{
     func addStableUIComponentsToView(){
         let viewsDictionary = [
-            "typeOfBleepTestSegment":typeOfBleepTestSegment,
             "startButton":startButton,
             "changeButton":changeButton,
             "titleLabel" : titleLabel,
@@ -70,19 +57,13 @@ extension HomeView{
         ]
         
         addSubview(startButton)
-        addSubview(typeOfBleepTestSegment)
         addSubview(changeButton)
         addSubview(titleLabel)
         addSubview(nameLabel)
         
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-120-[typeOfBleepTestSegment(40)]-50-[titleLabel]-50-[changeButton(40)]-50-[startButton(100)]-(>=80)-|",
+            "V:|-120-[titleLabel]-50-[changeButton(40)]-50-[startButton(100)]-(>=80)-|",
             options: NSLayoutFormatOptions(rawValue: 0),
-            metrics: nil,
-            views: viewsDictionary))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-30-[typeOfBleepTestSegment]-30-|",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
@@ -107,38 +88,9 @@ extension HomeView{
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
-        
-        if(typeOfBleepTestSegment.selectedSegmentIndex == 0){
-            singleBleepTestView()
-        } else {
-            teamBleepTestView()
-        }
-    }
-}
-
-//MARK: UISegmentedControl
-extension HomeView{
-    func typeSegment(sender:UISegmentedControl!){
-        NSNotificationCenter.defaultCenter().postNotificationName(
-            typeChangedNotificationKey,
-            object: self)
-        if(typeOfBleepTestSegment.selectedSegmentIndex == 0){
-            singleBleepTestView()
-        } else{
-            teamBleepTestView()
-        }
     }
     
-    func singleBleepTestView(){
-        titleLabel.text = "Runner:"
-        nameLabel.text = "Me"
     }
-
-    func teamBleepTestView(){
-        nameLabel.text = "Manchester FC"
-        titleLabel.text = "Team:"
-    }
-
 }
 
 //MARK: Actions
