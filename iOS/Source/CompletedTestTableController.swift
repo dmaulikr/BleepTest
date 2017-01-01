@@ -3,12 +3,14 @@ import CoreData
 import DATAStack
 
 class CompletedTestTableController: UITableViewController {
+    
     static let CellIdentifier = "CellID"
     var items = [CompletedTest]()
     let kCloseCellHeight: CGFloat = 100
     let kOpenCellHeight: CGFloat = 218
     let kRowsCount = 10
     var cellHeights = [CGFloat]()
+    
     private lazy var fetcher: Fetcher = {
         let url = NSURL(string: "levelsData.json")!
         let data = DATAStack(modelName: "iOS", bundle: NSBundle.mainBundle(), storeType:.SQLite)
