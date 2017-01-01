@@ -12,6 +12,7 @@ class HomeView: UIView {
     
     lazy var titleLabel : MediumBlackLabel = {
         let label : MediumBlackLabel = MediumBlackLabel()
+        label.text = "Runner:"
         return label
     }()
     
