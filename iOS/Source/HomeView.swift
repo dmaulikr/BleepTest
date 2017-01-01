@@ -15,10 +15,7 @@ class HomeView: UIView {
         return label
     }()
     
-    lazy var nameLabel : MedumBlueLabel = {
-        let label : MedumBlueLabel = MedumBlueLabel()
-        return label
-    }()
+    var nameLabel = MedumBlueLabel()
     
     lazy var startButton : StartButton = {
         var temporyButton : StartButton = StartButton()
