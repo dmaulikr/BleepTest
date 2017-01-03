@@ -206,13 +206,13 @@
 		146E27A31BCD51F200959BBA /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				95F4C8E11DA189280034E37A /* CreateSinglePlayer */,
 				956FD5851E1C291300C61C5B /* Select User */,
+				95F4C8E11DA189280034E37A /* Create Single Player */,
 				9548A8251CB14FF000BAF914 /* Home */,
 				953A5EF51CA456CE003960FC /* Navigation */,
-				953A5EF21CA42C6D003960FC /* CompletedTest */,
+				953A5EF21CA42C6D003960FC /* Completed Test */,
 				953A5EF11CA42C61003960FC /* Menu */,
-				953A5EF01CA42C4C003960FC /* BleepTest */,
+				953A5EF01CA42C4C003960FC /* Bleep Test */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -259,13 +259,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		953A5EF01CA42C4C003960FC /* BleepTest */ = {
+		953A5EF01CA42C4C003960FC /* Bleep Test */ = {
 			isa = PBXGroup;
 			children = (
 				95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */,
 				95D7B0051C8CBC68004690D5 /* BleepTestView.swift */,
 			);
-			name = BleepTest;
+			name = "Bleep Test";
 			sourceTree = "<group>";
 		};
 		953A5EF11CA42C61003960FC /* Menu */ = {
@@ -277,13 +277,13 @@
 			name = Menu;
 			sourceTree = "<group>";
 		};
-		953A5EF21CA42C6D003960FC /* CompletedTest */ = {
+		953A5EF21CA42C6D003960FC /* Completed Test */ = {
 			isa = PBXGroup;
 			children = (
 				9527A6D11CA038DB001E7942 /* CompletedTestTableController.swift */,
 				9527A6D61CA056C7001E7942 /* CompletedTestTableCell.swift */,
 			);
-			name = CompletedTest;
+			name = "Completed Test";
 			sourceTree = "<group>";
 		};
 		953A5EF51CA456CE003960FC /* Navigation */ = {
@@ -385,6 +385,14 @@
 			name = Home;
 			sourceTree = "<group>";
 		};
+		956FD5851E1C291300C61C5B /* Select User */ = {
+			isa = PBXGroup;
+			children = (
+				956FD5861E1C295200C61C5B /* SelectUserTableViewController.swift */,
+			);
+			name = "Select User";
+			sourceTree = "<group>";
+		};
 		95D8E4411CA15B5D0084F939 /* FoldingCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,13 +409,13 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
-		95F4C8E11DA189280034E37A /* CreateSinglePlayer */ = {
+		95F4C8E11DA189280034E37A /* Create Single Player */ = {
 			isa = PBXGroup;
 			children = (
 				95F4C8E41DA199F20034E37A /* CreateSinglePlayerView.swift */,
 				95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */,
 			);
-			name = CreateSinglePlayer;
+			name = "Create Single Player";
 			sourceTree = "<group>";
 		};
 		95F4C9421DA1A7770034E37A /* TextFields */ = {
