@@ -40,6 +40,7 @@
 		954215121DD9F76900F73DAF /* PlayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954215111DD9F76800F73DAF /* PlayerTest.swift */; };
 		9548A8221CB14F5000BAF914 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548A8211CB14F5000BAF914 /* HomeView.swift */; };
 		9548A8241CB14FEA00BAF914 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548A8231CB14FEA00BAF914 /* HomeController.swift */; };
+		956FD5871E1C295200C61C5B /* SelectUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD5861E1C295200C61C5B /* SelectUserTableViewController.swift */; };
 		9574F0D61E1927CE00ADDF32 /* FetcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574F0D51E1927CE00ADDF32 /* FetcherTest.swift */; };
 		95874DC01DA8401000D642A7 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95874DBF1DA8401000D642A7 /* CloseButton.swift */; };
 		95A90EBC1CC28A270062C448 /* MediumTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A90EBB1CC28A270062C448 /* MediumTitleLabel.swift */; };
@@ -113,6 +114,7 @@
 		954215111DD9F76800F73DAF /* PlayerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTest.swift; sourceTree = "<group>"; };
 		9548A8211CB14F5000BAF914 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9548A8231CB14FEA00BAF914 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		956FD5861E1C295200C61C5B /* SelectUserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserTableViewController.swift; sourceTree = "<group>"; };
 		9574F0D51E1927CE00ADDF32 /* FetcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetcherTest.swift; sourceTree = "<group>"; };
 		95874DBF1DA8401000D642A7 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		95A90EBB1CC28A270062C448 /* MediumTitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumTitleLabel.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				95F4C8E11DA189280034E37A /* CreateSinglePlayer */,
+				956FD5851E1C291300C61C5B /* Select User */,
 				9548A8251CB14FF000BAF914 /* Home */,
 				953A5EF51CA456CE003960FC /* Navigation */,
 				953A5EF21CA42C6D003960FC /* CompletedTest */,
@@ -669,6 +672,7 @@
 				95FAAFAE1C91D47E00F5374F /* NSNotificationCenterKeys.swift in Sources */,
 				953DD29D1CBE949500A49A98 /* SmallTitleLabel.swift in Sources */,
 				95F4C8E31DA18D2B0034E37A /* CreateSinglePlayerController.swift in Sources */,
+				956FD5871E1C295200C61C5B /* SelectUserTableViewController.swift in Sources */,
 				953DD2A61CBE94BE00A49A98 /* StartButton.swift in Sources */,
 				95BE7C281D908B530070DFFE /* MediumBlackLabel.swift in Sources */,
 				953DD2A21CBE949500A49A98 /* LapProgressIndicator.swift in Sources */,
