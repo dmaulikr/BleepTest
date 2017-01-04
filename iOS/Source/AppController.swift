@@ -7,15 +7,18 @@ class AppController: UIResponder {
     var window: UIWindow?
     var navController: UINavigationController?
     
-    private lazy var fetcher: Fetcher = {
+    private lazy var dataStack: DATAStack = {
         let data = DATAStack(modelName: "iOS", bundle: NSBundle.mainBundle(), storeType:.SQLite)
-        let fetcher = Fetcher(dataStack: data)
+        return data
+    }()
+    
+    private lazy var fetcher: Fetcher = {
+        let fetcher = Fetcher(dataStack: self.dataStack)
         return fetcher
     }()
     
     private lazy var writer: Writer = {
-        let data = DATAStack(modelName: "iOS", bundle: NSBundle.mainBundle(), storeType:.SQLite)
-        let writer = Writer(dataStack: data)
+        let writer = Writer(dataStack: self.dataStack)
         return writer
     }()
 }
@@ -32,7 +35,7 @@ extension AppController: UIApplicationDelegate {
         }
 
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        window.rootViewController = TabBarController(fetcher: self.fetcher, writer:self.writer)
+        window.rootViewController = TabBarController(fetcher: self.fetcher, writer:self.writer, dataStack: dataStack)
         window.makeKeyAndVisible()
 
         return true
