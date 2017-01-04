@@ -1,11 +1,3 @@
-//
-//  TabBarController.swift
-//  Project
-//
-//  Created by Ieuan Peace on 24/03/2016.
-//
-//
-
 import UIKit
 import DATAStack
 
