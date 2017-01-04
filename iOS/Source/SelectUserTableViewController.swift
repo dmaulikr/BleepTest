@@ -1,6 +1,6 @@
 import UIKit
 
-class SelectUsersTableViewController: BaseTableViewController {
+class SelectUserTableViewController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
