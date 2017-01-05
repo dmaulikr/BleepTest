@@ -27,9 +27,21 @@ class HomeController: BaseViewController {
 
 extension HomeController : HomeViewDelegate{
     func didChangeButtonPressed(sender: HomeView) {
-        self.navigationController?.presentViewController(SelectUserTableViewController(fetcher: fetcher, writer: writer, dataStack: dataStack!), animated: true, completion: nil)
+        let rootViewController = SelectUserTableViewController(fetcher: fetcher, writer: writer, dataStack: dataStack!)
+        rootViewController.delegate = self
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        self.navigationController?.presentViewController(navigationController, animated: true, completion: nil)
     }
     func didStartButtonPressed(sender: HomeView) {
         self.navigationController?.presentViewController(BleepTestController(fetcher: fetcher, writer: writer, dataStack: dataStack!), animated: true, completion: nil)
     }
+    
+}
+
+extension HomeController : SelectUserDelegate {
+    
+    func userSelected(sender: SelectUserTableViewController, user: Player) {
+        print(user.username)
+    }
+    
 }

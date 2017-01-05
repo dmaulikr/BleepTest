@@ -3,7 +3,13 @@ import DATASource
 import DATAStack
 import CoreData
 
+protocol SelectUserDelegate {
+    func userSelected(sender:SelectUserTableViewController, user: Player)
+}
+
 class SelectUserTableViewController: BaseTableViewController {
+    
+    var delegate: SelectUserDelegate?
 
     lazy var dataSource: DATASource = {
         let request = NSFetchRequest(entityName: "Player")
@@ -21,5 +27,11 @@ class SelectUserTableViewController: BaseTableViewController {
         self.tableView = UITableView(frame: self.tableView.frame, style: .Grouped)
         self.tableView.dataSource = self.dataSource
     }
+}
+
+extension SelectUserTableViewController {
+    //MARK: UITableViewDelegate
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    }
 }
