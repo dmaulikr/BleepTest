@@ -24,7 +24,6 @@ class SelectUserTableViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        self.tableView = UITableView(frame: self.tableView.frame, style: .Grouped)
         self.tableView.dataSource = self.dataSource
     }
 }
