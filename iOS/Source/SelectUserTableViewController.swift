@@ -32,5 +32,8 @@ extension SelectUserTableViewController {
     //MARK: UITableViewDelegate
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let user = self.dataSource.objectAtIndexPath(indexPath) as! Player
+        delegate?.userSelected(self, user: user)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
