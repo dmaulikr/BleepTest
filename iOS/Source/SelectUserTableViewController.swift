@@ -13,7 +13,7 @@ class SelectUserTableViewController: BaseTableViewController {
 
     lazy var dataSource: DATASource = {
         let request = NSFetchRequest(entityName: "Player")
-        request.sortDescriptors = [NSSortDescriptor(key: "dateAdded", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "username", ascending: true)]
         
         let dataSource = DATASource(tableView: self.tableView, cellIdentifier: "Cell", fetchRequest: request, mainContext: self.dataStack!.mainContext, configuration: { cell, item, indexPath in
             cell.textLabel?.text = item.valueForKey("username") as? String
