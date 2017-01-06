@@ -43,6 +43,10 @@ class HomeView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    internal func setUsernameLabel(username: String) {
+        self.nameLabel.text = username
+    }
 }
 
 //MARK: Static UI views which are alwas displayed
