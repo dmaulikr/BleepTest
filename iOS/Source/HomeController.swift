@@ -2,16 +2,19 @@ import UIKit
 
 class HomeController: BaseViewController {
     
+    lazy var homeView : HomeView = {
+        var temporyView : HomeView = HomeView(frame: UIScreen.mainScreen().bounds, playerName: self.fetchPlayerName())
+        return temporyView
+    }()
+    
     override func loadView() {
         self.title = "Bleep Test"
-        let view = HomeView(frame: UIScreen.mainScreen().bounds, playerName: fetchPlayerName())
-        self.view = view
+        self.view = self.homeView
     }
     
     override func viewDidAppear(animated: Bool) {
-        let view = HomeView(frame: UIScreen.mainScreen().bounds, playerName: fetchPlayerName())
-        self.view = view
-        view.delegate = self
+        self.view = self.homeView
+        self.homeView.delegate = self
     }
     
     func fetchPlayerName() -> String {
@@ -22,7 +25,6 @@ class HomeController: BaseViewController {
         }
         return "No player"
     }
-
 }
 
 extension HomeController : HomeViewDelegate{
@@ -42,7 +44,6 @@ extension HomeController : HomeViewDelegate{
 extension HomeController : SelectUserDelegate {
     
     func userSelected(sender: SelectUserTableViewController, user: Player) {
-        print(user.username)
+        self.homeView.setUsernameLabel(user.username)
     }
-    
 }
