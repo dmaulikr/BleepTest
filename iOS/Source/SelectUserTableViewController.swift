@@ -25,7 +25,10 @@ class SelectUserTableViewController: BaseTableViewController {
         super.viewDidLoad()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         self.tableView.dataSource = self.dataSource
+        self.tableView.tableFooterView = UIView()
         addNavigationItems()
+    }
+    
     func addNavigationItems() {
         self.title = "Select User"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(closeButtonAction(_:)))
@@ -37,7 +40,6 @@ class SelectUserTableViewController: BaseTableViewController {
 
 extension SelectUserTableViewController {
     //MARK: UITableViewDelegate
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let user = self.dataSource.objectAtIndexPath(indexPath) as! Player
         delegate?.userSelected(self, user: user)
