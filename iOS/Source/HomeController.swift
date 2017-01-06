@@ -26,16 +26,17 @@ class HomeController: BaseViewController {
 }
 
 extension HomeController : HomeViewDelegate{
+    
     func didChangeButtonPressed(sender: HomeView) {
         let rootViewController = SelectUserTableViewController(fetcher: fetcher, writer: writer, dataStack: dataStack!)
         rootViewController.delegate = self
-        let navigationController = UINavigationController(rootViewController: rootViewController)
+        let navigationController = OrangeNavigationController(rootViewController: rootViewController)
         self.navigationController?.presentViewController(navigationController, animated: true, completion: nil)
     }
+    
     func didStartButtonPressed(sender: HomeView) {
         self.navigationController?.presentViewController(BleepTestController(fetcher: fetcher, writer: writer, dataStack: dataStack!), animated: true, completion: nil)
     }
-    
 }
 
 extension HomeController : SelectUserDelegate {
