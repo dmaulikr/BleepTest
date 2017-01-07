@@ -127,6 +127,7 @@ class CreateSinglePlayerView: UIView {
     }
 }
 
+//MARK: UITextFieldDelegate
 extension CreateSinglePlayerView: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if (textField === self.userNameTextField){
