@@ -26,6 +26,7 @@ class SelectUserTableViewController: BaseTableViewController {
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         self.tableView.dataSource = self.dataSource
         self.tableView.tableFooterView = UIView()
+        self.tableView.backgroundColor = UIColor.veryLightGrayColor()
         addNavigationItems()
     }
     
