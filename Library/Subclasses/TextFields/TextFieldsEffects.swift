@@ -104,6 +104,27 @@ public class TextFieldEffects : UITextField {
         }
     }
     
+    override public func becomeFirstResponder() -> Bool {
+        self.addSeparatorInputAccessoryIfNumericKeyboardOnPhone()
+        return super.becomeFirstResponder()
+    }
+    
+    //Adding an line above a numerical keyboard
+    
+    func addSeparatorInputAccessoryIfNumericKeyboardOnPhone() {
+        guard self.keyboardType == .NumberPad else {
+            return
+        }
+        
+        guard UIDevice.currentDevice().userInterfaceIdiom == .Phone else {
+            return
+        }
+        
+        let view = UIView(frame: CGRectMake(0, 0, 0, 1 / UIScreen.mainScreen().scale))
+        view.backgroundColor = UIColor.lightGrayColor()
+        self.inputAccessoryView = view
+    }
+    
     // MARK: - UITextField Observing
     
     override public func willMoveToSuperview(newSuperview: UIView!) {
@@ -135,4 +156,6 @@ public class TextFieldEffects : UITextField {
     override public func prepareForInterfaceBuilder() {
         drawViewsForRect(frame)
     }
+    
+
 }
