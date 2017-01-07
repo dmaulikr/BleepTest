@@ -5,7 +5,6 @@ public class BaseViewController: UIViewController {
     internal var fetcher: Fetcher
     internal var writer: Writer
     internal var dataStack: DATAStack?
-
     
     // MARK: - Initializers
     
@@ -19,12 +18,23 @@ public class BaseViewController: UIViewController {
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
 
 //MARK: StatusBar
 extension BaseViewController{
     public func setStatusBarHidden(boolen: Bool){
         UIApplication.sharedApplication().statusBarHidden = boolen;
+    }
+}
+
+//MARK: Keyboard dismissal
+extension BaseViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

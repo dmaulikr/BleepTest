@@ -26,3 +26,15 @@ extension BaseTableViewController{
         UIApplication.sharedApplication().statusBarHidden = boolen;
     }
 }
+
+//MARK: Keyboard dismissal
+extension BaseTableViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}

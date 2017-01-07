@@ -26,3 +26,15 @@ extension BaseCollectionViewController{
         UIApplication.sharedApplication().statusBarHidden = boolen;
     }
 }
+
+//MARK: Keyboard dismissal
+extension BaseCollectionViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
