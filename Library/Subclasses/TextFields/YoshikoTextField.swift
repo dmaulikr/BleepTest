@@ -181,7 +181,7 @@ import UIKit
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.inactiveBorderColor = UIColor.veryLightGrayColor()
-        self.activeBorderColor = UIColor.pinkRedColor()
+        self.activeBorderColor = UIColor.orangeColor()
         self.placeholderColor = UIColor.grayColor()
     }
     
