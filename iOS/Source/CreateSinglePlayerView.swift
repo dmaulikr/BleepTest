@@ -23,6 +23,9 @@ class CreateSinglePlayerView: UIView {
 
     lazy var userNameTextField: YoshikoTextField = {
         let temporyTextField: YoshikoTextField = YoshikoTextField(frame: CGRect(x: 0, y: 0, width: 250, height: 55))
+        temporyTextField.autocorrectionType = .No
+        temporyTextField.returnKeyType = .Next
+        temporyTextField.delegate = self
         temporyTextField.placeholder = "Username   e.g. John Smith"
         temporyTextField.placeholderUpdated = "Username"
         return temporyTextField
@@ -121,6 +124,16 @@ class CreateSinglePlayerView: UIView {
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
+    }
+}
+
+extension CreateSinglePlayerView: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if (textField === self.userNameTextField){
+            self.userNameTextField.resignFirstResponder()
+            self.ageTextField.becomeFirstResponder()
+        }
+        return true
     }
 }
 
