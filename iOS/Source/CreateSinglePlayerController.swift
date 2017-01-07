@@ -5,7 +5,7 @@ class CreateSinglePlayerController: BaseViewController {
         let view = CreateSinglePlayerView(frame: UIScreen.mainScreen().bounds)
         self.view = view
         view.delegate = self
-        setStatusBarHidden(true)
+        self.setStatusBarHidden(true)
         self.hideKeyboardWhenTappedAround()
     }
 }
