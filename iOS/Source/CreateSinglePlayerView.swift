@@ -82,7 +82,7 @@ class CreateSinglePlayerView: UIView {
             views: viewsDictionary))
         
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-50-[titleLabel]-40-[userNameTextField(55)]-15-[ageTextField(55)]-90-[createButton(40)]-(>=20)-|",
+            "V:|-60-[titleLabel]-35-[userNameTextField(55)]-15-[ageTextField(55)]-30-[createButton(40)]-(>=20)-|",
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
