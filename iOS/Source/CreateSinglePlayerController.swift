@@ -1,7 +1,6 @@
 import UIKit
 
 class CreateSinglePlayerController: BaseViewController {
-    
     override func loadView() {
         let view = CreateSinglePlayerView(frame: UIScreen.mainScreen().bounds)
         self.view = view
@@ -9,11 +8,6 @@ class CreateSinglePlayerController: BaseViewController {
         setStatusBarHidden(true)
         self.hideKeyboardWhenTappedAround()
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
 }
 
 extension CreateSinglePlayerController : CreateSinglePlayerViewDelegate {
