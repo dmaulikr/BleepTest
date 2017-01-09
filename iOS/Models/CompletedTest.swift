@@ -9,4 +9,5 @@ public class CompletedTest: NSManagedObject {
     @NSManaged var lap: NSNumber
     @NSManaged var distance: NSNumber
     @NSManaged var createdDate: NSDate
+    @NSManaged var player: NSManagedObject
 }

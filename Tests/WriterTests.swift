@@ -38,4 +38,24 @@ class WriterTests: XCTestCase {
 
     }
     
+    func testCreateCompletedTest(){
+        let data = self.createDataStack()
+        
+        let user = NSEntityDescription.insertNewObjectForEntityForName("Player", inManagedObjectContext: data.mainContext)
+        user.setValue(101, forKey: "age")
+        user.setValue("Billy Jones", forKey: "username")
+        try! data.mainContext.save()
+        
+        let request = NSFetchRequest(entityName: "Player")
+        let objects = try! data.mainContext.executeFetchRequest(request)
+        
+        let writer = Writer(dataStack: data)
+        writer.saveBleepTest(2, lap: 3, vo2Max: 20.3, distance: 50, player: objects[0] as? Player)
+        
+        data.persistWithCompletion({
+            let objects = self.fetchObjectsInContext(data.mainContext, entity: "CompletedTest")
+            XCTAssertEqual(objects.count, 1)
+        })
+        
+    }
 }

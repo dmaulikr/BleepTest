@@ -4,7 +4,7 @@ import DATAStack
 import CoreData
 
 protocol SelectUserDelegate {
-    func userSelected(sender:SelectUserTableViewController, user: Player)
+    func userSelected(sender:SelectUserTableViewController, player: Player)
 }
 
 class SelectUserTableViewController: BaseTableViewController {
@@ -43,7 +43,7 @@ extension SelectUserTableViewController {
     //MARK: UITableViewDelegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let user = self.dataSource.objectAtIndexPath(indexPath) as! Player
-        delegate?.userSelected(self, user: user)
+        delegate?.userSelected(self, player: user)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

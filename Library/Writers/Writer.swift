@@ -11,15 +11,22 @@ public class Writer : NSObject {
         self.data = dataStack
     }
     
-    public func saveBleepTest(level:Int, lap:Int, vo2Max:Double, distance:Int){
+    public func saveBleepTest(level:Int, lap:Int, vo2Max:Double, distance:Int, player: Player?){
         self.data.performInNewBackgroundContext { backgroundContext in
+            let predicate = NSPredicate(format: "SELF == %@", (player?.objectID)!)
+            let request = NSFetchRequest(entityName: "Player")
+            request.predicate = predicate
+            let updatePlayer = (try! backgroundContext.executeFetchRequest(request))
+            
             let entity = NSEntityDescription.entityForName("CompletedTest", inManagedObjectContext: backgroundContext)!
-            let object = NSManagedObject(entity: entity, insertIntoManagedObjectContext: backgroundContext)
+            let object = CompletedTest(entity: entity, insertIntoManagedObjectContext: backgroundContext)
             object.setValue(level, forKey: "level")
             object.setValue(lap, forKey: "lap")
             object.setValue(vo2Max, forKey: "vo2Max")
             object.setValue(distance, forKey: "distance")
             object.setValue(NSDate(), forKey: "createdDate")
+            object.setValue(updatePlayer.first, forKey: "player")
+            
             try! backgroundContext.save()
         }
     }

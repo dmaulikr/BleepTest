@@ -6,11 +6,13 @@
         <attribute name="lap" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="vo2Max" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="commpletedTests" inverseEntity="Player" syncable="YES"/>
     </entity>
     <entity name="Player" representedClassName="Player" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="dateAdded" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="commpletedTests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CompletedTest" inverseName="player" inverseEntity="CompletedTest" syncable="YES"/>
     </entity>
     <entity name="TestLevel" representedClassName="TestLevel" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES">
@@ -24,8 +26,8 @@
         <attribute name="speed" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CompletedTest" positionX="-63" positionY="18" width="128" height="120"/>
-        <element name="Player" positionX="-63" positionY="36" width="128" height="90"/>
-        <element name="TestLevel" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="CompletedTest" positionX="-792" positionY="-369" width="128" height="133"/>
+        <element name="Player" positionX="-578" positionY="-396" width="128" height="103"/>
+        <element name="TestLevel" positionX="-531" positionY="-189" width="128" height="120"/>
     </elements>
 </model>
