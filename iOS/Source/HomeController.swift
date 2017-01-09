@@ -40,7 +40,9 @@ extension HomeController : HomeViewDelegate{
     }
     
     func didStartButtonPressed(sender: HomeView) {
-        self.navigationController?.presentViewController(BleepTestController(fetcher: fetcher, writer: writer, dataStack: dataStack!), animated: true, completion: nil)
+        let beepTestController = BleepTestController(fetcher: fetcher, writer: writer, dataStack: dataStack!)
+        beepTestController.player = self.player
+        self.navigationController?.presentViewController(beepTestController, animated: true, completion: nil)
     }
 }
 
