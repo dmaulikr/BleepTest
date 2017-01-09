@@ -53,6 +53,7 @@ extension CompletedTestTableController {
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         let data = self.items[indexPath.row]
+        let player = data.player as! Player
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "d/M/yyyy"
         dateFormatter.stringFromDate(NSDate())
@@ -91,7 +92,14 @@ extension CompletedTestTableController {
             if let vo2MaxLabel = cell.viewWithTag(104) as? UILabel{
                 vo2MaxLabel.text = String(format: "%.3f", data.vo2Max)
             }
+            if let playerLabel = cell.viewWithTag(105) as? UILabel{
+                playerLabel.text = String(player.username)
+            }
+            if let playerLabel = cell.viewWithTag(13) as? UILabel{
+                playerLabel.text = String(player.username)
+            }
         }
+        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
