@@ -10,6 +10,7 @@ class BleepTestController: BaseViewController {
     var timer : NSTimer!
     var beepSoundEffect : AVAudioPlayer!
     var distance : Int!
+    var player: Player!
     var vO2Max : Double!
     
     override func loadView() {
@@ -37,7 +38,7 @@ class BleepTestController: BaseViewController {
 // MARK: BleepTestViewDelegate
 extension BleepTestController :BleepTestViewDelegate {
     func didStopButtonPressed(sender: BleepTestView) {
-        writer.saveBleepTest((level+1), lap: (lap+1), vo2Max: vO2Max, distance: distance)
+        writer.saveBleepTest((level+1), lap: (lap+1), vo2Max: vO2Max, distance: distance, player: player)
         timer.invalidate()
         timer = NSTimer.after(10.seconds){
             UIApplication.sharedApplication().idleTimerDisabled = false
