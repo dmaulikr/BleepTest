@@ -41,4 +41,10 @@ public class Writer : NSObject {
             try! backgroundContext.save()
         }
     }
+    
+    public func setSelectedPlayer(player: Player) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setURL(player.objectID.URIRepresentation(), forKey: "selectedPlayerID")
+    }
+    
 }
