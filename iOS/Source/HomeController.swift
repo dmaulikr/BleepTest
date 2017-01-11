@@ -2,7 +2,6 @@ import UIKit
 
 class HomeController: BaseViewController {
     
-    private var player: Player!
     lazy var homeView : HomeView! = {
         let temporyPlayer = self.fetcher.fetchSelectedPlayer{_ in}
         var temporyView : HomeView = HomeView(frame: UIScreen.mainScreen().bounds, player: (temporyPlayer?.first))
@@ -18,16 +17,6 @@ class HomeController: BaseViewController {
         self.homeView = nil
         self.view = self.homeView
         self.homeView.delegate = self
-    }
-    
-    func fetchPlayerName() -> String {
-        let players = fetcher.fetchUsers{_ in}
-        if (players.count > 0) {
-            let player = players[players.count - 1]
-            self.player = player
-            return player.username
-        }
-        return "No player"
     }
 }
 
