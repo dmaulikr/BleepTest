@@ -10,8 +10,13 @@ class BleepTestController: BaseViewController {
     var timer : NSTimer!
     var beepSoundEffect : AVAudioPlayer!
     var distance : Int!
-    var player: Player!
     var vO2Max : Double!
+    
+    lazy var player: Player = {
+        let fetchedPlayer = self.fetcher.fetchSelectedPlayer{_ in}
+        let temporyPlayer = fetchedPlayer?.first
+        return temporyPlayer!
+    }()
     
     override func loadView() {
         let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
