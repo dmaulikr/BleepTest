@@ -3,9 +3,9 @@ import UIKit
 class HomeController: BaseViewController {
     
     private var player: Player!
-    
-    lazy var homeView : HomeView = {
-        var temporyView : HomeView = HomeView(frame: UIScreen.mainScreen().bounds, playerName: self.fetchPlayerName())
+    lazy var homeView : HomeView! = {
+        let temporyPlayer = self.fetcher.fetchSelectedPlayer{_ in}
+        var temporyView : HomeView = HomeView(frame: UIScreen.mainScreen().bounds, player: (temporyPlayer?.first))
         return temporyView
     }()
     
@@ -15,6 +15,7 @@ class HomeController: BaseViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        self.homeView = nil
         self.view = self.homeView
         self.homeView.delegate = self
     }

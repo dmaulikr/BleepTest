@@ -8,7 +8,7 @@ protocol HomeViewDelegate: class {
 class HomeView: UIView {
     
     weak var delegate: HomeViewDelegate?
-    var playerName: String?
+    var player: Player?
     
     lazy var titleLabel : MediumBlackLabel = {
         let label : MediumBlackLabel = MediumBlackLabel()
@@ -32,8 +32,8 @@ class HomeView: UIView {
         return temporyButton
     }()
     
-    init(frame: CGRect, playerName: String) {
-        self.playerName = playerName
+    init(frame: CGRect, player: Player?) {
+        self.player = player
         super.init(frame: frame)
         populateUserInterface()
         addStableUIComponentsToView()
@@ -44,8 +44,12 @@ class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    internal func setUsernameLabel(username: String) {
-        self.nameLabel.text = username
+    func populateUserInterface(){
+        if((self.player) != nil){
+            self.nameLabel.text = self.player!.username
+        } else {
+            self.nameLabel.text = "No runner"
+        }
     }
 }
 
@@ -92,10 +96,6 @@ extension HomeView{
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
-    }
-    
-    func populateUserInterface(){
-        nameLabel.text = playerName
     }
 }
 
