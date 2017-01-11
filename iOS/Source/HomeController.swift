@@ -34,7 +34,6 @@ class HomeController: BaseViewController {
 extension HomeController : HomeViewDelegate{
     func didChangeButtonPressed(sender: HomeView) {
         let rootViewController = SelectUserTableViewController(fetcher: fetcher, writer: writer, dataStack: dataStack!)
-        rootViewController.delegate = self
         let navigationController = OrangeNavigationController(rootViewController: rootViewController)
         self.navigationController?.presentViewController(navigationController, animated: true, completion: nil)
     }
@@ -43,13 +42,5 @@ extension HomeController : HomeViewDelegate{
         let beepTestController = BleepTestController(fetcher: fetcher, writer: writer, dataStack: dataStack!)
         beepTestController.player = self.player
         self.navigationController?.presentViewController(beepTestController, animated: true, completion: nil)
-    }
-}
-
-//MARK: SelectUserDelegate
-extension HomeController : SelectUserDelegate {
-    func userSelected(sender: SelectUserTableViewController, player: Player) {
-        self.player = player
-        self.homeView.setUsernameLabel(player.username)
     }
 }

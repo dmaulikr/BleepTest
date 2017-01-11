@@ -3,14 +3,8 @@ import DATASource
 import DATAStack
 import CoreData
 
-protocol SelectUserDelegate {
-    func userSelected(sender:SelectUserTableViewController, player: Player)
-}
-
 class SelectUserTableViewController: BaseTableViewController {
     
-    var delegate: SelectUserDelegate?
-
     lazy var dataSource: DATASource = {
         let request = NSFetchRequest(entityName: "Player")
         request.sortDescriptors = [NSSortDescriptor(key: "username", ascending: true)]
@@ -42,8 +36,6 @@ class SelectUserTableViewController: BaseTableViewController {
 extension SelectUserTableViewController {
     //MARK: UITableViewDelegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let user = self.dataSource.objectAtIndexPath(indexPath) as! Player
-        delegate?.userSelected(self, player: user)
         let player = self.dataSource.objectAtIndexPath(indexPath) as! Player
         writer.setSelectedPlayer(player)
         self.dismissViewControllerAnimated(true, completion: nil)
