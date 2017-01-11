@@ -56,7 +56,7 @@ public class Fetcher : NSObject {
         let defaults = NSUserDefaults.standardUserDefaults()
         if((defaults.objectForKey("selectedPlayerID")) != nil){
             let playerURI = defaults.URLForKey("selectedPlayerID")
-            let playerID = (data.mainContext.persistentStoreCoordinator?.managedObjectIDForURIRepresentation(playerURI!))!
+            let playerID: NSManagedObjectID  = (data.mainContext.persistentStoreCoordinator?.managedObjectIDForURIRepresentation(playerURI!))!
             let request = NSFetchRequest(entityName: "Player")
             request.predicate = NSPredicate(format: "SELF == %@", playerID)
             let player = (try! data.mainContext.executeFetchRequest(request)) as? [Player]
