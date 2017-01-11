@@ -17,11 +17,15 @@ class SelectUserTableViewController: BaseTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpTable()
+        addNavigationItems()
+    }
+    
+    func setUpTable() {
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         self.tableView.dataSource = self.dataSource
         self.tableView.tableFooterView = UIView()
         self.tableView.backgroundColor = UIColor.veryLightGrayColor()
-        addNavigationItems()
     }
     
     func addNavigationItems() {
@@ -33,8 +37,8 @@ class SelectUserTableViewController: BaseTableViewController {
     }
 }
 
+//MARK: UITableViewDelegate
 extension SelectUserTableViewController {
-    //MARK: UITableViewDelegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let player = self.dataSource.objectAtIndexPath(indexPath) as! Player
         writer.setSelectedPlayer(player)
@@ -42,8 +46,8 @@ extension SelectUserTableViewController {
     }
 }
 
+//MARK: Actions
 extension SelectUserTableViewController {
-    //MARK: Actions
     func closeButtonAction(sender:UIButton!) {
         self.navigationController!.dismissViewControllerAnimated(true, completion: nil)
     }
