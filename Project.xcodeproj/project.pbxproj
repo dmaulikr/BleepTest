@@ -51,6 +51,7 @@
 		95D8E4401CA157380084F939 /* CompletedTests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D8E43F1CA157380084F939 /* CompletedTests.storyboard */; };
 		95D8E4431CA15B5D0084F939 /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D8E4421CA15B5D0084F939 /* FoldingCell.swift */; };
 		95E6367A1E2A599200CD7918 /* BleepTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E636791E2A599200CD7918 /* BleepTest.swift */; };
+		95E6367C1E2A9C4200CD7918 /* BleepTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E6367B1E2A9C4100CD7918 /* BleepTestTests.swift */; };
 		95EBE9F11C9064D600A57377 /* levelsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 95EBE9F01C9064D600A57377 /* levelsData.json */; };
 		95EBE9F91C908DC100A57377 /* TestLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBE9F81C908DC100A57377 /* TestLevel.swift */; };
 		95F4C8E31DA18D2B0034E37A /* CreateSinglePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */; };
@@ -127,6 +128,7 @@
 		95D8E43F1CA157380084F939 /* CompletedTests.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CompletedTests.storyboard; sourceTree = "<group>"; };
 		95D8E4421CA15B5D0084F939 /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
 		95E636791E2A599200CD7918 /* BleepTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BleepTest.swift; path = BleepTest/BleepTest.swift; sourceTree = "<group>"; };
+		95E6367B1E2A9C4100CD7918 /* BleepTestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestTests.swift; sourceTree = "<group>"; };
 		95EBE9F01C9064D600A57377 /* levelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = levelsData.json; path = ../../levelsData.json; sourceTree = "<group>"; };
 		95EBE9F81C908DC100A57377 /* TestLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLevel.swift; sourceTree = "<group>"; };
 		95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSinglePlayerController.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				954215111DD9F76800F73DAF /* PlayerTest.swift */,
 				95F7B6F61DF849E50092114C /* WriterTests.swift */,
 				9574F0D51E1927CE00ADDF32 /* FetcherTest.swift */,
+				95E6367B1E2A9C4100CD7918 /* BleepTestTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -717,6 +720,7 @@
 			files = (
 				9574F0D61E1927CE00ADDF32 /* FetcherTest.swift in Sources */,
 				95F7B6F71DF849E50092114C /* WriterTests.swift in Sources */,
+				95E6367C1E2A9C4200CD7918 /* BleepTestTests.swift in Sources */,
 				954215121DD9F76900F73DAF /* PlayerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
