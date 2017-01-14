@@ -15,6 +15,7 @@ class BleepTest: NSObject {
     init(bleepTestLevels: [TestLevel]) {
         super.init()
         self.levels = bleepTestLevels
+        self.startBleepTest()
     }
 }
 
