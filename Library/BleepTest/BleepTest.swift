@@ -24,16 +24,27 @@ class BleepTest: NSObject {
     init(bleepTestLevels: [TestLevel]) {
         super.init()
         self.levels = bleepTestLevels
-        self.startBleepTest()
     }
 }
 
 // MARK: Bleep Test Logic
 extension BleepTest{
-    private func startBleepTest(){
+    func start() {
         level = 0
         distance = 0
-        levelRun(level)
+        timer = NSTimer.after(0.5.seconds){
+            levelRun(level)
+        }
+        timer.start()
+    }
+    
+    func stop() {
+        timer.invalidate()
+        timer = NSTimer.after(10.seconds){
+            UIApplication.sharedApplication().idleTimerDisabled = false
+            self.timer.invalidate()
+        }
+        timer.start()
     }
     
     private func levelRun(i : Int){
