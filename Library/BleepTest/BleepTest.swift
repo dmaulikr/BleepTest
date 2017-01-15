@@ -3,9 +3,9 @@ import SwiftyTimer
 import AVFoundation
 
 protocol BleepTestDelegate: class {
-    func lapedUpDelegate(sender: BleepTest, lap: String, distance: String, vO2Max: String)
-    func newLevelDelegate(sender: BleepTest, numberOfLaps: NSNumber, level: String, lapTime: NSNumber)
-    func startedNewLap(sender: BleepTest, lap: Double)
+    func lapedUpDelegate(sender: BleepTest, lap: Int, distance: Int, vO2Max: Double) 
+    func newLevelDelegate(sender: BleepTest, numberOfLaps: Int, level: Int, lapTime: Double)
+    func startedNewLap(sender: BleepTest, lapTime: Double)
     func bleepTestFinished(sender: BleepTest)
 }
 
@@ -33,7 +33,7 @@ extension BleepTest{
         level = 0
         distance = 0
         timer = NSTimer.after(0.5.seconds){
-            levelRun(level)
+            self.levelRun(self.level!)
         }
         timer.start()
     }
@@ -52,8 +52,8 @@ extension BleepTest{
             testLevel = levels[i]
             lap = 0
             vO2Max = 3.46 * (Double(testLevel.level)+Double(lap+1) / ((Double(testLevel.level) * 0.4325 + 7.0048))) + 12.2
-            delegate?.newLevelDelegate(self, numberOfLaps: testLevel.laps, level: String(testLevel.level), lapTime: testLevel.lapTime)
-            delegate?.lapedUpDelegate(self, lap: String(lap + 1), distance: String(distance), vO2Max: String(format: "%.1f", vO2Max))
+            delegate?.newLevelDelegate(self, numberOfLaps: Int(testLevel.laps), level: Int(testLevel.level), lapTime: testLevel.lapTime)
+            delegate?.lapedUpDelegate(self, lap: Int(lap + 1), distance: Int(distance), vO2Max: vO2Max)
             runLap()
         } else{
             beep()
@@ -73,7 +73,7 @@ extension BleepTest{
     
     private func runningLap(){
         let lapTime = Double(testLevel.lapTime)
-        delegate?.startedNewLap(self, lap: lapTime)
+        delegate?.startedNewLap(self, lapTime: lapTime)
         timer = NSTimer.after(lapTime.seconds){
             self.lapFinished()
         }
@@ -94,7 +94,7 @@ extension BleepTest{
         lap = lap + 1
         distance = distance + 20
         vO2Max = 3.46 * (Double(testLevel.level)+Double(lap+1) / ((Double(testLevel.level) * 0.4325 + 7.0048))) + 12.2
-        delegate?.lapedUpDelegate(self, lap: String(lap + 1), distance: String(distance), vO2Max: String(format: "%.1f", vO2Max))
+        delegate?.lapedUpDelegate(self, lap: Int(lap + 1), distance: Int(distance), vO2Max: vO2Max)
         runLap()
     }
 }
