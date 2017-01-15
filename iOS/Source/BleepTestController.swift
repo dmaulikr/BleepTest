@@ -3,14 +3,18 @@ import SwiftyTimer
 import AVFoundation
 
 class BleepTestController: BaseViewController {
-    var levels : [TestLevel]!
     var testLevel : TestLevel!
     var level : Int!
     var lap : Int!
-    var timer : NSTimer!
-    var beepSoundEffect : AVAudioPlayer!
     var distance : Int!
     var vO2Max : Double!
+    
+    lazy var bleepTest: BleepTest = {
+        let levels = self.fetcher.fetchTestLevels{_ in}
+        let temporyBleepTest = BleepTest(bleepTestLevels: levels)
+        temporyBleepTest.delegate = self
+        return temporyBleepTest
+    }()
     
     lazy var player: Player = {
         let fetchedPlayer = self.fetcher.fetchSelectedPlayer{_ in}
@@ -21,6 +25,7 @@ class BleepTestController: BaseViewController {
     override func loadView() {
         let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
         view.delegate = self
+        self.bleepTest.delegate = self
         self.view = view
         self.title = "Bleep Test"
     }
@@ -29,10 +34,7 @@ class BleepTestController: BaseViewController {
         super.viewDidLoad()
         setStatusBarHidden(true)
         UIApplication.sharedApplication().idleTimerDisabled = true
-        timer = NSTimer.after(0.5.seconds){
-            self.startBleepTest()
-        }
-        timer.start()
+        self.bleepTest.start()
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -40,16 +42,26 @@ class BleepTestController: BaseViewController {
     }
 }
 
+// MARK: BleepTestDelegate
+extension BleepTestController : BleepTestDelegate {
+    func lapedUpDelegate(sender: BleepTest, lap: Int, distance: Int, vO2Max: Double) {
+    }
+    
+    func newLevelDelegate(sender: BleepTest, numberOfLaps: Int, level: Int, lapTime: Double) {
+    }
+    
+    func startedNewLap(sender: BleepTest, lapTime lap: Double) {
+    }
+    
+    func bleepTestFinished(sender: BleepTest) {
+    }
+}
+
 // MARK: BleepTestViewDelegate
-extension BleepTestController :BleepTestViewDelegate {
+extension BleepTestController : BleepTestViewDelegate {
     func didStopButtonPressed(sender: BleepTestView) {
+        self.bleepTest.stop()
         writer.saveBleepTest((level+1), lap: (lap+1), vo2Max: vO2Max, distance: distance, player: player)
-        timer.invalidate()
-        timer = NSTimer.after(10.seconds){
-            UIApplication.sharedApplication().idleTimerDisabled = false
-            self.timer.invalidate()
-        }
-        timer.start()
         setStatusBarHidden(false)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
