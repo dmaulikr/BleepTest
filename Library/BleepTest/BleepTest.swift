@@ -2,7 +2,16 @@ import Foundation
 import SwiftyTimer
 import AVFoundation
 
+protocol BleepTestDelegates: class {
+    func lapedUpDelegate(sender: BleepTest, lap: String, distance: String, vO2Max: String)
+    func newLevelDelegate(sender: BleepTest, numberOfLaps: NSNumber, level: String, lapTime: NSNumber)
+    func startedNewLap(sender: BleepTest, lap: Double)
+    func bleepTestFinished(sender: BleepTest)
+}
+
 class BleepTest: NSObject {
+    
+    weak var delegate:BleepTestDelegates?
     private var levels : [TestLevel]!
     private var testLevel : TestLevel!
     private var level : Int!
@@ -32,28 +41,12 @@ extension BleepTest{
             testLevel = levels[i]
             lap = 0
             vO2Max = 3.46 * (Double(testLevel.level)+Double(lap+1) / ((Double(testLevel.level) * 0.4325 + 7.0048))) + 12.2
-            NSNotificationCenter.defaultCenter().postNotificationName(
-                leveledUpNotificationKey,
-                object: nil,
-                userInfo: [
-                    "level" : String(testLevel.level),
-                    "numberOfLaps" : testLevel.laps,
-                    "lapTime" : testLevel.lapTime
-                ])
-            NSNotificationCenter.defaultCenter().postNotificationName(
-                lapedUpNotificationKey,
-                object: nil,
-                userInfo: [
-                    "lap":String(lap+1),
-                    "distance":String(distance),
-                    "VO2Max":String(format: "%.1f", vO2Max)
-                ])
+            delegate?.newLevelDelegate(self, numberOfLaps: testLevel.laps, level: String(testLevel.level), lapTime: testLevel.lapTime)
+            delegate?.lapedUpDelegate(self, lap: String(lap + 1), distance: String(distance), vO2Max: String(format: "%.1f", vO2Max))
             runLap()
         } else{
             beep()
-            NSNotificationCenter.defaultCenter().postNotificationName(
-                stopTestNotificationKey,
-                object: self)
+            delegate?.bleepTestFinished(self)
         }
     }
     
@@ -69,11 +62,7 @@ extension BleepTest{
     
     private func runningLap(){
         let lapTime = Double(testLevel.lapTime)
-        NSNotificationCenter.defaultCenter().postNotificationName(
-            startedNewLapNotificationKey,
-            object: nil,
-            userInfo: ["lap":lapTime]
-        )
+        delegate?.startedNewLap(self, lap: lapTime)
         timer = NSTimer.after(lapTime.seconds){
             self.lapFinished()
         }
@@ -83,7 +72,6 @@ extension BleepTest{
     private func beep(){
         let sound =  NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("beep", ofType: "wav")!)
         let session:AVAudioSession = AVAudioSession.sharedInstance()
-        
         try! beepSoundEffect = AVAudioPlayer(contentsOfURL: sound)
         try! session.setCategory(AVAudioSessionCategoryPlayback)
         try! session.setActive(true)
@@ -95,14 +83,7 @@ extension BleepTest{
         lap = lap + 1
         distance = distance + 20
         vO2Max = 3.46 * (Double(testLevel.level)+Double(lap+1) / ((Double(testLevel.level) * 0.4325 + 7.0048))) + 12.2
-        NSNotificationCenter.defaultCenter().postNotificationName(
-            lapedUpNotificationKey,
-            object: nil,
-            userInfo: [
-                "lap" : String(lap+1),
-                "distance":String(distance),
-                "VO2Max":String(format: "%.1f", vO2Max)
-            ])
+        delegate?.lapedUpDelegate(self, lap: String(lap + 1), distance: String(distance), vO2Max: String(format: "%.1f", vO2Max))
         runLap()
     }
 }
