@@ -2,7 +2,7 @@ import Foundation
 import SwiftyTimer
 import AVFoundation
 
-protocol BleepTestDelegates: class {
+protocol BleepTestDelegate: class {
     func lapedUpDelegate(sender: BleepTest, lap: String, distance: String, vO2Max: String)
     func newLevelDelegate(sender: BleepTest, numberOfLaps: NSNumber, level: String, lapTime: NSNumber)
     func startedNewLap(sender: BleepTest, lap: Double)
@@ -11,7 +11,7 @@ protocol BleepTestDelegates: class {
 
 class BleepTest: NSObject {
     
-    weak var delegate:BleepTestDelegates?
+    weak var delegate:BleepTestDelegate?
     private var levels : [TestLevel]!
     private var testLevel : TestLevel!
     private var level : Int!
