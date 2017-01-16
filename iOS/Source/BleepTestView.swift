@@ -106,6 +106,24 @@ class BleepTestView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func newLap(lap: String, lapTime: Double) {
+        self.lapLabel.text = lap
+        self.lapProgressIndicator.animateCircle(lapTime)
+    }
+    
+    func newLevel(level: String, levelTime: Double) {
+        self.levelLabel.text = level
+        self.levelProgressIndicator.animateCircle(levelTime)
+    }
+    
+    func updateVO2Max(vO2Max: String) {
+        self.vO2MaxLabel.text = vO2Max
+    }
+    
+    func updateDistanceTitleLabel(distance: String) {
+        distanceLabel.text = distance
+    }
+    
     func addStatsLabels(){
         let viewsDictionary = [
             "distanceLabel":distanceLabel,
