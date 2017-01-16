@@ -54,7 +54,7 @@ extension BleepTestController : BleepTestDelegate {
     func newLevelDelegate(sender: BleepTest, numberOfLaps: Int, level: Int, lapTime: Double) {
     }
     
-    func startedNewLap(sender: BleepTest, lapTime lap: Double) {
+    func startedNewLap(sender: BleepTest, lap: Int, lapTime: Double) {
     }
     
     func bleepTestFinished(sender: BleepTest) {
