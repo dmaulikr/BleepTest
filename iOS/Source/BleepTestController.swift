@@ -36,7 +36,7 @@ class BleepTestController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setStatusBarHidden(true)
+        self.setStatusBarHidden(true)
         UIApplication.sharedApplication().idleTimerDisabled = true
         self.bleepTest.start()
     }
