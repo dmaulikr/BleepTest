@@ -44,20 +44,32 @@ class BleepTestController: BaseViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    func bleepTestFinished() {
+        self.bleepTest.stop()
+        self.writer.saveBleepTest(level, lap: (lap+1), vo2Max: vO2Max, distance: distance, player: player)
+        self.setStatusBarHidden(false)
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
 
 // MARK: BleepTestDelegate
 extension BleepTestController : BleepTestDelegate {
     func lapedUpDelegate(sender: BleepTest, lap: Int, distance: Int, vO2Max: Double) {
         self.rootView.updateVO2Max(String(format: "%.2f", vO2Max))
+        self.vO2Max = vO2Max
+        self.lap = lap
+        self.distance = distance
     }
     
     func newLevelDelegate(sender: BleepTest, numberOfLaps: Int, level: Int, lapTime: Double) {
         self.rootView.newLevel(String(level), levelTime: Double(numberOfLaps)*lapTime)
+        self.level = level
     }
     
     func startedNewLap(sender: BleepTest, lap: Int, lapTime: Double) {
         self.rootView.newLap(String(lap+1), lapTime: lapTime)
+        self.lap = lap
     }
     
     func bleepTestFinished(sender: BleepTest) {
@@ -68,9 +80,6 @@ extension BleepTestController : BleepTestDelegate {
 // MARK: BleepTestViewDelegate
 extension BleepTestController : BleepTestViewDelegate {
     func didStopButtonPressed(sender: BleepTestView) {
-        self.bleepTest.stop()
-        writer.saveBleepTest((level+1), lap: (lap+1), vo2Max: vO2Max, distance: distance, player: player)
-        setStatusBarHidden(false)
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.bleepTestFinished()
     }
 }
