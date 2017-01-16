@@ -22,11 +22,15 @@ class BleepTestController: BaseViewController {
         return temporyPlayer!
     }()
     
+    lazy var rootView: BleepTestView = {
+        var temporyView = BleepTestView(frame: UIScreen.mainScreen().bounds)
+        temporyView.delegate = self
+        return temporyView
+    }()
+    
     override func loadView() {
-        let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
-        view.delegate = self
         self.bleepTest.delegate = self
-        self.view = view
+        self.view = self.rootView
         self.title = "Bleep Test"
     }
 
