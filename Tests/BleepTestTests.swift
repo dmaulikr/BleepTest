@@ -10,14 +10,6 @@ class BleepTestTests: XCTestCase {
         return dataStack
     }
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
     func createLevels(data: DATAStack){
         data.performInNewBackgroundContext { backgroundContext in
             let entity = NSEntityDescription.entityForName("TestLevel", inManagedObjectContext: backgroundContext)!
