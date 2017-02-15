@@ -18,9 +18,7 @@ class BleepTestTests: XCTestCase {
         super.tearDown()
     }
     
-    func testBleepTest() {
-        let data = self.createDataStack()
-        
+    func createLevels(data: DATAStack){
         data.performInNewBackgroundContext { backgroundContext in
             let entity = NSEntityDescription.entityForName("TestLevel", inManagedObjectContext: backgroundContext)!
             let object = NSManagedObject(entity: entity, insertIntoManagedObjectContext: backgroundContext)
@@ -36,6 +34,18 @@ class BleepTestTests: XCTestCase {
         request.sortDescriptors = [NSSortDescriptor(key: "level", ascending: true)]
         let testLevels = (try! data.mainContext.executeFetchRequest(request) as! [TestLevel])
 
+    func testBleepTest() {
+        let data = self.createDataStack()
+        self.createLevels(data)
+        
+        let request = NSFetchRequest(entityName: "TestLevel")
+        request.sortDescriptors = [NSSortDescriptor(key: "level", ascending: true)]
+        let levels = (try! data.mainContext.executeFetchRequest(request) as! [TestLevel])
+        
+        let bleepTest = BleepTest(bleepTestLevels: levels)
+        let spyBleepTestDelegate = SpyBleepTestDelegate()
+        bleepTest.delegate = spyBleepTestDelegate
+        
     }
     
 }
