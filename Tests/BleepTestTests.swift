@@ -29,11 +29,23 @@ class BleepTestTests: XCTestCase {
             object.setValue(10.0, forKey: "speed")
             try! backgroundContext.save()
         }
+    }
+    
+    func testSetDelgate(){
+        let data = self.createDataStack()
+        self.createLevels(data)
         
         let request = NSFetchRequest(entityName: "TestLevel")
         request.sortDescriptors = [NSSortDescriptor(key: "level", ascending: true)]
-        let testLevels = (try! data.mainContext.executeFetchRequest(request) as! [TestLevel])
-
+        let levels = (try! data.mainContext.executeFetchRequest(request) as! [TestLevel])
+        
+        let bleepTest = BleepTest(bleepTestLevels: levels)
+        let spyBleepTestDelegate = SpyBleepTestDelegate()
+        bleepTest.delegate = spyBleepTestDelegate
+        
+        XCTAssertTrue(bleepTest.delegate === spyBleepTestDelegate)
+    }
+    
     func testBleepTest() {
         let data = self.createDataStack()
         self.createLevels(data)
