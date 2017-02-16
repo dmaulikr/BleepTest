@@ -1,4 +1,4 @@
-import UIKit
+import XCTest
 @testable import BleepTest
 
 class SpyBleepTestDelegate : BleepTestDelegate {
