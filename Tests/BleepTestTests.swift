@@ -12,14 +12,13 @@ class BleepTestTests: XCTestCase {
     }
     
     func createLevels(data: DATAStack, completion: (NSError?) -> Void){
-        let url = NSURL(string: "levelsData.json")!
-        let filePath = NSBundle.mainBundle().pathForResource(url.URLByDeletingPathExtension?.absoluteString, ofType: url.pathExtension)!
+        let filePath = NSBundle.mainBundle().pathForResource("testLevelsData", ofType: "json")!
         let jsonData = NSData(contentsOfFile: filePath)!
         let json = try! NSJSONSerialization.JSONObjectWithData(jsonData, options: []) as! [String: AnyObject]
+        
         Sync.changes(json["bleepTest"] as! Array, inEntityNamed: "TestLevel", predicate: nil, parent: nil, inContext: data.mainContext, dataStack: data, completion: { error in
             completion(error)
         })
-        
     }
     
     func testSetDelgate(){
