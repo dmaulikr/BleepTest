@@ -37,7 +37,7 @@ class BleepTestTests: XCTestCase {
         XCTAssertTrue(bleepTest.delegate === spyBleepTestDelegate)
     }
     
-    func testBleepTest() {
+    func testBleepTestDelegates() {
         let data = self.createDataStack()
         self.createLevels(data){ _ in }
         
@@ -48,6 +48,50 @@ class BleepTestTests: XCTestCase {
         let bleepTest = BleepTest(bleepTestLevels: levels)
         let spyBleepTestDelegate = SpyBleepTestDelegate()
         bleepTest.delegate = spyBleepTestDelegate
+        
+        weak var lapedUpExpectation = expectationWithDescription("BleepTest calls a delegate as the result of an laped up method completion")
+        spyBleepTestDelegate.timerExpectation = lapedUpExpectation
+        
+        weak var newLevelExpection = expectationWithDescription("BleepTest calls a delegate as the result of an other up method completion")
+        spyBleepTestDelegate.newLevelExpectation = newLevelExpection
+        
+        weak var newLapExpection = expectationWithDescription("BleepTest calls a delegate as the result of an other up method completion")
+        spyBleepTestDelegate.newLapExpectation = newLapExpection
+        
+        weak var bleepTestFinishedExpectation = expectationWithDescription("BleepTest calls a delegate as the result of an other up method completion")
+        spyBleepTestDelegate.bleepTestFinishedExpectation = bleepTestFinishedExpectation
+        
+        bleepTest.start()
+        
+        waitForExpectationsWithTimeout(100) { error in
+            if let error = error {
+                XCTFail("waitForExpectationsWithTimeout errored: \(error)")
+            }
+            
+            guard let resultLapedUp = spyBleepTestDelegate.lapedUpDelegateResult else {
+                XCTFail("Expected delegate to be called")
+                return
+            }
+            XCTAssertTrue(resultLapedUp)
+            
+            guard let newLevelResult = spyBleepTestDelegate.newLevelDelegateResult else {
+                XCTFail("Expected delegate to be called")
+                return
+            }
+            XCTAssertTrue(newLevelResult)
+            
+            guard let newLapResult = spyBleepTestDelegate.startedNewLapResult else {
+                XCTFail("Expected delegate to be called")
+                return
+            }
+            XCTAssertTrue(newLapResult)
+            
+            guard let bleepTestFinishedResult = spyBleepTestDelegate.bleepTestFinishedResult else {
+                XCTFail("Expected delegate to be called")
+                return
+            }
+            XCTAssertTrue(bleepTestFinishedResult)
+        }
         
     }
     
