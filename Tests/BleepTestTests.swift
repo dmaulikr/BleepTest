@@ -1,5 +1,6 @@
 import XCTest
 import DATAStack
+import Sync
 import CoreData
 @testable import BleepTest
 
@@ -10,22 +11,20 @@ class BleepTestTests: XCTestCase {
         return dataStack
     }
     
-    func createLevels(data: DATAStack){
-        data.performInNewBackgroundContext { backgroundContext in
-            let entity = NSEntityDescription.entityForName("TestLevel", inManagedObjectContext: backgroundContext)!
-            let object = NSManagedObject(entity: entity, insertIntoManagedObjectContext: backgroundContext)
-            object.setValue("", forKey:  "id")
-            object.setValue(1, forKey: "level")
-            object.setValue(1, forKey: "laps")
-            object.setValue(10.0, forKey: "lapTime")
-            object.setValue(10.0, forKey: "speed")
-            try! backgroundContext.save()
-        }
+    func createLevels(data: DATAStack, completion: (NSError?) -> Void){
+        let url = NSURL(string: "levelsData.json")!
+        let filePath = NSBundle.mainBundle().pathForResource(url.URLByDeletingPathExtension?.absoluteString, ofType: url.pathExtension)!
+        let jsonData = NSData(contentsOfFile: filePath)!
+        let json = try! NSJSONSerialization.JSONObjectWithData(jsonData, options: []) as! [String: AnyObject]
+        Sync.changes(json["bleepTest"] as! Array, inEntityNamed: "TestLevel", predicate: nil, parent: nil, inContext: data.mainContext, dataStack: data, completion: { error in
+            completion(error)
+        })
+        
     }
     
     func testSetDelgate(){
         let data = self.createDataStack()
-        self.createLevels(data)
+        self.createLevels(data){ _ in }
         
         let request = NSFetchRequest(entityName: "TestLevel")
         request.sortDescriptors = [NSSortDescriptor(key: "level", ascending: true)]
@@ -40,7 +39,7 @@ class BleepTestTests: XCTestCase {
     
     func testBleepTest() {
         let data = self.createDataStack()
-        self.createLevels(data)
+        self.createLevels(data){ _ in }
         
         let request = NSFetchRequest(entityName: "TestLevel")
         request.sortDescriptors = [NSSortDescriptor(key: "level", ascending: true)]
