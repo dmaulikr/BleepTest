@@ -9,7 +9,7 @@ protocol BleepTestDelegate: class {
     func bleepTestFinished(sender: BleepTest)
 }
 
-class BleepTest: NSObject {
+class BleepTest {
     
     weak var delegate:BleepTestDelegate?
     private var levels : [TestLevel]!
@@ -22,7 +22,6 @@ class BleepTest: NSObject {
     private var vO2Max : Double!
 
     init(bleepTestLevels: [TestLevel]) {
-        super.init()
         self.levels = bleepTestLevels
     }
 }
