@@ -3,14 +3,18 @@ import SwiftyTimer
 import AVFoundation
 
 class BleepTestController: BaseViewController {
-    var levels : [TestLevel]!
     var testLevel : TestLevel!
     var level : Int!
     var lap : Int!
-    var timer : NSTimer!
-    var beepSoundEffect : AVAudioPlayer!
     var distance : Int!
     var vO2Max : Double!
+    
+    lazy var bleepTest: BleepTest = {
+        let levels = self.fetcher.fetchTestLevels{_ in}
+        let temporyBleepTest = BleepTest(bleepTestLevels: levels)
+        temporyBleepTest.delegate = self
+        return temporyBleepTest
+    }()
     
     lazy var player: Player = {
         let fetchedPlayer = self.fetcher.fetchSelectedPlayer{_ in}
@@ -18,129 +22,64 @@ class BleepTestController: BaseViewController {
         return temporyPlayer!
     }()
     
+    lazy var rootView: BleepTestView = {
+        var temporyView = BleepTestView(frame: UIScreen.mainScreen().bounds)
+        temporyView.delegate = self
+        return temporyView
+    }()
+    
     override func loadView() {
-        let view = BleepTestView(frame: UIScreen.mainScreen().bounds)
-        view.delegate = self
-        self.view = view
+        self.bleepTest.delegate = self
+        self.view = self.rootView
         self.title = "Bleep Test"
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setStatusBarHidden(true)
+        self.setStatusBarHidden(true)
         UIApplication.sharedApplication().idleTimerDisabled = true
-        timer = NSTimer.after(0.5.seconds){
-            self.startBleepTest()
-        }
-        timer.start()
+        self.bleepTest.start()
     }
     
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-}
-
-// MARK: BleepTestViewDelegate
-extension BleepTestController :BleepTestViewDelegate {
-    func didStopButtonPressed(sender: BleepTestView) {
-        writer.saveBleepTest((level+1), lap: (lap+1), vo2Max: vO2Max, distance: distance, player: player)
-        timer.invalidate()
-        timer = NSTimer.after(10.seconds){
-            UIApplication.sharedApplication().idleTimerDisabled = false
-            self.timer.invalidate()
-        }
-        timer.start()
-        setStatusBarHidden(false)
+    
+    func bleepTestFinished() {
+        self.bleepTest.stop()
+        self.writer.saveBleepTest(level, lap: (lap+1), vo2Max: vO2Max, distance: distance, player: player)
+        self.setStatusBarHidden(false)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
-// MARK: Bleep Test Logic
-extension BleepTestController{
-    private func startBleepTest(){
-        levels = fetcher.fetchTestLevels{_ in}
-        level = 0
-        distance = 0
-        levelRun(level)
+// MARK: BleepTestDelegate
+extension BleepTestController : BleepTestDelegate {
+    func lapedUpDelegate(sender: BleepTest, lap: Int, distance: Int, vO2Max: Double) {
+        self.rootView.updateVO2Max(String(format: "%.2f", vO2Max))
+        self.vO2Max = vO2Max
+        self.lap = lap
+        self.distance = distance
     }
     
-    private func levelRun(i : Int){
-        if (i != levels.count){
-            testLevel = levels[i]
-            lap = 0
-            vO2Max = 3.46 * (Double(testLevel.level)+Double(lap+1) / ((Double(testLevel.level) * 0.4325 + 7.0048))) + 12.2
-            NSNotificationCenter.defaultCenter().postNotificationName(
-                leveledUpNotificationKey,
-                object: nil,
-                userInfo: [
-                    "level" : String(testLevel.level),
-                    "numberOfLaps" : testLevel.laps,
-                    "lapTime" : testLevel.lapTime
-                ])
-            NSNotificationCenter.defaultCenter().postNotificationName(
-                lapedUpNotificationKey,
-                object: nil,
-                userInfo: [
-                    "lap":String(lap+1),
-                    "distance":String(distance),
-                    "VO2Max":String(format: "%.1f", vO2Max)
-                    ])
-            runLap()
-        } else{
-            beep()
-            NSNotificationCenter.defaultCenter().postNotificationName(
-                stopTestNotificationKey,
-                object: self)
-        }
+    func newLevelDelegate(sender: BleepTest, numberOfLaps: Int, level: Int, lapTime: Double) {
+        self.rootView.newLevel(String(level), levelTime: Double(numberOfLaps)*lapTime)
+        self.level = level
     }
     
-    private func runLap(){
-        if(Int(testLevel.laps) == lap){
-            level = level + 1
-            levelRun(level)
-        } else {
-            beep()
-            runningLap()
-        }
+    func startedNewLap(sender: BleepTest, lap: Int, lapTime: Double) {
+        self.rootView.newLap(String(lap+1), lapTime: lapTime)
+        self.lap = lap
     }
     
-    private func runningLap(){
-        let lapTime = Double(testLevel.lapTime)
-        NSNotificationCenter.defaultCenter().postNotificationName(
-            startedNewLapNotificationKey,
-            object: nil,
-            userInfo: ["lap":lapTime]
-        )
-        timer = NSTimer.after(lapTime.seconds){
-            self.lapFinished()
-        }
-        timer.start()
-    }
-    
-    private func beep(){
-        let sound =  NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("beep", ofType: "wav")!)
-        let session:AVAudioSession = AVAudioSession.sharedInstance()
-        
-        try! beepSoundEffect = AVAudioPlayer(contentsOfURL: sound)
-        try! session.setCategory(AVAudioSessionCategoryPlayback)
-        try! session.setActive(true)
-        beepSoundEffect.prepareToPlay()
-        beepSoundEffect.play()
-    }
-    
-    private func lapFinished(){
-        lap = lap + 1
-        distance = distance + 20
-        vO2Max = 3.46 * (Double(testLevel.level)+Double(lap+1) / ((Double(testLevel.level) * 0.4325 + 7.0048))) + 12.2
-        NSNotificationCenter.defaultCenter().postNotificationName(
-            lapedUpNotificationKey,
-            object: nil,
-            userInfo: [
-                "lap" : String(lap+1),
-                "distance":String(distance),
-                "VO2Max":String(format: "%.1f", vO2Max)
-            ])
-        runLap()
+    func bleepTestFinished(sender: BleepTest) {
+        self.bleepTestFinished()
     }
 }
 
+// MARK: BleepTestViewDelegate
+extension BleepTestController : BleepTestViewDelegate {
+    func didStopButtonPressed(sender: BleepTestView) {
+        self.bleepTestFinished()
+    }
+}

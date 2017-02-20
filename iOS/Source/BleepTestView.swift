@@ -98,13 +98,30 @@ class BleepTestView: UIView {
         super.init(frame: frame)
         createRunningBleepTest()
         backgroundColor = .whiteColor()
-        notificationObservers()
         addStatsLabels()
         addLevelsLables()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func newLap(lap: String, lapTime: Double) {
+        self.lapLabel.text = lap
+        self.lapProgressIndicator.animateCircle(lapTime)
+    }
+    
+    func newLevel(level: String, levelTime: Double) {
+        self.levelLabel.text = level
+        self.levelProgressIndicator.animateCircle(levelTime)
+    }
+    
+    func updateVO2Max(vO2Max: String) {
+        self.vO2MaxLabel.text = vO2Max
+    }
+    
+    func updateDistanceTitleLabel(distance: String) {
+        distanceLabel.text = distance
     }
     
     func addStatsLabels(){
@@ -285,59 +302,6 @@ class BleepTestView: UIView {
             options: NSLayoutFormatOptions.AlignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
-    }
-}
-
-// MARK: Notifications
-extension BleepTestView{
-    private func notificationObservers(){
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: #selector(updateLevel(_:)),
-            name: leveledUpNotificationKey,
-            object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: #selector(updateLap(_:)),
-            name: lapedUpNotificationKey,
-            object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: #selector(bleepTestStoped(_:)),
-            name: stopTestNotificationKey,
-            object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: #selector(lapStarted(_:)),
-            name: startedNewLapNotificationKey,
-            object: nil)
-    }
-    
-    func updateLevel(notification : NSNotification){
-        let level = notification.userInfo!["level"]
-        let numberOfLaps = notification.userInfo!["numberOfLaps"]?.doubleValue
-        let lapTime = notification.userInfo!["lapTime"]?.doubleValue
-        levelLabel.text = level as? String
-        let levelTime = numberOfLaps! * lapTime!
-        levelProgressIndicator.animateCircle(levelTime)
-    }
-    
-    func updateLap(notification : NSNotification){
-        let lap = notification.userInfo!["lap"]
-        let distance = notification.userInfo!["distance"]
-        let vO2Max = notification.userInfo!["VO2Max"]
-        lapLabel.text = lap as? String
-        distanceLabel.text = "\(distance!)m"
-        vO2MaxLabel.text = "\(vO2Max!)"
-    }
-    
-    func bleepTestStoped(notification : NSNotification){
-        stopButton.removeFromSuperview()
-    }
-    
-    func lapStarted(notification: NSNotification){
-        let lap = notification.userInfo!["lap"]?.doubleValue
-        lapProgressIndicator.animateCircle(lap!)
     }
 }
 

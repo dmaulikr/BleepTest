@@ -12,7 +12,11 @@
 		146E27AA1BCD51F200959BBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 146E27A11BCD51F200959BBA /* Images.xcassets */; };
 		146E27AC1BCD51F200959BBA /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E27A41BCD51F200959BBA /* AppController.swift */; };
 		22BD232E23DC47B6D1EE36C2 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790CDFF1405879FEC5B0E798 /* Pods_Tests.framework */; };
+<<<<<<< HEAD
 		950CEB731E56552F004712C8 /* ResultsTableControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */; };
+=======
+		950CEB711E5607AE004712C8 /* testLevelsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 950CEB6F1E5606FB004712C8 /* testLevelsData.json */; };
+>>>>>>> master
 		950D12231C9AEF4400133A25 /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D12221C9AEF4400133A25 /* MenuTableCell.swift */; };
 		950D12251C9AF31400133A25 /* MenuTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D12241C9AF31400133A25 /* MenuTableController.swift */; };
 		9527A6D21CA038DB001E7942 /* ResultsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527A6D11CA038DB001E7942 /* ResultsTableController.swift */; };
@@ -46,11 +50,14 @@
 		95874DC01DA8401000D642A7 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95874DBF1DA8401000D642A7 /* CloseButton.swift */; };
 		95A90EBC1CC28A270062C448 /* MediumTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A90EBB1CC28A270062C448 /* MediumTitleLabel.swift */; };
 		95B235911E1FAB3F00A40666 /* OrangeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B235901E1FAB3F00A40666 /* OrangeNavigationController.swift */; };
+		95B92F4F1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B92F4E1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift */; };
 		95BE7C281D908B530070DFFE /* MediumBlackLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */; };
 		95D7B0041C8CBC3E004690D5 /* BleepTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */; };
 		95D7B0061C8CBC68004690D5 /* BleepTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7B0051C8CBC68004690D5 /* BleepTestView.swift */; };
 		95D8E4401CA157380084F939 /* CompletedTests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D8E43F1CA157380084F939 /* CompletedTests.storyboard */; };
 		95D8E4431CA15B5D0084F939 /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D8E4421CA15B5D0084F939 /* FoldingCell.swift */; };
+		95E6367A1E2A599200CD7918 /* BleepTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E636791E2A599200CD7918 /* BleepTest.swift */; };
+		95E6367C1E2A9C4200CD7918 /* BleepTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E6367B1E2A9C4100CD7918 /* BleepTestTests.swift */; };
 		95EBE9F11C9064D600A57377 /* levelsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 95EBE9F01C9064D600A57377 /* levelsData.json */; };
 		95EBE9F91C908DC100A57377 /* TestLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBE9F81C908DC100A57377 /* TestLevel.swift */; };
 		95F4C8E31DA18D2B0034E37A /* CreateSinglePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */; };
@@ -88,7 +95,11 @@
 		767205427B29E91A7EC7FF6A /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		78A72E2729A68604D6C1111C /* Pods-BleepTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BleepTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-BleepTest/Pods-BleepTest.release.xcconfig"; sourceTree = "<group>"; };
 		790CDFF1405879FEC5B0E798 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+<<<<<<< HEAD
 		950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableControllerTest.swift; sourceTree = "<group>"; };
+=======
+		950CEB6F1E5606FB004712C8 /* testLevelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testLevelsData.json; sourceTree = SOURCE_ROOT; };
+>>>>>>> master
 		950D12221C9AEF4400133A25 /* MenuTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
 		950D12241C9AF31400133A25 /* MenuTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableController.swift; sourceTree = "<group>"; };
 		9527A6D11CA038DB001E7942 /* ResultsTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableController.swift; sourceTree = "<group>"; };
@@ -122,11 +133,14 @@
 		95874DBF1DA8401000D642A7 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		95A90EBB1CC28A270062C448 /* MediumTitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumTitleLabel.swift; sourceTree = "<group>"; };
 		95B235901E1FAB3F00A40666 /* OrangeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrangeNavigationController.swift; path = ../../iOS/Source/OrangeNavigationController.swift; sourceTree = "<group>"; };
+		95B92F4E1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyBleepTestDelegate.swift; sourceTree = "<group>"; };
 		95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumBlackLabel.swift; sourceTree = "<group>"; };
 		95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestController.swift; sourceTree = "<group>"; };
 		95D7B0051C8CBC68004690D5 /* BleepTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestView.swift; sourceTree = "<group>"; };
 		95D8E43F1CA157380084F939 /* CompletedTests.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CompletedTests.storyboard; sourceTree = "<group>"; };
 		95D8E4421CA15B5D0084F939 /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
+		95E636791E2A599200CD7918 /* BleepTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BleepTest.swift; path = BleepTest/BleepTest.swift; sourceTree = "<group>"; };
+		95E6367B1E2A9C4100CD7918 /* BleepTestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestTests.swift; sourceTree = "<group>"; };
 		95EBE9F01C9064D600A57377 /* levelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = levelsData.json; path = ../../levelsData.json; sourceTree = "<group>"; };
 		95EBE9F81C908DC100A57377 /* TestLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLevel.swift; sourceTree = "<group>"; };
 		95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSinglePlayerController.swift; sourceTree = "<group>"; };
@@ -162,6 +176,7 @@
 		141A6FD31BDE2DAB00CB6E82 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				95E636781E2A596000CD7918 /* BleepTest */,
 				953DD2841CBE949500A49A98 /* Fetchers */,
 				953DD2861CBE949500A49A98 /* Subclasses */,
 				953DD2961CBE949500A49A98 /* Writers */,
@@ -199,6 +214,7 @@
 				95D8E4411CA15B5D0084F939 /* FoldingCell */,
 				95406FEF1C93343900567215 /* beep.wav */,
 				95EBE9F01C9064D600A57377 /* levelsData.json */,
+				950CEB6F1E5606FB004712C8 /* testLevelsData.json */,
 				146E279F1BCD51F200959BBA /* LaunchScreen.xib */,
 				146E27A11BCD51F200959BBA /* Images.xcassets */,
 				146E27A21BCD51F200959BBA /* Info.plist */,
@@ -249,7 +265,12 @@
 				954215111DD9F76800F73DAF /* PlayerTest.swift */,
 				95F7B6F61DF849E50092114C /* WriterTests.swift */,
 				9574F0D51E1927CE00ADDF32 /* FetcherTest.swift */,
+<<<<<<< HEAD
 				950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */,
+=======
+				95E6367B1E2A9C4100CD7918 /* BleepTestTests.swift */,
+				95B92F4E1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift */,
+>>>>>>> master
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -423,6 +444,14 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
+		95E636781E2A596000CD7918 /* BleepTest */ = {
+			isa = PBXGroup;
+			children = (
+				95E636791E2A599200CD7918 /* BleepTest.swift */,
+			);
+			name = BleepTest;
+			sourceTree = "<group>";
+		};
 		95F4C8E11DA189280034E37A /* Create Single Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +570,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950CEB711E5607AE004712C8 /* testLevelsData.json in Resources */,
 				95406FF01C93343900567215 /* beep.wav in Resources */,
 				95EBE9F11C9064D600A57377 /* levelsData.json in Resources */,
 				146E27AA1BCD51F200959BBA /* Images.xcassets in Resources */,
@@ -686,6 +716,7 @@
 				145F81CD1BDE2CFD0016A9E0 /* iOS.xcdatamodeld in Sources */,
 				95F7B6FA1DF852E40092114C /* Player.swift in Sources */,
 				953DD2981CBE949500A49A98 /* Fetcher.swift in Sources */,
+				95E6367A1E2A599200CD7918 /* BleepTest.swift in Sources */,
 				9527A6D41CA03B23001E7942 /* CompletedTest.swift in Sources */,
 				95EBE9F91C908DC100A57377 /* TestLevel.swift in Sources */,
 				95874DC01DA8401000D642A7 /* CloseButton.swift in Sources */,
@@ -708,7 +739,12 @@
 			files = (
 				9574F0D61E1927CE00ADDF32 /* FetcherTest.swift in Sources */,
 				95F7B6F71DF849E50092114C /* WriterTests.swift in Sources */,
+<<<<<<< HEAD
 				950CEB731E56552F004712C8 /* ResultsTableControllerTest.swift in Sources */,
+=======
+				95E6367C1E2A9C4200CD7918 /* BleepTestTests.swift in Sources */,
+				95B92F4F1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift in Sources */,
+>>>>>>> master
 				954215121DD9F76900F73DAF /* PlayerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
