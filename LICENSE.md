@@ -2,7 +2,7 @@
 
 MIT License
 
-Copyright (c) 2017 'Ieuan Tudur Peace'
+Copyright (c) 2017 **Ieuan Tudur Peace**
 
 ```
 Permission is hereby granted, free of charge, to any person obtaining a copy
