@@ -1,6 +1,6 @@
 # BleepTest
 
-A bleep test application.
+A multi-stage fitness<sup>[1]( https://en.wikipedia.org/wiki/Multi-stage_fitness_test)</sup> application commonly known as a bleep test. The application is created using Swift for iOS devices.
 
 ## Running the project
 
