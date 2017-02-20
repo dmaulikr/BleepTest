@@ -32,5 +32,12 @@ class ResultsTableControllerTest: XCTestCase {
         let writer = Writer(dataStack: self.data)
         writer.saveBleepTest(2, lap: 3, vo2Max: 20.3, distance: 50, player: objects[0] as? Player)
     }
+
+    func testTableViewControllerTable(){
+        let resultsController = ResultsTableController(fetcher: self.fetcher, writer: self.writer, dataStack: self.data)
+        let  countRow:Int =  resultsController.tableView(resultsController.tableView, numberOfRowsInSection: 0)
+        
+        XCTAssert(countRow == 1)
+    }
     
 }
