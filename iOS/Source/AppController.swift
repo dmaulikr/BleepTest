@@ -8,7 +8,7 @@ class AppController: UIResponder {
     var navController: UINavigationController?
     
     fileprivate lazy var dataStack: DATAStack = {
-        let data = DATAStack(modelName: "iOS", bundle: Bundle.mainBundle, storeType:.SQLite)
+        let data = DATAStack(modelName: "iOS", bundle: Bundle.main, storeType:.sqLite)
         return data
     }()
     
