@@ -6,7 +6,7 @@ import CoreData
 class FetcherTest: XCTestCase {
     
     func createDataStack() -> DATAStack {
-        let dataStack = DATAStack(modelName: "iOS", bundle: NSBundle.mainBundle(), storeType:.InMemory)
+        let dataStack = DATAStack(modelName: "iOS", bundle: Bundle.mainBundle, storeType:.InMemory)
         return dataStack
     }
     
@@ -21,7 +21,7 @@ class FetcherTest: XCTestCase {
     func testFetchUsers() {
         let data = self.createDataStack()
         
-        let user = NSEntityDescription.insertNewObjectForEntityForName("Player", inManagedObjectContext: data.mainContext)
+        let user = NSEntityDescription.insertNewObject(forEntityName: "Player", into: data.mainContext)
         user.setValue(101, forKey: "age")
         user.setValue("Billy Jones", forKey: "username")
         try! data.mainContext.save()

@@ -6,15 +6,15 @@ import CoreData
 
 class BleepTestTests: XCTestCase {
     
-    func createDataStack(storeType: DATAStackStoreType = .InMemory) -> DATAStack {
-        let dataStack = DATAStack(modelName: "iOS", bundle: NSBundle.mainBundle(), storeType:storeType)
+    func createDataStack(_ storeType: DATAStackStoreType = .InMemory) -> DATAStack {
+        let dataStack = DATAStack(modelName: "iOS", bundle: Bundle.main, storeType:storeType)
         return dataStack
     }
     
-    func createLevels(data: DATAStack, completion: (NSError?) -> Void){
-        let filePath = NSBundle.mainBundle().pathForResource("testLevelsData", ofType: "json")!
-        let jsonData = NSData(contentsOfFile: filePath)!
-        let json = try! NSJSONSerialization.JSONObjectWithData(jsonData, options: []) as! [String: AnyObject]
+    func createLevels(_ data: DATAStack, completion: @escaping (NSError?) -> Void){
+        let filePath = Bundle.main.path(forResource: "testLevelsData", ofType: "json")!
+        let jsonData = try! Data(contentsOf: URL(fileURLWithPath: filePath))
+        let json = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: AnyObject]
         
         Sync.changes(json["bleepTest"] as! Array, inEntityNamed: "TestLevel", predicate: nil, parent: nil, inContext: data.mainContext, dataStack: data, completion: { error in
             completion(error)
@@ -25,7 +25,7 @@ class BleepTestTests: XCTestCase {
         let data = self.createDataStack()
         self.createLevels(data){ _ in }
         
-        let request = NSFetchRequest(entityName: "TestLevel")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TestLevel")
         request.sortDescriptors = [NSSortDescriptor(key: "level", ascending: true)]
         let levels = (try! data.mainContext.executeFetchRequest(request) as! [TestLevel])
         
@@ -40,7 +40,7 @@ class BleepTestTests: XCTestCase {
         let data = self.createDataStack()
         self.createLevels(data){ _ in }
         
-        let request = NSFetchRequest(entityName: "TestLevel")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TestLevel")
         request.sortDescriptors = [NSSortDescriptor(key: "level", ascending: true)]
         let levels = (try! data.mainContext.executeFetchRequest(request) as! [TestLevel])
         
@@ -48,21 +48,21 @@ class BleepTestTests: XCTestCase {
         let spyBleepTestDelegate = SpyBleepTestDelegate()
         bleepTest.delegate = spyBleepTestDelegate
         
-        weak var lapedUpExpectation = expectationWithDescription("BleepTest calls a delegate as the result of an laped up method completion")
+        weak var lapedUpExpectation = expectation(description: "BleepTest calls a delegate as the result of an laped up method completion")
         spyBleepTestDelegate.timerExpectation = lapedUpExpectation
         
-        weak var newLevelExpection = expectationWithDescription("BleepTest calls a delegate as the result of an other up method completion")
+        weak var newLevelExpection = expectation(description: "BleepTest calls a delegate as the result of an other up method completion")
         spyBleepTestDelegate.newLevelExpectation = newLevelExpection
         
-        weak var newLapExpection = expectationWithDescription("BleepTest calls a delegate as the result of an other up method completion")
+        weak var newLapExpection = expectation(description: "BleepTest calls a delegate as the result of an other up method completion")
         spyBleepTestDelegate.newLapExpectation = newLapExpection
         
-        weak var bleepTestFinishedExpectation = expectationWithDescription("BleepTest calls a delegate as the result of an other up method completion")
+        weak var bleepTestFinishedExpectation = expectation(description: "BleepTest calls a delegate as the result of an other up method completion")
         spyBleepTestDelegate.bleepTestFinishedExpectation = bleepTestFinishedExpectation
         
         bleepTest.start()
         
-        waitForExpectationsWithTimeout(100) { error in
+        waitForExpectations(timeout: 100) { error in
             if let error = error {
                 XCTFail("waitForExpectationsWithTimeout errored: \(error)")
             }
