@@ -1,6 +1,6 @@
 # BleepTest
 
-A bleep test application.
+A multi-stage fitness<sup>[1]( https://en.wikipedia.org/wiki/Multi-stage_fitness_test)</sup> application commonly known as a bleep test. The application is created using Swift for iOS devices.
 
 ## Running the project
 
@@ -18,3 +18,7 @@ pod install
 
 - Open `Project.xcworkspace` or `Project.xcodeproj`
 
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/IeuanTudurPeace/BleepTest/blob/master/LICENSE.md) file for details
