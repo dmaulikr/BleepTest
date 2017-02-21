@@ -1,10 +1,10 @@
 import UIKit
 
 class StartButton : UIButton {
-    override func drawRect(rect: CGRect) {
-        let path = UIBezierPath(ovalInRect: rect)
-        if(highlighted){
-            UIColor.lightGrayColor().setFill()
+    override func draw(_ rect: CGRect) {
+        let path = UIBezierPath(ovalIn: rect)
+        if(isHighlighted){
+            UIColor.lightGray.setFill()
         } else{
             UIColor.customGreenColor().setFill()
         }
@@ -13,8 +13,8 @@ class StartButton : UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setTitle("Start", forState: UIControlState.Normal)
-        self.setTitleColor(.whiteColor(), forState: UIControlState.Normal)
+        self.setTitle("Start", for: UIControlState())
+        self.setTitleColor(.white, for: UIControlState())
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -22,9 +22,9 @@ class StartButton : UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override var highlighted: Bool {
+    override var isHighlighted: Bool {
         didSet {
-            switch highlighted {
+            switch isHighlighted {
             case true:
                 setNeedsDisplay()
             case false:

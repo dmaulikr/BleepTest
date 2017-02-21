@@ -1,7 +1,7 @@
 import UIKit
 import DATAStack
 
-public class BaseCollectionViewController: UICollectionViewController {
+open class BaseCollectionViewController: UICollectionViewController {
     internal var fetcher: Fetcher
     internal var writer: Writer
     internal var dataStack: DATAStack?
@@ -22,8 +22,8 @@ public class BaseCollectionViewController: UICollectionViewController {
 
 // MARK: Status Bar
 extension BaseCollectionViewController{
-    public func setStatusBarHidden(boolen: Bool){
-        UIApplication.sharedApplication().statusBarHidden = boolen;
+    public func setStatusBarHidden(_ boolen: Bool){
+        UIApplication.shared.isStatusBarHidden = boolen;
     }
 }
 

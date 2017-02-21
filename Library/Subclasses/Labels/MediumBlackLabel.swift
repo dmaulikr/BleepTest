@@ -5,7 +5,7 @@ class MediumBlackLabel: UILabel {
         super.init(frame: frame)
         self.font = UIFont(name: self.font.fontName, size: 23)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.textColor = UIColor.blackColor()
+        self.textColor = UIColor.black
     }
     
     required init?(coder aDecoder: NSCoder) {

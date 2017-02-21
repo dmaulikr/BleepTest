@@ -2,24 +2,24 @@ import Foundation
 import DATAStack
 import CoreData
 
-public class Writer : NSObject {
+open class Writer : NSObject {
 
-    private var data: DATAStack
+    fileprivate var data: DATAStack
     
     // MARK: - Initializers
     init(dataStack: DATAStack) {
         self.data = dataStack
     }
     
-    public func saveBleepTest(level:Int, lap:Int, vo2Max:Double, distance:Int, player: Player?){
+    open func saveBleepTest(_ level:Int, lap:Int, vo2Max:Double, distance:Int, player: Player?){
         self.data.performInNewBackgroundContext { backgroundContext in
             let predicate = NSPredicate(format: "SELF == %@", (player?.objectID)!)
-            let request = NSFetchRequest(entityName: "Player")
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
             request.predicate = predicate
-            let updatePlayer = (try! backgroundContext.executeFetchRequest(request))
+            let updatePlayer = (try! backgroundContext.fetch(request))
             
-            let entity = NSEntityDescription.entityForName("CompletedTest", inManagedObjectContext: backgroundContext)!
-            let object = CompletedTest(entity: entity, insertIntoManagedObjectContext: backgroundContext)
+            let entity = NSEntityDescription.entity(forEntityName: "CompletedTest", in: backgroundContext)!
+            let object = CompletedTest(entity: entity, insertInto: backgroundContext)
             object.setValue(level, forKey: "level")
             object.setValue(lap, forKey: "lap")
             object.setValue(vo2Max, forKey: "vo2Max")
@@ -31,10 +31,10 @@ public class Writer : NSObject {
         }
     }
     
-    public func createPlayer(username:String, age:Int){
+    open func createPlayer(_ username:String, age:Int){
         self.data.performInNewBackgroundContext { backgroundContext in
-            let entity = NSEntityDescription.entityForName("Player", inManagedObjectContext: backgroundContext)!
-            let object = NSManagedObject(entity: entity, insertIntoManagedObjectContext: backgroundContext)
+            let entity = NSEntityDescription.entity(forEntityName: "Player", in: backgroundContext)!
+            let object = NSManagedObject(entity: entity, insertInto: backgroundContext)
             object.setValue(username, forKey: "username")
             object.setValue(age, forKey: "age")
             object.setValue(NSDate(), forKey:  "dateAdded")
@@ -42,9 +42,9 @@ public class Writer : NSObject {
         }
     }
     
-    public func setSelectedPlayer(player: Player) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setURL(player.objectID.URIRepresentation(), forKey: "selectedPlayerID")
+    open func setSelectedPlayer(_ player: Player) {
+        let defaults = UserDefaults.standard
+        defaults.set(player.objectID.uriRepresentation(), forKey: "selectedPlayerID")
     }
     
 }

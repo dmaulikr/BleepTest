@@ -4,8 +4,8 @@ import Sync
 import DATASource
 import CoreData
 
-public class Fetcher : NSObject {
-    private var data: DATAStack
+open class Fetcher : NSObject {
+    fileprivate var data: DATAStack
     
     // MARK: - Initializers
 
@@ -15,15 +15,15 @@ public class Fetcher : NSObject {
 
     // MARK: - Public methods
 
-    public func persistWithCompletion(completion: () -> ()) {
+    open func persistWithCompletion(_ completion: () -> ()) {
         data.persistWithCompletion(completion)
     }
     
-    public func fetchLocalData(completion: (NSError?) -> Void){
-        let url = NSURL(string: "levelsData.json")!
-        let filePath = NSBundle.mainBundle().pathForResource(url.URLByDeletingPathExtension?.absoluteString, ofType: url.pathExtension)!
-        let jsonData = NSData(contentsOfFile: filePath)!
-        let json = try! NSJSONSerialization.JSONObjectWithData(jsonData, options: []) as! [String: AnyObject]
+    open func fetchLocalData(_ completion: @escaping (NSError?) -> Void){
+        let url = URL(string: "levelsData.json")!
+        let filePath = Bundle.main.path(forResource: url.deletingPathExtension().absoluteString, ofType: url.pathExtension)!
+        let jsonData = try! Data(contentsOf: URL(fileURLWithPath: filePath))
+        let json = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: AnyObject]
         self.data.performInNewBackgroundContext { backgroundContext in
             Sync.changes(json["bleepTest"] as! Array, inEntityNamed: "TestLevel", predicate: nil, parent: nil, inContext: backgroundContext, dataStack: self.data, completion: { error in
                 completion(error)
@@ -31,35 +31,35 @@ public class Fetcher : NSObject {
         }
     }
 
-    public func fetchTestLevels(completion: (NSError?) -> Void) -> [TestLevel] {
-        let request = NSFetchRequest(entityName: "TestLevel")
+    open func fetchTestLevels(_ completion: (NSError?) -> Void) -> [TestLevel] {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TestLevel")
         request.sortDescriptors = [NSSortDescriptor(key: "level", ascending: true)]
-        let levels = (try! data.mainContext.executeFetchRequest(request) as! [TestLevel])
+        let levels = (try! data.mainContext.fetch(request) as! [TestLevel])
         return levels
     }
     
-    public func fetchCompletedTest(completion: (NSError?) -> Void) -> [CompletedTest] {
-        let request = NSFetchRequest(entityName: "CompletedTest")
+    open func fetchCompletedTest(_ completion: (NSError?) -> Void) -> [CompletedTest] {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CompletedTest")
         request.sortDescriptors = [NSSortDescriptor(key: "createdDate", ascending: false)]
-        let tests = (try! data.mainContext.executeFetchRequest(request) as! [CompletedTest])
+        let tests = (try! data.mainContext.fetch(request) as! [CompletedTest])
         return tests
     }
     
-    public func fetchUsers(completion: (NSError?) -> Void) -> [Player] {
-        let request = NSFetchRequest(entityName: "Player")
+    open func fetchUsers(_ completion: (NSError?) -> Void) -> [Player] {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
         request.sortDescriptors = [NSSortDescriptor(key: "dateAdded", ascending: true)]
-        let players = (try! data.mainContext.executeFetchRequest(request) as! [Player])
+        let players = (try! data.mainContext.fetch(request) as! [Player])
         return players
     }
     
-    public func fetchSelectedPlayer(completion: (NSError?) -> Void) -> [Player]? {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if((defaults.objectForKey("selectedPlayerID")) != nil){
-            let playerURI = defaults.URLForKey("selectedPlayerID")
-            let playerID: NSManagedObjectID  = (data.mainContext.persistentStoreCoordinator?.managedObjectIDForURIRepresentation(playerURI!))!
-            let request = NSFetchRequest(entityName: "Player")
+    open func fetchSelectedPlayer(_ completion: (NSError?) -> Void) -> [Player]? {
+        let defaults = UserDefaults.standard
+        if((defaults.object(forKey: "selectedPlayerID")) != nil){
+            let playerURI = defaults.url(forKey: "selectedPlayerID")
+            let playerID: NSManagedObjectID  = (data.mainContext.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: playerURI!))!
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
             request.predicate = NSPredicate(format: "SELF == %@", playerID)
-            let player = (try! data.mainContext.executeFetchRequest(request)) as? [Player]
+            let player = (try! data.mainContext.fetch(request)) as? [Player]
             return player
         }
         return nil
@@ -70,11 +70,11 @@ public class Fetcher : NSObject {
 extension Fetcher {
     // MARK: DATASource helpers
     
-    public func dataSource(tableView: UITableView, cellIdentifier: String, fetchRequest: NSFetchRequest, sectionName: String? = nil, configuration: (cell: UITableViewCell, item: NSManagedObject, indexPath: NSIndexPath) -> ()) -> DATASource {
+    public func dataSource(_ tableView: UITableView, cellIdentifier: String, fetchRequest: NSFetchRequest<NSFetchRequestResult>, sectionName: String? = nil, configuration: @escaping (_ cell: UITableViewCell, _ item: NSManagedObject, _ indexPath: NSIndexPath) -> ()) -> DATASource {
         return DATASource(tableView: tableView, cellIdentifier: cellIdentifier, fetchRequest: fetchRequest, mainContext: self.data.mainContext, sectionName: sectionName, configuration: configuration)
     }
 
-    public func dataSource(collectionView: UICollectionView, cellIdentifier: String, fetchRequest: NSFetchRequest, mainContext: NSManagedObjectContext, sectionName: String? = nil, configuration: (cell: UICollectionViewCell, item: NSManagedObject, indexPath: NSIndexPath) -> ()) -> DATASource {
+    public func dataSource(_ collectionView: UICollectionView, cellIdentifier: String, fetchRequest: NSFetchRequest<NSFetchRequestResult>, mainContext: NSManagedObjectContext, sectionName: String? = nil, configuration: @escaping (_ cell: UICollectionViewCell, _ item: NSManagedObject, _ indexPath: NSIndexPath) -> ()) -> DATASource {
         return DATASource(collectionView: collectionView, cellIdentifier: cellIdentifier, fetchRequest: fetchRequest, mainContext: self.data.mainContext, sectionName: sectionName, configuration: configuration)
     }
 }

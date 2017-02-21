@@ -23,7 +23,7 @@ class BleepTestController: BaseViewController {
     }()
     
     lazy var rootView: BleepTestView = {
-        var temporyView = BleepTestView(frame: UIScreen.mainScreen().bounds)
+        var temporyView = BleepTestView(frame: UIScreen.main.bounds)
         temporyView.delegate = self
         return temporyView
     }()
@@ -37,11 +37,11 @@ class BleepTestController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setStatusBarHidden(true)
-        UIApplication.sharedApplication().idleTimerDisabled = true
+        UIApplication.shared.isIdleTimerDisabled = true
         self.bleepTest.start()
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
@@ -49,37 +49,37 @@ class BleepTestController: BaseViewController {
         self.bleepTest.stop()
         self.writer.saveBleepTest(level, lap: (lap+1), vo2Max: vO2Max, distance: distance, player: player)
         self.setStatusBarHidden(false)
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
 // MARK: BleepTestDelegate
 extension BleepTestController : BleepTestDelegate {
-    func lapedUpDelegate(sender: BleepTest, lap: Int, distance: Int, vO2Max: Double) {
+    func lapedUpDelegate(_ sender: BleepTest, lap: Int, distance: Int, vO2Max: Double) {
         self.rootView.updateVO2Max(String(format: "%.2f", vO2Max))
         self.vO2Max = vO2Max
         self.lap = lap
         self.distance = distance
     }
     
-    func newLevelDelegate(sender: BleepTest, numberOfLaps: Int, level: Int, lapTime: Double) {
+    func newLevelDelegate(_ sender: BleepTest, numberOfLaps: Int, level: Int, lapTime: Double) {
         self.rootView.newLevel(String(level), levelTime: Double(numberOfLaps)*lapTime)
         self.level = level
     }
     
-    func startedNewLap(sender: BleepTest, lap: Int, lapTime: Double) {
+    func startedNewLap(_ sender: BleepTest, lap: Int, lapTime: Double) {
         self.rootView.newLap(String(lap+1), lapTime: lapTime)
         self.lap = lap
     }
     
-    func bleepTestFinished(sender: BleepTest) {
+    func bleepTestFinished(_ sender: BleepTest) {
         self.bleepTestFinished()
     }
 }
 
 // MARK: BleepTestViewDelegate
 extension BleepTestController : BleepTestViewDelegate {
-    func didStopButtonPressed(sender: BleepTestView) {
+    func didStopButtonPressed(_ sender: BleepTestView) {
         self.bleepTestFinished()
     }
 }

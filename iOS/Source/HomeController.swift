@@ -4,7 +4,7 @@ class HomeController: BaseViewController {
     
     lazy var homeView : HomeView! = {
         let temporyPlayer = self.fetcher.fetchSelectedPlayer{_ in}
-        var temporyView : HomeView = HomeView(frame: UIScreen.mainScreen().bounds, player: (temporyPlayer?.first))
+        var temporyView : HomeView = HomeView(frame: UIScreen.main.bounds, player: (temporyPlayer?.first))
         return temporyView
     }()
     
@@ -13,7 +13,7 @@ class HomeController: BaseViewController {
         self.view = self.homeView
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.homeView = nil
         self.view = self.homeView
         self.homeView.delegate = self
@@ -22,14 +22,14 @@ class HomeController: BaseViewController {
 
 //MARK: HomeViewDelegate
 extension HomeController : HomeViewDelegate{
-    func didChangeButtonPressed(sender: HomeView) {
+    func didChangeButtonPressed(_ sender: HomeView) {
         let rootViewController = SelectUserTableViewController(fetcher: fetcher, writer: writer, dataStack: dataStack!)
         let navigationController = OrangeNavigationController(rootViewController: rootViewController)
-        self.navigationController?.presentViewController(navigationController, animated: true, completion: nil)
+        self.navigationController?.present(navigationController, animated: true, completion: nil)
     }
     
-    func didStartButtonPressed(sender: HomeView) {
+    func didStartButtonPressed(_ sender: HomeView) {
         let beepTestController = BleepTestController(fetcher: fetcher, writer: writer, dataStack: dataStack!)
-        self.navigationController?.presentViewController(beepTestController, animated: true, completion: nil)
+        self.navigationController?.present(beepTestController, animated: true, completion: nil)
     }
 }

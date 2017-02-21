@@ -11,9 +11,9 @@ class CompletedTestTableController: UITableViewController {
     let kRowsCount = 10
     var cellHeights = [CGFloat]()
     
-    private lazy var fetcher: Fetcher = {
-        let url = NSURL(string: "levelsData.json")!
-        let data = DATAStack(modelName: "iOS", bundle: NSBundle.mainBundle(), storeType:.SQLite)
+    fileprivate lazy var fetcher: Fetcher = {
+        let url = URL(string: "levelsData.json")!
+        let data = DATAStack(modelName: "iOS", bundle: Bundle.mainBundle, storeType:.SQLite)
         let fetcher = Fetcher(dataStack: data)
         return fetcher
     }()
@@ -26,7 +26,7 @@ class CompletedTestTableController: UITableViewController {
         self.tableView.backgroundColor = .customBlueColor()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         fetchCurrentObjects()
         createCellHeightsArray()
         tableView.reloadData()
@@ -47,20 +47,20 @@ class CompletedTestTableController: UITableViewController {
 
 extension CompletedTestTableController {
     // MARK: UITableViewDataSource
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let data = self.items[indexPath.row]
         let player = data.player as! Player
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d/M/yyyy"
-        dateFormatter.stringFromDate(NSDate())
+        dateFormatter.string(from: Date())
         
         if cell is FoldingCell {
             let foldingCell = cell as! FoldingCell
-            foldingCell.backgroundColor = UIColor.clearColor()
+            foldingCell.backgroundColor = UIColor.clear
             
             if cellHeights[indexPath.row] == kCloseCellHeight {
                 foldingCell.selectedAnimation(false, animated: false, completion:nil)
@@ -69,25 +69,25 @@ extension CompletedTestTableController {
             }
             
             if let dateLabel = cell.viewWithTag(100) as? UILabel {
-                dateLabel.text = dateFormatter.stringFromDate(data.createdDate)
+                dateLabel.text = dateFormatter.string(from: data.createdDate as Date)
             }
             if let dateLabel = cell.viewWithTag(10) as? UILabel{
-                dateLabel.text = dateFormatter.stringFromDate(data.createdDate)
+                dateLabel.text = dateFormatter.string(from: data.createdDate as Date)
             }
             if let levelLabel = cell.viewWithTag(101) as? UILabel{
-                levelLabel.text = String(data.level)
+                levelLabel.text = String(describing: data.level)
             }
             if let levelLabel = cell.viewWithTag(11) as? UILabel{
-                levelLabel.text = String(data.level)
+                levelLabel.text = String(describing: data.level)
             }
             if let lapLabel = cell.viewWithTag(102) as? UILabel{
-                lapLabel.text = String(data.lap)
+                lapLabel.text = String(describing: data.lap)
             }
             if let lapLabel = cell.viewWithTag(12) as? UILabel{
-                lapLabel.text = String(data.lap)
+                lapLabel.text = String(describing: data.lap)
             }
             if let distanceLabel = cell.viewWithTag(103) as? UILabel{
-                distanceLabel.text = "\(String(data.distance))m"
+                distanceLabel.text = "\(String(describing: data.distance))m"
             }
             if let vo2MaxLabel = cell.viewWithTag(104) as? UILabel{
                 vo2MaxLabel.text = String(format: "%.3f", data.vo2Max)
@@ -102,12 +102,12 @@ extension CompletedTestTableController {
         
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FoldingCell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath)
         return cell
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeights[indexPath.row]
     }
 }
@@ -115,8 +115,8 @@ extension CompletedTestTableController {
 extension CompletedTestTableController {
     // MARK: - UITableViewDelegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! FoldingCell
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! FoldingCell
         
         if cell.isAnimating() {
             return
@@ -133,7 +133,7 @@ extension CompletedTestTableController {
             duration = 0.8
         }
         
-        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseOut, animations: { () -> Void in
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { () -> Void in
             tableView.beginUpdates()
             tableView.endUpdates()
             }, completion: nil)

@@ -12,9 +12,9 @@ class MenuTableCell: UITableViewCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .whiteColor()
+        contentView.backgroundColor = .white
         addCellLabel()
-        accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        accessoryType = UITableViewCellAccessoryType.disclosureIndicator
     }
     
     func addCellLabel(){
@@ -23,15 +23,15 @@ class MenuTableCell: UITableViewCell {
             "superview" : contentView
         ]
         contentView.addSubview(cellLabel)
-        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-20-[cellLabel]-(>=20)-|",
+        contentView.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-20-[cellLabel]-(>=20)-|",
             options: [],
             metrics: nil,
             views: viewsDictionary
             ))
-        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[superview]-(<=1)-[cellLabel]",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
+        contentView.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:[superview]-(<=1)-[cellLabel]",
+            options: NSLayoutFormatOptions.alignAllCenterY,
             metrics: nil,
             views: viewsDictionary
             ))
@@ -41,7 +41,7 @@ class MenuTableCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 

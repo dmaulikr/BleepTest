@@ -3,11 +3,11 @@ import CoreData
 
 @objc(CompletedTest)
 
-public class CompletedTest: NSManagedObject {
+open class CompletedTest: NSManagedObject {
     @NSManaged var vo2Max: Double
     @NSManaged var level: NSNumber
     @NSManaged var lap: NSNumber
     @NSManaged var distance: NSNumber
-    @NSManaged var createdDate: NSDate
+    @NSManaged var createdDate: Date
     @NSManaged var player: NSManagedObject
 }
