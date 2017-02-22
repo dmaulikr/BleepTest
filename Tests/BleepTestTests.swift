@@ -6,7 +6,7 @@ import CoreData
 
 class BleepTestTests: XCTestCase {
     
-    func createDataStack(_ storeType: DATAStackStoreType = .InMemory) -> DATAStack {
+    func createDataStack(_ storeType: DATAStackStoreType = .inMemory) -> DATAStack {
         let dataStack = DATAStack(modelName: "iOS", bundle: Bundle.main, storeType:storeType)
         return dataStack
     }

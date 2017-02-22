@@ -6,7 +6,7 @@ import CoreData
 class PlayerTest: XCTestCase {
     
     func createDataStack() -> DATAStack {
-        let dataStack = DATAStack(modelName: "iOS", bundle: Bundle.mainBundle, storeType:.InMemory)
+        let dataStack = DATAStack(modelName: "iOS", bundle: Bundle.main, storeType:.inMemory)
         return dataStack
     }
     
