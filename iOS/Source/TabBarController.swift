@@ -31,15 +31,9 @@ class TabBarController: UITabBarController {
         navigationController1.navigationBar.tintColor = .white
         navigationController1.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
 
-        let storyboard = UIStoryboard(name: "CompletedTests", bundle: nil)
-        let item2 = storyboard.instantiateViewController(withIdentifier: "viewController")
-        item2.tabBarItem = UITabBarItem(title: "Stats", image: UIImage(named: "MyTimesIcon"), selectedImage: UIImage(named: "MyTimesIcon"))
-        let navigationController2 = UINavigationController(rootViewController: item2)
-        navigationController2.navigationBar.barTintColor = .customBlueColor()
-        navigationController2.navigationBar.tintColor = .white
-        navigationController2.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        let controllers = [navigationController1, navigationController2]
+        
+        let controllers = [navigationController1]
         self.viewControllers = controllers
     }
     
