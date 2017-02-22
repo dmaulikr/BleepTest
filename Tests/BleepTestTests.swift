@@ -11,13 +11,17 @@ class BleepTestTests: XCTestCase {
         return dataStack
     }
     
-    func createLevels(_ data: DATAStack, completion: @escaping (NSError?) -> Void){
-        let filePath = Bundle.main.path(forResource: "testLevelsData", ofType: "json")!
-        let jsonData = try! Data(contentsOf: URL(fileURLWithPath: filePath))
-        let json = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: AnyObject]
+    func createLevels(_ dataStack: DATAStack, completion: @escaping (NSError?) -> Void){
+        let fileName = "testLevelsData.json"
+        let url = URL(string: fileName)!
+        let filePath = Bundle.main.path(forResource: url.deletingPathExtension().absoluteString, ofType: url.pathExtension)!
+        let data = try! Data(contentsOf: URL(fileURLWithPath: filePath))
+        let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
         
-        Sync.changes(json["bleepTest"] as! Array, inEntityNamed: "TestLevel", predicate: nil, parent: nil, inContext: data.mainContext, dataStack: data, completion: { error in
-            completion(error)
+        
+        Sync.changes(json, inEntityNamed: "TestLevel", dataStack: dataStack,
+                     completion: { error in
+                        completion(error)
         })
     }
     
