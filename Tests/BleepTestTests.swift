@@ -27,7 +27,7 @@ class BleepTestTests: XCTestCase {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TestLevel")
         request.sortDescriptors = [NSSortDescriptor(key: "level", ascending: true)]
-        let levels = (try! data.mainContext.executeFetchRequest(request) as! [TestLevel])
+        let levels = (try! data.mainContext.fetch(request) as! [TestLevel])
         
         let bleepTest = BleepTest(bleepTestLevels: levels)
         let spyBleepTestDelegate = SpyBleepTestDelegate()
@@ -42,7 +42,7 @@ class BleepTestTests: XCTestCase {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TestLevel")
         request.sortDescriptors = [NSSortDescriptor(key: "level", ascending: true)]
-        let levels = (try! data.mainContext.executeFetchRequest(request) as! [TestLevel])
+        let levels = (try! data.mainContext.fetch(request) as! [TestLevel])
         
         let bleepTest = BleepTest(bleepTestLevels: levels)
         let spyBleepTestDelegate = SpyBleepTestDelegate()
