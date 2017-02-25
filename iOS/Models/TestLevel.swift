@@ -4,7 +4,7 @@ import Foundation
 import CoreData
 
 @objc(TestLevel)
-public class TestLevel: NSManagedObject {
+open class TestLevel: NSManagedObject {
     @NSManaged var level: NSNumber
     @NSManaged var laps: NSNumber
     @NSManaged var lapTime: Double

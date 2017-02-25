@@ -10,29 +10,29 @@ class MenuTableController: BaseTableViewController {
         setUpTableView()
     }
     
-    private func setUpTableView(){
-        self.tableView = UITableView(frame: self.tableView.frame, style: .Grouped)
+    fileprivate func setUpTableView(){
+        self.tableView = UITableView(frame: self.tableView.frame, style: .grouped)
         self.tableView.backgroundView = nil
-        self.tableView.backgroundColor = .whiteColor()
-        self.tableView.registerClass(MenuTableCell.self, forCellReuseIdentifier: MenuTableController.CellIdentifier)
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+        self.tableView.backgroundColor = .white
+        self.tableView.register(MenuTableCell.self, forCellReuseIdentifier: MenuTableController.CellIdentifier)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
     }
 }
 
 extension MenuTableController {
     // MARK: - UITableViewDataSource
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier(MenuTableController.CellIdentifier, forIndexPath: indexPath) as! MenuTableCell
-        cell.selectionStyle = .None
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: MenuTableController.CellIdentifier, for: indexPath) as! MenuTableCell
+        cell.selectionStyle = .none
         switch (indexPath.section){
             case 0: cell.cellLabel.text = "My test times"
             case 1: cell.cellLabel.text = "Instructions"
@@ -46,15 +46,15 @@ extension MenuTableController {
 extension MenuTableController {
     // MARK: - UITableViewDelegate
 
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 55
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         switch (indexPath.section){
             case 0:
                 let storyboard = UIStoryboard(name: "CompletedTests", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("viewController")
+                let vc = storyboard.instantiateViewController(withIdentifier: "viewController")
                 self.navigationController!.pushViewController(vc, animated: true)
             case 1:
                 print("Push to the instrucions view")

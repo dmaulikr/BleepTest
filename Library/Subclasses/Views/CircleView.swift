@@ -5,7 +5,7 @@ class CircleView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         
         let circlePath = UIBezierPath(
             arcCenter: CGPoint(
@@ -20,8 +20,8 @@ class CircleView: UIView {
         )
         
         circleLayer = CAShapeLayer()
-        circleLayer.path = circlePath.CGPath
-        circleLayer.fillColor = UIColor.customBlueColor().CGColor
+        circleLayer.path = circlePath.cgPath
+        circleLayer.fillColor = UIColor.customBlueColor().cgColor
         layer.addSublayer(circleLayer)
         self.translatesAutoresizingMaskIntoConstraints = false
     }

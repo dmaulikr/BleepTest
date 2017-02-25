@@ -1,7 +1,7 @@
 import UIKit
 
 protocol BleepTestViewDelegate: class {
-    func didStopButtonPressed(sender: BleepTestView)
+    func didStopButtonPressed(_ sender: BleepTestView)
 }
 
 class BleepTestView: UIView {
@@ -36,13 +36,13 @@ class BleepTestView: UIView {
     
     lazy var stopButton : StopButton = {
         var temporyButton : StopButton = StopButton()
-        temporyButton.addTarget(self, action: #selector(stopButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        temporyButton.addTarget(self, action: #selector(stopButtonAction(_:)), for: UIControlEvents.touchUpInside)
         return temporyButton
     }()
 
     lazy var pauseButton : PauseButton = {
         var temporyButton : PauseButton = PauseButton()
-        temporyButton.addTarget(self, action: #selector(pauseButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        temporyButton.addTarget(self, action: #selector(pauseButtonAction(_:)), for: UIControlEvents.touchUpInside)
         return temporyButton
     }()
     
@@ -97,7 +97,7 @@ class BleepTestView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         createRunningBleepTest()
-        backgroundColor = .whiteColor()
+        backgroundColor = .white
         addStatsLabels()
         addLevelsLables()
     }
@@ -106,21 +106,21 @@ class BleepTestView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func newLap(lap: String, lapTime: Double) {
+    func newLap(_ lap: String, lapTime: Double) {
         self.lapLabel.text = lap
         self.lapProgressIndicator.animateCircle(lapTime)
     }
     
-    func newLevel(level: String, levelTime: Double) {
+    func newLevel(_ level: String, levelTime: Double) {
         self.levelLabel.text = level
         self.levelProgressIndicator.animateCircle(levelTime)
     }
     
-    func updateVO2Max(vO2Max: String) {
+    func updateVO2Max(_ vO2Max: String) {
         self.vO2MaxLabel.text = vO2Max
     }
     
-    func updateDistanceTitleLabel(distance: String) {
+    func updateDistanceTitleLabel(_ distance: String) {
         distanceLabel.text = distance
     }
     
@@ -131,28 +131,28 @@ class BleepTestView: UIView {
             "distanceTitleLabel":distanceTitleLabel,
             "vO2MaxTitleLabel":vO2MaxTitleLabel,
             "superview":self
-        ]
+        ] as [String : Any]
 
         addSubview(distanceLabel)
         addSubview(vO2MaxLabel)
         addSubview(distanceTitleLabel)
         addSubview(vO2MaxTitleLabel)
 
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-40-[distanceTitleLabel]-10-[distanceLabel]-(>=200)-|",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-40-[distanceTitleLabel]-10-[distanceLabel]-(>=200)-|",
+            options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary
             ))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-40-[distanceLabel]-(>=20)-[vO2MaxLabel]-40-|",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-40-[distanceLabel]-(>=20)-[vO2MaxLabel]-40-|",
+            options: NSLayoutFormatOptions.alignAllCenterY,
             metrics: nil,
             views: viewsDictionary
             ))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-40-[distanceTitleLabel]-(>=20)-[vO2MaxTitleLabel]-35-|",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-40-[distanceTitleLabel]-(>=20)-[vO2MaxTitleLabel]-35-|",
+            options: NSLayoutFormatOptions.alignAllCenterY,
             metrics: nil,
             views: viewsDictionary
             ))
@@ -169,29 +169,29 @@ class BleepTestView: UIView {
         let viewsDictionary = [
             "lapProgressIndicator":lapProgressIndicator,
             "superview":self
-        ]
+        ] as [String : Any]
         
         addSubview(lapProgressIndicator)
         
         //setting the size of the LapProgressIndicator View
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[lapProgressIndicator(260)]",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:[lapProgressIndicator(260)]",
+            options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[lapProgressIndicator(260)]",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[lapProgressIndicator(260)]",
+            options: NSLayoutFormatOptions.alignAllCenterY,
             metrics: nil,
             views: viewsDictionary))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[superview]-(<=1)-[lapProgressIndicator]",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:[superview]-(<=1)-[lapProgressIndicator]",
+            options: NSLayoutFormatOptions.alignAllCenterY,
             metrics: nil,
             views: viewsDictionary))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[superview]-(<=1)-[lapProgressIndicator]",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[superview]-(<=1)-[lapProgressIndicator]",
+            options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
     }
@@ -200,23 +200,23 @@ class BleepTestView: UIView {
         let viewsDictionary = [
             "stopButton":stopButton,
             "superview":self
-        ]
+        ] as [String : Any]
         
         addSubview(stopButton)
 
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(>=50)-[stopButton(100)]-30-|",
-            options: NSLayoutFormatOptions.AlignAllLeading,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-(>=50)-[stopButton(100)]-30-|",
+            options: NSLayoutFormatOptions.alignAllLeading,
             metrics: nil,
             views: viewsDictionary))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[stopButton(100)]",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:[stopButton(100)]",
+            options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[superview]-(<=1)-[stopButton(100)]",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[superview]-(<=1)-[stopButton(100)]",
+            options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
     }
@@ -225,31 +225,31 @@ class BleepTestView: UIView {
         let viewsDictionary = [
             "levelProgressIndicator":levelProgressIndicator,
             "superview":self
-        ]
+        ] as [String : Any]
         
         addSubview(levelProgressIndicator)
         
         //setting the size of the LapProgressIndicator View
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[levelProgressIndicator(80)]",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:[levelProgressIndicator(80)]",
+            options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[levelProgressIndicator(80)]",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[levelProgressIndicator(80)]",
+            options: NSLayoutFormatOptions.alignAllCenterY,
             metrics: nil,
             views: viewsDictionary))
         
         //Centering the LapProgressIndicator View
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[superview]-(<=1)-[levelProgressIndicator]",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:[superview]-(<=1)-[levelProgressIndicator]",
+            options: NSLayoutFormatOptions.alignAllCenterY,
             metrics: nil,
             views: viewsDictionary))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[superview]-(<=1)-[levelProgressIndicator]",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[superview]-(<=1)-[levelProgressIndicator]",
+            options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
     }
@@ -262,7 +262,7 @@ class BleepTestView: UIView {
             "levelTitleLabel":levelTitleLabel,
             "lapTitleLabel":lapTitleLabel,
             "superview":self
-        ]
+        ] as [String : Any]
         
         addSubview(circleView)
         addSubview(levelLabel)
@@ -270,36 +270,36 @@ class BleepTestView: UIView {
         addSubview(levelTitleLabel)
         addSubview(lapTitleLabel)
         
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-(>=40)-[levelLabel]-40-[circleView(60)]-40-[lapLabel]-(>=40)-|",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-(>=40)-[levelLabel]-40-[circleView(60)]-40-[lapLabel]-(>=40)-|",
+            options: NSLayoutFormatOptions.alignAllCenterY,
             metrics: nil,
             views: viewsDictionary))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(>=0)-[levelTitleLabel]-5-[levelLabel]-(>=0)-|",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-(>=0)-[levelTitleLabel]-5-[levelLabel]-(>=0)-|",
+            options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary
             ))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-(>=0)-[lapTitleLabel]-5-[lapLabel]-(>=0)-|",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-(>=0)-[lapTitleLabel]-5-[lapLabel]-(>=0)-|",
+            options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary
             ))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[circleView(60)]",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[circleView(60)]",
+            options: NSLayoutFormatOptions.alignAllCenterY,
             metrics: nil,
             views: viewsDictionary))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[superview]-(<=1)-[circleView]",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:[superview]-(<=1)-[circleView]",
+            options: NSLayoutFormatOptions.alignAllCenterY,
             metrics: nil,
             views: viewsDictionary))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[superview]-(<=1)-[circleView]",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[superview]-(<=1)-[circleView]",
+            options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
     }
@@ -307,11 +307,11 @@ class BleepTestView: UIView {
 
 // MARK: Button Actions
 extension BleepTestView{
-    func stopButtonAction(sender:UIButton!){
+    func stopButtonAction(_ sender:UIButton!){
         delegate?.didStopButtonPressed(self)
     }
     
-    func pauseButtonAction(sender:UIButton!){
+    func pauseButtonAction(_ sender:UIButton!){
         // TODO: Pause Button Action
     }
 }

@@ -5,7 +5,7 @@ class SmallTitleLabel: UILabel {
         super.init(frame: frame)
         self.font = UIFont(name: self.font.fontName, size: 10)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.textColor = UIColor.grayColor()
+        self.textColor = UIColor.gray
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -1,49 +1,27 @@
 PODS:
-  - DATAFilter (0.9.1):
-    - DATAObjectIDs (~> 0.5.1)
-  - DATAObjectIDs (0.5.1)
-  - DATASource (5.6.0)
-  - DATAStack (4.2.0):
-    - TestCheck (~> 0.3.0)
-  - FoldingCell (0.7.3)
-  - Hex (3.0.0)
-  - NSDictionary-ANDYSafeValue (0.3.1)
-  - NSEntityDescription-SYNCPrimaryKey (0.1.2):
-    - NSString-HYPNetworking (~> 0.4.0)
-  - NSManagedObject-HYPPropertyMapper (3.4.2):
-    - NSString-HYPNetworking (~> 0.4.0)
-  - NSString-HYPNetworking (0.4.0)
-  - SwiftyTimer (1.4.0)
-  - Sync (1.5.2):
-    - DATAFilter (~> 0.9.1)
-    - DATAStack (~> 4.2.0)
-    - NSDictionary-ANDYSafeValue (~> 0.3.1)
-    - NSEntityDescription-SYNCPrimaryKey (~> 0.1.2)
-    - NSManagedObject-HYPPropertyMapper (~> 3.4.2)
-  - TestCheck (0.3.0)
+  - DATASource (6.1.5)
+  - DATAStack (7.0.1)
+  - Hex (5.0.1)
+  - SwiftyTimer (2.0.0)
+  - Sync (2.7.0):
+    - DATAStack (~> 7.0.1)
+    - SYNCPropertyMapper (~> 5.2.0)
+  - SYNCPropertyMapper (5.2.0)
 
 DEPENDENCIES:
   - DATASource
-  - FoldingCell (~> 0.7.3)
   - Hex
   - SwiftyTimer
   - Sync
 
 SPEC CHECKSUMS:
-  DATAFilter: 4a1bdc065847e19d9fa1c9dd92ed2d85847967a1
-  DATAObjectIDs: 33db74dd1c858c2d22a45a4013c95f1082182e4e
-  DATASource: f189ace5ed4859501c9c48599625a1fe664d900f
-  DATAStack: b831724a52d67cc0cf098cf53774b8fdeab22a25
-  FoldingCell: 8d7674d9ff51ae40408b99a17798bc0ec20a3654
-  Hex: ee430da9c4412d9196366ae5327f279021dc03eb
-  NSDictionary-ANDYSafeValue: 2d7adf339b6e302d71fec5f1d71ae00aacda993e
-  NSEntityDescription-SYNCPrimaryKey: 9a2b2f7b838913eb445f20cc2f2edca7281fcfa5
-  NSManagedObject-HYPPropertyMapper: 9f3dd46e4265d7f6ba1ce0039ce1fc28524e9937
-  NSString-HYPNetworking: 24c3828eebde8a37cc16101a475934a56ac820c0
-  SwiftyTimer: db4458cfaf67fc71e16ad6e4637c60b86f76a649
-  Sync: 66abc80c70f5316ef804027878b946f31ad6114b
-  TestCheck: 42c1343664986c0cbfaa20a62622d6f6fb70a407
+  DATASource: 52b86cfff6c7ac3db45192c01f7839c7473576c3
+  DATAStack: 9ca4ba8e8e4f389f1593ad3178d7a4d4df69d648
+  Hex: 2c757d81a2b4b6afc842458ce485c8c097ea1c79
+  SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
+  Sync: b02ce41aa8080049a2932fd7342fe189edb2298a
+  SYNCPropertyMapper: b3157f5183285c8a25ba23877b95a06ec2547e73
 
-PODFILE CHECKSUM: dc1220f26f5ca10a4a0e9a3ea1e257196861081d
+PODFILE CHECKSUM: 39fb6e20599ab03e8c50118045478617368b4891
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0

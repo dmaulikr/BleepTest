@@ -7,17 +7,17 @@ class AppController: UIResponder {
     var window: UIWindow?
     var navController: UINavigationController?
     
-    private lazy var dataStack: DATAStack = {
-        let data = DATAStack(modelName: "iOS", bundle: NSBundle.mainBundle(), storeType:.SQLite)
+    fileprivate lazy var dataStack: DATAStack = {
+        let data = DATAStack(modelName: "iOS", bundle: Bundle.main, storeType:.sqLite)
         return data
     }()
     
-    private lazy var fetcher: Fetcher = {
+    fileprivate lazy var fetcher: Fetcher = {
         let fetcher = Fetcher(dataStack: self.dataStack)
         return fetcher
     }()
     
-    private lazy var writer: Writer = {
+    fileprivate lazy var writer: Writer = {
         let writer = Writer(dataStack: self.dataStack)
         return writer
     }()
@@ -26,15 +26,15 @@ class AppController: UIResponder {
 extension AppController: UIApplicationDelegate {
     //MARK: UIApplicationDelegate
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        window = UIWindow(frame: UIScreen.main.bounds)
         guard let window = self.window else { fatalError("Window not found") }
        
         if(!isAppAlreadyLaunchedOnce()){
             self.fetcher.fetchLocalData{ _ in }
         }
 
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.shared.statusBarStyle = .lightContent
         window.rootViewController = TabBarController(fetcher: self.fetcher, writer:self.writer, dataStack: dataStack)
         window.makeKeyAndVisible()
 
@@ -42,11 +42,11 @@ extension AppController: UIApplicationDelegate {
     }
     
     func isAppAlreadyLaunchedOnce()->Bool{
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let _ = defaults.stringForKey("isAppAlreadyLaunchedOnce"){
+        let defaults = UserDefaults.standard
+        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
             return true
         }else{
-            defaults.setBool(true, forKey: "isAppAlreadyLaunchedOnce")
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
             return false
         }
     }

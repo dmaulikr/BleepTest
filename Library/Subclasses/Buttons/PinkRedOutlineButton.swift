@@ -7,19 +7,19 @@ class PinkRedOutlineButton: UIButton {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.cornerRadius = 8;
         self.layer.borderWidth = 2;
-        self.layer.borderColor = UIColor.pinkRedColor().CGColor
-        self.setTitleColor(UIColor.pinkRedColor(), forState: UIControlState.Normal)
-        self.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Highlighted)
-        self.backgroundColor = UIColor.clearColor()
+        self.layer.borderColor = UIColor.pinkRedColor().cgColor
+        self.setTitleColor(UIColor.pinkRedColor(), for: UIControlState())
+        self.setTitleColor(UIColor.lightGray, for: UIControlState.highlighted)
+        self.backgroundColor = UIColor.clear
     }
     
-    override var highlighted: Bool {
+    override var isHighlighted: Bool {
         didSet {
-            switch highlighted {
+            switch isHighlighted {
             case true:
-                layer.borderColor = UIColor.lightGrayColor().CGColor
+                layer.borderColor = UIColor.lightGray.cgColor
             case false:
-                layer.borderColor = UIColor.pinkRedColor().CGColor
+                layer.borderColor = UIColor.pinkRedColor().cgColor
             }
         }
     }
