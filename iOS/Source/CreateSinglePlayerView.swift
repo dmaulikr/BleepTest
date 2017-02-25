@@ -132,7 +132,7 @@ extension CreateSinglePlayerView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField === self.userNameTextField){
             self.userNameTextField.resignFirstResponder()
-            self.ageTextField.becomeFirstResponder()
+            _ = self.ageTextField.becomeFirstResponder()
         }
         return true
     }
