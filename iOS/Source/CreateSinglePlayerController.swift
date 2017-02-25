@@ -2,7 +2,7 @@ import UIKit
 
 class CreateSinglePlayerController: BaseViewController {
     override func loadView() {
-        let view = CreateSinglePlayerView(frame: UIScreen.mainScreen().bounds)
+        let view = CreateSinglePlayerView(frame: UIScreen.main.bounds)
         self.view = view
         view.delegate = self
         self.setStatusBarHidden(true)
@@ -11,15 +11,15 @@ class CreateSinglePlayerController: BaseViewController {
 }
 
 extension CreateSinglePlayerController : CreateSinglePlayerViewDelegate {
-    func didCloseButtonPressed(sender: CreateSinglePlayerView) {
+    func didCloseButtonPressed(_ sender: CreateSinglePlayerView) {
         view.endEditing(true)
         setStatusBarHidden(false)
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
-    func didCreateButtonPressed(sender: CreateSinglePlayerView, age:Int, userName:NSString) {
+    func didCreateButtonPressed(_ sender: CreateSinglePlayerView, age:Int, userName:NSString) {
         view.endEditing(true)
         setStatusBarHidden(false)
         writer.createPlayer(userName as String, age:age)
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }

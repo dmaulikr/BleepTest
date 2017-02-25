@@ -1,7 +1,7 @@
 import UIKit
 import DATAStack
 
-public class BaseTableViewController: UITableViewController {
+open class BaseTableViewController: UITableViewController {
     internal var fetcher: Fetcher
     internal var writer: Writer
     internal var dataStack: DATAStack?
@@ -22,8 +22,8 @@ public class BaseTableViewController: UITableViewController {
 
 // MARK: Status Bar
 extension BaseTableViewController{
-    public func setStatusBarHidden(boolen: Bool){
-        UIApplication.sharedApplication().statusBarHidden = boolen;
+    public func setStatusBarHidden(_ boolen: Bool){
+        UIApplication.shared.isStatusBarHidden = boolen;
     }
 }
 

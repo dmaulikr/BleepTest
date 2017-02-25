@@ -6,7 +6,7 @@ import CoreData
 class PlayerTest: XCTestCase {
     
     func createDataStack() -> DATAStack {
-        let dataStack = DATAStack(modelName: "iOS", bundle: NSBundle.mainBundle(), storeType:.InMemory)
+        let dataStack = DATAStack(modelName: "iOS", bundle: Bundle.main, storeType:.inMemory)
         return dataStack
     }
     
@@ -21,13 +21,13 @@ class PlayerTest: XCTestCase {
     func testPlayerInCoreData(){
         let dataStack = self.createDataStack()
 
-        let user = NSEntityDescription.insertNewObjectForEntityForName("Player", inManagedObjectContext: dataStack.mainContext)
+        let user = NSEntityDescription.insertNewObject(forEntityName: "Player", into: dataStack.mainContext)
         user.setValue(101, forKey: "age")
         user.setValue("Billy Jones", forKey: "username")
         try! dataStack.mainContext.save()
        
-        let request = NSFetchRequest(entityName: "Player")
-        let objects = try! dataStack.mainContext.executeFetchRequest(request)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        let objects = try! dataStack.mainContext.fetch(request)
         XCTAssertEqual(objects.count, 1)
     }
     

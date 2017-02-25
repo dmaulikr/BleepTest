@@ -15,9 +15,7 @@
 		950CEB711E5607AE004712C8 /* testLevelsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 950CEB6F1E5606FB004712C8 /* testLevelsData.json */; };
 		950D12231C9AEF4400133A25 /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D12221C9AEF4400133A25 /* MenuTableCell.swift */; };
 		950D12251C9AF31400133A25 /* MenuTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D12241C9AF31400133A25 /* MenuTableController.swift */; };
-		9527A6D21CA038DB001E7942 /* CompletedTestTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527A6D11CA038DB001E7942 /* CompletedTestTableController.swift */; };
 		9527A6D41CA03B23001E7942 /* CompletedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527A6D31CA03B23001E7942 /* CompletedTest.swift */; };
-		9527A6D71CA056C7001E7942 /* CompletedTestTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527A6D61CA056C7001E7942 /* CompletedTestTableCell.swift */; };
 		953DD2801CBE946E00A49A98 /* UIButton+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD27D1CBE946E00A49A98 /* UIButton+Custom.swift */; };
 		953DD2811CBE946E00A49A98 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD27E1CBE946E00A49A98 /* UIColor+Custom.swift */; };
 		953DD2821CBE946E00A49A98 /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD27F1CBE946E00A49A98 /* UIFont+Custom.swift */; };
@@ -50,8 +48,6 @@
 		95BE7C281D908B530070DFFE /* MediumBlackLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */; };
 		95D7B0041C8CBC3E004690D5 /* BleepTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */; };
 		95D7B0061C8CBC68004690D5 /* BleepTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7B0051C8CBC68004690D5 /* BleepTestView.swift */; };
-		95D8E4401CA157380084F939 /* CompletedTests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D8E43F1CA157380084F939 /* CompletedTests.storyboard */; };
-		95D8E4431CA15B5D0084F939 /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D8E4421CA15B5D0084F939 /* FoldingCell.swift */; };
 		95E6367A1E2A599200CD7918 /* BleepTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E636791E2A599200CD7918 /* BleepTest.swift */; };
 		95E6367C1E2A9C4200CD7918 /* BleepTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E6367B1E2A9C4100CD7918 /* BleepTestTests.swift */; };
 		95EBE9F11C9064D600A57377 /* levelsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 95EBE9F01C9064D600A57377 /* levelsData.json */; };
@@ -94,9 +90,7 @@
 		950CEB6F1E5606FB004712C8 /* testLevelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testLevelsData.json; sourceTree = SOURCE_ROOT; };
 		950D12221C9AEF4400133A25 /* MenuTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
 		950D12241C9AF31400133A25 /* MenuTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableController.swift; sourceTree = "<group>"; };
-		9527A6D11CA038DB001E7942 /* CompletedTestTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTestTableController.swift; sourceTree = "<group>"; };
 		9527A6D31CA03B23001E7942 /* CompletedTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTest.swift; sourceTree = "<group>"; };
-		9527A6D61CA056C7001E7942 /* CompletedTestTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTestTableCell.swift; sourceTree = "<group>"; };
 		953DD27D1CBE946E00A49A98 /* UIButton+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Custom.swift"; sourceTree = "<group>"; };
 		953DD27E1CBE946E00A49A98 /* UIColor+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		953DD27F1CBE946E00A49A98 /* UIFont+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Custom.swift"; sourceTree = "<group>"; };
@@ -129,8 +123,6 @@
 		95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumBlackLabel.swift; sourceTree = "<group>"; };
 		95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestController.swift; sourceTree = "<group>"; };
 		95D7B0051C8CBC68004690D5 /* BleepTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestView.swift; sourceTree = "<group>"; };
-		95D8E43F1CA157380084F939 /* CompletedTests.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CompletedTests.storyboard; sourceTree = "<group>"; };
-		95D8E4421CA15B5D0084F939 /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
 		95E636791E2A599200CD7918 /* BleepTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BleepTest.swift; path = BleepTest/BleepTest.swift; sourceTree = "<group>"; };
 		95E6367B1E2A9C4100CD7918 /* BleepTestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestTests.swift; sourceTree = "<group>"; };
 		95EBE9F01C9064D600A57377 /* levelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = levelsData.json; path = ../../levelsData.json; sourceTree = "<group>"; };
@@ -202,8 +194,6 @@
 		146E279E1BCD51F200959BBA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				95D8E4441CA16B5C0084F939 /* Storyboards */,
-				95D8E4411CA15B5D0084F939 /* FoldingCell */,
 				95406FEF1C93343900567215 /* beep.wav */,
 				95EBE9F01C9064D600A57377 /* levelsData.json */,
 				950CEB6F1E5606FB004712C8 /* testLevelsData.json */,
@@ -294,8 +284,6 @@
 		953A5EF21CA42C6D003960FC /* Completed Test */ = {
 			isa = PBXGroup;
 			children = (
-				9527A6D11CA038DB001E7942 /* CompletedTestTableController.swift */,
-				9527A6D61CA056C7001E7942 /* CompletedTestTableCell.swift */,
 			);
 			name = "Completed Test";
 			sourceTree = "<group>";
@@ -416,22 +404,6 @@
 			name = NavigationControllers;
 			sourceTree = "<group>";
 		};
-		95D8E4411CA15B5D0084F939 /* FoldingCell */ = {
-			isa = PBXGroup;
-			children = (
-				95D8E4421CA15B5D0084F939 /* FoldingCell.swift */,
-			);
-			path = FoldingCell;
-			sourceTree = "<group>";
-		};
-		95D8E4441CA16B5C0084F939 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				95D8E43F1CA157380084F939 /* CompletedTests.storyboard */,
-			);
-			name = Storyboards;
-			sourceTree = "<group>";
-		};
 		95E636781E2A596000CD7918 /* BleepTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,10 +498,13 @@
 				TargetAttributes = {
 					146E27881BCD51C800959BBA = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = UF58D3R587;
+						DevelopmentTeam = 2BJY8JPR55;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 					};
 					148312881B92C11500266943 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0820;
 						TestTargetID = 146E27881BCD51C800959BBA;
 					};
 				};
@@ -563,7 +538,6 @@
 				95EBE9F11C9064D600A57377 /* levelsData.json in Resources */,
 				146E27AA1BCD51F200959BBA /* Images.xcassets in Resources */,
 				146E27A91BCD51F200959BBA /* LaunchScreen.xib in Resources */,
-				95D8E4401CA157380084F939 /* CompletedTests.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,7 +563,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		19C30EB927038E801EED1BE4 /* [CP] Check Pods Manifest.lock */ = {
@@ -604,7 +578,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		90906E8881565ECD0C82DF6E /* [CP] Embed Pods Frameworks */ = {
@@ -684,7 +658,6 @@
 				953F4E821D96F358004BAD1E /* MedumBlueLabel.swift in Sources */,
 				146E27AC1BCD51F200959BBA /* AppController.swift in Sources */,
 				953DD2A01CBE949500A49A98 /* BaseViewController.swift in Sources */,
-				9527A6D71CA056C7001E7942 /* CompletedTestTableCell.swift in Sources */,
 				953F4E841D9719E7004BAD1E /* PinkRedOutlineButton.swift in Sources */,
 				953DD29E1CBE949500A49A98 /* BaseCollectionViewController.swift in Sources */,
 				953DD2A11CBE949500A49A98 /* CircleView.swift in Sources */,
@@ -697,9 +670,7 @@
 				950D12251C9AF31400133A25 /* MenuTableController.swift in Sources */,
 				95D7B0061C8CBC68004690D5 /* BleepTestView.swift in Sources */,
 				953DD2A41CBE949500A49A98 /* Writer.swift in Sources */,
-				95D8E4431CA15B5D0084F939 /* FoldingCell.swift in Sources */,
 				953DD2801CBE946E00A49A98 /* UIButton+Custom.swift in Sources */,
-				9527A6D21CA038DB001E7942 /* CompletedTestTableController.swift in Sources */,
 				953DD29B1CBE949500A49A98 /* LargeContentLabel.swift in Sources */,
 				145F81CD1BDE2CFD0016A9E0 /* iOS.xcdatamodeld in Sources */,
 				95F7B6FA1DF852E40092114C /* Player.swift in Sources */,
@@ -763,12 +734,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 2BJY8JPR55;
 				INFOPLIST_FILE = iOS/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "COM.COMPANY-NAME.APP-NAME.iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -779,12 +752,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2BJY8JPR55;
 				INFOPLIST_FILE = iOS/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "COM.COMPANY-NAME.APP-NAME.iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -887,6 +862,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rename.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BleepTest.app/BleepTest";
 			};
 			name = Debug;
@@ -904,6 +880,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rename.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BleepTest.app/BleepTest";
 			};
 			name = Release;

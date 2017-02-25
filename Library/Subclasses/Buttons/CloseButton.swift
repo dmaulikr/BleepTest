@@ -8,12 +8,12 @@ class CloseButton: UIButton {
         self.translatesAutoresizingMaskIntoConstraints = false
         
         let closeImage = UIImage(named: "Close") as UIImage?
-        self.setImage(closeImage, forState: UIControlState.Normal)
+        self.setImage(closeImage, for: UIControlState())
     }
     
-    override var highlighted: Bool {
+    override var isHighlighted: Bool {
         didSet {
-            switch highlighted {
+            switch isHighlighted {
             case true:
                 setNeedsDisplay()
             case false:

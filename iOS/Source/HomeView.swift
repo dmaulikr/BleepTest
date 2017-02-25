@@ -1,8 +1,8 @@
 import UIKit
 
 protocol HomeViewDelegate: class {
-    func didChangeButtonPressed(sender: HomeView)
-    func didStartButtonPressed(sender: HomeView)
+    func didChangeButtonPressed(_ sender: HomeView)
+    func didStartButtonPressed(_ sender: HomeView)
 }
 
 class HomeView: UIView {
@@ -20,14 +20,14 @@ class HomeView: UIView {
     
     lazy var startButton : StartButton = {
         var temporyButton : StartButton = StartButton()
-        temporyButton.addTarget(self, action: #selector(startButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        temporyButton.addTarget(self, action: #selector(startButtonAction(_:)), for: UIControlEvents.touchUpInside)
         return temporyButton
     }()
     
     lazy var changeButton : PinkRedOutlineButton = {
         var temporyButton : PinkRedOutlineButton = PinkRedOutlineButton()
-        temporyButton.setTitle("Change", forState: UIControlState.Normal)
-        temporyButton.addTarget(self, action: #selector(changeButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        temporyButton.setTitle("Change", for: UIControlState())
+        temporyButton.addTarget(self, action: #selector(changeButtonAction(_:)), for: UIControlEvents.touchUpInside)
         temporyButton.titleLabel!.font =  UIFont(name: temporyButton.titleLabel!.font.fontName, size: 18)
         return temporyButton
     }()
@@ -37,7 +37,7 @@ class HomeView: UIView {
         super.init(frame: frame)
         populateUserInterface()
         addStableUIComponentsToView()
-        backgroundColor = .whiteColor()
+        backgroundColor = .white
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -62,38 +62,38 @@ extension HomeView{
             "titleLabel" : titleLabel,
             "nameLabel" : nameLabel,
             "superview":self
-        ]
+        ] as [String : Any]
         
         addSubview(startButton)
         addSubview(changeButton)
         addSubview(titleLabel)
         addSubview(nameLabel)
         
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-120-[titleLabel]-50-[changeButton(40)]-50-[startButton(100)]-(>=80)-|",
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-120-[titleLabel]-50-[changeButton(40)]-50-[startButton(100)]-(>=80)-|",
             options: NSLayoutFormatOptions(rawValue: 0),
             metrics: nil,
             views: viewsDictionary))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-30-[titleLabel]-(>=10)-[nameLabel]-30-|",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-30-[titleLabel]-(>=10)-[nameLabel]-30-|",
+            options: NSLayoutFormatOptions.alignAllCenterY,
             metrics: nil,
             views: viewsDictionary))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-60-[changeButton]-60-|",
-            options: NSLayoutFormatOptions.AlignAllCenterY,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-60-[changeButton]-60-|",
+            options: NSLayoutFormatOptions.alignAllCenterY,
             metrics: nil,
             views:viewsDictionary
             ))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:[superview]-(<=1)-[startButton(100)]",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[superview]-(<=1)-[startButton(100)]",
+            options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary
             ))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:[startButton(100)]",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:[startButton(100)]",
+            options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
     }
@@ -101,11 +101,11 @@ extension HomeView{
 
 //MARK: Actions
 extension HomeView{
-    func startButtonAction(sender:UIButton!){
+    func startButtonAction(_ sender:UIButton!){
         delegate?.didStartButtonPressed(self)
     }
     
-    func changeButtonAction(sender:UIButton!){
+    func changeButtonAction(_ sender:UIButton!){
         delegate?.didChangeButtonPressed(self)
     }
 }

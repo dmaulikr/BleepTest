@@ -20,7 +20,7 @@ extension String {
 /**
 A TextFieldEffects object is a control that displays editable text and contains the boilerplates to setup unique animations for text entrey and display. You typically use this class the same way you use UITextField.
 */
-public class TextFieldEffects : UITextField {
+open class TextFieldEffects : UITextField {
     
     /**
      The type of animatino a TextFieldEffect can perform.
@@ -29,8 +29,8 @@ public class TextFieldEffects : UITextField {
      - TextDisplay: animation that takes effect when the textfield loses focus.
      */
     public enum AnimationType: Int {
-        case TextEntry
-        case TextDisplay
+        case textEntry
+        case textDisplay
     }
     
     override init(frame: CGRect) {
@@ -45,58 +45,58 @@ public class TextFieldEffects : UITextField {
     /**
     Closure executed when an animation has been completed.
      */
-    public typealias AnimationCompletionHandler = (type: AnimationType)->()
+    public typealias AnimationCompletionHandler = (_ type: AnimationType)->()
     
     /**
     UILabel that holds all the placeholder information
     */
-    public let placeholderLabel = UILabel()
+    open let placeholderLabel = UILabel()
     
     /**
     Creates all the animations that are used to leave the textfield in the "entering text" state.
     */
-    public func animateViewsForTextEntry() {
+    open func animateViewsForTextEntry() {
         fatalError("\(#function) must be overridden")
     }
     
     /**
     Creates all the animations that are used to leave the textfield in the "display input text" state.
     */
-    public func animateViewsForTextDisplay() {
+    open func animateViewsForTextDisplay() {
         fatalError("\(#function) must be overridden")
     }
     
     /**
      The animation completion handler is the best place to be notified when the text field animation has ended.
      */
-    public var animationCompletionHandler: AnimationCompletionHandler?
+    open var animationCompletionHandler: AnimationCompletionHandler?
     
     /**
     Draws the receiver’s image within the passed-in rectangle.
     
     - parameter rect:	The portion of the view’s bounds that needs to be updated.
     */
-    public func drawViewsForRect(rect: CGRect) {
+    open func drawViewsForRect(_ rect: CGRect) {
         fatalError("\(#function) must be overridden")
     }
     
-    public func updateViewsForBoundsChange(bounds: CGRect) {
+    open func updateViewsForBoundsChange(_ bounds: CGRect) {
         fatalError("\(#function) must be overridden")
     }
     
     // MARK: - Overrides
     
-    override public func drawRect(rect: CGRect) {
+    override open func draw(_ rect: CGRect) {
         drawViewsForRect(rect)
     }
     
-    override public func drawPlaceholderInRect(rect: CGRect) {
+    override open func drawPlaceholder(in rect: CGRect) {
         // Don't draw any placeholders
     }
     
-    override public var text: String? {
+    override open var text: String? {
         didSet {
-            if let text = text where text.isNotEmpty {
+            if let text = text, text.isNotEmpty {
                 animateViewsForTextEntry()
             } else {
                 animateViewsForTextDisplay()
@@ -104,7 +104,7 @@ public class TextFieldEffects : UITextField {
         }
     }
     
-    override public func becomeFirstResponder() -> Bool {
+    override open func becomeFirstResponder() -> Bool {
         self.addSeparatorInputAccessoryIfNumericKeyboardOnPhone()
         return super.becomeFirstResponder()
     }
@@ -112,48 +112,48 @@ public class TextFieldEffects : UITextField {
     //Adding an line above a numerical keyboard
     
     func addSeparatorInputAccessoryIfNumericKeyboardOnPhone() {
-        guard self.keyboardType == .NumberPad else {
+        guard self.keyboardType == .numberPad else {
             return
         }
         
-        guard UIDevice.currentDevice().userInterfaceIdiom == .Phone else {
+        guard UIDevice.current.userInterfaceIdiom == .phone else {
             return
         }
         
-        let view = UIView(frame: CGRectMake(0, 0, 0, 1 / UIScreen.mainScreen().scale))
-        view.backgroundColor = UIColor.lightGrayColor()
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 1 / UIScreen.main.scale))
+        view.backgroundColor = UIColor.lightGray
         self.inputAccessoryView = view
     }
     
     // MARK: - UITextField Observing
     
-    override public func willMoveToSuperview(newSuperview: UIView!) {
+    override open func willMove(toSuperview newSuperview: UIView!) {
         if newSuperview != nil {
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(textFieldDidEndEditing), name: UITextFieldTextDidEndEditingNotification, object: self)
+            NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidEndEditing), name: NSNotification.Name.UITextFieldTextDidEndEditing, object: self)
             
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(textFieldDidBeginEditing), name: UITextFieldTextDidBeginEditingNotification, object: self)
+            NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidBeginEditing), name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: self)
         } else {
-            NSNotificationCenter.defaultCenter().removeObserver(self)
+            NotificationCenter.default.removeObserver(self)
         }
     }
     
     /**
     The textfield has started an editing session.
     */
-    public func textFieldDidBeginEditing() {
+    open func textFieldDidBeginEditing() {
         animateViewsForTextEntry()
     }
     
     /**
     The textfield has ended an editing session.
     */
-    public func textFieldDidEndEditing() {
+    open func textFieldDidEndEditing() {
         animateViewsForTextDisplay()
     }
     
     // MARK: - Interface Builder
     
-    override public func prepareForInterfaceBuilder() {
+    override open func prepareForInterfaceBuilder() {
         drawViewsForRect(frame)
     }
     

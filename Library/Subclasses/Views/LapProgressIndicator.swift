@@ -5,7 +5,7 @@ class LapProgressIndicator: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         
         let circlePath = UIBezierPath(
             arcCenter:
@@ -21,9 +21,9 @@ class LapProgressIndicator: UIView {
         )
         
         circleLayer = CAShapeLayer()
-        circleLayer.path = circlePath.CGPath
-        circleLayer.fillColor = UIColor.clearColor().CGColor
-        circleLayer.strokeColor = UIColor.pinkRedColor().CGColor
+        circleLayer.path = circlePath.cgPath
+        circleLayer.fillColor = UIColor.clear.cgColor
+        circleLayer.strokeColor = UIColor.pinkRedColor().cgColor
         circleLayer.lineWidth = 5.0;
         circleLayer.strokeEnd = 0.0
         
@@ -40,7 +40,7 @@ class LapProgressIndicator: UIView {
         circleLayer.frame = frame
     }
     
-    func animateCircle(duration: NSTimeInterval) {
+    func animateCircle(_ duration: TimeInterval) {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         
         animation.duration = duration
@@ -49,6 +49,6 @@ class LapProgressIndicator: UIView {
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         
         circleLayer.strokeEnd = 1.0
-        circleLayer.addAnimation(animation, forKey: "animateCircle")
+        circleLayer.add(animation, forKey: "animateCircle")
     }
 }

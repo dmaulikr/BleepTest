@@ -12,12 +12,12 @@ class OrangeNavigationController: UINavigationController {
     }
     
     func setUpNavigationBarAppearance() {
-        navigationBar.barTintColor = UIColor.orangeColor()
-        navigationBar.tintColor = UIColor.whiteColor()
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        navigationBar.barTintColor = UIColor.orange
+        navigationBar.tintColor = UIColor.white
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
     }
 
-    func cancelButtonAction(sender: UIButton) {
+    func cancelButtonAction(_ sender: UIButton) {
         
     }
 }
