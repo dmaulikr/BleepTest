@@ -6,7 +6,7 @@ import CoreData
 class ResultsTableControllerTest: XCTestCase {
     
     private lazy var data: DATAStack = {
-        let data = DATAStack(modelName: "iOS", bundle: NSBundle.mainBundle(), storeType:.InMemory)
+        let data = DATAStack(modelName: "iOS", bundle: Bundle.main, storeType:.inMemory)
         return data
     }()
     
@@ -21,13 +21,13 @@ class ResultsTableControllerTest: XCTestCase {
     }()
     
     override func setUp(){
-        let user = NSEntityDescription.insertNewObjectForEntityForName("Player", inManagedObjectContext: data.mainContext)
+        let user = NSEntityDescription.insertNewObject(forEntityName: "Player", into: data.mainContext)
         user.setValue(101, forKey: "age")
         user.setValue("Billy Jones", forKey: "username")
         try! self.data.mainContext.save()
         
-        let request = NSFetchRequest(entityName: "Player")
-        let objects = try! self.data.mainContext.executeFetchRequest(request)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        let objects = try! self.data.mainContext.fetch(request)
         
         let writer = Writer(dataStack: self.data)
         writer.saveBleepTest(2, lap: 3, vo2Max: 20.3, distance: 50, player: objects[0] as? Player)
