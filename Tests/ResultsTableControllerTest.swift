@@ -35,9 +35,11 @@ class ResultsTableControllerTest: XCTestCase {
 
     func testTableViewControllerTable(){
         let resultsController = ResultsTableController(fetcher: self.fetcher, writer: self.writer, dataStack: self.data)
-        let  countRow:Int =  resultsController.tableView(resultsController.tableView, numberOfRowsInSection: 0)
+        let countedRows = resultsController.tableView.numberOfRows(inSection: 0)
         
-        XCTAssert(countRow == 1)
+        let fetchedReslults = fetcher.fetchCompletedTest{_ in}
+        
+        XCTAssert(countedRows == fetchedReslults.count)
     }
     
 }
