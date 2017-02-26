@@ -12,6 +12,7 @@
 		146E27AA1BCD51F200959BBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 146E27A11BCD51F200959BBA /* Images.xcassets */; };
 		146E27AC1BCD51F200959BBA /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E27A41BCD51F200959BBA /* AppController.swift */; };
 		22BD232E23DC47B6D1EE36C2 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790CDFF1405879FEC5B0E798 /* Pods_Tests.framework */; };
+		9500F0171E6381310058B6EA /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F0161E6381300058B6EA /* ResultsCell.swift */; };
 		950CEB711E5607AE004712C8 /* testLevelsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 950CEB6F1E5606FB004712C8 /* testLevelsData.json */; };
 		950CEB731E56552F004712C8 /* ResultsTableControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */; };
 		950D12231C9AEF4400133A25 /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D12221C9AEF4400133A25 /* MenuTableCell.swift */; };
@@ -89,6 +90,7 @@
 		767205427B29E91A7EC7FF6A /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		78A72E2729A68604D6C1111C /* Pods-BleepTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BleepTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-BleepTest/Pods-BleepTest.release.xcconfig"; sourceTree = "<group>"; };
 		790CDFF1405879FEC5B0E798 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9500F0161E6381300058B6EA /* ResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		950CEB6F1E5606FB004712C8 /* testLevelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testLevelsData.json; sourceTree = SOURCE_ROOT; };
 		950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableControllerTest.swift; sourceTree = "<group>"; };
 		950D12221C9AEF4400133A25 /* MenuTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				9527A6D11CA038DB001E7942 /* ResultsTableController.swift */,
+				9500F0161E6381300058B6EA /* ResultsCell.swift */,
 			);
 			name = "Completed Test";
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				953DD2A31CBE949500A49A98 /* LevelProgressIndicator.swift in Sources */,
 				953DD2821CBE946E00A49A98 /* UIFont+Custom.swift in Sources */,
 				95F4C94A1DA1B0860034E37A /* YoshikoTextField.swift in Sources */,
+				9500F0171E6381310058B6EA /* ResultsCell.swift in Sources */,
 				953DD2811CBE946E00A49A98 /* UIColor+Custom.swift in Sources */,
 				9548A8221CB14F5000BAF914 /* HomeView.swift in Sources */,
 				95D7B0041C8CBC3E004690D5 /* BleepTestController.swift in Sources */,
