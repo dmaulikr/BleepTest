@@ -46,11 +46,11 @@ class ResultsTableControllerTest: XCTestCase {
         let resultsController = ResultsTableController(fetcher: self.fetcher, writer: self.writer, dataStack: self.data)
         let resultsCell :ResultsCell = resultsController.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! ResultsCell
         
-        XCTAssertEqual(resultsCell.levelLabel.text!, "2")
-        XCTAssertEqual(resultsCell.lapLabel.text!, "3")
-        XCTAssertEqual(resultsCell.playerNameLabel.text!, "Billy Jones")
-        XCTAssertEqual(resultsCell.vo2MaxLabel.text!, "20.3")
-        XCTAssertEqual(resultsCell.distanceLabel.text!, "50")
+        XCTAssertEqual(resultsCell.levelLabel.text, "Level: 2")
+        XCTAssertEqual(resultsCell.lapLabel.text, "Lap: 3")
+        XCTAssertEqual(resultsCell.playerNameLabel.text, "Billy Jones")
+        XCTAssertEqual(resultsCell.vo2MaxLabel.text, "VO2 Max: 20.3")
+        XCTAssertEqual(resultsCell.distanceLabel.text, "Distance: 50")
     }
     
 }
