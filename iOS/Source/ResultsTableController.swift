@@ -10,9 +10,19 @@ class ResultsTableController: BaseTableViewController {
         request.sortDescriptors = [NSSortDescriptor(key: "level", ascending: true)]
         
         let dataSource = DATASource(tableView: self.tableView, cellIdentifier:  ResultsCell.Identifier, fetchRequest: request, mainContext: self.dataStack!.mainContext, configuration: { cell, item, indexPath in
-            let levelString =  String(format: "Level: %@ - Lap: %@", (item.value(forKey: "level") as? NSNumber)!, (item.value(forKey: "lap") as? NSNumber)!)
+            let levelString =  String(format: "Level: %@", (item.value(forKey: "level") as? NSNumber)!)
+            let lapString = String(format: "Lap: %@", (item.value(forKey: "lap") as? NSNumber)!)
+            let vo2MaxString = String(format: "VO2 Max: %@", (item.value(forKey: "vo2Max") as? NSNumber)!)
+            let distanceString = String(format: "Distance: %@", (item.value(forKey: "distance") as? NSNumber)!)
+            let player = item.value(forKey: "player") as? Player
+            let playerNameString = player?.username
+
             let cell = cell as! ResultsCell
-            cell.textLabel?.text = levelString
+            cell.levelLabel.text = levelString
+            cell.lapLabel.text = lapString
+            cell.playerNameLabel.text = playerNameString
+            cell.vo2MaxLabel.text = vo2MaxString
+            cell.distanceLabel.text = distanceString
         })
         return dataSource
     }()
