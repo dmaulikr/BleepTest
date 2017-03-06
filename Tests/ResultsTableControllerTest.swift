@@ -20,7 +20,7 @@ class ResultsTableControllerTest: XCTestCase {
         return writer
     }()
     
-    override func setUp(){
+    override func setUp() {
         let user = NSEntityDescription.insertNewObject(forEntityName: "Player", into: data.mainContext)
         user.setValue(101, forKey: "age")
         user.setValue("Billy Jones", forKey: "username")
@@ -33,7 +33,7 @@ class ResultsTableControllerTest: XCTestCase {
         writer.saveBleepTest(2, lap: 3, vo2Max: 20.3, distance: 50, player: objects[0] as? Player)
     }
 
-    func testTableViewControllerTable(){
+    func testTableViewControllerTable() {
         let resultsController = ResultsTableController(fetcher: self.fetcher, writer: self.writer, dataStack: self.data)
         let countedRows = resultsController.tableView.numberOfRows(inSection: 0)
         
@@ -45,6 +45,13 @@ class ResultsTableControllerTest: XCTestCase {
     func testResultsTableCells() {
         let resultsController = ResultsTableController(fetcher: self.fetcher, writer: self.writer, dataStack: self.data)
         let resultsCell :ResultsCell = resultsController.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! ResultsCell
+
+        //Test labels initialised
+        XCTAssertNotNil(resultsCell.levelLabel, "levelLabel Not Initialised")
+        XCTAssertNotNil(resultsCell.lapLabel, "lapLabel Not Initialised")
+        XCTAssertNotNil(resultsCell.playerNameLabel, "playerNameLabel Not Initialised")
+        XCTAssertNotNil(resultsCell.vo2MaxLabel, "vo2MaxLabel Not Initialised")
+        XCTAssertNotNil(resultsCell.distanceLabel, "distanceLabel Not Initialised")
         
         XCTAssertEqual(resultsCell.levelLabel.text, "Level: 2")
         XCTAssertEqual(resultsCell.lapLabel.text, "Lap: 3")
