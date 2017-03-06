@@ -58,6 +58,13 @@ class ResultsTableControllerTest: XCTestCase {
         XCTAssertEqual(resultsCell.playerNameLabel.text, "Billy Jones")
         XCTAssertEqual(resultsCell.vo2MaxLabel.text, "VO2 Max: 20.3")
         XCTAssertEqual(resultsCell.distanceLabel.text, "Distance: 50")
+        
+        //Test labels added to the cell view
+        XCTAssertNotNil(resultsCell.levelLabel.superview, "levelLabel Not Added To View")
+        XCTAssertNotNil(resultsCell.lapLabel.superview, "lapLabel Not Added To View")
+        XCTAssertNotNil(resultsCell.playerNameLabel.superview, "playerNameLabel Not Added To View")
+        XCTAssertNotNil(resultsCell.vo2MaxLabel.superview, "vo2MaxLabel Not Added To View")
+        XCTAssertNotNil(resultsCell.distanceLabel.superview, "distanceLabel Not Added To View")
     }
     
 }
