@@ -12,9 +12,12 @@
 		146E27AA1BCD51F200959BBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 146E27A11BCD51F200959BBA /* Images.xcassets */; };
 		146E27AC1BCD51F200959BBA /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E27A41BCD51F200959BBA /* AppController.swift */; };
 		22BD232E23DC47B6D1EE36C2 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790CDFF1405879FEC5B0E798 /* Pods_Tests.framework */; };
+		9500F0171E6381310058B6EA /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F0161E6381300058B6EA /* ResultsCell.swift */; };
 		950CEB711E5607AE004712C8 /* testLevelsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 950CEB6F1E5606FB004712C8 /* testLevelsData.json */; };
+		950CEB731E56552F004712C8 /* ResultsTableControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */; };
 		950D12231C9AEF4400133A25 /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D12221C9AEF4400133A25 /* MenuTableCell.swift */; };
 		950D12251C9AF31400133A25 /* MenuTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D12241C9AF31400133A25 /* MenuTableController.swift */; };
+		9527A6D21CA038DB001E7942 /* ResultsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527A6D11CA038DB001E7942 /* ResultsTableController.swift */; };
 		9527A6D41CA03B23001E7942 /* CompletedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527A6D31CA03B23001E7942 /* CompletedTest.swift */; };
 		953DD2801CBE946E00A49A98 /* UIButton+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD27D1CBE946E00A49A98 /* UIButton+Custom.swift */; };
 		953DD2811CBE946E00A49A98 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD27E1CBE946E00A49A98 /* UIColor+Custom.swift */; };
@@ -44,6 +47,8 @@
 		95874DC01DA8401000D642A7 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95874DBF1DA8401000D642A7 /* CloseButton.swift */; };
 		95A90EBC1CC28A270062C448 /* MediumTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A90EBB1CC28A270062C448 /* MediumTitleLabel.swift */; };
 		95B235911E1FAB3F00A40666 /* OrangeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B235901E1FAB3F00A40666 /* OrangeNavigationController.swift */; };
+		95B7EC011E6F437C00FBAB08 /* ResultsLargeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B7EC001E6F437B00FBAB08 /* ResultsLargeLabel.swift */; };
+		95B7EC031E6F444200FBAB08 /* ResultsSmallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B7EC021E6F444200FBAB08 /* ResultsSmallLabel.swift */; };
 		95B92F4F1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B92F4E1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift */; };
 		95BE7C281D908B530070DFFE /* MediumBlackLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */; };
 		95D7B0041C8CBC3E004690D5 /* BleepTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */; };
@@ -87,9 +92,12 @@
 		767205427B29E91A7EC7FF6A /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		78A72E2729A68604D6C1111C /* Pods-BleepTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BleepTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-BleepTest/Pods-BleepTest.release.xcconfig"; sourceTree = "<group>"; };
 		790CDFF1405879FEC5B0E798 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9500F0161E6381300058B6EA /* ResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		950CEB6F1E5606FB004712C8 /* testLevelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testLevelsData.json; sourceTree = SOURCE_ROOT; };
+		950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableControllerTest.swift; sourceTree = "<group>"; };
 		950D12221C9AEF4400133A25 /* MenuTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
 		950D12241C9AF31400133A25 /* MenuTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableController.swift; sourceTree = "<group>"; };
+		9527A6D11CA038DB001E7942 /* ResultsTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableController.swift; sourceTree = "<group>"; };
 		9527A6D31CA03B23001E7942 /* CompletedTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTest.swift; sourceTree = "<group>"; };
 		953DD27D1CBE946E00A49A98 /* UIButton+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Custom.swift"; sourceTree = "<group>"; };
 		953DD27E1CBE946E00A49A98 /* UIColor+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
@@ -119,6 +127,8 @@
 		95874DBF1DA8401000D642A7 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		95A90EBB1CC28A270062C448 /* MediumTitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumTitleLabel.swift; sourceTree = "<group>"; };
 		95B235901E1FAB3F00A40666 /* OrangeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrangeNavigationController.swift; path = ../../iOS/Source/OrangeNavigationController.swift; sourceTree = "<group>"; };
+		95B7EC001E6F437B00FBAB08 /* ResultsLargeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsLargeLabel.swift; sourceTree = "<group>"; };
+		95B7EC021E6F444200FBAB08 /* ResultsSmallLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsSmallLabel.swift; sourceTree = "<group>"; };
 		95B92F4E1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyBleepTestDelegate.swift; sourceTree = "<group>"; };
 		95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumBlackLabel.swift; sourceTree = "<group>"; };
 		95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestController.swift; sourceTree = "<group>"; };
@@ -247,6 +257,7 @@
 				954215111DD9F76800F73DAF /* PlayerTest.swift */,
 				95F7B6F61DF849E50092114C /* WriterTests.swift */,
 				9574F0D51E1927CE00ADDF32 /* FetcherTest.swift */,
+				950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */,
 				95E6367B1E2A9C4100CD7918 /* BleepTestTests.swift */,
 				95B92F4E1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift */,
 			);
@@ -284,6 +295,8 @@
 		953A5EF21CA42C6D003960FC /* Completed Test */ = {
 			isa = PBXGroup;
 			children = (
+				9527A6D11CA038DB001E7942 /* ResultsTableController.swift */,
+				9500F0161E6381300058B6EA /* ResultsCell.swift */,
 			);
 			name = "Completed Test";
 			sourceTree = "<group>";
@@ -347,6 +360,8 @@
 				95A90EBB1CC28A270062C448 /* MediumTitleLabel.swift */,
 				95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */,
 				953F4E811D96F358004BAD1E /* MedumBlueLabel.swift */,
+				95B7EC001E6F437B00FBAB08 /* ResultsLargeLabel.swift */,
+				95B7EC021E6F444200FBAB08 /* ResultsSmallLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -493,11 +508,13 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					146E27881BCD51C800959BBA = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = UF58D3R587;
+						LastSwiftMigration = 0820;
 						DevelopmentTeam = 2BJY8JPR55;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
@@ -664,6 +681,7 @@
 				953DD2A31CBE949500A49A98 /* LevelProgressIndicator.swift in Sources */,
 				953DD2821CBE946E00A49A98 /* UIFont+Custom.swift in Sources */,
 				95F4C94A1DA1B0860034E37A /* YoshikoTextField.swift in Sources */,
+				9500F0171E6381310058B6EA /* ResultsCell.swift in Sources */,
 				953DD2811CBE946E00A49A98 /* UIColor+Custom.swift in Sources */,
 				9548A8221CB14F5000BAF914 /* HomeView.swift in Sources */,
 				95D7B0041C8CBC3E004690D5 /* BleepTestController.swift in Sources */,
@@ -671,12 +689,15 @@
 				95D7B0061C8CBC68004690D5 /* BleepTestView.swift in Sources */,
 				953DD2A41CBE949500A49A98 /* Writer.swift in Sources */,
 				953DD2801CBE946E00A49A98 /* UIButton+Custom.swift in Sources */,
+				9527A6D21CA038DB001E7942 /* ResultsTableController.swift in Sources */,
 				953DD29B1CBE949500A49A98 /* LargeContentLabel.swift in Sources */,
 				145F81CD1BDE2CFD0016A9E0 /* iOS.xcdatamodeld in Sources */,
 				95F7B6FA1DF852E40092114C /* Player.swift in Sources */,
 				953DD2981CBE949500A49A98 /* Fetcher.swift in Sources */,
 				95E6367A1E2A599200CD7918 /* BleepTest.swift in Sources */,
+				95B7EC031E6F444200FBAB08 /* ResultsSmallLabel.swift in Sources */,
 				9527A6D41CA03B23001E7942 /* CompletedTest.swift in Sources */,
+				95B7EC011E6F437C00FBAB08 /* ResultsLargeLabel.swift in Sources */,
 				95EBE9F91C908DC100A57377 /* TestLevel.swift in Sources */,
 				95874DC01DA8401000D642A7 /* CloseButton.swift in Sources */,
 				950D12231C9AEF4400133A25 /* MenuTableCell.swift in Sources */,
@@ -698,6 +719,7 @@
 			files = (
 				9574F0D61E1927CE00ADDF32 /* FetcherTest.swift in Sources */,
 				95F7B6F71DF849E50092114C /* WriterTests.swift in Sources */,
+				950CEB731E56552F004712C8 /* ResultsTableControllerTest.swift in Sources */,
 				95E6367C1E2A9C4200CD7918 /* BleepTestTests.swift in Sources */,
 				95B92F4F1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift in Sources */,
 				954215121DD9F76900F73DAF /* PlayerTest.swift in Sources */,
@@ -738,6 +760,7 @@
 				INFOPLIST_FILE = iOS/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "COM.COMPANY-NAME.APP-NAME.iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -756,6 +779,7 @@
 				INFOPLIST_FILE = iOS/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "COM.COMPANY-NAME.APP-NAME.iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -776,8 +800,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -821,8 +847,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -841,6 +869,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
