@@ -12,11 +12,16 @@ class ResultsCell: UITableViewCell {
     
     static let Identifier: String = "ResultsCell"
     
-    var levelLabel = MediumBlackLabel()
-    var lapLabel = MediumBlackLabel()
-    var playerNameLabel = MediumBlackLabel()
-    var vo2MaxLabel = SmallTitleLabel()
-    var distanceLabel = SmallTitleLabel()
+    lazy var playerNameLabel : ResultsLargeLabel = {
+        let label : ResultsLargeLabel = ResultsLargeLabel()
+        label.textColor = UIColor.gray
+        return label
+    }()
+    
+    var levelLabel = ResultsLargeLabel()
+    var lapLabel = ResultsLargeLabel()
+    var vo2MaxLabel = ResultsSmallLabel()
+    var distanceLabel = ResultsSmallLabel()
     
     func setUpCell(resutsCellContent: ResultsCellContent) {
         self.popuateCellLabels(resutsCellContent: resutsCellContent)
