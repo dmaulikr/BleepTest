@@ -49,7 +49,7 @@ class ResultsCell: UITableViewCell {
         let leading = NSLayoutConstraint(item: self.playerNameLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading,
                                          multiplier: 1.0, constant: 15.0)
         let top = NSLayoutConstraint(item: self.playerNameLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top,
-                                     multiplier: 1.0, constant: 5.0)
+                                     multiplier: 1.0, constant: 10.0)
         NSLayoutConstraint.activate([leading, top])
     }
     
@@ -86,7 +86,7 @@ class ResultsCell: UITableViewCell {
         let leading = NSLayoutConstraint(item: self.vo2MaxLabel, attribute: .trailing, relatedBy: .equal, toItem: self.distanceLabel,
                                          attribute: .trailing, multiplier: 1.0, constant: 75.0)
         let trailing = NSLayoutConstraint(item: self.vo2MaxLabel, attribute: .trailing, relatedBy: .equal, toItem: self,
-                                          attribute: .trailing, multiplier: 1.0, constant: -50.0)
+                                          attribute: .trailing, multiplier: 1.0, constant: -20.0)
         let top = NSLayoutConstraint(item: self.vo2MaxLabel, attribute: .top, relatedBy: .equal, toItem: self.lapLabel, attribute: .bottom,
                                      multiplier: 1.0, constant: 10.0)
         NSLayoutConstraint.activate([leading, trailing, top])
