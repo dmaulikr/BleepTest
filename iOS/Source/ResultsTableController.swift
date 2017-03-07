@@ -7,22 +7,18 @@ class ResultsTableController: BaseTableViewController {
     
     lazy var dataSource: DATASource = {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CompletedTest")
-        request.sortDescriptors = [NSSortDescriptor(key: "level", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "createdDate", ascending: false)]
         
         let dataSource = DATASource(tableView: self.tableView, cellIdentifier:  ResultsCell.Identifier, fetchRequest: request, mainContext: self.dataStack!.mainContext, configuration: { cell, item, indexPath in
-            let levelString =  String(format: "Level: %@", (item.value(forKey: "level") as? NSNumber)!)
+            let levelString = String(format: "Level: %@", (item.value(forKey: "level") as? NSNumber)!)
             let lapString = String(format: "Lap: %@", (item.value(forKey: "lap") as? NSNumber)!)
-            let vo2MaxString = String(format: "VO2 Max: %@", (item.value(forKey: "vo2Max") as? NSNumber)!)
+            let vo2MaxString = String(format: "VO2 Max: %.2f", (item.value(forKey: "vo2Max") as? Double)!)
             let distanceString = String(format: "Distance: %@", (item.value(forKey: "distance") as? NSNumber)!)
             let player = item.value(forKey: "player") as? Player
-            let playerNameString = player?.username
-
+            let playerNameString = (player?.username)!
+            
             let cell = cell as! ResultsCell
-            cell.levelLabel.text = levelString
-            cell.lapLabel.text = lapString
-            cell.playerNameLabel.text = playerNameString
-            cell.vo2MaxLabel.text = vo2MaxString
-            cell.distanceLabel.text = distanceString
+            cell.setUpCell(resutsCellContent: ResultsCellContent(level: levelString, lap: lapString, vo2Max: vo2MaxString, distance: distanceString, playerName: playerNameString))
         })
         return dataSource
     }()
