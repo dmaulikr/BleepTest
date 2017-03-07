@@ -57,7 +57,7 @@ class ResultsTableControllerTest: XCTestCase {
         XCTAssertEqual(resultsCell.levelLabel.text, "Level: 2")
         XCTAssertEqual(resultsCell.lapLabel.text, "Lap: 3")
         XCTAssertEqual(resultsCell.playerNameLabel.text, "Billy Jones")
-        XCTAssertEqual(resultsCell.vo2MaxLabel.text, "VO2 Max: 20.3")
+        XCTAssertEqual(resultsCell.vo2MaxLabel.text, "VO2 Max: 20.30")
         XCTAssertEqual(resultsCell.distanceLabel.text, "Distance: 50")
         
         //Test cell height
