@@ -25,6 +25,7 @@ class ResultsTableController: BaseTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Results"
         setUpTable()
     }
     
