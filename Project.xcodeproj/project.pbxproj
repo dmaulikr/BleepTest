@@ -15,8 +15,6 @@
 		9500F0171E6381310058B6EA /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F0161E6381300058B6EA /* ResultsCell.swift */; };
 		950CEB711E5607AE004712C8 /* testLevelsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 950CEB6F1E5606FB004712C8 /* testLevelsData.json */; };
 		950CEB731E56552F004712C8 /* ResultsTableControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */; };
-		950D12231C9AEF4400133A25 /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D12221C9AEF4400133A25 /* MenuTableCell.swift */; };
-		950D12251C9AF31400133A25 /* MenuTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D12241C9AF31400133A25 /* MenuTableController.swift */; };
 		9527A6D21CA038DB001E7942 /* ResultsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527A6D11CA038DB001E7942 /* ResultsTableController.swift */; };
 		9527A6D41CA03B23001E7942 /* CompletedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527A6D31CA03B23001E7942 /* CompletedTest.swift */; };
 		953DD2801CBE946E00A49A98 /* UIButton+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD27D1CBE946E00A49A98 /* UIButton+Custom.swift */; };
@@ -95,8 +93,6 @@
 		9500F0161E6381300058B6EA /* ResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		950CEB6F1E5606FB004712C8 /* testLevelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testLevelsData.json; sourceTree = SOURCE_ROOT; };
 		950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableControllerTest.swift; sourceTree = "<group>"; };
-		950D12221C9AEF4400133A25 /* MenuTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
-		950D12241C9AF31400133A25 /* MenuTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableController.swift; sourceTree = "<group>"; };
 		9527A6D11CA038DB001E7942 /* ResultsTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableController.swift; sourceTree = "<group>"; };
 		9527A6D31CA03B23001E7942 /* CompletedTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTest.swift; sourceTree = "<group>"; };
 		953DD27D1CBE946E00A49A98 /* UIButton+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Custom.swift"; sourceTree = "<group>"; };
@@ -223,7 +219,6 @@
 				9548A8251CB14FF000BAF914 /* Home */,
 				953A5EF51CA456CE003960FC /* Navigation */,
 				953A5EF21CA42C6D003960FC /* Completed Test */,
-				953A5EF11CA42C61003960FC /* Menu */,
 				953A5EF01CA42C4C003960FC /* Bleep Test */,
 			);
 			path = Source;
@@ -281,15 +276,6 @@
 				95D7B0051C8CBC68004690D5 /* BleepTestView.swift */,
 			);
 			name = "Bleep Test";
-			sourceTree = "<group>";
-		};
-		953A5EF11CA42C61003960FC /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				950D12221C9AEF4400133A25 /* MenuTableCell.swift */,
-				950D12241C9AF31400133A25 /* MenuTableController.swift */,
-			);
-			name = Menu;
 			sourceTree = "<group>";
 		};
 		953A5EF21CA42C6D003960FC /* Completed Test */ = {
@@ -513,8 +499,6 @@
 				TargetAttributes = {
 					146E27881BCD51C800959BBA = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = UF58D3R587;
-						LastSwiftMigration = 0820;
 						DevelopmentTeam = 2BJY8JPR55;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
@@ -685,7 +669,6 @@
 				953DD2811CBE946E00A49A98 /* UIColor+Custom.swift in Sources */,
 				9548A8221CB14F5000BAF914 /* HomeView.swift in Sources */,
 				95D7B0041C8CBC3E004690D5 /* BleepTestController.swift in Sources */,
-				950D12251C9AF31400133A25 /* MenuTableController.swift in Sources */,
 				95D7B0061C8CBC68004690D5 /* BleepTestView.swift in Sources */,
 				953DD2A41CBE949500A49A98 /* Writer.swift in Sources */,
 				953DD2801CBE946E00A49A98 /* UIButton+Custom.swift in Sources */,
@@ -700,7 +683,6 @@
 				95B7EC011E6F437C00FBAB08 /* ResultsLargeLabel.swift in Sources */,
 				95EBE9F91C908DC100A57377 /* TestLevel.swift in Sources */,
 				95874DC01DA8401000D642A7 /* CloseButton.swift in Sources */,
-				950D12231C9AEF4400133A25 /* MenuTableCell.swift in Sources */,
 				9548A8241CB14FEA00BAF914 /* HomeController.swift in Sources */,
 				95F4C8E51DA199F20034E37A /* CreateSinglePlayerView.swift in Sources */,
 				95FAAFAE1C91D47E00F5374F /* NSNotificationCenterKeys.swift in Sources */,
