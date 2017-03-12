@@ -22,7 +22,7 @@ class SpyBleepTestDelegate : BleepTestDelegate {
         self.lapedUpDelegateResult = true
     }
     
-    func newLevelDelegate(_ sender: BleepTest, numberOfLaps: Int, level: Int, lapTime: Double) {
+    func newLevelDelegate(_ sender: BleepTest, numberOfLaps: Int, level: Int, lapTime: Double, distance: Int) {
         guard newLevelExpectation != nil else {
             XCTFail("SpyBleepTestDelegate was not setup correctly. Missing XCTExpectation reference")
             return

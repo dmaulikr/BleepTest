@@ -13,19 +13,22 @@ open class Writer : NSObject {
     
     open func saveBleepTest(_ level:Int, lap:Int, vo2Max:Double, distance:Int, player: Player?){
         self.data.performInNewBackgroundContext { backgroundContext in
-            let predicate = NSPredicate(format: "SELF == %@", (player?.objectID)!)
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
-            request.predicate = predicate
-            let updatePlayer = (try! backgroundContext.fetch(request))
-            
             let entity = NSEntityDescription.entity(forEntityName: "CompletedTest", in: backgroundContext)!
             let object = CompletedTest(entity: entity, insertInto: backgroundContext)
+            
+            if(player != nil) {
+                let predicate = NSPredicate(format: "SELF == %@", (player?.objectID)!)
+                let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+                request.predicate = predicate
+                let updatePlayer = (try! backgroundContext.fetch(request))
+                object.setValue(updatePlayer.first, forKey: "player")
+            }
+            
             object.setValue(level, forKey: "level")
             object.setValue(lap, forKey: "lap")
             object.setValue(vo2Max, forKey: "vo2Max")
             object.setValue(distance, forKey: "distance")
             object.setValue(NSDate(), forKey: "createdDate")
-            object.setValue(updatePlayer.first, forKey: "player")
             
             try! backgroundContext.save()
         }

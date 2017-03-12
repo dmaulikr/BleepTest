@@ -15,10 +15,13 @@ class ResultsTableController: BaseTableViewController {
             let vo2MaxString = String(format: "VO2 Max: %.2f", (item.value(forKey: "vo2Max") as? Double)!)
             let distanceString = String(format: "Distance: %@", (item.value(forKey: "distance") as? NSNumber)!)
             let player = item.value(forKey: "player") as? Player
-            let playerNameString = (player?.username)!
+            var playerName: String = ""
+            if(player != nil) {
+                playerName = (player?.username)!
+            }
             
             let cell = cell as! ResultsCell
-            cell.setUpCell(resutsCellContent: ResultsCellContent(level: levelString, lap: lapString, vo2Max: vo2MaxString, distance: distanceString, playerName: playerNameString))
+            cell.setUpCell(resutsCellContent: ResultsCellContent(level: levelString, lap: lapString, vo2Max: vo2MaxString, distance: distanceString, playerName: playerName))
         })
         return dataSource
     }()

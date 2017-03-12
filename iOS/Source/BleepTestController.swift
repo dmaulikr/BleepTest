@@ -16,12 +16,8 @@ class BleepTestController: BaseViewController {
         return temporyBleepTest
     }()
     
-    lazy var player: Player = {
-        let fetchedPlayer = self.fetcher.fetchSelectedPlayer{_ in}
-        let temporyPlayer = fetchedPlayer?.first
-        return temporyPlayer!
-    }()
-    
+    var player: Player!
+
     lazy var rootView: BleepTestView = {
         var temporyView = BleepTestView(frame: UIScreen.main.bounds)
         temporyView.delegate = self
@@ -47,23 +43,36 @@ class BleepTestController: BaseViewController {
     
     func bleepTestFinished() {
         self.bleepTest.stop()
+        self.fetchPlayer()
         self.writer.saveBleepTest(level, lap: (lap+1), vo2Max: vO2Max, distance: distance, player: player)
         self.setStatusBarHidden(false)
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func fetchPlayer() {
+        let fetchedPlayer = self.fetcher.fetchSelectedPlayer{_ in}
+        if ((fetchedPlayer) != nil) {
+            let temporyPlayer = fetchedPlayer?.first
+            self.player = temporyPlayer!
+        }
+    }
+    
 }
 
 // MARK: BleepTestDelegate
 extension BleepTestController : BleepTestDelegate {
     func lapedUpDelegate(_ sender: BleepTest, lap: Int, distance: Int, vO2Max: Double) {
         self.rootView.updateVO2Max(String(format: "%.2f", vO2Max))
+        self.rootView.updateDistanceLabel(String(distance))
         self.vO2Max = vO2Max
         self.lap = lap
         self.distance = distance
     }
     
-    func newLevelDelegate(_ sender: BleepTest, numberOfLaps: Int, level: Int, lapTime: Double) {
+    func newLevelDelegate(_ sender: BleepTest, numberOfLaps: Int, level: Int, lapTime: Double, distance: Int) {
         self.rootView.newLevel(String(level), levelTime: Double(numberOfLaps)*lapTime)
+        self.rootView.updateDistanceLabel(String(distance))
+        self.distance = distance
         self.level = level
     }
     

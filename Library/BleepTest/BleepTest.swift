@@ -4,7 +4,7 @@ import AVFoundation
 
 protocol BleepTestDelegate: class {
     func lapedUpDelegate(_ sender: BleepTest, lap: Int, distance: Int, vO2Max: Double) 
-    func newLevelDelegate(_ sender: BleepTest, numberOfLaps: Int, level: Int, lapTime: Double)
+    func newLevelDelegate(_ sender: BleepTest, numberOfLaps: Int, level: Int, lapTime: Double, distance: Int)
     func startedNewLap(_ sender: BleepTest, lap: Int, lapTime: Double)
     func bleepTestFinished(_ sender: BleepTest)
 }
@@ -51,7 +51,7 @@ extension BleepTest{
             testLevel = levels[i]
             lap = 0
             vO2Max = 3.46 * (Double(testLevel.level)+Double(lap+1) / ((Double(testLevel.level) * 0.4325 + 7.0048))) + 12.2
-            delegate?.newLevelDelegate(self, numberOfLaps: Int(testLevel.laps), level: Int(testLevel.level), lapTime: testLevel.lapTime)
+            delegate?.newLevelDelegate(self, numberOfLaps: Int(testLevel.laps), level: Int(testLevel.level), lapTime: testLevel.lapTime, distance: Int(distance))
             delegate?.lapedUpDelegate(self, lap: Int(lap + 1), distance: Int(distance), vO2Max: vO2Max)
             runLap()
         } else{
