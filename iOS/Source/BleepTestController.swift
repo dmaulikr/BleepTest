@@ -16,12 +16,8 @@ class BleepTestController: BaseViewController {
         return temporyBleepTest
     }()
     
-    lazy var player: Player = {
-        let fetchedPlayer = self.fetcher.fetchSelectedPlayer{_ in}
-        let temporyPlayer = fetchedPlayer?.first
-        return temporyPlayer!
-    }()
-    
+    var player: Player!
+
     lazy var rootView: BleepTestView = {
         var temporyView = BleepTestView(frame: UIScreen.main.bounds)
         temporyView.delegate = self
@@ -47,10 +43,20 @@ class BleepTestController: BaseViewController {
     
     func bleepTestFinished() {
         self.bleepTest.stop()
+        self.fetchPlayer()
         self.writer.saveBleepTest(level, lap: (lap+1), vo2Max: vO2Max, distance: distance, player: player)
         self.setStatusBarHidden(false)
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func fetchPlayer() {
+        let fetchedPlayer = self.fetcher.fetchSelectedPlayer{_ in}
+        if ((fetchedPlayer) != nil) {
+            let temporyPlayer = fetchedPlayer?.first
+            self.player = temporyPlayer!
+        }
+    }
+    
 }
 
 // MARK: BleepTestDelegate
