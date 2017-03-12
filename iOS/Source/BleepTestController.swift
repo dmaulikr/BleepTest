@@ -57,13 +57,16 @@ class BleepTestController: BaseViewController {
 extension BleepTestController : BleepTestDelegate {
     func lapedUpDelegate(_ sender: BleepTest, lap: Int, distance: Int, vO2Max: Double) {
         self.rootView.updateVO2Max(String(format: "%.2f", vO2Max))
+        self.rootView.updateDistanceLabel(String(distance))
         self.vO2Max = vO2Max
         self.lap = lap
         self.distance = distance
     }
     
-    func newLevelDelegate(_ sender: BleepTest, numberOfLaps: Int, level: Int, lapTime: Double) {
+    func newLevelDelegate(_ sender: BleepTest, numberOfLaps: Int, level: Int, lapTime: Double, distance: Int) {
         self.rootView.newLevel(String(level), levelTime: Double(numberOfLaps)*lapTime)
+        self.rootView.updateDistanceLabel(String(distance))
+        self.distance = distance
         self.level = level
     }
     

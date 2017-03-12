@@ -120,7 +120,7 @@ class BleepTestView: UIView {
         self.vO2MaxLabel.text = vO2Max
     }
     
-    func updateDistanceTitleLabel(_ distance: String) {
+    func updateDistanceLabel(_ distance: String) {
         distanceLabel.text = distance
     }
     
