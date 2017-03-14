@@ -224,7 +224,7 @@
 				95F4C8E11DA189280034E37A /* Create Single Player */,
 				9548A8251CB14FF000BAF914 /* Home */,
 				953A5EF51CA456CE003960FC /* Navigation */,
-				953A5EF21CA42C6D003960FC /* Completed Test */,
+				953A5EF21CA42C6D003960FC /* Results */,
 				953A5EF01CA42C4C003960FC /* Bleep Test */,
 				95962D1C1E784B5600D80E47 /* Finished Bleep Test */,
 			);
@@ -286,13 +286,13 @@
 			name = "Bleep Test";
 			sourceTree = "<group>";
 		};
-		953A5EF21CA42C6D003960FC /* Completed Test */ = {
+		953A5EF21CA42C6D003960FC /* Results */ = {
 			isa = PBXGroup;
 			children = (
 				9527A6D11CA038DB001E7942 /* ResultsTableController.swift */,
 				9500F0161E6381300058B6EA /* ResultsCell.swift */,
 			);
-			name = "Completed Test";
+			name = Results;
 			sourceTree = "<group>";
 		};
 		953A5EF51CA456CE003960FC /* Navigation */ = {
