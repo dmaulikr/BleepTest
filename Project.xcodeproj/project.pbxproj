@@ -44,6 +44,7 @@
 		9574F0D61E1927CE00ADDF32 /* FetcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574F0D51E1927CE00ADDF32 /* FetcherTest.swift */; };
 		95874DC01DA8401000D642A7 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95874DBF1DA8401000D642A7 /* CloseButton.swift */; };
 		95962D1E1E784CFA00D80E47 /* FinishedBleepTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95962D1D1E784CFA00D80E47 /* FinishedBleepTestController.swift */; };
+		95962D201E784D1A00D80E47 /* FinishedBleepTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95962D1F1E784D1A00D80E47 /* FinishedBleepTestView.swift */; };
 		95962D221E784DB000D80E47 /* FinishedTestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95962D211E784DB000D80E47 /* FinishedTestTest.swift */; };
 		95A90EBC1CC28A270062C448 /* MediumTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A90EBB1CC28A270062C448 /* MediumTitleLabel.swift */; };
 		95B235911E1FAB3F00A40666 /* OrangeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B235901E1FAB3F00A40666 /* OrangeNavigationController.swift */; };
@@ -124,6 +125,7 @@
 		9574F0D51E1927CE00ADDF32 /* FetcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetcherTest.swift; sourceTree = "<group>"; };
 		95874DBF1DA8401000D642A7 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		95962D1D1E784CFA00D80E47 /* FinishedBleepTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedBleepTestController.swift; sourceTree = "<group>"; };
+		95962D1F1E784D1A00D80E47 /* FinishedBleepTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedBleepTestView.swift; sourceTree = "<group>"; };
 		95962D211E784DB000D80E47 /* FinishedTestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedTestTest.swift; sourceTree = "<group>"; };
 		95A90EBB1CC28A270062C448 /* MediumTitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumTitleLabel.swift; sourceTree = "<group>"; };
 		95B235901E1FAB3F00A40666 /* OrangeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrangeNavigationController.swift; path = ../../iOS/Source/OrangeNavigationController.swift; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				95962D1D1E784CFA00D80E47 /* FinishedBleepTestController.swift */,
+				95962D1F1E784D1A00D80E47 /* FinishedBleepTestView.swift */,
 			);
 			name = "Finished Bleep Test";
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				953DD2811CBE946E00A49A98 /* UIColor+Custom.swift in Sources */,
 				9548A8221CB14F5000BAF914 /* HomeView.swift in Sources */,
 				95D7B0041C8CBC3E004690D5 /* BleepTestController.swift in Sources */,
+				95962D1E1E784CFA00D80E47 /* FinishedBleepTestController.swift in Sources */,
 				95D7B0061C8CBC68004690D5 /* BleepTestView.swift in Sources */,
 				953DD2A41CBE949500A49A98 /* Writer.swift in Sources */,
 				953DD2801CBE946E00A49A98 /* UIButton+Custom.swift in Sources */,
@@ -704,6 +708,7 @@
 				95F4C8E31DA18D2B0034E37A /* CreateSinglePlayerController.swift in Sources */,
 				956FD5871E1C295200C61C5B /* SelectUserTableViewController.swift in Sources */,
 				953DD2A61CBE94BE00A49A98 /* StartButton.swift in Sources */,
+				95962D201E784D1A00D80E47 /* FinishedBleepTestView.swift in Sources */,
 				95BE7C281D908B530070DFFE /* MediumBlackLabel.swift in Sources */,
 				953DD2A21CBE949500A49A98 /* LapProgressIndicator.swift in Sources */,
 			);
