@@ -24,6 +24,10 @@ class FinishedTestControllerTest: XCTestCase {
         let finishedBleepTestController = FinishedBleepTestController(fetcher: fetcher, writer: writer, dataStack: data)
         XCTAssertNotNil(finishedBleepTestController)
         
+        //Test the rootview of FinishedBleepTestController
+        if !(finishedBleepTestController.view is FinishedBleepTestView) {
+            XCTFail()
+        }
         
     }    
 }
