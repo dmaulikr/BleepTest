@@ -20,4 +20,10 @@ class FinishedTestControllerTest: XCTestCase {
         return writer
     }()
     
+    func testFinishedBleepTestController() {
+        let finishedBleepTestController = FinishedBleepTestController(fetcher: fetcher, writer: writer, dataStack: data)
+        XCTAssertNotNil(finishedBleepTestController)
+        
+        
+    }    
 }
