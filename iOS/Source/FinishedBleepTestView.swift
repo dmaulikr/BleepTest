@@ -39,22 +39,51 @@ class FinishedBleepTestView: UIView {
     
     private func addPlayerNameLabel() {
         self.addSubview(self.playerNameLabel)
+        
+        let leading = NSLayoutConstraint(item: self.playerNameLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 50.0)
+        let trailing = NSLayoutConstraint(item: self.playerNameLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -50.0)
+        let top = NSLayoutConstraint(item: self.playerNameLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 50.0)
+        
+        NSLayoutConstraint.activate([leading, trailing, top])
     }
     
     private func addLevelLabel() {
         self.addSubview(self.levelLabel)
+        
+        let leading = NSLayoutConstraint(item: self.levelLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 50.0)
+        let trailing = NSLayoutConstraint(item: self.levelLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -50.0)
+        let top = NSLayoutConstraint(item: self.levelLabel, attribute: .top, relatedBy: .equal, toItem: self.playerNameLabel, attribute: .top, multiplier: 1.0, constant: 50.0)
+        
+        NSLayoutConstraint.activate([leading, trailing, top])
     }
     
     private func addLapLabel() {
         self.addSubview(self.lapLabel)
+        
+        let leading = NSLayoutConstraint(item: self.lapLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 50.0)
+        let trailing = NSLayoutConstraint(item: self.lapLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -50.0)
+        let top = NSLayoutConstraint(item: self.lapLabel, attribute: .top, relatedBy: .equal, toItem: self.levelLabel, attribute: .top, multiplier: 1.0, constant: 50.0)
+        
+        NSLayoutConstraint.activate([leading, trailing, top])
     }
     
     private func addDistanceLabel() {
         self.addSubview(self.distanceLabel)
+        
+        let leading = NSLayoutConstraint(item: self.distanceLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 15.0)
+        let top = NSLayoutConstraint(item: self.distanceLabel, attribute: .top, relatedBy: .equal, toItem: self.lapLabel, attribute: .bottom, multiplier: 1.0, constant: 50.0)
+        
+        NSLayoutConstraint.activate([leading, top])
     }
     
     private func addVo2MaxLabel() {
         self.addSubview(self.vo2MaxLabel)
+        
+        let leading = NSLayoutConstraint(item: self.vo2MaxLabel, attribute: .trailing, relatedBy: .equal, toItem: self.distanceLabel, attribute: .trailing, multiplier: 1.0, constant: 75.0)
+        let trailing = NSLayoutConstraint(item: self.vo2MaxLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -20.0)
+        let top = NSLayoutConstraint(item: self.vo2MaxLabel, attribute: .top, relatedBy: .equal, toItem: self.lapLabel, attribute: .bottom, multiplier: 1.0, constant: 10.0)
+        
+        NSLayoutConstraint.activate([leading, trailing, top])
     }
 
 }
