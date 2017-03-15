@@ -12,6 +12,7 @@ class FinishedBleepTestView: UIView {
     public init(frame: CGRect, result: Result) {
         super.init(frame: frame)
         self.setLabelsValues(result: result)
+        self.setUpView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,4 +29,32 @@ class FinishedBleepTestView: UIView {
         self.vo2MaxLabel.text = result.vo2Max
     }
     
+    private func setUpView() {
+        self.addPlayerNameLabel()
+        self.addLevelLabel()
+        self.addLapLabel()
+        self.addDistanceLabel()
+        self.addVo2MaxLabel()
+    }
+    
+    private func addPlayerNameLabel() {
+        self.addSubview(self.playerNameLabel)
+    }
+    
+    private func addLevelLabel() {
+        self.addSubview(self.levelLabel)
+    }
+    
+    private func addLapLabel() {
+        self.addSubview(self.lapLabel)
+    }
+    
+    private func addDistanceLabel() {
+        self.addSubview(self.distanceLabel)
+    }
+    
+    private func addVo2MaxLabel() {
+        self.addSubview(self.vo2MaxLabel)
+    }
+
 }
