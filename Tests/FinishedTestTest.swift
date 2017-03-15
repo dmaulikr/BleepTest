@@ -5,23 +5,10 @@ import CoreData
 
 class FinishedTestControllerTest: XCTestCase {
     
-    private lazy var data: DATAStack = {
-        let data = DATAStack(modelName: "iOS", bundle: Bundle.main, storeType:.inMemory)
-        return data
-    }()
-    
-    private lazy var fetcher: Fetcher = {
-        let fetcher = Fetcher(dataStack: self.data)
-        return fetcher
-    }()
-    
-    private lazy var writer: Writer = {
-        let writer = Writer(dataStack: self.data)
-        return writer
-    }()
-    
     func testFinishedBleepTestController() {
-        let finishedBleepTestController = FinishedBleepTestController(fetcher: fetcher, writer: writer, dataStack: data)
+        let result: Result = Result(level: "1", lap: "2", vo2Max: "3", distance: "4", playerName: "Bob Jones")
+        let finishedBleepTestController = FinishedBleepTestController(result: result)        
+    
         XCTAssertNotNil(finishedBleepTestController)
         
         //Test the rootview of FinishedBleepTestController
@@ -29,5 +16,5 @@ class FinishedTestControllerTest: XCTestCase {
             XCTFail()
         }
         
-    }    
+    }
 }
