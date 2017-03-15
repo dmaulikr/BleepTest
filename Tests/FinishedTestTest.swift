@@ -23,6 +23,12 @@ class FinishedTestControllerTest: XCTestCase {
         XCTAssertNotNil(finishedBleepTestController.rootView.vo2MaxLabel, "vo2MaxLabel Not Initialised")
         XCTAssertNotNil(finishedBleepTestController.rootView.distanceLabel, "distanceLabel Not Initialised")
 
+        //Test labels value
+        XCTAssertEqual(finishedBleepTestController.rootView.levelLabel.text, "1")
+        XCTAssertEqual(finishedBleepTestController.rootView.lapLabel.text, "2")
+        XCTAssertEqual(finishedBleepTestController.rootView.vo2MaxLabel.text, "3")
+        XCTAssertEqual(finishedBleepTestController.rootView.distanceLabel.text, "4")
+        XCTAssertEqual(finishedBleepTestController.rootView.playerNameLabel.text, "Bob Jones")
         
     }
 }
