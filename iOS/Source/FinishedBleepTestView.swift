@@ -24,7 +24,7 @@ class FinishedBleepTestView: UIView {
     private func setLabelsValues(result: Result) {
         self.levelLabel.text = result.level
         self.lapLabel.text = result.lap
-        self.playerNameLabel.text = result.playerName
+        self.playerNameLabel.text = "Nice one \(result.playerName) you have finished a Bleep Test. This is your results!"
         self.distanceLabel.text = result.distance
         self.vo2MaxLabel.text = result.vo2Max
     }
