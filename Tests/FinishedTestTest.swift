@@ -16,5 +16,13 @@ class FinishedTestControllerTest: XCTestCase {
             XCTFail()
         }
         
+        //Test labels initialised
+        XCTAssertNotNil(finishedBleepTestController.rootView.levelLabel, "levelLabel Not Initialised")
+        XCTAssertNotNil(finishedBleepTestController.rootView.lapLabel, "lapLabel Not Initialised")
+        XCTAssertNotNil(finishedBleepTestController.rootView.playerNameLabel, "playerNameLabel Not Initialised")
+        XCTAssertNotNil(finishedBleepTestController.rootView.vo2MaxLabel, "vo2MaxLabel Not Initialised")
+        XCTAssertNotNil(finishedBleepTestController.rootView.distanceLabel, "distanceLabel Not Initialised")
+
+        
     }
 }
