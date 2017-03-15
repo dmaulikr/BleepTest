@@ -1,13 +1,5 @@
 import UIKit
 
-struct ResultsCellContent {
-    var level: String
-    var lap: String
-    var vo2Max: String
-    var distance: String
-    var playerName: String
-}
-
 class ResultsCell: UITableViewCell {
     
     static let Identifier: String = "ResultsCell"
@@ -23,17 +15,17 @@ class ResultsCell: UITableViewCell {
     var vo2MaxLabel = ResultsSmallLabel()
     var distanceLabel = ResultsSmallLabel()
     
-    func setUpCell(resutsCellContent: ResultsCellContent) {
-        self.popuateCellLabels(resutsCellContent: resutsCellContent)
+    func setUpCell(resutsCellContent: Result) {
+        self.popuateCellLabels(resultCellContent: resutsCellContent)
         self.setUpView()
     }
     
-    func popuateCellLabels(resutsCellContent: ResultsCellContent) {
-        self.levelLabel.text = resutsCellContent.level
-        self.lapLabel.text = resutsCellContent.lap
-        self.playerNameLabel.text = resutsCellContent.playerName
-        self.distanceLabel.text = resutsCellContent.distance
-        self.vo2MaxLabel.text = resutsCellContent.vo2Max
+    func popuateCellLabels(resultCellContent: Result) {
+        self.levelLabel.text = resultCellContent.level
+        self.lapLabel.text = resultCellContent.lap
+        self.playerNameLabel.text = resultCellContent.playerName
+        self.distanceLabel.text = resultCellContent.distance
+        self.vo2MaxLabel.text = resultCellContent.vo2Max
     }
     
     func setUpView() {

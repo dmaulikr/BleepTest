@@ -21,7 +21,7 @@ class ResultsTableController: BaseTableViewController {
             }
             
             let cell = cell as! ResultsCell
-            cell.setUpCell(resutsCellContent: ResultsCellContent(level: levelString, lap: lapString, vo2Max: vo2MaxString, distance: distanceString, playerName: playerName))
+            cell.setUpCell(resutsCellContent: Result(level: levelString, lap: lapString, vo2Max: vo2MaxString, distance: distanceString, playerName: playerName))
         })
         return dataSource
     }()

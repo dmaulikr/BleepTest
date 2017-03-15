@@ -65,6 +65,7 @@
 		95F7B6F71DF849E50092114C /* WriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F7B6F61DF849E50092114C /* WriterTests.swift */; };
 		95F7B6FA1DF852E40092114C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F7B6F81DF84A060092114C /* Player.swift */; };
 		95FAAFAE1C91D47E00F5374F /* NSNotificationCenterKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FAAFAD1C91D47E00F5374F /* NSNotificationCenterKeys.swift */; };
+		95FE8F581E795841006F4BD3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE8F571E795841006F4BD3 /* Result.swift */; };
 		D34B122C43B6A071B208D42F /* Pods_BleepTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD5174EE16E4872C492972F2 /* Pods_BleepTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +147,7 @@
 		95F7B6F61DF849E50092114C /* WriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriterTests.swift; sourceTree = "<group>"; };
 		95F7B6F81DF84A060092114C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		95FAAFAD1C91D47E00F5374F /* NSNotificationCenterKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterKeys.swift; sourceTree = "<group>"; };
+		95FE8F571E795841006F4BD3 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FD5174EE16E4872C492972F2 /* Pods_BleepTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BleepTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 				95F7B6F81DF84A060092114C /* Player.swift */,
 				95EBE9F81C908DC100A57377 /* TestLevel.swift */,
 				9527A6D31CA03B23001E7942 /* CompletedTest.swift */,
+				95FE8F571E795841006F4BD3 /* Result.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -704,6 +707,7 @@
 				9548A8241CB14FEA00BAF914 /* HomeController.swift in Sources */,
 				95F4C8E51DA199F20034E37A /* CreateSinglePlayerView.swift in Sources */,
 				95FAAFAE1C91D47E00F5374F /* NSNotificationCenterKeys.swift in Sources */,
+				95FE8F581E795841006F4BD3 /* Result.swift in Sources */,
 				953DD29D1CBE949500A49A98 /* SmallTitleLabel.swift in Sources */,
 				95F4C8E31DA18D2B0034E37A /* CreateSinglePlayerController.swift in Sources */,
 				956FD5871E1C295200C61C5B /* SelectUserTableViewController.swift in Sources */,
