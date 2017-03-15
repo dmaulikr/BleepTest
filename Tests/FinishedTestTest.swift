@@ -30,5 +30,12 @@ class FinishedTestControllerTest: XCTestCase {
         XCTAssertEqual(finishedBleepTestController.rootView.distanceLabel.text, "4")
         XCTAssertEqual(finishedBleepTestController.rootView.playerNameLabel.text, "Bob Jones")
         
+        //Test labels added to the cell view
+        XCTAssertNotNil(finishedBleepTestController.rootView.levelLabel.superview, "levelLabel Not Added To View")
+        XCTAssertNotNil(finishedBleepTestController.rootView.lapLabel.superview, "lapLabel Not Added To View")
+        XCTAssertNotNil(finishedBleepTestController.rootView.playerNameLabel.superview, "playerNameLabel Not Added To View")
+        XCTAssertNotNil(finishedBleepTestController.rootView.vo2MaxLabel.superview, "vo2MaxLabel Not Added To View")
+        XCTAssertNotNil(finishedBleepTestController.rootView.distanceLabel.superview, "distanceLabel Not Added To View")
+        
     }
 }
