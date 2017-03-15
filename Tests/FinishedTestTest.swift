@@ -19,6 +19,9 @@ class FinishedTestControllerTest: XCTestCase {
         //Test the views frame
         XCTAssertEqual(finishedBleepTestController.rootView.frame, UIScreen.main.bounds)
         
+        //Test the background colour
+        XCTAssertEqual(finishedBleepTestController.rootView.backgroundColor, UIColor.white)
+        
         //Test labels initialised
         XCTAssertNotNil(finishedBleepTestController.rootView.levelLabel, "levelLabel Not Initialised")
         XCTAssertNotNil(finishedBleepTestController.rootView.lapLabel, "lapLabel Not Initialised")

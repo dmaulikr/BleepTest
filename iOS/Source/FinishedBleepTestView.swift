@@ -30,6 +30,7 @@ class FinishedBleepTestView: UIView {
     }
     
     private func setUpView() {
+        self.backgroundColor = UIColor.white
         self.addPlayerNameLabel()
         self.addLevelLabel()
         self.addLapLabel()
