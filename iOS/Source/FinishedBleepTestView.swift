@@ -42,7 +42,7 @@ class FinishedBleepTestView: UIView {
     //MARK: - Initializers
     public init(frame: CGRect, result: Result) {
         super.init(frame: frame)
-        self.setLabelsValues(result: result)
+        self.setLabels(to: result)
         self.setUpView()
     }
     
@@ -52,11 +52,11 @@ class FinishedBleepTestView: UIView {
     
     //MARK: - Populate labels
     
-    private func setLabelsValues(result: Result) {
-        self.levelLabel.text = result.level
-        self.lapLabel.text = result.lap
-        self.formatTopLabel(result.playerName)
-        self.formatBottomLabel(result.distance, result.vo2Max)
+    private func setLabels(to value: Result) {
+        self.levelLabel.text = value.level
+        self.lapLabel.text = value.lap
+        self.formatTopLabel(value.playerName)
+        self.formatBottomLabel(value.distance, value.vo2Max)
     }
     
     
