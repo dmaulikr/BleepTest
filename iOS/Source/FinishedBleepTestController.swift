@@ -14,10 +14,15 @@ class FinishedBleepTestController: UIViewController {
         self.result = result
         super.init(nibName: nil, bundle: nil)
         self.view = self.rootView
+        self.setStatusBarHidden(true)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setStatusBarHidden(_ boolen: Bool){
+        UIApplication.shared.isStatusBarHidden = boolen;
     }
     
 }
