@@ -2,11 +2,17 @@ import UIKit
 
 class FinishedBleepTestView: UIView {
     
-    internal var playerNameLabel = UILabel()
     internal var levelLabel = UILabel()
     internal var lapLabel = UILabel()
     internal var vo2MaxLabel = UILabel()
     internal var distanceLabel = UILabel()
+    internal var playerNameLabel : MediumTitleLabel = {
+        let temporyLabel = MediumTitleLabel()
+        temporyLabel.font = UIFont.systemFont(ofSize: 16.0);
+        temporyLabel.numberOfLines = 0;
+        temporyLabel.textAlignment = NSTextAlignment.center;
+        return temporyLabel
+    }()
 
     //MARK: Initializers
     public init(frame: CGRect, result: Result) {
@@ -19,16 +25,25 @@ class FinishedBleepTestView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: Set up view methods
+    //MARK: Populate labels
     
     private func setLabelsValues(result: Result) {
         self.levelLabel.text = result.level
         self.lapLabel.text = result.lap
-        self.playerNameLabel.text = "Nice one \(result.playerName) you have finished a Bleep Test. This is your results!"
         self.distanceLabel.text = result.distance
+        self.formatPlayerNameLabel(string: result.playerName)
         self.vo2MaxLabel.text = result.vo2Max
     }
     
+    
+    private func formatPlayerNameLabel(string: String) {
+        let formattedString = NSMutableAttributedString()
+        formattedString
+            .normal("Nice one ")
+            .bold(string, size: self.playerNameLabel.font.pointSize)
+            .normal(" you have finished a Bleep Test. This is your results!")
+        self.playerNameLabel.attributedText = formattedString
+    }
     private func setUpView() {
         self.backgroundColor = UIColor.white
         self.addPlayerNameLabel()
