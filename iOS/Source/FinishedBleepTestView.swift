@@ -1,6 +1,12 @@
 import UIKit
 
+protocol FinishedBleepTestViewDelegate : class {
+    func didCloseButtonPressed(_ sender: FinishedBleepTestView)
+}
+
 class FinishedBleepTestView: UIView {
+    
+    weak var delegate: FinishedBleepTestViewDelegate?
     
     internal var topLabel : MediumTitleLabel = {
         let temporyLabel = MediumTitleLabel()
@@ -178,6 +184,6 @@ class FinishedBleepTestView: UIView {
 //MARK: - Actions
 extension FinishedBleepTestView {
     func closeButtonAction(_ sender:UIButton!) {
-        
+        self.delegate?.didCloseButtonPressed(self)
     }
 }

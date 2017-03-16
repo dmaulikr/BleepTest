@@ -6,6 +6,7 @@ class FinishedBleepTestController: UIViewController {
     
     lazy internal var rootView: FinishedBleepTestView = {
         var temporyView = FinishedBleepTestView(frame: UIScreen.main.bounds, result: self.result)
+        temporyView.delegate = self
         return temporyView
     }()
     
@@ -21,8 +22,21 @@ class FinishedBleepTestController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    internal func close() {
+        self.setStatusBarHidden(false)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     private func setStatusBarHidden(_ boolen: Bool){
         UIApplication.shared.isStatusBarHidden = boolen;
     }
     
+}
+
+//MARK: - FinishedBleepTestViewDelegate
+extension FinishedBleepTestController: FinishedBleepTestViewDelegate {
+    
+    func didCloseButtonPressed(_ sender: FinishedBleepTestView){
+        self.close()
+    }
 }
