@@ -20,7 +20,7 @@ class HomeController: BaseViewController {
     }
 }
 
-//MARK: HomeViewDelegate
+//MARK: - HomeViewDelegate
 extension HomeController : HomeViewDelegate{
     func didChangeButtonPressed(_ sender: HomeView) {
         let rootViewController = SelectUserTableViewController(fetcher: fetcher, writer: writer, dataStack: dataStack!)
@@ -29,7 +29,16 @@ extension HomeController : HomeViewDelegate{
     }
     
     func didStartButtonPressed(_ sender: HomeView) {
-        let beepTestController = BleepTestController(fetcher: fetcher, writer: writer, dataStack: dataStack!)
-        self.navigationController?.present(beepTestController, animated: true, completion: nil)
+        let bleepTestController = BleepTestController(fetcher: self.fetcher, writer: self.writer, dataStack: self.dataStack!)
+        bleepTestController.delegate = self
+        self.navigationController?.present(bleepTestController, animated: true, completion: nil)
+    }
+}
+
+//MARK: - BleepTestControllerDelegate
+extension HomeController : BleepTestControllerDelegate {
+    func didTestFinish(_ sender: BleepTestController, _ values: Result) {
+        let finishedBleepTestController = FinishedBleepTestController(values)
+        self.navigationController?.present(finishedBleepTestController, animated: true, completion: nil)
     }
 }

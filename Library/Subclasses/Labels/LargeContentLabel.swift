@@ -6,6 +6,7 @@ class LargeContentLabel: UILabel {
         self.font = UIFont(name: self.font.fontName, size: 40)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.textColor = UIColor.black
+        self.textAlignment = NSTextAlignment.center;
     }
     
     required init?(coder aDecoder: NSCoder) {
