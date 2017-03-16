@@ -6,6 +6,7 @@ class MediumTitleLabel: UILabel {
         self.font = UIFont(name: self.font.fontName, size: 23)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.textColor = UIColor.gray
+        self.textAlignment = NSTextAlignment.center;
     }
     
     required init?(coder aDecoder: NSCoder) {
