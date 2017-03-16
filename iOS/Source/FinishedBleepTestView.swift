@@ -41,7 +41,7 @@ class FinishedBleepTestView: UIView {
         let formattedString = NSMutableAttributedString()
         formattedString
             .normal("Nice one ")
-            .bold(playerName, size: self.topLabel.font.pointSize)
+            .bold(playerName, self.topLabel.font.pointSize)
             .normal(" you have finished a Bleep Test. This is your results!")
         self.topLabel.attributedText = formattedString
     }
