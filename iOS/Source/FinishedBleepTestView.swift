@@ -44,6 +44,10 @@ class FinishedBleepTestView: UIView {
             .normal(" you have finished a Bleep Test. This is your results!")
         self.playerNameLabel.attributedText = formattedString
     }
+    
+    
+    //MARK: Set up view methods
+    
     private func setUpView() {
         self.backgroundColor = UIColor.white
         self.addPlayerNameLabel()
@@ -56,9 +60,9 @@ class FinishedBleepTestView: UIView {
     private func addPlayerNameLabel() {
         self.addSubview(self.playerNameLabel)
         
-        let leading = NSLayoutConstraint(item: self.playerNameLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 50.0)
-        let trailing = NSLayoutConstraint(item: self.playerNameLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -50.0)
-        let top = NSLayoutConstraint(item: self.playerNameLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 50.0)
+        let leading = NSLayoutConstraint(item: self.playerNameLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 5.0)
+        let trailing = NSLayoutConstraint(item: self.playerNameLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -5.0)
+        let top = NSLayoutConstraint(item: self.playerNameLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 25.0)
         
         NSLayoutConstraint.activate([leading, trailing, top])
     }
