@@ -24,24 +24,27 @@ class FinishedTestControllerTest: XCTestCase {
         
         //Test labels initialised
         XCTAssertNotNil(finishedBleepTestController.rootView.levelLabel, "levelLabel Not Initialised")
+        XCTAssertNotNil(finishedBleepTestController.rootView.levelTitleLable, "levelTitleLable Not Initialised")
         XCTAssertNotNil(finishedBleepTestController.rootView.lapLabel, "lapLabel Not Initialised")
-        XCTAssertNotNil(finishedBleepTestController.rootView.playerNameLabel, "playerNameLabel Not Initialised")
-        XCTAssertNotNil(finishedBleepTestController.rootView.vo2MaxLabel, "vo2MaxLabel Not Initialised")
-        XCTAssertNotNil(finishedBleepTestController.rootView.distanceLabel, "distanceLabel Not Initialised")
+        XCTAssertNotNil(finishedBleepTestController.rootView.lapTitleLable, "lapTitleLable Not Initialised")
+        XCTAssertNotNil(finishedBleepTestController.rootView.topLabel, "playerNameLabel Not Initialised")
+        XCTAssertNotNil(finishedBleepTestController.rootView.bottomLabel, "vo2MaxLabel Not Initialised")
 
         //Test labels value
         XCTAssertEqual(finishedBleepTestController.rootView.levelLabel.text, "1")
+        XCTAssertEqual(finishedBleepTestController.rootView.levelTitleLable.text, "Level")
         XCTAssertEqual(finishedBleepTestController.rootView.lapLabel.text, "2")
-        XCTAssertEqual(finishedBleepTestController.rootView.vo2MaxLabel.text, "3")
-        XCTAssertEqual(finishedBleepTestController.rootView.distanceLabel.text, "4")
-        XCTAssertEqual(finishedBleepTestController.rootView.playerNameLabel.text, "Nice one Bob Jones you have finished a Bleep Test. This is your results!")
+        XCTAssertEqual(finishedBleepTestController.rootView.lapTitleLable.text, "Lap")
+        XCTAssertEqual(finishedBleepTestController.rootView.topLabel.text, "Nice one Bob Jones you have finished a Bleep Test. This is your results!")
+        XCTAssertEqual(finishedBleepTestController.rootView.bottomLabel.text, "You ran a total distance of 4m and reached a maximal oxygen uptake of 3")
         
         //Test labels added to the cell view
         XCTAssertNotNil(finishedBleepTestController.rootView.levelLabel.superview, "levelLabel Not Added To View")
+        XCTAssertNotNil(finishedBleepTestController.rootView.levelTitleLable.superview, "levelTitleLable Not Added To View")
         XCTAssertNotNil(finishedBleepTestController.rootView.lapLabel.superview, "lapLabel Not Added To View")
-        XCTAssertNotNil(finishedBleepTestController.rootView.playerNameLabel.superview, "playerNameLabel Not Added To View")
-        XCTAssertNotNil(finishedBleepTestController.rootView.vo2MaxLabel.superview, "vo2MaxLabel Not Added To View")
-        XCTAssertNotNil(finishedBleepTestController.rootView.distanceLabel.superview, "distanceLabel Not Added To View")
+        XCTAssertNotNil(finishedBleepTestController.rootView.lapTitleLable.superview, "lapTitleLable Not Added To View")
+        XCTAssertNotNil(finishedBleepTestController.rootView.topLabel.superview, "playerNameLabel Not Added To View")
+        XCTAssertNotNil(finishedBleepTestController.rootView.bottomLabel.superview, "distanceLabel Not Added To View")
         
     }
 }
