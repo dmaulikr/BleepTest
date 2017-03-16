@@ -6,7 +6,7 @@ class FinishedBleepTestView: UIView {
     internal var lapLabel = UILabel()
     internal var vo2MaxLabel = UILabel()
     internal var distanceLabel = UILabel()
-    internal var playerNameLabel : MediumTitleLabel = {
+    internal var topLabel : MediumTitleLabel = {
         let temporyLabel = MediumTitleLabel()
         temporyLabel.font = UIFont.systemFont(ofSize: 16.0);
         temporyLabel.numberOfLines = 0;
@@ -14,7 +14,7 @@ class FinishedBleepTestView: UIView {
         return temporyLabel
     }()
 
-    //MARK: Initializers
+    //MARK: - Initializers
     public init(frame: CGRect, result: Result) {
         super.init(frame: frame)
         self.setLabelsValues(result: result)
@@ -25,7 +25,7 @@ class FinishedBleepTestView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: Populate labels
+    //MARK: - Populate labels
     
     private func setLabelsValues(result: Result) {
         self.levelLabel.text = result.level
@@ -33,36 +33,38 @@ class FinishedBleepTestView: UIView {
         self.distanceLabel.text = result.distance
         self.formatPlayerNameLabel(string: result.playerName)
         self.vo2MaxLabel.text = result.vo2Max
+        self.formatTopLabel(result.playerName)
     }
     
     
-    private func formatPlayerNameLabel(string: String) {
+    private func formatTopLabel(_ playerName: String) {
         let formattedString = NSMutableAttributedString()
         formattedString
             .normal("Nice one ")
-            .bold(string, size: self.playerNameLabel.font.pointSize)
+            .bold(playerName, size: self.topLabel.font.pointSize)
             .normal(" you have finished a Bleep Test. This is your results!")
-        self.playerNameLabel.attributedText = formattedString
+        self.topLabel.attributedText = formattedString
     }
     
     
-    //MARK: Set up view methods
+    
+    //MARK: - Set up view methods
     
     private func setUpView() {
         self.backgroundColor = UIColor.white
-        self.addPlayerNameLabel()
+        self.addTopLabel()
         self.addLevelLabel()
         self.addLapLabel()
         self.addDistanceLabel()
         self.addVo2MaxLabel()
     }
     
-    private func addPlayerNameLabel() {
-        self.addSubview(self.playerNameLabel)
+    private func addTopLabel() {
+        self.addSubview(self.topLabel)
         
-        let leading = NSLayoutConstraint(item: self.playerNameLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 5.0)
-        let trailing = NSLayoutConstraint(item: self.playerNameLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -5.0)
-        let top = NSLayoutConstraint(item: self.playerNameLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 25.0)
+        let leading = NSLayoutConstraint(item: self.topLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 5.0)
+        let trailing = NSLayoutConstraint(item: self.topLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -5.0)
+        let top = NSLayoutConstraint(item: self.topLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 25.0)
         
         NSLayoutConstraint.activate([leading, trailing, top])
     }
@@ -72,7 +74,7 @@ class FinishedBleepTestView: UIView {
         
         let leading = NSLayoutConstraint(item: self.levelLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 50.0)
         let trailing = NSLayoutConstraint(item: self.levelLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -50.0)
-        let top = NSLayoutConstraint(item: self.levelLabel, attribute: .top, relatedBy: .equal, toItem: self.playerNameLabel, attribute: .top, multiplier: 1.0, constant: 50.0)
+        let top = NSLayoutConstraint(item: self.levelLabel, attribute: .top, relatedBy: .equal, toItem: self.topLabel, attribute: .top, multiplier: 1.0, constant: 50.0)
         
         NSLayoutConstraint.activate([leading, trailing, top])
     }
