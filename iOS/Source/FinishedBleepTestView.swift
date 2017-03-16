@@ -38,6 +38,14 @@ class FinishedBleepTestView: UIView {
         temporyLabel.textAlignment = NSTextAlignment.center;
         return temporyLabel
     }()
+    
+    lazy var closeButton : RedButton = {
+        var temporyButton : RedButton = RedButton()
+        temporyButton.setTitle("Close", for: UIControlState())
+        temporyButton.addTarget(self, action: #selector(closeButtonAction(_:)), for: UIControlEvents.touchUpInside)
+        return temporyButton
+    }()
+    
 
     //MARK: - Initializers
     public init(frame: CGRect, result: Result) {
@@ -92,6 +100,7 @@ class FinishedBleepTestView: UIView {
         self.addLapLabel()
         self.addLapTitleLabel()
         self.addBottomLabel()
+        self.addCloseButton()
     }
     
     private func addTopLabel() {
@@ -152,5 +161,23 @@ class FinishedBleepTestView: UIView {
         let top = NSLayoutConstraint(item: self.bottomLabel, attribute: .top, relatedBy: .equal, toItem: self.lapTitleLable, attribute: .bottom, multiplier: 1.0, constant: 50.0)
         
         NSLayoutConstraint.activate([leading, trailing, top])
+    }
+    
+    private func addCloseButton() {
+        self.addSubview(self.closeButton)
+        
+        let leading = NSLayoutConstraint(item: self.closeButton, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 5.0)
+        let trailing = NSLayoutConstraint(item: self.closeButton, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -5.0)
+        let top = NSLayoutConstraint(item: self.closeButton, attribute: .top, relatedBy: .greaterThanOrEqual, toItem: self.bottomLabel, attribute: .bottom, multiplier: 1.0, constant: 20.0)
+        let bottom = NSLayoutConstraint(item: self.closeButton, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: -40.0)
+        
+        NSLayoutConstraint.activate([leading, trailing, top, bottom])
+    }
+}
+
+//MARK: - Actions
+extension FinishedBleepTestView {
+    func closeButtonAction(_ sender:UIButton!) {
+        
     }
 }
