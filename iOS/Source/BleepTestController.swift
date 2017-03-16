@@ -56,7 +56,7 @@ class BleepTestController: BaseViewController {
         self.setStatusBarHidden(false)
         self.dismiss(animated: true, completion: nil)
         
-        let result = Result(level: String(self.level), lap: String(self.lap), vo2Max: String(vO2Max), distance: String(self.distance), playerName: self.player.username)
+        let result = Result(level: String(self.level), lap: String(self.lap), vo2Max: String(format: "%.2f", self.vO2Max), distance: String(self.distance), playerName: self.player.username)
         self.delegate?.didTestFinish(self, result: result)
     }
     
