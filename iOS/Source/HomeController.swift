@@ -8,11 +8,6 @@ class HomeController: BaseViewController {
         return temporyView
     }()
     
-    lazy var beepTestController: BleepTestController = {
-        let temporyController = BleepTestController(fetcher: self.fetcher, writer: self.writer, dataStack: self.dataStack!)
-        return temporyController
-    }()
-    
     override func loadView() {
         self.title = "Bleep Test"
         self.view = self.homeView
@@ -22,7 +17,6 @@ class HomeController: BaseViewController {
         self.homeView = nil
         self.view = self.homeView
         self.homeView.delegate = self
-        self.beepTestController.delegate = self
     }
 }
 
@@ -35,7 +29,9 @@ extension HomeController : HomeViewDelegate{
     }
     
     func didStartButtonPressed(_ sender: HomeView) {
-        self.navigationController?.present(self.beepTestController, animated: true, completion: nil)
+        let bleepTestController = BleepTestController(fetcher: self.fetcher, writer: self.writer, dataStack: self.dataStack!)
+        bleepTestController.delegate = self
+        self.navigationController?.present(bleepTestController, animated: true, completion: nil)
     }
 }
 
