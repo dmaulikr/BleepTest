@@ -2,7 +2,6 @@ import UIKit
 
 class FinishedBleepTestView: UIView {
     
-    internal var levelLabel = UILabel()
     internal var lapLabel = UILabel()
     internal var vo2MaxLabel = UILabel()
     internal var distanceLabel = UILabel()
@@ -10,6 +9,20 @@ class FinishedBleepTestView: UIView {
         let temporyLabel = MediumTitleLabel()
         temporyLabel.font = UIFont.systemFont(ofSize: 16.0);
         temporyLabel.numberOfLines = 0;
+    
+    internal var levelLabel: LargeContentLabel = {
+        let temporyLabel = LargeContentLabel()
+        temporyLabel.font = UIFont.systemFont(ofSize: 60.0);
+        return temporyLabel
+    }()
+    
+    internal var levelTitleLable: MediumTitleLabel = {
+        let temporyLabel = MediumTitleLabel()
+        temporyLabel.font = UIFont.systemFont(ofSize: 12.0);
+        temporyLabel.text = "Level"
+        return temporyLabel
+    }()
+    
         temporyLabel.textAlignment = NSTextAlignment.center;
         return temporyLabel
     }()
@@ -54,6 +67,7 @@ class FinishedBleepTestView: UIView {
         self.backgroundColor = UIColor.white
         self.addTopLabel()
         self.addLevelLabel()
+        self.addLevelTitleLabel()
         self.addLapLabel()
         self.addDistanceLabel()
         self.addVo2MaxLabel()
@@ -72,9 +86,19 @@ class FinishedBleepTestView: UIView {
     private func addLevelLabel() {
         self.addSubview(self.levelLabel)
         
-        let leading = NSLayoutConstraint(item: self.levelLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 50.0)
-        let trailing = NSLayoutConstraint(item: self.levelLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -50.0)
-        let top = NSLayoutConstraint(item: self.levelLabel, attribute: .top, relatedBy: .equal, toItem: self.topLabel, attribute: .top, multiplier: 1.0, constant: 50.0)
+        let leading = NSLayoutConstraint(item: self.levelLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0)
+        let trailing = NSLayoutConstraint(item: self.levelLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0)
+        let top = NSLayoutConstraint(item: self.levelLabel, attribute: .top, relatedBy: .equal, toItem: self.topLabel, attribute: .bottom, multiplier: 1.0, constant: 40.0)
+        
+        NSLayoutConstraint.activate([leading, trailing, top])
+    }
+    
+    private func addLevelTitleLabel() {
+        self.addSubview(self.levelTitleLable)
+        
+        let leading = NSLayoutConstraint(item: self.levelTitleLable, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0)
+        let trailing = NSLayoutConstraint(item: self.levelTitleLable, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0)
+        let top = NSLayoutConstraint(item: self.levelTitleLable, attribute: .top, relatedBy: .equal, toItem: self.levelLabel, attribute: .bottom, multiplier: 1.0, constant: 2.0)
         
         NSLayoutConstraint.activate([leading, trailing, top])
     }
