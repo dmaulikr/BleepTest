@@ -40,8 +40,8 @@ extension HomeController : HomeViewDelegate{
 }
 
 extension HomeController : BleepTestControllerDelegate {
-    func didTestFinish(_ sender: BleepTestController, result: Result) {
-        let finishedBleepTestController = FinishedBleepTestController(result: result)
+    func didTestFinish(_ sender: BleepTestController, _ values: Result) {
+        let finishedBleepTestController = FinishedBleepTestController(values)
         self.navigationController?.present(finishedBleepTestController, animated: true, completion: nil)
     }
 }

@@ -11,8 +11,8 @@ class FinishedBleepTestController: UIViewController {
     }()
     
     // MARK: - Initializers
-    public init(result: Result){
-        self.result = result
+    public init(_ values: Result){
+        self.result = values
         super.init(nibName: nil, bundle: nil)
         self.view = self.rootView
         self.setStatusBarHidden(true)
