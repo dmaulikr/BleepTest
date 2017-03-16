@@ -2,12 +2,12 @@ import UIKit
 
 class FinishedBleepTestView: UIView {
     
-    internal var vo2MaxLabel = UILabel()
-    internal var distanceLabel = UILabel()
     internal var topLabel : MediumTitleLabel = {
         let temporyLabel = MediumTitleLabel()
         temporyLabel.font = UIFont.systemFont(ofSize: 16.0);
         temporyLabel.numberOfLines = 0;
+        return temporyLabel
+    }()
     
     internal var levelLabel: LargeContentLabel = {
         let temporyLabel = LargeContentLabel()
@@ -31,6 +31,10 @@ class FinishedBleepTestView: UIView {
         return temporyLabel
     }()
     
+    internal var bottomLabel: MediumBlackLabel = {
+        let temporyLabel = MediumBlackLabel()
+        temporyLabel.font = UIFont.systemFont(ofSize: 19.0);
+        temporyLabel.numberOfLines = 0;
         temporyLabel.textAlignment = NSTextAlignment.center;
         return temporyLabel
     }()
@@ -51,10 +55,8 @@ class FinishedBleepTestView: UIView {
     private func setLabelsValues(result: Result) {
         self.levelLabel.text = result.level
         self.lapLabel.text = result.lap
-        self.distanceLabel.text = result.distance
-        self.formatPlayerNameLabel(string: result.playerName)
-        self.vo2MaxLabel.text = result.vo2Max
         self.formatTopLabel(result.playerName)
+        self.formatBottomLabel(result.distance, result.vo2Max)
     }
     
     
@@ -67,6 +69,17 @@ class FinishedBleepTestView: UIView {
         self.topLabel.attributedText = formattedString
     }
     
+    private func formatBottomLabel(_ distance: String, _ vo2Max: String) {
+        let formattedString = NSMutableAttributedString()
+        formattedString
+            .normal("You ran a total distance of ")
+            .bold("\(distance)m ", self.bottomLabel.font.pointSize)
+            .normal("and reached a ")
+            .bold("maximal oxygen uptake ", self.bottomLabel.font.pointSize)
+            .normal("of ")
+            .bold(vo2Max, self.bottomLabel.font.pointSize)
+        self.bottomLabel.attributedText = formattedString
+    }
     
     
     //MARK: - Set up view methods
@@ -77,9 +90,8 @@ class FinishedBleepTestView: UIView {
         self.addLevelLabel()
         self.addLevelTitleLabel()
         self.addLapLabel()
-        self.addDistanceLabel()
-        self.addVo2MaxLabel()
         self.addLapTitleLabel()
+        self.addBottomLabel()
     }
     
     private func addTopLabel() {
@@ -122,8 +134,6 @@ class FinishedBleepTestView: UIView {
         NSLayoutConstraint.activate([leading, trailing, top])
     }
     
-    private func addDistanceLabel() {
-        self.addSubview(self.distanceLabel)
     private func addLapTitleLabel() {
         self.addSubview(self.lapTitleLable)
         
@@ -134,14 +144,13 @@ class FinishedBleepTestView: UIView {
         NSLayoutConstraint.activate([leading, trailing, top])
     }
     
-    private func addVo2MaxLabel() {
-        self.addSubview(self.vo2MaxLabel)
+    private func addBottomLabel() {
+        self.addSubview(self.bottomLabel)
         
-        let leading = NSLayoutConstraint(item: self.vo2MaxLabel, attribute: .trailing, relatedBy: .equal, toItem: self.distanceLabel, attribute: .trailing, multiplier: 1.0, constant: 75.0)
-        let trailing = NSLayoutConstraint(item: self.vo2MaxLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -20.0)
-        let top = NSLayoutConstraint(item: self.vo2MaxLabel, attribute: .top, relatedBy: .equal, toItem: self.lapLabel, attribute: .bottom, multiplier: 1.0, constant: 10.0)
+        let leading = NSLayoutConstraint(item: self.bottomLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 5.0)
+        let trailing = NSLayoutConstraint(item: self.bottomLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -5.0)
+        let top = NSLayoutConstraint(item: self.bottomLabel, attribute: .top, relatedBy: .equal, toItem: self.lapTitleLable, attribute: .bottom, multiplier: 1.0, constant: 50.0)
         
         NSLayoutConstraint.activate([leading, trailing, top])
     }
-
 }
