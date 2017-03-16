@@ -51,7 +51,8 @@ class BleepTestController: BaseViewController {
     func bleepTestFinished() {
         self.bleepTest.stop()
         self.fetchPlayer()
-        self.writer.saveBleepTest(level, lap: (lap+1), vo2Max: vO2Max, distance: distance, player: player)
+        self.lap = self.lap + 1
+        self.writer.saveBleepTest(level, lap: (lap), vo2Max: vO2Max, distance: distance, player: player)
         //Dismiss the controller
         self.setStatusBarHidden(false)
         self.dismiss(animated: true, completion: nil)
