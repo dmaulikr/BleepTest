@@ -20,7 +20,7 @@ class HomeController: BaseViewController {
     }
 }
 
-//MARK: HomeViewDelegate
+//MARK: - HomeViewDelegate
 extension HomeController : HomeViewDelegate{
     func didChangeButtonPressed(_ sender: HomeView) {
         let rootViewController = SelectUserTableViewController(fetcher: fetcher, writer: writer, dataStack: dataStack!)
@@ -35,6 +35,7 @@ extension HomeController : HomeViewDelegate{
     }
 }
 
+//MARK: - BleepTestControllerDelegate
 extension HomeController : BleepTestControllerDelegate {
     func didTestFinish(_ sender: BleepTestController, _ values: Result) {
         let finishedBleepTestController = FinishedBleepTestController(values)
