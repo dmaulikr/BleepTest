@@ -118,7 +118,7 @@ class FinishedBleepTestView: UIView {
         
         let leading = NSLayoutConstraint(item: self.levelLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0)
         let trailing = NSLayoutConstraint(item: self.levelLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0)
-        let top = NSLayoutConstraint(item: self.levelLabel, attribute: .top, relatedBy: .equal, toItem: self.topLabel, attribute: .bottom, multiplier: 1.0, constant: 40.0)
+        let top = NSLayoutConstraint(item: self.levelLabel, attribute: .top, relatedBy: .equal, toItem: self.topLabel, attribute: .bottom, multiplier: 1.0, constant: 50.0)
         
         NSLayoutConstraint.activate([leading, trailing, top])
     }
@@ -158,7 +158,7 @@ class FinishedBleepTestView: UIView {
         
         let leading = NSLayoutConstraint(item: self.bottomLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 5.0)
         let trailing = NSLayoutConstraint(item: self.bottomLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -5.0)
-        let top = NSLayoutConstraint(item: self.bottomLabel, attribute: .top, relatedBy: .equal, toItem: self.lapTitleLable, attribute: .bottom, multiplier: 1.0, constant: 50.0)
+        let top = NSLayoutConstraint(item: self.bottomLabel, attribute: .top, relatedBy: .equal, toItem: self.lapTitleLable, attribute: .bottom, multiplier: 1.0, constant: 60.0)
         
         NSLayoutConstraint.activate([leading, trailing, top])
     }
