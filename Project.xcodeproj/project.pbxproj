@@ -21,8 +21,6 @@
 		953DD2811CBE946E00A49A98 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD27E1CBE946E00A49A98 /* UIColor+Custom.swift */; };
 		953DD2821CBE946E00A49A98 /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD27F1CBE946E00A49A98 /* UIFont+Custom.swift */; };
 		953DD2981CBE949500A49A98 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2851CBE949500A49A98 /* Fetcher.swift */; };
-		953DD2991CBE949500A49A98 /* PauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2881CBE949500A49A98 /* PauseButton.swift */; };
-		953DD29A1CBE949500A49A98 /* StopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2891CBE949500A49A98 /* StopButton.swift */; };
 		953DD29B1CBE949500A49A98 /* LargeContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD28B1CBE949500A49A98 /* LargeContentLabel.swift */; };
 		953DD29D1CBE949500A49A98 /* SmallTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD28D1CBE949500A49A98 /* SmallTitleLabel.swift */; };
 		953DD29E1CBE949500A49A98 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD28F1CBE949500A49A98 /* BaseCollectionViewController.swift */; };
@@ -105,8 +103,6 @@
 		953DD27E1CBE946E00A49A98 /* UIColor+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		953DD27F1CBE946E00A49A98 /* UIFont+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Custom.swift"; sourceTree = "<group>"; };
 		953DD2851CBE949500A49A98 /* Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
-		953DD2881CBE949500A49A98 /* PauseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseButton.swift; sourceTree = "<group>"; };
-		953DD2891CBE949500A49A98 /* StopButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopButton.swift; sourceTree = "<group>"; };
 		953DD28B1CBE949500A49A98 /* LargeContentLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeContentLabel.swift; sourceTree = "<group>"; };
 		953DD28D1CBE949500A49A98 /* SmallTitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallTitleLabel.swift; sourceTree = "<group>"; };
 		953DD28F1CBE949500A49A98 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
@@ -346,8 +342,6 @@
 			isa = PBXGroup;
 			children = (
 				953DD2A51CBE94BE00A49A98 /* StartButton.swift */,
-				953DD2881CBE949500A49A98 /* PauseButton.swift */,
-				953DD2891CBE949500A49A98 /* StopButton.swift */,
 				953F4E831D9719E7004BAD1E /* PinkRedOutlineButton.swift */,
 				95874DBF1DA8401000D642A7 /* CloseButton.swift */,
 				957590F81E7AD9E800077A64 /* RedButton.swift */,
@@ -677,11 +671,9 @@
 			files = (
 				95A90EBC1CC28A270062C448 /* MediumTitleLabel.swift in Sources */,
 				95F4C9491DA1B0860034E37A /* TextFieldsEffects.swift in Sources */,
-				953DD29A1CBE949500A49A98 /* StopButton.swift in Sources */,
 				953DD2A81CBE976900A49A98 /* TabBarController.swift in Sources */,
 				95B235911E1FAB3F00A40666 /* OrangeNavigationController.swift in Sources */,
 				953DD29F1CBE949500A49A98 /* BaseTableViewController.swift in Sources */,
-				953DD2991CBE949500A49A98 /* PauseButton.swift in Sources */,
 				953F4E821D96F358004BAD1E /* MedumBlueLabel.swift in Sources */,
 				146E27AC1BCD51F200959BBA /* AppController.swift in Sources */,
 				953DD2A01CBE949500A49A98 /* BaseViewController.swift in Sources */,
