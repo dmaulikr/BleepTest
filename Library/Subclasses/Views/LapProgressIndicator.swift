@@ -2,6 +2,7 @@ import UIKit
 
 class LapProgressIndicator: UIView {
     var circleLayer: CAShapeLayer!
+    var backgroundLayer: CAShapeLayer!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,6 +28,13 @@ class LapProgressIndicator: UIView {
         circleLayer.lineWidth = 5.0;
         circleLayer.strokeEnd = 0.0
         
+        backgroundLayer = CAShapeLayer()
+        backgroundLayer.path = circlePath.cgPath
+        backgroundLayer.fillColor = UIColor.clear.cgColor
+        backgroundLayer.strokeColor = UIColor.veryLightGrayColor().cgColor
+        backgroundLayer.lineWidth = 5.0
+        
+        layer.addSublayer(backgroundLayer)
         layer.addSublayer(circleLayer)
         self.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -38,6 +46,7 @@ class LapProgressIndicator: UIView {
     override func layoutSubviews(){
         let frame = self.layer.bounds
         circleLayer.frame = frame
+        backgroundLayer.frame = frame
     }
     
     func animateCircle(_ duration: TimeInterval) {
