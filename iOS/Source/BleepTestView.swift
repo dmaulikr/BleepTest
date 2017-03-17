@@ -249,13 +249,13 @@ class BleepTestView: UIView {
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-(>=0)-[levelTitleLabel]-5-[levelLabel]-(>=0)-|",
+            withVisualFormat: "V:[levelLabel]-0-[levelTitleLabel]",
             options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary
         ))
         self.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-(>=0)-[lapTitleLabel]-5-[lapLabel]-(>=0)-|",
+            withVisualFormat: "V:[lapLabel]-0-[lapTitleLabel]",
             options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary
