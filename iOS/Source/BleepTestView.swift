@@ -39,12 +39,6 @@ class BleepTestView: UIView {
         temporyButton.addTarget(self, action: #selector(stopButtonAction(_:)), for: UIControlEvents.touchUpInside)
         return temporyButton
     }()
-
-    lazy var pauseButton : PauseButton = {
-        var temporyButton : PauseButton = PauseButton()
-        temporyButton.addTarget(self, action: #selector(pauseButtonAction(_:)), for: UIControlEvents.touchUpInside)
-        return temporyButton
-    }()
     
     lazy var levelTitleLabel : SmallTitleLabel = {
         var temporyLabel : SmallTitleLabel = SmallTitleLabel()
@@ -309,9 +303,5 @@ class BleepTestView: UIView {
 extension BleepTestView{
     func stopButtonAction(_ sender:UIButton!){
         delegate?.didStopButtonPressed(self)
-    }
-    
-    func pauseButtonAction(_ sender:UIButton!){
-        // TODO: Pause Button Action
     }
 }
