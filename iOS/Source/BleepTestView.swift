@@ -28,6 +28,7 @@ class BleepTestView: UIView {
     
     lazy var stopButton : RedButton = {
         var temporyButton : RedButton = RedButton()
+        temporyButton.titleLabel?.font = UIFont(name: (temporyButton.titleLabel?.font.fontName)!, size: 30)
         temporyButton.setTitle("Stop", for: UIControlState())
         temporyButton.addTarget(self, action: #selector(stopButtonAction(_:)), for: UIControlEvents.touchUpInside)
         return temporyButton
