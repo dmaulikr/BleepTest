@@ -148,7 +148,7 @@ class BleepTestView: UIView {
     //This is the view when the bleep test is running
     func createRunningBleepTest(){
         addLapProgressIndicator()
-        addButtonsToView()
+        addButtonToView()
         addLevelProgressIndicator()
     }
     
@@ -183,7 +183,7 @@ class BleepTestView: UIView {
             views: viewsDictionary))
     }
     
-    func addButtonsToView(){
+    func addButtonToView(){
         let viewsDictionary = [
             "stopButton":stopButton,
             "superview":self
