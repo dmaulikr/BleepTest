@@ -34,8 +34,9 @@ class BleepTestView: UIView {
         return temporyView
     }()
     
-    lazy var stopButton : StopButton = {
-        var temporyButton : StopButton = StopButton()
+    lazy var stopButton : RedButton = {
+        var temporyButton : RedButton = RedButton()
+        temporyButton.setTitle("Stop", for: UIControlState())
         temporyButton.addTarget(self, action: #selector(stopButtonAction(_:)), for: UIControlEvents.touchUpInside)
         return temporyButton
     }()
