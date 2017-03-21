@@ -18,7 +18,7 @@ class HomeView: UIView {
         formattedString
             .normal("Welcome to the BleepTest app. This app is set up for a ")
             .bold("20m ", temporyLabel.font.pointSize)
-            .normal("bleep test. Make sure you have set up your markers at the corect disttance!")
+            .normal("bleep test. Make sure your markers are set up at the correct distance!")
         temporyLabel.attributedText = formattedString
         return temporyLabel
     }()
