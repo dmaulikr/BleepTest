@@ -10,6 +10,19 @@ class HomeView: UIView {
     weak var delegate: HomeViewDelegate?
     var player: Player?
     
+    lazy var topLabel : MediumTitleLabel = {
+        let temporyLabel = MediumTitleLabel()
+        temporyLabel.font = UIFont.systemFont(ofSize: 16.0);
+        temporyLabel.numberOfLines = 0;
+        let formattedString = NSMutableAttributedString()
+        formattedString
+            .normal("Welcome to the BleepTest app. This app is set up for a ")
+            .bold("20m ", temporyLabel.font.pointSize)
+            .normal("bleep test. Make sure your markers are set up at the correct distance!")
+        temporyLabel.attributedText = formattedString
+        return temporyLabel
+    }()
+    
     lazy var titleLabel : MediumBlackLabel = {
         let label : MediumBlackLabel = MediumBlackLabel()
         label.text = "Runner:"
@@ -18,8 +31,9 @@ class HomeView: UIView {
     
     var nameLabel = MedumBlueLabel()
     
-    lazy var startButton : StartButton = {
-        var temporyButton : StartButton = StartButton()
+    lazy var startButton : BlueButton = {
+        var temporyButton : BlueButton = BlueButton()
+        temporyButton.setTitle("Start", for: UIControlState())
         temporyButton.addTarget(self, action: #selector(startButtonAction(_:)), for: UIControlEvents.touchUpInside)
         return temporyButton
     }()
@@ -28,7 +42,7 @@ class HomeView: UIView {
         var temporyButton : PinkRedOutlineButton = PinkRedOutlineButton()
         temporyButton.setTitle("Change", for: UIControlState())
         temporyButton.addTarget(self, action: #selector(changeButtonAction(_:)), for: UIControlEvents.touchUpInside)
-        temporyButton.titleLabel!.font =  UIFont(name: temporyButton.titleLabel!.font.fontName, size: 18)
+        temporyButton.titleLabel!.font =  UIFont(name: temporyButton.titleLabel!.font.fontName, size: 12)
         return temporyButton
     }()
     
@@ -51,12 +65,12 @@ class HomeView: UIView {
             self.nameLabel.text = "No runner"
         }
     }
-}
 
 //MARK: Static UI views which are alwas displayed
-extension HomeView{
+
     func addStableUIComponentsToView(){
         let viewsDictionary = [
+            "topLabel": topLabel,
             "startButton":startButton,
             "changeButton":changeButton,
             "titleLabel" : titleLabel,
@@ -64,14 +78,25 @@ extension HomeView{
             "superview":self
         ] as [String : Any]
         
+        addSubview(topLabel)
         addSubview(startButton)
         addSubview(changeButton)
         addSubview(titleLabel)
         addSubview(nameLabel)
         
         self.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-120-[titleLabel]-50-[changeButton(40)]-50-[startButton(100)]-(>=80)-|",
+            withVisualFormat: "V:[titleLabel]-1-[changeButton(40)]",
+            options: NSLayoutFormatOptions.alignAllLeft,
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-80-[topLabel]-50-[titleLabel]-(>=150)-|",
             options: NSLayoutFormatOptions(rawValue: 0),
+            metrics: nil,
+            views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-(>=150)-[startButton(100)]-120-|",
+            options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraints(
@@ -80,17 +105,17 @@ extension HomeView{
             metrics: nil,
             views: viewsDictionary))
         self.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-60-[changeButton]-60-|",
-            options: NSLayoutFormatOptions.alignAllCenterY,
-            metrics: nil,
-            views:viewsDictionary
-            ))
-        self.addConstraints(NSLayoutConstraint.constraints(
             withVisualFormat: "V:[superview]-(<=1)-[startButton(100)]",
             options: NSLayoutFormatOptions.alignAllCenterX,
             metrics: nil,
             views: viewsDictionary
             ))
+        self.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-10-[topLabel]-10-|",
+            options: NSLayoutFormatOptions.alignAllCenterX,
+            metrics: nil,
+            views: viewsDictionary
+        ))
         self.addConstraints(NSLayoutConstraint.constraints(
             withVisualFormat: "H:[startButton(100)]",
             options: NSLayoutFormatOptions.alignAllCenterX,

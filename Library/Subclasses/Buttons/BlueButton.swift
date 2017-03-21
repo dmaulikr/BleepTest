@@ -1,11 +1,12 @@
 import UIKit
 
-class PinkRedOutlineButton: UIButton {
-
+class BlueButton: UIButton {
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.setTitleColor(UIColor.pinkRedColor(), for: UIControlState())
+        self.titleLabel!.font =  UIFont(name: self.titleLabel!.font.fontName, size: 40)
+        self.setTitleColor(UIColor.customBlueColor(), for: UIControlState())
         self.setTitleColor(UIColor.lightGray, for: UIControlState.highlighted)
         self.backgroundColor = UIColor.clear
     }
@@ -13,5 +14,4 @@ class PinkRedOutlineButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

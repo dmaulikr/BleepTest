@@ -15,14 +15,13 @@
 		9500F0171E6381310058B6EA /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F0161E6381300058B6EA /* ResultsCell.swift */; };
 		950CEB711E5607AE004712C8 /* testLevelsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 950CEB6F1E5606FB004712C8 /* testLevelsData.json */; };
 		950CEB731E56552F004712C8 /* ResultsTableControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */; };
+		95149E691E8184A7004DA448 /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95149E681E8184A7004DA448 /* BlueButton.swift */; };
 		9527A6D21CA038DB001E7942 /* ResultsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527A6D11CA038DB001E7942 /* ResultsTableController.swift */; };
 		9527A6D41CA03B23001E7942 /* CompletedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527A6D31CA03B23001E7942 /* CompletedTest.swift */; };
 		953DD2801CBE946E00A49A98 /* UIButton+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD27D1CBE946E00A49A98 /* UIButton+Custom.swift */; };
 		953DD2811CBE946E00A49A98 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD27E1CBE946E00A49A98 /* UIColor+Custom.swift */; };
 		953DD2821CBE946E00A49A98 /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD27F1CBE946E00A49A98 /* UIFont+Custom.swift */; };
 		953DD2981CBE949500A49A98 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2851CBE949500A49A98 /* Fetcher.swift */; };
-		953DD2991CBE949500A49A98 /* PauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2881CBE949500A49A98 /* PauseButton.swift */; };
-		953DD29A1CBE949500A49A98 /* StopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2891CBE949500A49A98 /* StopButton.swift */; };
 		953DD29B1CBE949500A49A98 /* LargeContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD28B1CBE949500A49A98 /* LargeContentLabel.swift */; };
 		953DD29D1CBE949500A49A98 /* SmallTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD28D1CBE949500A49A98 /* SmallTitleLabel.swift */; };
 		953DD29E1CBE949500A49A98 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD28F1CBE949500A49A98 /* BaseCollectionViewController.swift */; };
@@ -32,7 +31,6 @@
 		953DD2A21CBE949500A49A98 /* LapProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2941CBE949500A49A98 /* LapProgressIndicator.swift */; };
 		953DD2A31CBE949500A49A98 /* LevelProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2951CBE949500A49A98 /* LevelProgressIndicator.swift */; };
 		953DD2A41CBE949500A49A98 /* Writer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2971CBE949500A49A98 /* Writer.swift */; };
-		953DD2A61CBE94BE00A49A98 /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2A51CBE94BE00A49A98 /* StartButton.swift */; };
 		953DD2A81CBE976900A49A98 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DD2A71CBE976900A49A98 /* TabBarController.swift */; };
 		953F4E821D96F358004BAD1E /* MedumBlueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953F4E811D96F358004BAD1E /* MedumBlueLabel.swift */; };
 		953F4E841D9719E7004BAD1E /* PinkRedOutlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953F4E831D9719E7004BAD1E /* PinkRedOutlineButton.swift */; };
@@ -99,14 +97,13 @@
 		9500F0161E6381300058B6EA /* ResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		950CEB6F1E5606FB004712C8 /* testLevelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testLevelsData.json; sourceTree = SOURCE_ROOT; };
 		950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableControllerTest.swift; sourceTree = "<group>"; };
+		95149E681E8184A7004DA448 /* BlueButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
 		9527A6D11CA038DB001E7942 /* ResultsTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableController.swift; sourceTree = "<group>"; };
 		9527A6D31CA03B23001E7942 /* CompletedTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTest.swift; sourceTree = "<group>"; };
 		953DD27D1CBE946E00A49A98 /* UIButton+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Custom.swift"; sourceTree = "<group>"; };
 		953DD27E1CBE946E00A49A98 /* UIColor+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		953DD27F1CBE946E00A49A98 /* UIFont+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Custom.swift"; sourceTree = "<group>"; };
 		953DD2851CBE949500A49A98 /* Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
-		953DD2881CBE949500A49A98 /* PauseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseButton.swift; sourceTree = "<group>"; };
-		953DD2891CBE949500A49A98 /* StopButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopButton.swift; sourceTree = "<group>"; };
 		953DD28B1CBE949500A49A98 /* LargeContentLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeContentLabel.swift; sourceTree = "<group>"; };
 		953DD28D1CBE949500A49A98 /* SmallTitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallTitleLabel.swift; sourceTree = "<group>"; };
 		953DD28F1CBE949500A49A98 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +113,6 @@
 		953DD2941CBE949500A49A98 /* LapProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LapProgressIndicator.swift; sourceTree = "<group>"; };
 		953DD2951CBE949500A49A98 /* LevelProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelProgressIndicator.swift; sourceTree = "<group>"; };
 		953DD2971CBE949500A49A98 /* Writer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Writer.swift; sourceTree = "<group>"; };
-		953DD2A51CBE94BE00A49A98 /* StartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
 		953DD2A71CBE976900A49A98 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		953F4E811D96F358004BAD1E /* MedumBlueLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedumBlueLabel.swift; sourceTree = "<group>"; };
 		953F4E831D9719E7004BAD1E /* PinkRedOutlineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinkRedOutlineButton.swift; sourceTree = "<group>"; };
@@ -345,12 +341,10 @@
 		953DD2871CBE949500A49A98 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				953DD2A51CBE94BE00A49A98 /* StartButton.swift */,
-				953DD2881CBE949500A49A98 /* PauseButton.swift */,
-				953DD2891CBE949500A49A98 /* StopButton.swift */,
 				953F4E831D9719E7004BAD1E /* PinkRedOutlineButton.swift */,
 				95874DBF1DA8401000D642A7 /* CloseButton.swift */,
 				957590F81E7AD9E800077A64 /* RedButton.swift */,
+				95149E681E8184A7004DA448 /* BlueButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -677,11 +671,9 @@
 			files = (
 				95A90EBC1CC28A270062C448 /* MediumTitleLabel.swift in Sources */,
 				95F4C9491DA1B0860034E37A /* TextFieldsEffects.swift in Sources */,
-				953DD29A1CBE949500A49A98 /* StopButton.swift in Sources */,
 				953DD2A81CBE976900A49A98 /* TabBarController.swift in Sources */,
 				95B235911E1FAB3F00A40666 /* OrangeNavigationController.swift in Sources */,
 				953DD29F1CBE949500A49A98 /* BaseTableViewController.swift in Sources */,
-				953DD2991CBE949500A49A98 /* PauseButton.swift in Sources */,
 				953F4E821D96F358004BAD1E /* MedumBlueLabel.swift in Sources */,
 				146E27AC1BCD51F200959BBA /* AppController.swift in Sources */,
 				953DD2A01CBE949500A49A98 /* BaseViewController.swift in Sources */,
@@ -714,12 +706,12 @@
 				9548A8241CB14FEA00BAF914 /* HomeController.swift in Sources */,
 				95D7825A1E7AA59300AFC6B0 /* NSMutableAttributedString+custom.swift in Sources */,
 				95F4C8E51DA199F20034E37A /* CreateSinglePlayerView.swift in Sources */,
+				95149E691E8184A7004DA448 /* BlueButton.swift in Sources */,
 				95FAAFAE1C91D47E00F5374F /* NSNotificationCenterKeys.swift in Sources */,
 				95FE8F581E795841006F4BD3 /* Result.swift in Sources */,
 				953DD29D1CBE949500A49A98 /* SmallTitleLabel.swift in Sources */,
 				95F4C8E31DA18D2B0034E37A /* CreateSinglePlayerController.swift in Sources */,
 				956FD5871E1C295200C61C5B /* SelectUserTableViewController.swift in Sources */,
-				953DD2A61CBE94BE00A49A98 /* StartButton.swift in Sources */,
 				95962D201E784D1A00D80E47 /* FinishedBleepTestView.swift in Sources */,
 				95BE7C281D908B530070DFFE /* MediumBlackLabel.swift in Sources */,
 				953DD2A21CBE949500A49A98 /* LapProgressIndicator.swift in Sources */,
