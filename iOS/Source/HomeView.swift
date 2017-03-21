@@ -10,6 +10,19 @@ class HomeView: UIView {
     weak var delegate: HomeViewDelegate?
     var player: Player?
     
+    lazy var topLabel : MediumTitleLabel = {
+        let temporyLabel = MediumTitleLabel()
+        temporyLabel.font = UIFont.systemFont(ofSize: 16.0);
+        temporyLabel.numberOfLines = 0;
+        let formattedString = NSMutableAttributedString()
+        formattedString
+            .normal("Welcome to the BleepTest app. This app is set up for a ")
+            .bold("20m ", temporyLabel.font.pointSize)
+            .normal("bleep test. Make sure you have set up your markers at the corect disttance!")
+        temporyLabel.attributedText = formattedString
+        return temporyLabel
+    }()
+    
     lazy var titleLabel : MediumBlackLabel = {
         let label : MediumBlackLabel = MediumBlackLabel()
         label.text = "Runner:"
