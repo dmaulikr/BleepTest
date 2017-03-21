@@ -32,7 +32,7 @@ class TabBarController: UITabBarController {
         navigationController1.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
 
         let item2 = ResultsTableController(fetcher: self.fetcher, writer: self.writer, dataStack: self.dataStack!)
-        let icon2 = UITabBarItem(title: "Results", image:UIImage(named:"MyTimesIcon"), selectedImage:UIImage(named:"MyTimesIcon"))
+        let icon2 = UITabBarItem(title: "Results", image:UIImage(named:"Graph"), selectedImage:UIImage(named:"Graph"))
         item2.tabBarItem = icon2
         let navigationController2 = UINavigationController(rootViewController: item2)
         navigationController2.navigationBar.barTintColor = .customBlueColor()
