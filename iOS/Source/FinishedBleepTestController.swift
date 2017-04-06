@@ -35,8 +35,7 @@ class FinishedBleepTestController: UIViewController {
 
 //MARK: - FinishedBleepTestViewDelegate
 extension FinishedBleepTestController: FinishedBleepTestViewDelegate {
-    
-    func didCloseButtonPressed(_ sender: FinishedBleepTestView){
+    func didCloseButtonPressed(_ sender: FinishedBleepTestView) {
         self.close()
     }
 }

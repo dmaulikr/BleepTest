@@ -2,14 +2,8 @@ import UIKit
 import SwiftyTimer
 import AVFoundation
 
-protocol BleepTestControllerDelegate: class {
-    func didTestFinish(_ sender: BleepTestController, _ values: Result)
-}
-
 class BleepTestController: BaseViewController {
     
-    weak var delegate: BleepTestControllerDelegate?
-
     var testLevel : TestLevel!
     var level : Int!
     var lap : Int!
@@ -30,7 +24,7 @@ class BleepTestController: BaseViewController {
         temporyView.delegate = self
         return temporyView
     }()
-    
+        
     override func loadView() {
         self.bleepTest.delegate = self
         self.view = self.rootView
@@ -53,10 +47,8 @@ class BleepTestController: BaseViewController {
         self.fetchPlayer()
         self.lap = self.lap + 1
         self.writer.saveBleepTest(level, lap: (lap), vo2Max: vO2Max, distance: distance, player: player)
-        //Dismiss the controller
         self.setStatusBarHidden(false)
-        self.dismiss(animated: true, completion: nil)
-        //tell the home view that the bleep test has finished
+        
         let result = Result(level: String(self.level), lap: String(self.lap), vo2Max: String(format: "%.2f", self.vO2Max), distance: String(self.distance), playerName: self.player.username)
         let finishedBleepTestController = FinishedBleepTestController(result)
         self.navigationController?.pushViewController(finishedBleepTestController, animated: true)
@@ -105,3 +97,4 @@ extension BleepTestController : BleepTestViewDelegate {
         self.bleepTestFinished()
     }
 }
+
