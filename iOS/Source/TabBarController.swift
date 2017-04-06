@@ -44,11 +44,3 @@ class TabBarController: UITabBarController {
     }
     
 }
-
-extension TabBarController{
-    //MARK: UITabBarControllerDelegate
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
-        print("Should select viewController: \(viewController.title) ?")
-        return true;
-    }
-}
