@@ -8,6 +8,12 @@ class HomeController: BaseViewController {
         return temporyView
     }()
     
+    let bleepTestNavigation: UINavigationController = {
+        let temporyNavigation = UINavigationController()
+        temporyNavigation.setNavigationBarHidden(true, animated: false)
+        return temporyNavigation
+    }()
+    
     override func loadView() {
         self.title = "Bleep Test"
         self.view = self.homeView
@@ -30,15 +36,7 @@ extension HomeController : HomeViewDelegate{
     
     func didStartButtonPressed(_ sender: HomeView) {
         let bleepTestController = BleepTestController(fetcher: self.fetcher, writer: self.writer, dataStack: self.dataStack!)
-        bleepTestController.delegate = self
-        self.navigationController?.present(bleepTestController, animated: true, completion: nil)
-    }
-}
-
-//MARK: - BleepTestControllerDelegate
-extension HomeController : BleepTestControllerDelegate {
-    func didTestFinish(_ sender: BleepTestController, _ values: Result) {
-        let finishedBleepTestController = FinishedBleepTestController(values)
-        self.navigationController?.present(finishedBleepTestController, animated: true, completion: nil)
+        self.bleepTestNavigation.addChildViewController(bleepTestController)
+        self.navigationController?.present(bleepTestNavigation, animated: true, completion: nil)
     }
 }

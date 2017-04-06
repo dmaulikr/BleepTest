@@ -58,7 +58,8 @@ class BleepTestController: BaseViewController {
         self.dismiss(animated: true, completion: nil)
         //tell the home view that the bleep test has finished
         let result = Result(level: String(self.level), lap: String(self.lap), vo2Max: String(format: "%.2f", self.vO2Max), distance: String(self.distance), playerName: self.player.username)
-        self.delegate?.didTestFinish(self, result)
+        let finishedBleepTestController = FinishedBleepTestController(result)
+        self.navigationController?.pushViewController(finishedBleepTestController, animated: true)
     }
     
     func fetchPlayer() {
