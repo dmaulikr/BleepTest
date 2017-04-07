@@ -1,6 +1,5 @@
 import UIKit
 import DATASource
-import DATAStack
 import CoreData
 
 class SelectUserTableViewController: BaseTableViewController {

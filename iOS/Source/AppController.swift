@@ -1,5 +1,5 @@
 import UIKit
-import DATAStack
+import Sync
 
 @UIApplicationMain
 class AppController: UIResponder {
@@ -7,8 +7,8 @@ class AppController: UIResponder {
     var window: UIWindow?
     var navController: UINavigationController?
     
-    fileprivate lazy var dataStack: DATAStack = {
-        let data = DATAStack(modelName: "iOS", bundle: Bundle.main, storeType:.sqLite)
+    fileprivate lazy var dataStack: DataStack = {
+        let data = DataStack(modelName: "iOS", bundle: Bundle.main, storeType:.sqLite)
         return data
     }()
     

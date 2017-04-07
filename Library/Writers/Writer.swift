@@ -1,13 +1,13 @@
 import Foundation
-import DATAStack
+import Sync
 import CoreData
 
 open class Writer : NSObject {
 
-    fileprivate var data: DATAStack
+    fileprivate var data: DataStack
     
     // MARK: - Initializers
-    init(dataStack: DATAStack) {
+    init(dataStack: DataStack) {
         self.data = dataStack
     }
     

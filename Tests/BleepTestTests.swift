@@ -1,17 +1,16 @@
 import XCTest
-import DATAStack
 import Sync
 import CoreData
 @testable import BleepTest
 
 class BleepTestTests: XCTestCase {
     
-    func createDataStack(_ storeType: DATAStackStoreType = .inMemory) -> DATAStack {
-        let dataStack = DATAStack(modelName: "iOS", bundle: Bundle.main, storeType:storeType)
+    func createDataStack(_ storeType: DataStackStoreType = .inMemory) -> DataStack {
+        let dataStack = DataStack(modelName: "iOS", bundle: Bundle.main, storeType:storeType)
         return dataStack
     }
     
-    func createLevels(_ dataStack: DATAStack, completion: @escaping (NSError?) -> Void){
+    func createLevels(_ dataStack: DataStack, completion: @escaping (NSError?) -> Void){
         let fileName = "testLevelsData.json"
         let url = URL(string: fileName)!
         let filePath = Bundle.main.path(forResource: url.deletingPathExtension().absoluteString, ofType: url.pathExtension)!

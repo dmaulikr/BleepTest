@@ -15,7 +15,7 @@ class CircleView: UIView {
             radius: (
                 frame.size.width - 10)/2,
             startAngle: 0.0,
-            endAngle: CGFloat(M_PI * 2.0),
+            endAngle: CGFloat(Double.pi * 2.0),
             clockwise: true
         )
         
