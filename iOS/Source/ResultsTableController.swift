@@ -1,6 +1,5 @@
 import UIKit
 import CoreData
-import DATAStack
 import DATASource
 
 class ResultsTableController: BaseTableViewController {
