@@ -1,12 +1,12 @@
 import XCTest
-import DATAStack
+import Sync
 import CoreData
 @testable import BleepTest
 
 class PlayerTest: XCTestCase {
     
-    func createDataStack() -> DATAStack {
-        let dataStack = DATAStack(modelName: "iOS", bundle: Bundle.main, storeType:.inMemory)
+    func createDataStack() -> DataStack {
+        let dataStack = DataStack(modelName: "iOS", bundle: Bundle.main, storeType:.inMemory)
         return dataStack
     }
     

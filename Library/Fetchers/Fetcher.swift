@@ -1,15 +1,14 @@
 import Foundation
-import DATAStack
 import Sync
 import DATASource
 import CoreData
 
 open class Fetcher : NSObject {
-    fileprivate var dataStack: DATAStack
+    fileprivate var dataStack: DataStack
     
     // MARK: - Initializers
 
-    init(dataStack: DATAStack) {
+    init(dataStack: DataStack) {
         self.dataStack = dataStack
     }
 

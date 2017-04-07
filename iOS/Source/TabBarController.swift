@@ -1,14 +1,14 @@
 import UIKit
-import DATAStack
+import Sync
 
 class TabBarController: UITabBarController {
     internal var fetcher: Fetcher
     internal var writer: Writer
-    internal var dataStack: DATAStack?
+    internal var dataStack: DataStack?
     
     // MARK: - Initializers
     
-    internal init(fetcher: Fetcher, writer: Writer, dataStack: DATAStack) {
+    internal init(fetcher: Fetcher, writer: Writer, dataStack: DataStack) {
         self.fetcher = fetcher
         self.writer = writer
         self.dataStack = dataStack

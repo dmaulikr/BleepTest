@@ -1,14 +1,14 @@
 import UIKit
-import DATAStack
+import Sync
 
 open class BaseCollectionViewController: UICollectionViewController {
     internal var fetcher: Fetcher
     internal var writer: Writer
-    internal var dataStack: DATAStack?
+    internal var dataStack: DataStack?
     
     // MARK: - Initializers
     
-    public init(fetcher: Fetcher, writer: Writer, dataStack: DATAStack) {
+    public init(fetcher: Fetcher, writer: Writer, dataStack: DataStack) {
         self.fetcher = fetcher
         self.writer = writer
         self.dataStack = dataStack

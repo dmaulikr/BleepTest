@@ -1,12 +1,12 @@
 import XCTest
-import DATAStack
+import Sync
 import CoreData
 @testable import BleepTest
 
 class ResultsTableControllerTest: XCTestCase {
     
-    private lazy var data: DATAStack = {
-        let data = DATAStack(modelName: "iOS", bundle: Bundle.main, storeType:.inMemory)
+    private lazy var data: DataStack = {
+        let data = DataStack(modelName: "iOS", bundle: Bundle.main, storeType:.inMemory)
         return data
     }()
     

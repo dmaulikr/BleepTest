@@ -1,12 +1,8 @@
 PODS:
   - DATASource (6.1.5)
-  - DATAStack (7.0.1)
   - Hex (5.0.1)
   - SwiftyTimer (2.0.0)
-  - Sync (2.7.0):
-    - DATAStack (~> 7.0.1)
-    - SYNCPropertyMapper (~> 5.2.0)
-  - SYNCPropertyMapper (5.2.0)
+  - Sync (3.2.1)
 
 DEPENDENCIES:
   - DATASource
@@ -16,12 +12,10 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   DATASource: 52b86cfff6c7ac3db45192c01f7839c7473576c3
-  DATAStack: 9ca4ba8e8e4f389f1593ad3178d7a4d4df69d648
   Hex: 2c757d81a2b4b6afc842458ce485c8c097ea1c79
   SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
-  Sync: b02ce41aa8080049a2932fd7342fe189edb2298a
-  SYNCPropertyMapper: b3157f5183285c8a25ba23877b95a06ec2547e73
+  Sync: 70ba21675235ea8960e9033611cd2ebd0131adf2
 
-PODFILE CHECKSUM: 39fb6e20599ab03e8c50118045478617368b4891
+PODFILE CHECKSUM: 23a702a6ab500ec2a2d8eecf79eb50628a6d7fa2
 
 COCOAPODS: 1.2.0
