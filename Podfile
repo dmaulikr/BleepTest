@@ -4,7 +4,7 @@ target 'BleepTest' do
 	# link_with 'iOS', 'tvOS', 'watchOS'
 	pod 'Sync'
 	pod 'DATASource'
-	pod 'Hex'
+	pod 'HexColors'
 	pod 'SwiftyTimer'
 
 	target 'Tests' do

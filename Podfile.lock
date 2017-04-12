@@ -1,21 +1,21 @@
 PODS:
   - DATASource (6.1.5)
-  - Hex (5.0.1)
+  - HexColors (5.0.1)
   - SwiftyTimer (2.0.0)
   - Sync (3.2.1)
 
 DEPENDENCIES:
   - DATASource
-  - Hex
+  - HexColors
   - SwiftyTimer
   - Sync
 
 SPEC CHECKSUMS:
   DATASource: 52b86cfff6c7ac3db45192c01f7839c7473576c3
-  Hex: 2c757d81a2b4b6afc842458ce485c8c097ea1c79
+  HexColors: d642e696de77aa919584012e80bf62a4b099cee1
   SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
   Sync: 70ba21675235ea8960e9033611cd2ebd0131adf2
 
-PODFILE CHECKSUM: 23a702a6ab500ec2a2d8eecf79eb50628a6d7fa2
+PODFILE CHECKSUM: 49eb85d6fc05eb34d8ba9fb390c45c3c1c8a8892
 
 COCOAPODS: 1.2.0
