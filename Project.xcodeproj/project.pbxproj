@@ -15,6 +15,7 @@
 		9500F0171E6381310058B6EA /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F0161E6381300058B6EA /* ResultsCell.swift */; };
 		95021BE31E9FC3B500C54BA2 /* CreateTeamControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95021BE21E9FC3B500C54BA2 /* CreateTeamControllerTest.swift */; };
 		95021BE61E9FC49200C54BA2 /* CreateTeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95021BE51E9FC49200C54BA2 /* CreateTeamController.swift */; };
+		95021BE81E9FD29800C54BA2 /* CreateTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95021BE71E9FD29800C54BA2 /* CreateTeamView.swift */; };
 		950CEB711E5607AE004712C8 /* testLevelsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 950CEB6F1E5606FB004712C8 /* testLevelsData.json */; };
 		950CEB731E56552F004712C8 /* ResultsTableControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */; };
 		95149E691E8184A7004DA448 /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95149E681E8184A7004DA448 /* BlueButton.swift */; };
@@ -99,6 +100,7 @@
 		9500F0161E6381300058B6EA /* ResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		95021BE21E9FC3B500C54BA2 /* CreateTeamControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamControllerTest.swift; sourceTree = "<group>"; };
 		95021BE51E9FC49200C54BA2 /* CreateTeamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamController.swift; sourceTree = "<group>"; };
+		95021BE71E9FD29800C54BA2 /* CreateTeamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamView.swift; sourceTree = "<group>"; };
 		950CEB6F1E5606FB004712C8 /* testLevelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testLevelsData.json; sourceTree = SOURCE_ROOT; };
 		950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableControllerTest.swift; sourceTree = "<group>"; };
 		95149E681E8184A7004DA448 /* BlueButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				95021BE51E9FC49200C54BA2 /* CreateTeamController.swift */,
+				95021BE71E9FD29800C54BA2 /* CreateTeamView.swift */,
 			);
 			name = "Create Team";
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				95874DC01DA8401000D642A7 /* CloseButton.swift in Sources */,
 				9548A8241CB14FEA00BAF914 /* HomeController.swift in Sources */,
 				95D7825A1E7AA59300AFC6B0 /* NSMutableAttributedString+custom.swift in Sources */,
+				95021BE81E9FD29800C54BA2 /* CreateTeamView.swift in Sources */,
 				95F4C8E51DA199F20034E37A /* CreateSinglePlayerView.swift in Sources */,
 				95149E691E8184A7004DA448 /* BlueButton.swift in Sources */,
 				95FAAFAE1C91D47E00F5374F /* NSNotificationCenterKeys.swift in Sources */,
