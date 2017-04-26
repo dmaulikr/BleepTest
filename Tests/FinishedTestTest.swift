@@ -49,4 +49,9 @@ class FinishedTestControllerTest: XCTestCase {
         XCTAssertNotNil(finishedBleepTestController.rootView.bottomLabel.superview, "distanceLabel Not Added To View")
         XCTAssertNotNil(finishedBleepTestController.rootView.closeButton.superview, "closeButton Not Added To View")
     }
+    
+    func testFinishedBleepTestNoRunnerName() {
+        let result: Result = Result(level: "1", lap: "1", vo2Max: "3", distance: "0", playerName: nil)
+    }
+
 }
