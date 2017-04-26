@@ -74,11 +74,18 @@ class FinishedBleepTestView: UIView {
     }
     
     
-    private func formatTopLabel(_ playerName: String) {
+    private func formatTopLabel(_ playerName: String? = "") {
+        var name:String
+        if let nameCheck = playerName {
+            name = " \(nameCheck)"
+        } else {
+             name = ""
+        }
+
         let formattedString = NSMutableAttributedString()
         formattedString
-            .normal("Nice one ")
-            .bold(playerName, self.topLabel.font.pointSize)
+            .normal("Nice one")
+            .bold(name, self.topLabel.font.pointSize)
             .normal(" you have finished a Bleep Test. This is your results!")
         self.topLabel.attributedText = formattedString
     }

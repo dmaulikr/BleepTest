@@ -52,6 +52,9 @@ class FinishedTestControllerTest: XCTestCase {
     
     func testFinishedBleepTestNoRunnerName() {
         let result: Result = Result(level: "1", lap: "1", vo2Max: "3", distance: "0", playerName: nil)
+        let finishedBleepTestController = FinishedBleepTestController(result)
+        
+        XCTAssertNotNil(finishedBleepTestController)
     }
 
 }
