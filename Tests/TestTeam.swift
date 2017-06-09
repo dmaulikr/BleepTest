@@ -4,12 +4,14 @@ import XCTest
 class TestTeam: XCTestCase {
     
     func testInit_ShouldTakeName() {
-        let item = Team(name: "Test name", teamDescription: nil)
-        XCTAssertNotNil(item, "Item should not be nil")
+        let item = Team(name: "Test name")
+        XCTAssertEqual(item.name, "Test name", "Item should not be nil")
     }
     
     func testInit_ShouldTakeNameAndDescription() {
-        _ = Team(name: "Test name", teamDescription: "This is my team")
+        let item = Team(name: "Test name", teamDescription: "This is my team")
+        XCTAssertEqual(item.teamDescription, "This is my team", "Item should not be nil")
+
     }
     
 }
