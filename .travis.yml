@@ -4,4 +4,4 @@ before_install:
 - pod update
 - brew outdated xctool || brew upgrade xctool
 script:
-- xcodebuild -workspace Project.xcworkspace -scheme iOS -sdk iphonesimulator build test -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.3'
+- xcodebuild -workspace Project.xcworkspace -scheme iOS -sdk iphonesimulator build test -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.3.1'
