@@ -17,7 +17,7 @@ class BleepTestController: BaseViewController {
         return temporyBleepTest
     }()
     
-    var player: Player!
+    var player: Player?
 
     lazy var rootView: BleepTestView = {
         var temporyView = BleepTestView(frame: UIScreen.main.bounds)
@@ -47,10 +47,13 @@ class BleepTestController: BaseViewController {
         self.fetchPlayer()
         self.lap = self.lap + 1
         self.writer.saveBleepTest(level, lap: (lap), vo2Max: vO2Max, distance: distance, player: player)
-        self.setStatusBarHidden(false)
-        
-        let result = Result(level: String(self.level), lap: String(self.lap), vo2Max: String(format: "%.2f", self.vO2Max), distance: String(self.distance), playerName: self.player.username)
+        self.showFinisedBleepTestController()
+    }
+    
+    func showFinisedBleepTestController() {
+        let result = Result(level: String(self.level), lap: String(self.lap), vo2Max: String(format: "%.2f", self.vO2Max), distance: String(self.distance), playerName: self.player?.username)
         let finishedBleepTestController = FinishedBleepTestController(result)
+        
         self.navigationController?.pushViewController(finishedBleepTestController, animated: true)
     }
     

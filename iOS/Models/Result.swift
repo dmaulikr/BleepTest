@@ -5,5 +5,5 @@ struct Result {
     var lap: String
     var vo2Max: String
     var distance: String
-    var playerName: String
+    var playerName: String? = ""
 }
