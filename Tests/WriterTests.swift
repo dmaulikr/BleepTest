@@ -17,14 +17,6 @@ class WriterTests: XCTestCase {
         return objects
     }
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
     func testCreatePlayer(){
         let data = self.createDataStack()
         
@@ -33,8 +25,6 @@ class WriterTests: XCTestCase {
         
             let objects = self.fetchObjectsInContext(data.mainContext, entity: "Player")
             XCTAssertEqual(objects.count, 1)
-        
-
     }
     
     func testCreateCompletedTest(){
