@@ -4,15 +4,18 @@ import XCTest
 
 class TestTeamListController: XCTestCase {
     
-    func test_TableViewIsNotNilAfterViewDidLoad() {
-        let teamListContorller = TeamListController()
+    var teamListContorller: TeamListController!
+    
+    override func setUp() {
+        teamListContorller = TeamListController()
         _ = teamListContorller.view
+    }
+    
+    func test_TableViewIsNotNilAfterViewDidLoad() {
         XCTAssertNotNil(teamListContorller.tableView)
     }
     
     func testVeiwDidLoad_ShouldSetTableDataSource() {
-        let teamListContorller = TeamListController()
-        _ = teamListContorller.view
         XCTAssertNotNil(teamListContorller.tableView.dataSource)
         XCTAssertTrue(teamListContorller.tableView.dataSource is TeamDataProvider)
     }
