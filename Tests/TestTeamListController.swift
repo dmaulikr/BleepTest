@@ -25,4 +25,8 @@ class TestTeamListController: XCTestCase {
         XCTAssertTrue(teamListContorller.tableView.delegate is TeamDataProvider)
     }
     
+    func testViewDidLoad_ShouldSetDelegateAndDataSourceToTheSameObject() {
+        XCTAssertEqual(teamListContorller.tableView.delegate as? TeamDataProvider, teamListContorller.tableView.dataSource as? TeamDataProvider)
+    }
+    
 }
