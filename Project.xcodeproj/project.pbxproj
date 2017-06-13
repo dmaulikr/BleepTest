@@ -55,6 +55,7 @@
 		95B92F4F1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B92F4E1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift */; };
 		95BAF51E1EF00FF2003B52BC /* TestTeamListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BAF51D1EF00FF2003B52BC /* TestTeamListController.swift */; };
 		95BAF5201EF01AE5003B52BC /* TeamListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BAF51F1EF01AE5003B52BC /* TeamListController.swift */; };
+		95BAF5231EF02393003B52BC /* TeamDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BAF5221EF02393003B52BC /* TeamDataProvider.swift */; };
 		95BD7CEF1EEADB6F0007AC3E /* TestTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD7CEE1EEADB6F0007AC3E /* TestTeam.swift */; };
 		95BD7CF11EEAE4930007AC3E /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD7CF01EEAE4930007AC3E /* Team.swift */; };
 		95BE7C281D908B530070DFFE /* MediumBlackLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */; };
@@ -144,6 +145,7 @@
 		95B92F4E1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyBleepTestDelegate.swift; sourceTree = "<group>"; };
 		95BAF51D1EF00FF2003B52BC /* TestTeamListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTeamListController.swift; sourceTree = "<group>"; };
 		95BAF51F1EF01AE5003B52BC /* TeamListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamListController.swift; sourceTree = "<group>"; };
+		95BAF5221EF02393003B52BC /* TeamDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDataProvider.swift; sourceTree = "<group>"; };
 		95BD7CEE1EEADB6F0007AC3E /* TestTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTeam.swift; sourceTree = "<group>"; };
 		95BD7CF01EEAE4930007AC3E /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumBlackLabel.swift; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 			isa = PBXGroup;
 			children = (
 				95BAF51F1EF01AE5003B52BC /* TeamListController.swift */,
+				95BAF5221EF02393003B52BC /* TeamDataProvider.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				95962D201E784D1A00D80E47 /* FinishedBleepTestView.swift in Sources */,
 				95BE7C281D908B530070DFFE /* MediumBlackLabel.swift in Sources */,
 				953DD2A21CBE949500A49A98 /* LapProgressIndicator.swift in Sources */,
+				95BAF5231EF02393003B52BC /* TeamDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
