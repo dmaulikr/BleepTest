@@ -7,4 +7,5 @@ open class Player: NSManagedObject {
     @NSManaged var age: NSNumber
     @NSManaged var dateAdded: Date
     @NSManaged var commpletedTests: Set<CompletedTest>
+    @NSManaged var teams: [Team]
 }
