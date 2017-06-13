@@ -13,7 +13,7 @@
         <attribute name="dateAdded" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="commpletedTests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CompletedTest" inverseName="player" inverseEntity="CompletedTest" syncable="YES"/>
-        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="players" inverseEntity="Team" syncable="YES"/>
+        <relationship name="team" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="players" inverseEntity="Team" syncable="YES"/>
     </entity>
     <entity name="Team" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
