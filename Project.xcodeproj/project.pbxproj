@@ -56,6 +56,7 @@
 		95BAF51E1EF00FF2003B52BC /* TestTeamListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BAF51D1EF00FF2003B52BC /* TestTeamListController.swift */; };
 		95BAF5201EF01AE5003B52BC /* TeamListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BAF51F1EF01AE5003B52BC /* TeamListController.swift */; };
 		95BAF5231EF02393003B52BC /* TeamDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BAF5221EF02393003B52BC /* TeamDataProvider.swift */; };
+		95BAF5251EF03574003B52BC /* TeamDataProividerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BAF5241EF03574003B52BC /* TeamDataProividerTests.swift */; };
 		95BD7CEF1EEADB6F0007AC3E /* TestTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD7CEE1EEADB6F0007AC3E /* TestTeam.swift */; };
 		95BD7CF11EEAE4930007AC3E /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD7CF01EEAE4930007AC3E /* Team.swift */; };
 		95BE7C281D908B530070DFFE /* MediumBlackLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */; };
@@ -146,6 +147,7 @@
 		95BAF51D1EF00FF2003B52BC /* TestTeamListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTeamListController.swift; sourceTree = "<group>"; };
 		95BAF51F1EF01AE5003B52BC /* TeamListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamListController.swift; sourceTree = "<group>"; };
 		95BAF5221EF02393003B52BC /* TeamDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDataProvider.swift; sourceTree = "<group>"; };
+		95BAF5241EF03574003B52BC /* TeamDataProividerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDataProividerTests.swift; sourceTree = "<group>"; };
 		95BD7CEE1EEADB6F0007AC3E /* TestTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTeam.swift; sourceTree = "<group>"; };
 		95BD7CF01EEAE4930007AC3E /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumBlackLabel.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				95021BE21E9FC3B500C54BA2 /* CreateTeamControllerTest.swift */,
 				95BD7CEE1EEADB6F0007AC3E /* TestTeam.swift */,
 				95BAF51D1EF00FF2003B52BC /* TestTeamListController.swift */,
+				95BAF5241EF03574003B52BC /* TeamDataProividerTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -772,6 +775,7 @@
 				95962D221E784DB000D80E47 /* FinishedTestTest.swift in Sources */,
 				95F7B6F71DF849E50092114C /* WriterTests.swift in Sources */,
 				95BAF51E1EF00FF2003B52BC /* TestTeamListController.swift in Sources */,
+				95BAF5251EF03574003B52BC /* TeamDataProividerTests.swift in Sources */,
 				95BD7CEF1EEADB6F0007AC3E /* TestTeam.swift in Sources */,
 				950CEB731E56552F004712C8 /* ResultsTableControllerTest.swift in Sources */,
 				95E6367C1E2A9C4200CD7918 /* BleepTestTests.swift in Sources */,
