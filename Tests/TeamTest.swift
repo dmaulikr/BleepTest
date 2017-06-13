@@ -3,7 +3,7 @@ import Sync
 import CoreData
 @testable import BleepTest
 
-class TestTeam: XCTestCase {
+class TeamTest: XCTestCase {
     
     var dataStack: DataStack = DataStack()
     var entity: NSEntityDescription?

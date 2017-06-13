@@ -2,7 +2,7 @@ import XCTest
 
 @testable import BleepTest
 
-class TestTeamListController: XCTestCase {
+class TeamListControllerTest: XCTestCase {
     
     var teamListContorller: TeamListController!
     
