@@ -6,6 +6,7 @@ class TeamListController: UITableViewController {
 
     override func viewDidLoad() {
         self.tableView.dataSource = dataProvider
+        self.tableView.delegate = dataProvider
     }
     
 }
