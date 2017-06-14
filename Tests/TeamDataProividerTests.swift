@@ -36,9 +36,36 @@ class TeamDataProividerTests: XCTestCase {
     func testCellForRow_ReturnsTeamCell() {
         teamDataProvider.manager.add(Team(name: "Test name", entity: self.entity!, insertIntoManagedObjectContext: self.dataStack.mainContext))
         tableView.reloadData()
+        tableView.register(TeamCell.self, forCellReuseIdentifier: NSStringFromClass(TeamCell.self))
         
         let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
         XCTAssertTrue(cell is TeamCell)
     }
     
+    func testCellForRow_DequeuesCell() {
+        let mockTableView = MockTableView()
+        mockTableView.dataSource = teamDataProvider
+        mockTableView.register(TeamCell.self, forCellReuseIdentifier: NSStringFromClass(TeamCell.self))
+        
+        teamDataProvider.manager.add(Team(name: "Test name", entity: self.entity!, insertIntoManagedObjectContext: self.dataStack.mainContext))
+        mockTableView.reloadData()
+        
+        _ = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0))
+        
+        XCTAssertTrue(mockTableView.cellGotDequeued)
+    }
+    
+}
+
+extension TeamDataProividerTests {
+    
+    class MockTableView: UITableView {
+        
+        var cellGotDequeued = false
+        
+        override func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell {
+            cellGotDequeued = true
+            return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        }
+    }
 }
