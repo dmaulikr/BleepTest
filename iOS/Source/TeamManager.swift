@@ -7,7 +7,15 @@ class TeamManager {
         teams.append(team)
     }
     
-    func atIndex(_ index: Int) -> Team {
+    func remove(atIndex: Int) {
+        count -= 1
+        teams.remove(at: atIndex)
+    }
+    
+    func atIndex(_ index: Int) -> Team? {
+        if (index >= count) {
+            return nil
+        }
         return teams[index]
     }
 }
