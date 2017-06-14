@@ -42,6 +42,7 @@
 		9548A8221CB14F5000BAF914 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548A8211CB14F5000BAF914 /* HomeView.swift */; };
 		9548A8241CB14FEA00BAF914 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548A8231CB14FEA00BAF914 /* HomeController.swift */; };
 		956FD5871E1C295200C61C5B /* SelectUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD5861E1C295200C61C5B /* SelectUserTableViewController.swift */; };
+		95711F6C1EF172C2009E3857 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95711F6B1EF172C2009E3857 /* TeamCell.swift */; };
 		9574F0D61E1927CE00ADDF32 /* FetcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574F0D51E1927CE00ADDF32 /* FetcherTest.swift */; };
 		957590F91E7AD9E800077A64 /* RedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957590F81E7AD9E800077A64 /* RedButton.swift */; };
 		95874DC01DA8401000D642A7 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95874DBF1DA8401000D642A7 /* CloseButton.swift */; };
@@ -135,6 +136,7 @@
 		9548A8211CB14F5000BAF914 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9548A8231CB14FEA00BAF914 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		956FD5861E1C295200C61C5B /* SelectUserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserTableViewController.swift; sourceTree = "<group>"; };
+		95711F6B1EF172C2009E3857 /* TeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 		9574F0D51E1927CE00ADDF32 /* FetcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetcherTest.swift; sourceTree = "<group>"; };
 		957590F81E7AD9E800077A64 /* RedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedButton.swift; sourceTree = "<group>"; };
 		95874DBF1DA8401000D642A7 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				95BAF51F1EF01AE5003B52BC /* TeamListController.swift */,
 				95BAF5221EF02393003B52BC /* TeamDataProvider.swift */,
 				95EF5E3A1EF1394C00D8430C /* TeamManager.swift */,
+				95711F6B1EF172C2009E3857 /* TeamCell.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -748,6 +751,7 @@
 				9527A6D21CA038DB001E7942 /* ResultsTableController.swift in Sources */,
 				953DD29B1CBE949500A49A98 /* LargeContentLabel.swift in Sources */,
 				145F81CD1BDE2CFD0016A9E0 /* iOS.xcdatamodeld in Sources */,
+				95711F6C1EF172C2009E3857 /* TeamCell.swift in Sources */,
 				95F7B6FA1DF852E40092114C /* Player.swift in Sources */,
 				953DD2981CBE949500A49A98 /* Fetcher.swift in Sources */,
 				95E6367A1E2A599200CD7918 /* BleepTest.swift in Sources */,

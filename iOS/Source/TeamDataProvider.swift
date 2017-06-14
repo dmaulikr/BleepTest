@@ -9,7 +9,7 @@ class TeamDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func  tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        return TeamCell()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

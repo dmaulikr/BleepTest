@@ -31,7 +31,14 @@ class TeamDataProividerTests: XCTestCase {
         teamDataProvider.manager.add(Team(name: "Test name", entity: self.entity!, insertIntoManagedObjectContext: self.dataStack.mainContext))
         let numberOfRows = tableView.numberOfRows(inSection: 0)
         XCTAssertEqual(numberOfRows, 1)
-
+    }
+    
+    func testCellForRow_ReturnsTeamCell() {
+        teamDataProvider.manager.add(Team(name: "Test name", entity: self.entity!, insertIntoManagedObjectContext: self.dataStack.mainContext))
+        tableView.reloadData()
+        
+        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+        XCTAssertTrue(cell is TeamCell)
     }
     
 }
