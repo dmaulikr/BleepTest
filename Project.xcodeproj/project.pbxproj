@@ -67,6 +67,8 @@
 		95E6367C1E2A9C4200CD7918 /* BleepTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E6367B1E2A9C4100CD7918 /* BleepTestTests.swift */; };
 		95EBE9F11C9064D600A57377 /* levelsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 95EBE9F01C9064D600A57377 /* levelsData.json */; };
 		95EBE9F91C908DC100A57377 /* TestLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBE9F81C908DC100A57377 /* TestLevel.swift */; };
+		95EF5E3B1EF1394C00D8430C /* TeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5E3A1EF1394C00D8430C /* TeamManager.swift */; };
+		95EF5E3D1EF13B8D00D8430C /* TeamManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5E3C1EF13B8D00D8430C /* TeamManagerTests.swift */; };
 		95F4C8E31DA18D2B0034E37A /* CreateSinglePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */; };
 		95F4C8E51DA199F20034E37A /* CreateSinglePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C8E41DA199F20034E37A /* CreateSinglePlayerView.swift */; };
 		95F4C9491DA1B0860034E37A /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C9471DA1B0860034E37A /* TextFieldsEffects.swift */; };
@@ -158,6 +160,8 @@
 		95E6367B1E2A9C4100CD7918 /* BleepTestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestTests.swift; sourceTree = "<group>"; };
 		95EBE9F01C9064D600A57377 /* levelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = levelsData.json; path = ../../levelsData.json; sourceTree = "<group>"; };
 		95EBE9F81C908DC100A57377 /* TestLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLevel.swift; sourceTree = "<group>"; };
+		95EF5E3A1EF1394C00D8430C /* TeamManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamManager.swift; sourceTree = "<group>"; };
+		95EF5E3C1EF13B8D00D8430C /* TeamManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamManagerTests.swift; sourceTree = "<group>"; };
 		95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSinglePlayerController.swift; sourceTree = "<group>"; };
 		95F4C8E41DA199F20034E37A /* CreateSinglePlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSinglePlayerView.swift; sourceTree = "<group>"; };
 		95F4C9471DA1B0860034E37A /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
@@ -291,6 +295,7 @@
 				95BD7CEE1EEADB6F0007AC3E /* TeamTest.swift */,
 				95BAF51D1EF00FF2003B52BC /* TeamListControllerTest.swift */,
 				95BAF5241EF03574003B52BC /* TeamDataProividerTests.swift */,
+				95EF5E3C1EF13B8D00D8430C /* TeamManagerTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -464,6 +469,7 @@
 			children = (
 				95BAF51F1EF01AE5003B52BC /* TeamListController.swift */,
 				95BAF5221EF02393003B52BC /* TeamDataProvider.swift */,
+				95EF5E3A1EF1394C00D8430C /* TeamManager.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -738,6 +744,7 @@
 				95D7B0061C8CBC68004690D5 /* BleepTestView.swift in Sources */,
 				953DD2A41CBE949500A49A98 /* Writer.swift in Sources */,
 				953DD2801CBE946E00A49A98 /* UIButton+Custom.swift in Sources */,
+				95EF5E3B1EF1394C00D8430C /* TeamManager.swift in Sources */,
 				9527A6D21CA038DB001E7942 /* ResultsTableController.swift in Sources */,
 				953DD29B1CBE949500A49A98 /* LargeContentLabel.swift in Sources */,
 				145F81CD1BDE2CFD0016A9E0 /* iOS.xcdatamodeld in Sources */,
@@ -780,6 +787,7 @@
 				950CEB731E56552F004712C8 /* ResultsTableControllerTest.swift in Sources */,
 				95E6367C1E2A9C4200CD7918 /* BleepTestTests.swift in Sources */,
 				95B92F4F1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift in Sources */,
+				95EF5E3D1EF13B8D00D8430C /* TeamManagerTests.swift in Sources */,
 				954215121DD9F76900F73DAF /* PlayerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
