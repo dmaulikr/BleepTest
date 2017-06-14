@@ -2,12 +2,18 @@ import UIKit
 
 class TeamDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+    var manager = TeamManager()
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     func  tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return manager.count 
     }
 
 }
