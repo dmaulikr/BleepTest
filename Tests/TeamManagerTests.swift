@@ -29,4 +29,12 @@ class TeamManagerTests: XCTestCase {
         XCTAssertEqual(teamManager.count, 1, "Initially teamManager should be one")
     }
     
+    func testTeamAtIndex_ShouldReturnPreviouslyAddedTeam() {
+        let team = Team(name: "Test name", entity: self.entity!, insertIntoManagedObjectContext: self.dataStack.mainContext)
+        teamManager.add(team)
+        
+        let returnedTeam = teamManager.atIndex(0)
+        XCTAssertEqual(team.name, returnedTeam.name, "Both teams should be the same")
+    }
+    
 }
