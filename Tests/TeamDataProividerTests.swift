@@ -68,7 +68,6 @@ class TeamDataProividerTests: XCTestCase {
         let cell = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! MockTeamCell
         XCTAssertEqual(cell.team?.name, team.name)
     }
-    
 }
 
 extension TeamDataProividerTests {

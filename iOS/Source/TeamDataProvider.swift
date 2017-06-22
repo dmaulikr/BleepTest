@@ -11,7 +11,7 @@ class TeamDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func  tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell( withIdentifier: NSStringFromClass(TeamCell.self), for: indexPath) as! TeamCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(TeamCell.self), for: indexPath) as! TeamCell
         
         if let team = manager.atIndex(indexPath.row) {
             cell.configCellWith(team)
