@@ -49,6 +49,7 @@
 		958DA77C1F1F964200C7993E /* DetailTeamControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DA77B1F1F964200C7993E /* DetailTeamControllerTests.swift */; };
 		958DA77F1F1F985E00C7993E /* DetailTeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DA77E1F1F985E00C7993E /* DetailTeamController.swift */; };
 		958DA7811F1F9AE800C7993E /* DetailTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DA7801F1F9AE800C7993E /* DetailTeamView.swift */; };
+		958DA7831F1FA21A00C7993E /* DetailTeamViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DA7821F1FA21A00C7993E /* DetailTeamViewTests.swift */; };
 		95962D1E1E784CFA00D80E47 /* FinishedBleepTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95962D1D1E784CFA00D80E47 /* FinishedBleepTestController.swift */; };
 		95962D201E784D1A00D80E47 /* FinishedBleepTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95962D1F1E784D1A00D80E47 /* FinishedBleepTestView.swift */; };
 		95962D221E784DB000D80E47 /* FinishedTestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95962D211E784DB000D80E47 /* FinishedTestTest.swift */; };
@@ -147,6 +148,7 @@
 		958DA77B1F1F964200C7993E /* DetailTeamControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTeamControllerTests.swift; sourceTree = "<group>"; };
 		958DA77E1F1F985E00C7993E /* DetailTeamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTeamController.swift; sourceTree = "<group>"; };
 		958DA7801F1F9AE800C7993E /* DetailTeamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailTeamView.swift; path = Source/DetailTeamView.swift; sourceTree = "<group>"; };
+		958DA7821F1FA21A00C7993E /* DetailTeamViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTeamViewTests.swift; sourceTree = "<group>"; };
 		95962D1D1E784CFA00D80E47 /* FinishedBleepTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedBleepTestController.swift; sourceTree = "<group>"; };
 		95962D1F1E784D1A00D80E47 /* FinishedBleepTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedBleepTestView.swift; sourceTree = "<group>"; };
 		95962D211E784DB000D80E47 /* FinishedTestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedTestTest.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				95EF5E3C1EF13B8D00D8430C /* TeamManagerTests.swift */,
 				95BF7A581EF2D7F900D71EFD /* TeamCellTests.swift */,
 				958DA77B1F1F964200C7993E /* DetailTeamControllerTests.swift */,
+				958DA7821F1FA21A00C7993E /* DetailTeamViewTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 				95021BE31E9FC3B500C54BA2 /* CreateTeamControllerTest.swift in Sources */,
 				9574F0D61E1927CE00ADDF32 /* FetcherTest.swift in Sources */,
 				958DA77C1F1F964200C7993E /* DetailTeamControllerTests.swift in Sources */,
+				958DA7831F1FA21A00C7993E /* DetailTeamViewTests.swift in Sources */,
 				95962D221E784DB000D80E47 /* FinishedTestTest.swift in Sources */,
 				95F7B6F71DF849E50092114C /* WriterTests.swift in Sources */,
 				95BAF51E1EF00FF2003B52BC /* TeamListControllerTest.swift in Sources */,
