@@ -46,6 +46,9 @@
 		9574F0D61E1927CE00ADDF32 /* FetcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574F0D51E1927CE00ADDF32 /* FetcherTest.swift */; };
 		957590F91E7AD9E800077A64 /* RedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957590F81E7AD9E800077A64 /* RedButton.swift */; };
 		95874DC01DA8401000D642A7 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95874DBF1DA8401000D642A7 /* CloseButton.swift */; };
+		958DA77C1F1F964200C7993E /* DetailTeamControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DA77B1F1F964200C7993E /* DetailTeamControllerTests.swift */; };
+		958DA77F1F1F985E00C7993E /* DetailTeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DA77E1F1F985E00C7993E /* DetailTeamController.swift */; };
+		958DA7811F1F9AE800C7993E /* DetailTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DA7801F1F9AE800C7993E /* DetailTeamView.swift */; };
 		95962D1E1E784CFA00D80E47 /* FinishedBleepTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95962D1D1E784CFA00D80E47 /* FinishedBleepTestController.swift */; };
 		95962D201E784D1A00D80E47 /* FinishedBleepTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95962D1F1E784D1A00D80E47 /* FinishedBleepTestView.swift */; };
 		95962D221E784DB000D80E47 /* FinishedTestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95962D211E784DB000D80E47 /* FinishedTestTest.swift */; };
@@ -141,6 +144,9 @@
 		9574F0D51E1927CE00ADDF32 /* FetcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetcherTest.swift; sourceTree = "<group>"; };
 		957590F81E7AD9E800077A64 /* RedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedButton.swift; sourceTree = "<group>"; };
 		95874DBF1DA8401000D642A7 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		958DA77B1F1F964200C7993E /* DetailTeamControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTeamControllerTests.swift; sourceTree = "<group>"; };
+		958DA77E1F1F985E00C7993E /* DetailTeamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTeamController.swift; sourceTree = "<group>"; };
+		958DA7801F1F9AE800C7993E /* DetailTeamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailTeamView.swift; path = Source/DetailTeamView.swift; sourceTree = "<group>"; };
 		95962D1D1E784CFA00D80E47 /* FinishedBleepTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedBleepTestController.swift; sourceTree = "<group>"; };
 		95962D1F1E784D1A00D80E47 /* FinishedBleepTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedBleepTestView.swift; sourceTree = "<group>"; };
 		95962D211E784DB000D80E47 /* FinishedTestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedTestTest.swift; sourceTree = "<group>"; };
@@ -258,6 +264,7 @@
 				953A5EF01CA42C4C003960FC /* Bleep Test */,
 				95962D1C1E784B5600D80E47 /* Finished Bleep Test */,
 				95BAF5211EF01B13003B52BC /* Team */,
+				958DA77D1F1F982600C7993E /* DetailTeam */,
 				95021BE41E9FC43100C54BA2 /* Create Team */,
 			);
 			path = Source;
@@ -301,6 +308,7 @@
 				95BAF5241EF03574003B52BC /* TeamDataProividerTests.swift */,
 				95EF5E3C1EF13B8D00D8430C /* TeamManagerTests.swift */,
 				95BF7A581EF2D7F900D71EFD /* TeamCellTests.swift */,
+				958DA77B1F1F964200C7993E /* DetailTeamControllerTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -450,6 +458,16 @@
 				956FD5861E1C295200C61C5B /* SelectUserTableViewController.swift */,
 			);
 			name = "Select User";
+			sourceTree = "<group>";
+		};
+		958DA77D1F1F982600C7993E /* DetailTeam */ = {
+			isa = PBXGroup;
+			children = (
+				958DA77E1F1F985E00C7993E /* DetailTeamController.swift */,
+				958DA7801F1F9AE800C7993E /* DetailTeamView.swift */,
+			);
+			name = DetailTeam;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		95962D1C1E784B5600D80E47 /* Finished Bleep Test */ = {
@@ -729,6 +747,7 @@
 				953DD2A81CBE976900A49A98 /* TabBarController.swift in Sources */,
 				95B235911E1FAB3F00A40666 /* OrangeNavigationController.swift in Sources */,
 				953DD29F1CBE949500A49A98 /* BaseTableViewController.swift in Sources */,
+				958DA7811F1F9AE800C7993E /* DetailTeamView.swift in Sources */,
 				953F4E821D96F358004BAD1E /* MedumBlueLabel.swift in Sources */,
 				146E27AC1BCD51F200959BBA /* AppController.swift in Sources */,
 				95021BE61E9FC49200C54BA2 /* CreateTeamController.swift in Sources */,
@@ -739,6 +758,7 @@
 				953DD29E1CBE949500A49A98 /* BaseCollectionViewController.swift in Sources */,
 				953DD2A11CBE949500A49A98 /* CircleView.swift in Sources */,
 				953DD2A31CBE949500A49A98 /* LevelProgressIndicator.swift in Sources */,
+				958DA77F1F1F985E00C7993E /* DetailTeamController.swift in Sources */,
 				953DD2821CBE946E00A49A98 /* UIFont+Custom.swift in Sources */,
 				95F4C94A1DA1B0860034E37A /* YoshikoTextField.swift in Sources */,
 				9500F0171E6381310058B6EA /* ResultsCell.swift in Sources */,
@@ -787,6 +807,7 @@
 				95BF7A591EF2D7F900D71EFD /* TeamCellTests.swift in Sources */,
 				95021BE31E9FC3B500C54BA2 /* CreateTeamControllerTest.swift in Sources */,
 				9574F0D61E1927CE00ADDF32 /* FetcherTest.swift in Sources */,
+				958DA77C1F1F964200C7993E /* DetailTeamControllerTests.swift in Sources */,
 				95962D221E784DB000D80E47 /* FinishedTestTest.swift in Sources */,
 				95F7B6F71DF849E50092114C /* WriterTests.swift in Sources */,
 				95BAF51E1EF00FF2003B52BC /* TeamListControllerTest.swift in Sources */,
