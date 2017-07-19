@@ -9,4 +9,8 @@ class DetailTeamViewTests: XCTestCase {
         XCTAssertNotNil(detailTeamView.titleLabel)
     }
     
+    func test_hasTabelView() {
+        XCTAssertNotNil(detailTeamView.playerTabel)
+    }
+    
 }
