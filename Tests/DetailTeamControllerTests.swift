@@ -28,6 +28,9 @@ class DetailTeamControllerTests: XCTestCase {
     }
     
     func test_HasDetailView() {
+        detailTeamViewController.beginAppearanceTransition(true, animated: true)
+        detailTeamViewController.endAppearanceTransition()
+
         XCTAssertTrue(detailTeamViewController.view is DetailTeamView)        
     }
     
