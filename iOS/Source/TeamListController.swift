@@ -10,4 +10,9 @@ class TeamListController: BaseTableViewController {
         self.tableView.delegate = dataProvider
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.tableFooterView = UIView()
+        self.tableView.backgroundColor = UIColor.veryLightGrayColor()
+    }
+    
 }
