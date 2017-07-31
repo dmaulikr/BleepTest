@@ -466,8 +466,8 @@
 		958DA77D1F1F982600C7993E /* DetailTeam */ = {
 			isa = PBXGroup;
 			children = (
+				959E98DC1F2F59E3000A9B3F /* View */,
 				958DA77E1F1F985E00C7993E /* DetailTeamController.swift */,
-				958DA7801F1F9AE800C7993E /* DetailTeamView.swift */,
 			);
 			name = DetailTeam;
 			path = ..;
@@ -480,6 +480,14 @@
 				95962D1F1E784D1A00D80E47 /* FinishedBleepTestView.swift */,
 			);
 			name = "Finished Bleep Test";
+			sourceTree = "<group>";
+		};
+		959E98DC1F2F59E3000A9B3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				958DA7801F1F9AE800C7993E /* DetailTeamView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		95B235961E2015CF00A40666 /* NavigationControllers */ = {
