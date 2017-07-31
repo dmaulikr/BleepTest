@@ -1,13 +1,29 @@
 import XCTest
-
+import Sync
+import CoreData
 @testable import BleepTest
 
 class TeamListControllerTest: XCTestCase {
     
     var teamListContorller: TeamListController!
     
+    private lazy var data: DataStack = {
+        let data = DataStack(modelName: "iOS", bundle: Bundle.main, storeType:.inMemory)
+        return data
+    }()
+    
+    private lazy var fetcher: Fetcher = {
+        let fetcher = Fetcher(dataStack: self.data)
+        return fetcher
+    }()
+    
+    private lazy var writer: Writer = {
+        let writer = Writer(dataStack: self.data)
+        return writer
+    }()
+    
     override func setUp() {
-        teamListContorller = TeamListController()
+        teamListContorller = TeamListController(fetcher: self.fetcher, writer: self.writer, dataStack: self.data)
         _ = teamListContorller.view
     }
     

@@ -8,6 +8,21 @@ class TeamCellTests: XCTestCase {
     var dataStack: DataStack = DataStack()
     var entity: NSEntityDescription?
     
+    private lazy var data: DataStack = {
+        let data = DataStack(modelName: "iOS", bundle: Bundle.main, storeType:.inMemory)
+        return data
+    }()
+    
+    private lazy var fetcher: Fetcher = {
+        let fetcher = Fetcher(dataStack: self.data)
+        return fetcher
+    }()
+    
+    private lazy var writer: Writer = {
+        let writer = Writer(dataStack: self.data)
+        return writer
+    }()
+    
     override func setUp() {
         super.setUp()
         self.dataStack = self.createDataStack()
@@ -20,7 +35,7 @@ class TeamCellTests: XCTestCase {
     }
    
     func testTeamCell_HasNameLabel() {
-        let controller = TeamListController()
+        let controller = TeamListController(fetcher: self.fetcher, writer: self.writer, dataStack: self.data)
         _ = controller.view
         
         let tableView = controller.tableView
@@ -33,7 +48,7 @@ class TeamCellTests: XCTestCase {
     }
     
     func testConfigWithItem_SetsLabelTitle() {
-        let controller = TeamListController()
+        let controller = TeamListController(fetcher: self.fetcher, writer: self.writer, dataStack: self.data)
         _ = controller.view
         
         let tableView = controller.tableView
