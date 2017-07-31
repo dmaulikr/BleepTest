@@ -31,6 +31,10 @@ class TeamListControllerTest: XCTestCase {
         XCTAssertNotNil(teamListContorller.tableView)
     }
     
+    func test_TitleName() {
+        XCTAssertEqual(teamListContorller.title, "Teams")
+    }
+    
     func testVeiwDidLoad_ShouldSetTableDataSource() {
         XCTAssertNotNil(teamListContorller.tableView.dataSource)
         XCTAssertTrue(teamListContorller.tableView.dataSource is TeamDataProvider)
