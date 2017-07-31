@@ -8,6 +8,7 @@ class TeamListController: BaseTableViewController {
         self.title = "Teams"
         self.tableView.dataSource = dataProvider
         self.tableView.delegate = dataProvider
+        self.tableView.register(TeamCell.self, forCellReuseIdentifier: TeamCell.Identifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
