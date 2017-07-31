@@ -1,6 +1,6 @@
 import UIKit
 
-class TeamListController: UITableViewController {
+class TeamListController: BaseTableViewController {
     
     var dataProvider: TeamDataProvider! = TeamDataProvider()
 
