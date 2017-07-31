@@ -14,7 +14,7 @@ class DetailTeamViewTests: XCTestCase {
         super.setUp()
         self.dataStack = self.createDataStack()
         self.entity = NSEntityDescription.entity(forEntityName: "Team", in: dataStack.mainContext)
-        team = Team(name: "Test name", entity: self.entity!, insertIntoManagedObjectContext: self.dataStack.mainContext)
+        team = Team(name: "Test name", teamDescription: "Team description", entity: self.entity!, insertIntoManagedObjectContext: self.dataStack.mainContext)
         detailTeamView = DetailTeamView(frame: CGRect(x:0,y:0, width:0, height:0), team)
     }
     
@@ -27,9 +27,15 @@ class DetailTeamViewTests: XCTestCase {
         XCTAssertNotNil(detailTeamView.titleLabel)
     }
     
+    func test_HasDescriptionLabel() {
+        XCTAssertNotNil(detailTeamView.descriptionLabel)
+    }
+    
     func test_loadViewMethod() {
         XCTAssertNotNil(detailTeamView.titleLabel.text)
         XCTAssertEqual(detailTeamView.titleLabel.text!, team.name)
+        XCTAssertNotNil(detailTeamView.descriptionLabel.text)
+        XCTAssertEqual(detailTeamView.descriptionLabel.text!, team.teamDescription)
     }
     
 }
