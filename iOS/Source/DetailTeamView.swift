@@ -3,7 +3,6 @@ import UIKit
 class DetailTeamView: UIView {
     
     let titleLabel = UILabel()
-    let playerTabel = UITableView()
     
     public init(frame: CGRect, _ team: Team) {
         super.init(frame: frame)

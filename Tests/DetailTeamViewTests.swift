@@ -27,10 +27,6 @@ class DetailTeamViewTests: XCTestCase {
         XCTAssertNotNil(detailTeamView.titleLabel)
     }
     
-    func test_hasTabelView() {
-        XCTAssertNotNil(detailTeamView.playerTabel)
-    }
-    
     func test_loadViewMethod() {
         XCTAssertNotNil(detailTeamView.titleLabel.text)
         XCTAssertEqual(detailTeamView.titleLabel.text!, team.name)
