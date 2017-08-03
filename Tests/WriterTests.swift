@@ -17,24 +17,14 @@ class WriterTests: XCTestCase {
         return objects
     }
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
     func testCreatePlayer(){
         let data = self.createDataStack()
         
         let writer = Writer(dataStack: data)
         writer.createPlayer("John Gwyn", age: 10)
         
-            let objects = self.fetchObjectsInContext(data.mainContext, entity: "Player")
-            XCTAssertEqual(objects.count, 1)
-        
-
+        let objects = self.fetchObjectsInContext(data.mainContext, entity: "Player")
+        XCTAssertEqual(objects.count, 1)
     }
     
     func testCreateCompletedTest(){
@@ -51,8 +41,7 @@ class WriterTests: XCTestCase {
         let writer = Writer(dataStack: data)
         writer.saveBleepTest(2, lap: 3, vo2Max: 20.3, distance: 50, player: objects[0] as? Player)
         
-            objects = self.fetchObjectsInContext(data.mainContext, entity: "CompletedTest")
-            XCTAssertEqual(objects.count, 1)
-        
+        objects = self.fetchObjectsInContext(data.mainContext, entity: "CompletedTest")
+        XCTAssertEqual(objects.count, 1)
     }
 }

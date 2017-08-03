@@ -13,6 +13,9 @@
 		146E27AC1BCD51F200959BBA /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E27A41BCD51F200959BBA /* AppController.swift */; };
 		22BD232E23DC47B6D1EE36C2 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790CDFF1405879FEC5B0E798 /* Pods_Tests.framework */; };
 		9500F0171E6381310058B6EA /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F0161E6381300058B6EA /* ResultsCell.swift */; };
+		95021BE31E9FC3B500C54BA2 /* CreateTeamControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95021BE21E9FC3B500C54BA2 /* CreateTeamControllerTest.swift */; };
+		95021BE61E9FC49200C54BA2 /* CreateTeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95021BE51E9FC49200C54BA2 /* CreateTeamController.swift */; };
+		95021BE81E9FD29800C54BA2 /* CreateTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95021BE71E9FD29800C54BA2 /* CreateTeamView.swift */; };
 		950CEB711E5607AE004712C8 /* testLevelsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 950CEB6F1E5606FB004712C8 /* testLevelsData.json */; };
 		950CEB731E56552F004712C8 /* ResultsTableControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */; };
 		95149E691E8184A7004DA448 /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95149E681E8184A7004DA448 /* BlueButton.swift */; };
@@ -39,9 +42,14 @@
 		9548A8221CB14F5000BAF914 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548A8211CB14F5000BAF914 /* HomeView.swift */; };
 		9548A8241CB14FEA00BAF914 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548A8231CB14FEA00BAF914 /* HomeController.swift */; };
 		956FD5871E1C295200C61C5B /* SelectUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD5861E1C295200C61C5B /* SelectUserTableViewController.swift */; };
+		95711F6C1EF172C2009E3857 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95711F6B1EF172C2009E3857 /* TeamCell.swift */; };
 		9574F0D61E1927CE00ADDF32 /* FetcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574F0D51E1927CE00ADDF32 /* FetcherTest.swift */; };
 		957590F91E7AD9E800077A64 /* RedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957590F81E7AD9E800077A64 /* RedButton.swift */; };
 		95874DC01DA8401000D642A7 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95874DBF1DA8401000D642A7 /* CloseButton.swift */; };
+		958DA77C1F1F964200C7993E /* DetailTeamControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DA77B1F1F964200C7993E /* DetailTeamControllerTests.swift */; };
+		958DA77F1F1F985E00C7993E /* DetailTeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DA77E1F1F985E00C7993E /* DetailTeamController.swift */; };
+		958DA7811F1F9AE800C7993E /* DetailTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DA7801F1F9AE800C7993E /* DetailTeamView.swift */; };
+		958DA7831F1FA21A00C7993E /* DetailTeamViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DA7821F1FA21A00C7993E /* DetailTeamViewTests.swift */; };
 		95962D1E1E784CFA00D80E47 /* FinishedBleepTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95962D1D1E784CFA00D80E47 /* FinishedBleepTestController.swift */; };
 		95962D201E784D1A00D80E47 /* FinishedBleepTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95962D1F1E784D1A00D80E47 /* FinishedBleepTestView.swift */; };
 		95962D221E784DB000D80E47 /* FinishedTestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95962D211E784DB000D80E47 /* FinishedTestTest.swift */; };
@@ -50,7 +58,14 @@
 		95B7EC011E6F437C00FBAB08 /* ResultsLargeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B7EC001E6F437B00FBAB08 /* ResultsLargeLabel.swift */; };
 		95B7EC031E6F444200FBAB08 /* ResultsSmallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B7EC021E6F444200FBAB08 /* ResultsSmallLabel.swift */; };
 		95B92F4F1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B92F4E1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift */; };
+		95BAF51E1EF00FF2003B52BC /* TeamListControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BAF51D1EF00FF2003B52BC /* TeamListControllerTest.swift */; };
+		95BAF5201EF01AE5003B52BC /* TeamListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BAF51F1EF01AE5003B52BC /* TeamListController.swift */; };
+		95BAF5231EF02393003B52BC /* TeamDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BAF5221EF02393003B52BC /* TeamDataProvider.swift */; };
+		95BAF5251EF03574003B52BC /* TeamDataProividerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BAF5241EF03574003B52BC /* TeamDataProividerTests.swift */; };
+		95BD7CEF1EEADB6F0007AC3E /* TeamTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD7CEE1EEADB6F0007AC3E /* TeamTest.swift */; };
+		95BD7CF11EEAE4930007AC3E /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD7CF01EEAE4930007AC3E /* Team.swift */; };
 		95BE7C281D908B530070DFFE /* MediumBlackLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */; };
+		95BF7A591EF2D7F900D71EFD /* TeamCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF7A581EF2D7F900D71EFD /* TeamCellTests.swift */; };
 		95D7825A1E7AA59300AFC6B0 /* NSMutableAttributedString+custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D782591E7AA59300AFC6B0 /* NSMutableAttributedString+custom.swift */; };
 		95D7B0041C8CBC3E004690D5 /* BleepTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */; };
 		95D7B0061C8CBC68004690D5 /* BleepTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7B0051C8CBC68004690D5 /* BleepTestView.swift */; };
@@ -58,6 +73,8 @@
 		95E6367C1E2A9C4200CD7918 /* BleepTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E6367B1E2A9C4100CD7918 /* BleepTestTests.swift */; };
 		95EBE9F11C9064D600A57377 /* levelsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 95EBE9F01C9064D600A57377 /* levelsData.json */; };
 		95EBE9F91C908DC100A57377 /* TestLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBE9F81C908DC100A57377 /* TestLevel.swift */; };
+		95EF5E3B1EF1394C00D8430C /* TeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5E3A1EF1394C00D8430C /* TeamManager.swift */; };
+		95EF5E3D1EF13B8D00D8430C /* TeamManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5E3C1EF13B8D00D8430C /* TeamManagerTests.swift */; };
 		95F4C8E31DA18D2B0034E37A /* CreateSinglePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */; };
 		95F4C8E51DA199F20034E37A /* CreateSinglePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C8E41DA199F20034E37A /* CreateSinglePlayerView.swift */; };
 		95F4C9491DA1B0860034E37A /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C9471DA1B0860034E37A /* TextFieldsEffects.swift */; };
@@ -95,6 +112,9 @@
 		78A72E2729A68604D6C1111C /* Pods-BleepTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BleepTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-BleepTest/Pods-BleepTest.release.xcconfig"; sourceTree = "<group>"; };
 		790CDFF1405879FEC5B0E798 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9500F0161E6381300058B6EA /* ResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
+		95021BE21E9FC3B500C54BA2 /* CreateTeamControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamControllerTest.swift; sourceTree = "<group>"; };
+		95021BE51E9FC49200C54BA2 /* CreateTeamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamController.swift; sourceTree = "<group>"; };
+		95021BE71E9FD29800C54BA2 /* CreateTeamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamView.swift; sourceTree = "<group>"; };
 		950CEB6F1E5606FB004712C8 /* testLevelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testLevelsData.json; sourceTree = SOURCE_ROOT; };
 		950CEB721E56552F004712C8 /* ResultsTableControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableControllerTest.swift; sourceTree = "<group>"; };
 		95149E681E8184A7004DA448 /* BlueButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
@@ -121,9 +141,14 @@
 		9548A8211CB14F5000BAF914 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9548A8231CB14FEA00BAF914 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		956FD5861E1C295200C61C5B /* SelectUserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserTableViewController.swift; sourceTree = "<group>"; };
+		95711F6B1EF172C2009E3857 /* TeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 		9574F0D51E1927CE00ADDF32 /* FetcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetcherTest.swift; sourceTree = "<group>"; };
 		957590F81E7AD9E800077A64 /* RedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedButton.swift; sourceTree = "<group>"; };
 		95874DBF1DA8401000D642A7 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		958DA77B1F1F964200C7993E /* DetailTeamControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTeamControllerTests.swift; sourceTree = "<group>"; };
+		958DA77E1F1F985E00C7993E /* DetailTeamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTeamController.swift; sourceTree = "<group>"; };
+		958DA7801F1F9AE800C7993E /* DetailTeamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailTeamView.swift; path = Source/DetailTeamView.swift; sourceTree = "<group>"; };
+		958DA7821F1FA21A00C7993E /* DetailTeamViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTeamViewTests.swift; sourceTree = "<group>"; };
 		95962D1D1E784CFA00D80E47 /* FinishedBleepTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedBleepTestController.swift; sourceTree = "<group>"; };
 		95962D1F1E784D1A00D80E47 /* FinishedBleepTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedBleepTestView.swift; sourceTree = "<group>"; };
 		95962D211E784DB000D80E47 /* FinishedTestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedTestTest.swift; sourceTree = "<group>"; };
@@ -132,7 +157,14 @@
 		95B7EC001E6F437B00FBAB08 /* ResultsLargeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsLargeLabel.swift; sourceTree = "<group>"; };
 		95B7EC021E6F444200FBAB08 /* ResultsSmallLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsSmallLabel.swift; sourceTree = "<group>"; };
 		95B92F4E1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyBleepTestDelegate.swift; sourceTree = "<group>"; };
+		95BAF51D1EF00FF2003B52BC /* TeamListControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamListControllerTest.swift; sourceTree = "<group>"; };
+		95BAF51F1EF01AE5003B52BC /* TeamListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamListController.swift; sourceTree = "<group>"; };
+		95BAF5221EF02393003B52BC /* TeamDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDataProvider.swift; sourceTree = "<group>"; };
+		95BAF5241EF03574003B52BC /* TeamDataProividerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDataProividerTests.swift; sourceTree = "<group>"; };
+		95BD7CEE1EEADB6F0007AC3E /* TeamTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTest.swift; sourceTree = "<group>"; };
+		95BD7CF01EEAE4930007AC3E /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		95BE7C271D908B520070DFFE /* MediumBlackLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumBlackLabel.swift; sourceTree = "<group>"; };
+		95BF7A581EF2D7F900D71EFD /* TeamCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamCellTests.swift; sourceTree = "<group>"; };
 		95D782591E7AA59300AFC6B0 /* NSMutableAttributedString+custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+custom.swift"; sourceTree = "<group>"; };
 		95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestController.swift; sourceTree = "<group>"; };
 		95D7B0051C8CBC68004690D5 /* BleepTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestView.swift; sourceTree = "<group>"; };
@@ -140,6 +172,8 @@
 		95E6367B1E2A9C4100CD7918 /* BleepTestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleepTestTests.swift; sourceTree = "<group>"; };
 		95EBE9F01C9064D600A57377 /* levelsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = levelsData.json; path = ../../levelsData.json; sourceTree = "<group>"; };
 		95EBE9F81C908DC100A57377 /* TestLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLevel.swift; sourceTree = "<group>"; };
+		95EF5E3A1EF1394C00D8430C /* TeamManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamManager.swift; sourceTree = "<group>"; };
+		95EF5E3C1EF13B8D00D8430C /* TeamManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamManagerTests.swift; sourceTree = "<group>"; };
 		95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSinglePlayerController.swift; sourceTree = "<group>"; };
 		95F4C8E41DA199F20034E37A /* CreateSinglePlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSinglePlayerView.swift; sourceTree = "<group>"; };
 		95F4C9471DA1B0860034E37A /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
@@ -202,6 +236,7 @@
 				95EBE9F81C908DC100A57377 /* TestLevel.swift */,
 				9527A6D31CA03B23001E7942 /* CompletedTest.swift */,
 				95FE8F571E795841006F4BD3 /* Result.swift */,
+				95BD7CF01EEAE4930007AC3E /* Team.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -230,6 +265,9 @@
 				953A5EF21CA42C6D003960FC /* Results */,
 				953A5EF01CA42C4C003960FC /* Bleep Test */,
 				95962D1C1E784B5600D80E47 /* Finished Bleep Test */,
+				95BAF5211EF01B13003B52BC /* Team */,
+				958DA77D1F1F982600C7993E /* DetailTeam */,
+				95021BE41E9FC43100C54BA2 /* Create Team */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -266,6 +304,14 @@
 				95E6367B1E2A9C4100CD7918 /* BleepTestTests.swift */,
 				95B92F4E1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift */,
 				95962D211E784DB000D80E47 /* FinishedTestTest.swift */,
+				95021BE21E9FC3B500C54BA2 /* CreateTeamControllerTest.swift */,
+				95BD7CEE1EEADB6F0007AC3E /* TeamTest.swift */,
+				95BAF51D1EF00FF2003B52BC /* TeamListControllerTest.swift */,
+				95BAF5241EF03574003B52BC /* TeamDataProividerTests.swift */,
+				95EF5E3C1EF13B8D00D8430C /* TeamManagerTests.swift */,
+				95BF7A581EF2D7F900D71EFD /* TeamCellTests.swift */,
+				958DA77B1F1F964200C7993E /* DetailTeamControllerTests.swift */,
+				958DA7821F1FA21A00C7993E /* DetailTeamViewTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -278,6 +324,15 @@
 				790CDFF1405879FEC5B0E798 /* Pods_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95021BE41E9FC43100C54BA2 /* Create Team */ = {
+			isa = PBXGroup;
+			children = (
+				95021BE51E9FC49200C54BA2 /* CreateTeamController.swift */,
+				95021BE71E9FD29800C54BA2 /* CreateTeamView.swift */,
+			);
+			name = "Create Team";
 			sourceTree = "<group>";
 		};
 		953A5EF01CA42C4C003960FC /* Bleep Test */ = {
@@ -408,6 +463,16 @@
 			name = "Select User";
 			sourceTree = "<group>";
 		};
+		958DA77D1F1F982600C7993E /* DetailTeam */ = {
+			isa = PBXGroup;
+			children = (
+				959E98DC1F2F59E3000A9B3F /* View */,
+				958DA77E1F1F985E00C7993E /* DetailTeamController.swift */,
+			);
+			name = DetailTeam;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		95962D1C1E784B5600D80E47 /* Finished Bleep Test */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,12 +482,31 @@
 			name = "Finished Bleep Test";
 			sourceTree = "<group>";
 		};
+		959E98DC1F2F59E3000A9B3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				958DA7801F1F9AE800C7993E /* DetailTeamView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		95B235961E2015CF00A40666 /* NavigationControllers */ = {
 			isa = PBXGroup;
 			children = (
 				95B235901E1FAB3F00A40666 /* OrangeNavigationController.swift */,
 			);
 			name = NavigationControllers;
+			sourceTree = "<group>";
+		};
+		95BAF5211EF01B13003B52BC /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				95BAF51F1EF01AE5003B52BC /* TeamListController.swift */,
+				95BAF5221EF02393003B52BC /* TeamDataProvider.swift */,
+				95EF5E3A1EF1394C00D8430C /* TeamManager.swift */,
+				95711F6B1EF172C2009E3857 /* TeamCell.swift */,
+			);
+			name = Team;
 			sourceTree = "<group>";
 		};
 		95E636781E2A596000CD7918 /* BleepTest */ = {
@@ -674,13 +758,18 @@
 				953DD2A81CBE976900A49A98 /* TabBarController.swift in Sources */,
 				95B235911E1FAB3F00A40666 /* OrangeNavigationController.swift in Sources */,
 				953DD29F1CBE949500A49A98 /* BaseTableViewController.swift in Sources */,
+				958DA7811F1F9AE800C7993E /* DetailTeamView.swift in Sources */,
 				953F4E821D96F358004BAD1E /* MedumBlueLabel.swift in Sources */,
 				146E27AC1BCD51F200959BBA /* AppController.swift in Sources */,
+				95021BE61E9FC49200C54BA2 /* CreateTeamController.swift in Sources */,
 				953DD2A01CBE949500A49A98 /* BaseViewController.swift in Sources */,
+				95BD7CF11EEAE4930007AC3E /* Team.swift in Sources */,
+				95BAF5201EF01AE5003B52BC /* TeamListController.swift in Sources */,
 				953F4E841D9719E7004BAD1E /* PinkRedOutlineButton.swift in Sources */,
 				953DD29E1CBE949500A49A98 /* BaseCollectionViewController.swift in Sources */,
 				953DD2A11CBE949500A49A98 /* CircleView.swift in Sources */,
 				953DD2A31CBE949500A49A98 /* LevelProgressIndicator.swift in Sources */,
+				958DA77F1F1F985E00C7993E /* DetailTeamController.swift in Sources */,
 				953DD2821CBE946E00A49A98 /* UIFont+Custom.swift in Sources */,
 				95F4C94A1DA1B0860034E37A /* YoshikoTextField.swift in Sources */,
 				9500F0171E6381310058B6EA /* ResultsCell.swift in Sources */,
@@ -692,9 +781,11 @@
 				95D7B0061C8CBC68004690D5 /* BleepTestView.swift in Sources */,
 				953DD2A41CBE949500A49A98 /* Writer.swift in Sources */,
 				953DD2801CBE946E00A49A98 /* UIButton+Custom.swift in Sources */,
+				95EF5E3B1EF1394C00D8430C /* TeamManager.swift in Sources */,
 				9527A6D21CA038DB001E7942 /* ResultsTableController.swift in Sources */,
 				953DD29B1CBE949500A49A98 /* LargeContentLabel.swift in Sources */,
 				145F81CD1BDE2CFD0016A9E0 /* iOS.xcdatamodeld in Sources */,
+				95711F6C1EF172C2009E3857 /* TeamCell.swift in Sources */,
 				95F7B6FA1DF852E40092114C /* Player.swift in Sources */,
 				953DD2981CBE949500A49A98 /* Fetcher.swift in Sources */,
 				95E6367A1E2A599200CD7918 /* BleepTest.swift in Sources */,
@@ -705,6 +796,7 @@
 				95874DC01DA8401000D642A7 /* CloseButton.swift in Sources */,
 				9548A8241CB14FEA00BAF914 /* HomeController.swift in Sources */,
 				95D7825A1E7AA59300AFC6B0 /* NSMutableAttributedString+custom.swift in Sources */,
+				95021BE81E9FD29800C54BA2 /* CreateTeamView.swift in Sources */,
 				95F4C8E51DA199F20034E37A /* CreateSinglePlayerView.swift in Sources */,
 				95149E691E8184A7004DA448 /* BlueButton.swift in Sources */,
 				95FAAFAE1C91D47E00F5374F /* NSNotificationCenterKeys.swift in Sources */,
@@ -715,6 +807,7 @@
 				95962D201E784D1A00D80E47 /* FinishedBleepTestView.swift in Sources */,
 				95BE7C281D908B530070DFFE /* MediumBlackLabel.swift in Sources */,
 				953DD2A21CBE949500A49A98 /* LapProgressIndicator.swift in Sources */,
+				95BAF5231EF02393003B52BC /* TeamDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,12 +815,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95BF7A591EF2D7F900D71EFD /* TeamCellTests.swift in Sources */,
+				95021BE31E9FC3B500C54BA2 /* CreateTeamControllerTest.swift in Sources */,
 				9574F0D61E1927CE00ADDF32 /* FetcherTest.swift in Sources */,
+				958DA77C1F1F964200C7993E /* DetailTeamControllerTests.swift in Sources */,
+				958DA7831F1FA21A00C7993E /* DetailTeamViewTests.swift in Sources */,
 				95962D221E784DB000D80E47 /* FinishedTestTest.swift in Sources */,
 				95F7B6F71DF849E50092114C /* WriterTests.swift in Sources */,
+				95BAF51E1EF00FF2003B52BC /* TeamListControllerTest.swift in Sources */,
+				95BAF5251EF03574003B52BC /* TeamDataProividerTests.swift in Sources */,
+				95BD7CEF1EEADB6F0007AC3E /* TeamTest.swift in Sources */,
 				950CEB731E56552F004712C8 /* ResultsTableControllerTest.swift in Sources */,
 				95E6367C1E2A9C4200CD7918 /* BleepTestTests.swift in Sources */,
 				95B92F4F1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift in Sources */,
+				95EF5E3D1EF13B8D00D8430C /* TeamManagerTests.swift in Sources */,
 				954215121DD9F76900F73DAF /* PlayerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -885,10 +986,7 @@
 			baseConfigurationReference = 767205427B29E91A7EC7FF6A /* Pods-Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -907,10 +1005,7 @@
 			baseConfigurationReference = 1F6D16D938269E8889A9CE2D /* Pods-Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rename.$(PRODUCT_NAME:rfc1034identifier)";
