@@ -53,7 +53,7 @@ class TeamListControllerTest: XCTestCase {
         XCTAssertNotNil(teamListContorller.navigationItem.rightBarButtonItem)
     }
     
-    func testRightBarButton_IsPlusSign() {
+    func testRightBarButton_Title() {
         XCTAssertEqual(teamListContorller.navigationItem.rightBarButtonItem?.title, "+")
     }
     
