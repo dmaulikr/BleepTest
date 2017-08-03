@@ -329,8 +329,8 @@
 		95021BE41E9FC43100C54BA2 /* Create Team */ = {
 			isa = PBXGroup;
 			children = (
+				95D7CA571F3367040070C521 /* Veiws */,
 				95021BE51E9FC49200C54BA2 /* CreateTeamController.swift */,
-				95021BE71E9FD29800C54BA2 /* CreateTeamView.swift */,
 			);
 			name = "Create Team";
 			sourceTree = "<group>";
@@ -338,8 +338,8 @@
 		953A5EF01CA42C4C003960FC /* Bleep Test */ = {
 			isa = PBXGroup;
 			children = (
+				95D7CA531F3366CA0070C521 /* Views */,
 				95D7B0031C8CBC3E004690D5 /* BleepTestController.swift */,
-				95D7B0051C8CBC68004690D5 /* BleepTestView.swift */,
 			);
 			name = "Bleep Test";
 			sourceTree = "<group>";
@@ -347,8 +347,8 @@
 		953A5EF21CA42C6D003960FC /* Results */ = {
 			isa = PBXGroup;
 			children = (
+				95D7CA541F3366D40070C521 /* Views */,
 				9527A6D11CA038DB001E7942 /* ResultsTableController.swift */,
-				9500F0161E6381300058B6EA /* ResultsCell.swift */,
 			);
 			name = Results;
 			sourceTree = "<group>";
@@ -449,7 +449,7 @@
 		9548A8251CB14FF000BAF914 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				9548A8211CB14F5000BAF914 /* HomeView.swift */,
+				95D7CA551F3366DF0070C521 /* Views */,
 				9548A8231CB14FEA00BAF914 /* HomeController.swift */,
 			);
 			name = Home;
@@ -466,8 +466,8 @@
 		958DA77D1F1F982600C7993E /* DetailTeam */ = {
 			isa = PBXGroup;
 			children = (
+				959E98DC1F2F59E3000A9B3F /* Views */,
 				95D7CA4F1F334C0F0070C521 /* DetailTeamController.swift */,
-				959E98DC1F2F59E3000A9B3F /* View */,
 			);
 			name = DetailTeam;
 			path = ..;
@@ -476,18 +476,18 @@
 		95962D1C1E784B5600D80E47 /* Finished Bleep Test */ = {
 			isa = PBXGroup;
 			children = (
+				95D7CA521F3366BA0070C521 /* Views */,
 				95962D1D1E784CFA00D80E47 /* FinishedBleepTestController.swift */,
-				95962D1F1E784D1A00D80E47 /* FinishedBleepTestView.swift */,
 			);
 			name = "Finished Bleep Test";
 			sourceTree = "<group>";
 		};
-		959E98DC1F2F59E3000A9B3F /* View */ = {
+		959E98DC1F2F59E3000A9B3F /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				958DA7801F1F9AE800C7993E /* DetailTeamView.swift */,
 			);
-			name = View;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		95B235961E2015CF00A40666 /* NavigationControllers */ = {
@@ -501,12 +501,68 @@
 		95BAF5211EF01B13003B52BC /* Team */ = {
 			isa = PBXGroup;
 			children = (
+				95D7CA511F3366720070C521 /* Views */,
 				95BAF51F1EF01AE5003B52BC /* TeamListController.swift */,
 				95BAF5221EF02393003B52BC /* TeamDataProvider.swift */,
 				95EF5E3A1EF1394C00D8430C /* TeamManager.swift */,
-				95711F6B1EF172C2009E3857 /* TeamCell.swift */,
 			);
 			name = Team;
+			sourceTree = "<group>";
+		};
+		95D7CA511F3366720070C521 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95711F6B1EF172C2009E3857 /* TeamCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		95D7CA521F3366BA0070C521 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95962D1F1E784D1A00D80E47 /* FinishedBleepTestView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		95D7CA531F3366CA0070C521 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95D7B0051C8CBC68004690D5 /* BleepTestView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		95D7CA541F3366D40070C521 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9500F0161E6381300058B6EA /* ResultsCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		95D7CA551F3366DF0070C521 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9548A8211CB14F5000BAF914 /* HomeView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		95D7CA561F3366F00070C521 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95F4C8E41DA199F20034E37A /* CreateSinglePlayerView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		95D7CA571F3367040070C521 /* Veiws */ = {
+			isa = PBXGroup;
+			children = (
+				95021BE71E9FD29800C54BA2 /* CreateTeamView.swift */,
+			);
+			name = Veiws;
 			sourceTree = "<group>";
 		};
 		95E636781E2A596000CD7918 /* BleepTest */ = {
@@ -520,7 +576,7 @@
 		95F4C8E11DA189280034E37A /* Create Single Player */ = {
 			isa = PBXGroup;
 			children = (
-				95F4C8E41DA199F20034E37A /* CreateSinglePlayerView.swift */,
+				95D7CA561F3366F00070C521 /* Views */,
 				95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */,
 			);
 			name = "Create Single Player";
