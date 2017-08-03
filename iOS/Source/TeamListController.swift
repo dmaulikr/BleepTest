@@ -9,6 +9,13 @@ class TeamListController: BaseTableViewController {
         self.tableView.dataSource = dataProvider
         self.tableView.delegate = dataProvider
         self.tableView.register(TeamCell.self, forCellReuseIdentifier: TeamCell.Identifier)
+        self.addNavigationItems()
+    }
+    
+    func addNavigationItems() {
+        let rightBarButtonItem = UIBarButtonItem(title: "+", style: UIBarButtonItemStyle.plain, target: self, action: nil)
+        rightBarButtonItem.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Helvetica-Light", size: 40.0)!], for: UIControlState())
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {

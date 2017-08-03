@@ -49,4 +49,12 @@ class TeamListControllerTest: XCTestCase {
         XCTAssertEqual(teamListContorller.tableView.delegate as? TeamDataProvider, teamListContorller.tableView.dataSource as? TeamDataProvider)
     }
     
+    func testRightBarButton_IsNotNill() {
+        XCTAssertNotNil(teamListContorller.navigationItem.rightBarButtonItem)
+    }
+    
+    func testRightBarButton_IsPlusSign() {
+        XCTAssertEqual(teamListContorller.navigationItem.rightBarButtonItem?.title, "+")
+    }
+    
 }
