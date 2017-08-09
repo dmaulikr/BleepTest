@@ -57,4 +57,27 @@ class TeamListControllerTest: XCTestCase {
         XCTAssertEqual(teamListContorller.navigationItem.rightBarButtonItem?.title, "+")
     }
     
+    func testRightBarButton_Action() {
+        let mockTeamListController = MockTeamListController(fetcher: self.fetcher, writer: self.writer, dataStack: self.data)
+        _ = mockTeamListController.view
+        
+        let barButtonItem = mockTeamListController.navigationItem.rightBarButtonItem
+        let button: UIButton = UIButton()
+        button.sendAction((barButtonItem?.action)!, to: barButtonItem?.target, for: nil)
+        
+        XCTAssertTrue(mockTeamListController.rightBarButtonCalled)
+    }
 }
+
+extension TeamListControllerTest {
+    
+    class MockTeamListController: TeamListController {
+        
+        var rightBarButtonCalled = false
+        
+        override func createTeamButtonAction(_ sender: UIButton!) {
+            rightBarButtonCalled = true
+        }
+    }
+}
+
