@@ -20,5 +20,14 @@ class CrateTeamViewTest: XCTestCase {
         XCTAssertNotNil(createTeamView.closeButton)
         XCTAssertTrue((createTeamView.closeButton as Any) is CloseButton)
     }
+    
+    func test_teamNameTextField() {
+        XCTAssertNotNil(createTeamView.nameTextField)
+        XCTAssertTrue((createTeamView.nameTextField as Any) is YoshikoTextField)
+        XCTAssertEqual(createTeamView.nameTextField.placeholder, "Team Name  e.g. Office Football")
+        XCTAssertEqual(createTeamView.nameTextField.placeholderUpdated, "Team Name")
+        XCTAssertEqual(createTeamView.nameTextField.returnKeyType, UIReturnKeyType.next)
+        XCTAssertEqual(createTeamView.nameTextField.autocorrectionType, UITextAutocorrectionType.no)
+    }
 
 }

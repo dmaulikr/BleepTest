@@ -13,6 +13,14 @@ class CreateTeamView: UIView {
         return temporyLabel
     }()
     
+    lazy var nameTextField: YoshikoTextField = {
+        let temporyTextField: YoshikoTextField = YoshikoTextField(frame: CGRect(x: 0, y: 0, width: 250, height: 55))
+        temporyTextField.autocorrectionType = .no
+        temporyTextField.returnKeyType = .next
+        temporyTextField.placeholder = "Team Name  e.g. Office Football"
+        temporyTextField.placeholderUpdated = "Team Name"
+        return temporyTextField
+    }()
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
