@@ -21,6 +21,12 @@ class CreateTeamViewTest: XCTestCase {
         XCTAssertTrue((createTeamView.closeButton as Any) is CloseButton)
     }
     
+    func test_closeButton_runActionMethodWhenClicked() {
+        let mockCreateTeamView = MockCreateTeamView()
+        mockCreateTeamView.closeButton.sendActions(for: .touchUpInside)
+        XCTAssertTrue(mockCreateTeamView.closeButtonActionCalled)
+    }
+    
     func test_nameTextField() {
         XCTAssertNotNil(createTeamView.nameTextField)
         XCTAssertTrue((createTeamView.nameTextField as Any) is YoshikoTextField)
@@ -42,14 +48,17 @@ class CreateTeamViewTest: XCTestCase {
         mockCreateTeamView.createButton.sendActions(for: .touchUpInside)
         XCTAssertTrue(mockCreateTeamView.createButtonActionCalled)
     }
-    
-    
 }
 
 extension CreateTeamViewTest {
     
     class MockCreateTeamView: CreateTeamView {
         var createButtonActionCalled = false
+        var closeButtonActionCalled = false
+
+        override func closeButtonAction(_ sender:UIButton){
+            closeButtonActionCalled = true
+        }
         
         override func createButtonAction(_ sender:UIButton){
             createButtonActionCalled = true

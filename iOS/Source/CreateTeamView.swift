@@ -4,6 +4,7 @@ class CreateTeamView: UIView {
 
     lazy var closeButton : CloseButton = {
         var temporyButton : CloseButton = CloseButton()
+        temporyButton.addTarget(self, action: #selector(closeButtonAction(_:)), for: UIControlEvents.touchUpInside)
         return temporyButton
     }()
     
@@ -42,6 +43,10 @@ class CreateTeamView: UIView {
 
 //Mark:Action
 extension CreateTeamView {
+    func closeButtonAction(_ sender:UIButton){
+        
+    }
+    
     func createButtonAction(_ sender:UIButton){
 
     }
