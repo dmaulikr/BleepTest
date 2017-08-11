@@ -1,7 +1,7 @@
 import XCTest
 @testable import BleepTest
 
-class CrateTeamViewTest: XCTestCase {
+class CreateTeamViewTest: XCTestCase {
     
     var createTeamView : CreateTeamView!
 

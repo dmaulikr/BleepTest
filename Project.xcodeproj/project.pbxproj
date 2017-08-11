@@ -75,7 +75,7 @@
 		95EBE9F91C908DC100A57377 /* TestLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBE9F81C908DC100A57377 /* TestLevel.swift */; };
 		95EF5E3B1EF1394C00D8430C /* TeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5E3A1EF1394C00D8430C /* TeamManager.swift */; };
 		95EF5E3D1EF13B8D00D8430C /* TeamManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5E3C1EF13B8D00D8430C /* TeamManagerTests.swift */; };
-		95EF81C41F3DE2540042AE6C /* CrateTeamViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EF81C31F3DE2540042AE6C /* CrateTeamViewTest.swift */; };
+		95EF81C41F3DE2540042AE6C /* CreateTeamViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EF81C31F3DE2540042AE6C /* CreateTeamViewTest.swift */; };
 		95F4C8E31DA18D2B0034E37A /* CreateSinglePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */; };
 		95F4C8E51DA199F20034E37A /* CreateSinglePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C8E41DA199F20034E37A /* CreateSinglePlayerView.swift */; };
 		95F4C9491DA1B0860034E37A /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4C9471DA1B0860034E37A /* TextFieldsEffects.swift */; };
@@ -175,7 +175,7 @@
 		95EBE9F81C908DC100A57377 /* TestLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLevel.swift; sourceTree = "<group>"; };
 		95EF5E3A1EF1394C00D8430C /* TeamManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamManager.swift; sourceTree = "<group>"; };
 		95EF5E3C1EF13B8D00D8430C /* TeamManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamManagerTests.swift; sourceTree = "<group>"; };
-		95EF81C31F3DE2540042AE6C /* CrateTeamViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrateTeamViewTest.swift; sourceTree = "<group>"; };
+		95EF81C31F3DE2540042AE6C /* CreateTeamViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamViewTest.swift; sourceTree = "<group>"; };
 		95F4C8E21DA18D2B0034E37A /* CreateSinglePlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSinglePlayerController.swift; sourceTree = "<group>"; };
 		95F4C8E41DA199F20034E37A /* CreateSinglePlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSinglePlayerView.swift; sourceTree = "<group>"; };
 		95F4C9471DA1B0860034E37A /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
@@ -307,7 +307,7 @@
 				95B92F4E1E53B04300AEE4F3 /* SpyBleepTestDelegate.swift */,
 				95962D211E784DB000D80E47 /* FinishedTestTest.swift */,
 				95021BE21E9FC3B500C54BA2 /* CreateTeamControllerTest.swift */,
-				95EF81C31F3DE2540042AE6C /* CrateTeamViewTest.swift */,
+				95EF81C31F3DE2540042AE6C /* CreateTeamViewTest.swift */,
 				95BD7CEE1EEADB6F0007AC3E /* TeamTest.swift */,
 				95BAF51D1EF00FF2003B52BC /* TeamListControllerTest.swift */,
 				95BAF5241EF03574003B52BC /* TeamDataProividerTests.swift */,
@@ -877,7 +877,7 @@
 				95BF7A591EF2D7F900D71EFD /* TeamCellTests.swift in Sources */,
 				95021BE31E9FC3B500C54BA2 /* CreateTeamControllerTest.swift in Sources */,
 				9574F0D61E1927CE00ADDF32 /* FetcherTest.swift in Sources */,
-				95EF81C41F3DE2540042AE6C /* CrateTeamViewTest.swift in Sources */,
+				95EF81C41F3DE2540042AE6C /* CreateTeamViewTest.swift in Sources */,
 				958DA77C1F1F964200C7993E /* DetailTeamControllerTests.swift in Sources */,
 				958DA7831F1FA21A00C7993E /* DetailTeamViewTests.swift in Sources */,
 				95962D221E784DB000D80E47 /* FinishedTestTest.swift in Sources */,
