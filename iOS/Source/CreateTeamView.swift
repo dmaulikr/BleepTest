@@ -21,6 +21,14 @@ class CreateTeamView: UIView {
         temporyTextField.placeholderUpdated = "Team Name"
         return temporyTextField
     }()
+
+    lazy var createButton : PinkRedOutlineButton = {
+        var temporyButton : PinkRedOutlineButton = PinkRedOutlineButton()
+        temporyButton.setTitle("Create", for: UIControlState())
+        temporyButton.titleLabel!.font =  UIFont(name: temporyButton.titleLabel!.font.fontName, size: 18)
+        return temporyButton
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }

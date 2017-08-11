@@ -29,5 +29,11 @@ class CrateTeamViewTest: XCTestCase {
         XCTAssertEqual(createTeamView.nameTextField.returnKeyType, UIReturnKeyType.next)
         XCTAssertEqual(createTeamView.nameTextField.autocorrectionType, UITextAutocorrectionType.no)
     }
-
+    
+    func test_createButton() {
+        XCTAssertNotNil(createTeamView.createButton)
+        XCTAssertTrue((createTeamView.createButton as Any) is PinkRedOutlineButton)
+        XCTAssertEqual(createTeamView.createButton.titleLabel?.text, "Create")
+        XCTAssertEqual(createTeamView.createButton.titleLabel?.font, UIFont(name: createTeamView.createButton.titleLabel!.font.fontName, size: 18))
+    }
 }
