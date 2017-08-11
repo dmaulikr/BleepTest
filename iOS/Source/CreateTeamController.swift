@@ -1,6 +1,6 @@
 import UIKit
 
-class CreateTeamController: UIViewController {
+class CreateTeamController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
