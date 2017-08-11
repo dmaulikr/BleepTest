@@ -27,6 +27,6 @@ class TeamListController: BaseTableViewController {
 //MARK: Actions
 extension TeamListController {
     func createTeamButtonAction(_ sender: UIButton!) {
-        
+        self.navigationController?.present(CreateTeamController(fetcher: fetcher, writer: writer, dataStack: dataStack!), animated: true, completion: nil)
     }
 }

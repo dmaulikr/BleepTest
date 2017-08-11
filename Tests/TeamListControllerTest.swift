@@ -67,16 +67,35 @@ class TeamListControllerTest: XCTestCase {
         
         XCTAssertTrue(mockTeamListController.rightBarButtonCalled)
     }
+    
+    func test_PresentCreateTeamController_WhenRightBarButtonPressed() {
+        let mockNavigationController = MockNavigationController()
+        mockNavigationController.setViewControllers([teamListContorller], animated: false)
+        
+        let barButtonItem = teamListContorller.navigationItem.rightBarButtonItem
+        let button: UIButton = UIButton()
+        button.sendAction((barButtonItem?.action)!, to: barButtonItem?.target, for: nil)
+        
+        XCTAssertEqual(mockNavigationController.prestentVeiwControllerIsCalled, true)
+    }
+    
 }
 
 extension TeamListControllerTest {
     
     class MockTeamListController: TeamListController {
-        
-        var rightBarButtonCalled = false
+       var rightBarButtonCalled = false
         
         override func createTeamButtonAction(_ sender: UIButton!) {
             rightBarButtonCalled = true
+        }
+    }
+    
+    class MockNavigationController: UINavigationController {
+        var prestentVeiwControllerIsCalled = false
+        
+        override internal func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+            prestentVeiwControllerIsCalled = true
         }
     }
 }
