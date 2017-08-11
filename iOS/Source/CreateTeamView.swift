@@ -26,6 +26,7 @@ class CreateTeamView: UIView {
         var temporyButton : PinkRedOutlineButton = PinkRedOutlineButton()
         temporyButton.setTitle("Create", for: UIControlState())
         temporyButton.titleLabel!.font =  UIFont(name: temporyButton.titleLabel!.font.fontName, size: 18)
+        temporyButton.addTarget(self, action: #selector(createButtonAction(_:)), for: UIControlEvents.touchUpInside)
         return temporyButton
     }()
     
@@ -37,4 +38,11 @@ class CreateTeamView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+//Mark:Action
+extension CreateTeamView {
+    func createButtonAction(_ sender:UIButton){
+
+    }
 }

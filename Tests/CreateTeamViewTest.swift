@@ -36,4 +36,23 @@ class CreateTeamViewTest: XCTestCase {
         XCTAssertEqual(createTeamView.createButton.titleLabel?.text, "Create")
         XCTAssertEqual(createTeamView.createButton.titleLabel?.font, UIFont(name: createTeamView.createButton.titleLabel!.font.fontName, size: 18))
     }
+    
+    func test_createButton_runActionMethodWhenClicked() {
+        let mockCreateTeamView = MockCreateTeamView()
+        mockCreateTeamView.createButton.sendActions(for: .touchUpInside)
+        XCTAssertTrue(mockCreateTeamView.createButtonActionCalled)
+    }
+    
+    
+}
+
+extension CreateTeamViewTest {
+    
+    class MockCreateTeamView: CreateTeamView {
+        var createButtonActionCalled = false
+        
+        override func createButtonAction(_ sender:UIButton){
+            createButtonActionCalled = true
+        }
+    }
 }
