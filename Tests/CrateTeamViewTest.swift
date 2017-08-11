@@ -15,5 +15,10 @@ class CrateTeamViewTest: XCTestCase {
         XCTAssertTrue((createTeamView.titleLabel as Any) is MediumBlackLabel)
         XCTAssertEqual(createTeamView.titleLabel.text, "Create team")
     }
+    
+    func test_CloseButton() {
+        XCTAssertNotNil(createTeamView.closeButton)
+        XCTAssertTrue((createTeamView.closeButton as Any) is CloseButton)
+    }
 
 }
