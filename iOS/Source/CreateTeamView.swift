@@ -1,6 +1,11 @@
 import UIKit
 
+protocol CreateTeamViewDelegate: class {
+    func didCreateButtonPressed(_ sender: CreateTeamView, name:NSString)
+}
 class CreateTeamView: UIView {
+    
+    weak var delegate:CreateTeamViewDelegate?
 
     lazy var closeButton : CloseButton = {
         var temporyButton : CloseButton = CloseButton()
@@ -48,6 +53,6 @@ extension CreateTeamView {
     }
     
     func createButtonAction(_ sender:UIButton){
-
+        delegate?.didCreateButtonPressed(self, name: nameTextField.text! as NSString)
     }
 }

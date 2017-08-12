@@ -48,6 +48,15 @@ class CreateTeamViewTest: XCTestCase {
         mockCreateTeamView.createButton.sendActions(for: .touchUpInside)
         XCTAssertTrue(mockCreateTeamView.createButtonActionCalled)
     }
+    
+    func test_createButton_delegateCalledWhenClicked() {
+        let spyCreateTeamViewDelegate = SpyCreateTeamViewDelegate()
+        createTeamView.delegate = spyCreateTeamViewDelegate
+        createTeamView.nameTextField.text = "Footy"
+        createTeamView.createButton.sendActions(for: .touchUpInside)
+        XCTAssertTrue(spyCreateTeamViewDelegate.didCreateButtonPressed)
+        XCTAssertEqual(spyCreateTeamViewDelegate.name, "Footy")
+    }
 }
 
 extension CreateTeamViewTest {
@@ -62,6 +71,15 @@ extension CreateTeamViewTest {
         
         override func createButtonAction(_ sender:UIButton){
             createButtonActionCalled = true
+        }
+    }
+    
+    class SpyCreateTeamViewDelegate: CreateTeamViewDelegate {
+        var didCreateButtonPressed = false
+        var name = ""
+        func didCreateButtonPressed(_ sender: CreateTeamView, name:NSString) {
+            didCreateButtonPressed = true
+            self.name = name as String
         }
     }
 }
