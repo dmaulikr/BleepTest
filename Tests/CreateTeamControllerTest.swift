@@ -31,7 +31,7 @@ class CreateTeamControllerTest: XCTestCase {
         XCTAssertNotNil(createTeamController)
     }
     
-    func test_HasDetailView() {
+    func test_HasView() {
         XCTAssertTrue(createTeamController.view is CreateTeamView)
     }
 }
