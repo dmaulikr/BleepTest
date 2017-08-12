@@ -1,8 +1,10 @@
 import UIKit
 
 protocol CreateTeamViewDelegate: class {
+    func didCloseButtonPressed(_ sender: CreateTeamView)
     func didCreateButtonPressed(_ sender: CreateTeamView, name:NSString)
 }
+
 class CreateTeamView: UIView {
     
     weak var delegate:CreateTeamViewDelegate?
@@ -49,7 +51,7 @@ class CreateTeamView: UIView {
 //Mark:Action
 extension CreateTeamView {
     func closeButtonAction(_ sender:UIButton){
-        
+        delegate?.didCloseButtonPressed(self)
     }
     
     func createButtonAction(_ sender:UIButton){

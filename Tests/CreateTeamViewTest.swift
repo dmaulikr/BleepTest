@@ -27,6 +27,13 @@ class CreateTeamViewTest: XCTestCase {
         XCTAssertTrue(mockCreateTeamView.closeButtonActionCalled)
     }
     
+    func test_closeButton_delegateCalledWhenClicked() {
+        let spyCreateTeamViewDelegate = SpyCreateTeamViewDelegate()
+        createTeamView.delegate = spyCreateTeamViewDelegate
+        createTeamView.closeButton.sendActions(for: .touchUpInside)
+        XCTAssertTrue(spyCreateTeamViewDelegate.didCloseButtonPressed)
+    }
+    
     func test_nameTextField() {
         XCTAssertNotNil(createTeamView.nameTextField)
         XCTAssertTrue((createTeamView.nameTextField as Any) is YoshikoTextField)
@@ -75,8 +82,14 @@ extension CreateTeamViewTest {
     }
     
     class SpyCreateTeamViewDelegate: CreateTeamViewDelegate {
+        var didCloseButtonPressed = false
         var didCreateButtonPressed = false
         var name = ""
+
+        func didCloseButtonPressed(_ sender: CreateTeamView) {
+            didCloseButtonPressed = true
+        }
+        
         func didCreateButtonPressed(_ sender: CreateTeamView, name:NSString) {
             didCreateButtonPressed = true
             self.name = name as String
