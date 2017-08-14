@@ -47,7 +47,7 @@ class TabBarController: UITabBarController {
         navigationController3.navigationBar.tintColor = .white
         navigationController3.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        let controllers = [navigationController1, navigationController2, navigationController3]
+        let controllers = [navigationController1, navigationController2]
         self.viewControllers = controllers
     }
     
