@@ -34,4 +34,9 @@ class CreateTeamControllerTest: XCTestCase {
     func test_HasView() {
         XCTAssertTrue(createTeamController.view is CreateTeamView)
     }
+    
+    func test_HasViewDelegate() {
+        XCTAssertTrue(createTeamController.responds(to: #selector(CreateTeamController.didCloseButtonPressed(_:))))
+        XCTAssertTrue(createTeamController.responds(to: #selector(CreateTeamController.didCreateButtonPressed(_:name:))))
+    }
 }
