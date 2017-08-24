@@ -77,4 +77,17 @@ class WriterTests: XCTestCase {
         XCTAssertEqual(team.players, players)
 
     }
+    
+    func testCreateTeam_WithNoPlayers() {
+        
+        let writer = Writer(dataStack: dataStack)
+        writer.createTeam(name: "Test name", description:"Testing", players: nil)
+        
+        let savedTeams = self.fetchObjectsInContext(dataStack.mainContext, entity: "Team")
+        let team = savedTeams[0] as! Team
+        
+        XCTAssertEqual(team.name, "Test name")
+        XCTAssertEqual(team.teamDescription, "Testing")
+        
+    }
 }

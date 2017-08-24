@@ -56,10 +56,14 @@ open class Writer : NSObject {
             let object = NSManagedObject(entity: entity, insertInto: backgroundContext)
             object.setValue(name, forKey: "name")
             object.setValue(description, forKey: "teamDescription")
-            let items = object.mutableSetValue(forKey: "players");
-            for player in players as Set<Player>! {
-                items.add(player)
+            
+            if(players != nil) {
+                let items = object.mutableSetValue(forKey: "players");
+                for player in players as Set<Player>! {
+                    items.add(player)
+                }
             }
+            
             try! backgroundContext.save()
         }
     }
