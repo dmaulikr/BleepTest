@@ -43,6 +43,15 @@ class CreateTeamViewTest: XCTestCase {
         XCTAssertEqual(createTeamView.nameTextField.autocorrectionType, UITextAutocorrectionType.no)
     }
     
+    func test_descriptionTextField() {
+        XCTAssertNotNil(createTeamView.descriptionTextField)
+        XCTAssertTrue((createTeamView.descriptionTextField as Any) is YoshikoTextField)
+        XCTAssertEqual(createTeamView.descriptionTextField.placeholder, "Team description...")
+        XCTAssertEqual(createTeamView.descriptionTextField.placeholderUpdated, "Description")
+        XCTAssertEqual(createTeamView.descriptionTextField.returnKeyType, UIReturnKeyType.next)
+        XCTAssertEqual(createTeamView.descriptionTextField.autocorrectionType, UITextAutocorrectionType.no)
+    }
+    
     func test_createButton() {
         XCTAssertNotNil(createTeamView.createButton)
         XCTAssertTrue((createTeamView.createButton as Any) is PinkRedOutlineButton)

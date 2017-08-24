@@ -29,6 +29,15 @@ class CreateTeamView: UIView {
         temporyTextField.placeholderUpdated = "Team Name"
         return temporyTextField
     }()
+    
+    lazy var descriptionTextField: YoshikoTextField = {
+        let temporyTextField: YoshikoTextField = YoshikoTextField(frame: CGRect(x: 0, y: 0, width: 250, height: 150))
+        temporyTextField.autocorrectionType = .no
+        temporyTextField.returnKeyType = .next
+        temporyTextField.placeholder = "Team description..."
+        temporyTextField.placeholderUpdated = "Description"
+        return temporyTextField
+    }()
 
     lazy var createButton : PinkRedOutlineButton = {
         var temporyButton : PinkRedOutlineButton = PinkRedOutlineButton()
