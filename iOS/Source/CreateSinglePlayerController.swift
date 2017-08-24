@@ -16,7 +16,7 @@ extension CreateSinglePlayerController : CreateSinglePlayerViewDelegate {
         setStatusBarHidden(false)
         self.dismiss(animated: true, completion: nil)
     }
-    func didCreateButtonPressed(_ sender: CreateSinglePlayerView, age:Int, userName:NSString) {
+    func didCreateButtonPressed(_ sender: CreateSinglePlayerView, age:Int, userName:String) {
         view.endEditing(true)
         setStatusBarHidden(false)
         writer.createPlayer(userName as String, age:age)

@@ -37,7 +37,7 @@ class CreateTeamControllerTest: XCTestCase {
     
     func test_HasViewDelegates() {
         XCTAssertTrue(createTeamController.responds(to: #selector(CreateTeamController.didCloseButtonPressed(_:))))
-        XCTAssertTrue(createTeamController.responds(to: #selector(CreateTeamController.didCreateButtonPressed(_:name:))))
+        XCTAssertTrue(createTeamController.responds(to: #selector(CreateTeamController.didCreateButtonPressed(_:name:description:))))
     }
     
     func test_CloseButtonPressedDeleget_DismissController() {
@@ -55,7 +55,7 @@ class CreateTeamControllerTest: XCTestCase {
         let mockNavigationController = MockNavigationController(rootViewController: rootViewController)
         
         mockNavigationController.viewControllers = [rootViewController, createTeamController]
-        createTeamController.didCreateButtonPressed(createTeamController.view as! CreateTeamView, name: "Bob")
+        createTeamController.didCreateButtonPressed(createTeamController.view as! CreateTeamView, name: "Bob", description: "")
         
         XCTAssertTrue(mockNavigationController.dismissControllerIsCalled)
     }

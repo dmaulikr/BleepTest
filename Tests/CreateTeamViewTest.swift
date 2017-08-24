@@ -85,14 +85,16 @@ extension CreateTeamViewTest {
         var didCloseButtonPressed = false
         var didCreateButtonPressed = false
         var name = ""
+        var teamDescription = ""
 
         func didCloseButtonPressed(_ sender: CreateTeamView) {
             didCloseButtonPressed = true
         }
         
-        func didCreateButtonPressed(_ sender: CreateTeamView, name:NSString) {
+        func didCreateButtonPressed(_ sender: CreateTeamView, name:String, description:String) {
             didCreateButtonPressed = true
-            self.name = name as String
+            self.name = name
+            self.teamDescription = description
         }
     }
 }

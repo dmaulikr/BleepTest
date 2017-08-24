@@ -2,7 +2,7 @@ import UIKit
 
 protocol CreateSinglePlayerViewDelegate: class {
     func didCloseButtonPressed(_ sender: CreateSinglePlayerView)
-    func didCreateButtonPressed(_ sender: CreateSinglePlayerView, age:Int, userName:NSString)
+    func didCreateButtonPressed(_ sender: CreateSinglePlayerView, age:Int, userName:String)
 }
 
 class CreateSinglePlayerView: UIView {
@@ -143,7 +143,7 @@ extension CreateSinglePlayerView{
     func createButtonAction(_ sender:UIButton){
         let ageInt : Int = Int(ageTextField.text!)!
         let userNameString : String = userNameTextField.text!
-        delegate?.didCreateButtonPressed(self, age: ageInt, userName: userNameString as NSString)
+        delegate?.didCreateButtonPressed(self, age: ageInt, userName: userNameString)
     }
     func closeButtonAction(_ sender:UIButton){
         delegate?.didCloseButtonPressed(self)

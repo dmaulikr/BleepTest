@@ -2,7 +2,7 @@ import UIKit
 
 protocol CreateTeamViewDelegate: class {
     func didCloseButtonPressed(_ sender: CreateTeamView)
-    func didCreateButtonPressed(_ sender: CreateTeamView, name:NSString)
+    func didCreateButtonPressed(_ sender: CreateTeamView, name:String, description:String)
 }
 
 class CreateTeamView: UIView {
@@ -55,6 +55,6 @@ extension CreateTeamView {
     }
     
     func createButtonAction(_ sender:UIButton){
-        delegate?.didCreateButtonPressed(self, name: nameTextField.text! as NSString)
+        delegate?.didCreateButtonPressed(self, name: nameTextField.text!, description: "")
     }
 }
