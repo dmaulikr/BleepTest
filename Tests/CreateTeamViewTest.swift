@@ -69,9 +69,11 @@ class CreateTeamViewTest: XCTestCase {
         let spyCreateTeamViewDelegate = SpyCreateTeamViewDelegate()
         createTeamView.delegate = spyCreateTeamViewDelegate
         createTeamView.nameTextField.text = "Footy"
+        createTeamView.descriptionTextField.text = "The team description"
         createTeamView.createButton.sendActions(for: .touchUpInside)
         XCTAssertTrue(spyCreateTeamViewDelegate.didCreateButtonPressed)
         XCTAssertEqual(spyCreateTeamViewDelegate.name, "Footy")
+        XCTAssertEqual(spyCreateTeamViewDelegate.teamDescription, "The team description")
     }
 }
 

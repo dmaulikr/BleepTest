@@ -64,6 +64,6 @@ extension CreateTeamView {
     }
     
     func createButtonAction(_ sender:UIButton){
-        delegate?.didCreateButtonPressed(self, name: nameTextField.text!, description: "")
+        delegate?.didCreateButtonPressed(self, name: nameTextField.text!, description: description)
     }
 }
