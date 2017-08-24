@@ -18,8 +18,8 @@ extension CreateTeamController : CreateTeamViewDelegate {
     }
     
     func didCreateButtonPressed(_ sender: CreateTeamView, name:String, description:String) {
+        writer.createTeam(name: name, description: description, players: nil)
         self.navigationController?.dismiss(animated: true, completion: nil)
-        
     }
 }
 

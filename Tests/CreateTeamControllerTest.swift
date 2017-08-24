@@ -5,7 +5,7 @@ import CoreData
 
 class CreateTeamControllerTest: XCTestCase {
     
-    var createTeamController: CreateTeamController!
+    private var createTeamController: CreateTeamController!
     
     private lazy var data: DataStack = {
         let data = DataStack(modelName: "iOS", bundle: Bundle.main, storeType:.inMemory)
@@ -21,6 +21,13 @@ class CreateTeamControllerTest: XCTestCase {
         let writer = Writer(dataStack: self.data)
         return writer
     }()
+    
+    func fetchObjectsInContext(_ context: NSManagedObjectContext, entity: String) -> [NSManagedObject] {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        let objects = try! context.fetch(request) as! [NSManagedObject]
+        
+        return objects
+    }
     
     override func setUp() {
         createTeamController = CreateTeamController(fetcher: self.fetcher, writer: self.writer, dataStack: self.data)
@@ -58,6 +65,15 @@ class CreateTeamControllerTest: XCTestCase {
         createTeamController.didCreateButtonPressed(createTeamController.view as! CreateTeamView, name: "Bob", description: "")
         
         XCTAssertTrue(mockNavigationController.dismissControllerIsCalled)
+    }
+    
+    func test_CreateButtonPressedDeleget_SaveTeam() {
+        createTeamController.didCreateButtonPressed(createTeamController.view as! CreateTeamView, name: "Test name", description: "Description")
+        
+        let savedTeams = self.fetchObjectsInContext(self.data.mainContext, entity: "Team")
+        let team = savedTeams[0] as! Team
+        
+        XCTAssertEqual(team.name, "Test name")
     }
 }
 
