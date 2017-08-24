@@ -10,6 +10,10 @@ class CreateTeamViewTest: XCTestCase {
         createTeamView = CreateTeamView(frame: CGRect(x:0,y:0, width:0, height:0))
     }
     
+    func test_ViewBackground_IsWhiteColour() {
+        XCTAssertEqual(createTeamView.backgroundColor, .white)
+    }
+    
     func test_titleLabel() {
         XCTAssertNotNil(createTeamView.titleLabel)
         XCTAssertTrue((createTeamView.titleLabel as Any) is MediumBlackLabel)
