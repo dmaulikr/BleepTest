@@ -14,7 +14,7 @@ class CreateTeamController: BaseViewController {
 extension CreateTeamController : CreateTeamViewDelegate {
 
     func didCloseButtonPressed(_ sender: CreateTeamView) {
-        
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     func didCreateButtonPressed(_ sender: CreateTeamView, name:NSString) {

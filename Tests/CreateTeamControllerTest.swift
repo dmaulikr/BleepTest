@@ -39,4 +39,26 @@ class CreateTeamControllerTest: XCTestCase {
         XCTAssertTrue(createTeamController.responds(to: #selector(CreateTeamController.didCloseButtonPressed(_:))))
         XCTAssertTrue(createTeamController.responds(to: #selector(CreateTeamController.didCreateButtonPressed(_:name:))))
     }
+    
+    func test_CloseButtonPressedDeleget_DismissController() {
+        let rootViewController = UIViewController()
+        let mockNavigationController = MockNavigationController(rootViewController: rootViewController)
+       
+        mockNavigationController.viewControllers = [rootViewController, createTeamController]
+        createTeamController.didCloseButtonPressed(createTeamController.view as! CreateTeamView)
+
+        XCTAssertTrue(mockNavigationController.dismissControllerIsCalled)
+    }
+}
+
+extension CreateTeamControllerTest {
+    
+    class MockNavigationController: UINavigationController {
+        
+        var dismissControllerIsCalled = false
+
+        override internal func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+            dismissControllerIsCalled = true
+        }
+    }
 }
