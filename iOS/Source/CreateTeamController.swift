@@ -18,7 +18,7 @@ extension CreateTeamController : CreateTeamViewDelegate {
     }
     
     func didCreateButtonPressed(_ sender: CreateTeamView, name:NSString) {
-        
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
 }
 

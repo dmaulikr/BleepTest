@@ -49,6 +49,16 @@ class CreateTeamControllerTest: XCTestCase {
 
         XCTAssertTrue(mockNavigationController.dismissControllerIsCalled)
     }
+    
+    func test_CreateButtonPressedDeleget_DismissController() {
+        let rootViewController = UIViewController()
+        let mockNavigationController = MockNavigationController(rootViewController: rootViewController)
+        
+        mockNavigationController.viewControllers = [rootViewController, createTeamController]
+        createTeamController.didCreateButtonPressed(createTeamController.view as! CreateTeamView, name: "Bob")
+        
+        XCTAssertTrue(mockNavigationController.dismissControllerIsCalled)
+    }
 }
 
 extension CreateTeamControllerTest {
