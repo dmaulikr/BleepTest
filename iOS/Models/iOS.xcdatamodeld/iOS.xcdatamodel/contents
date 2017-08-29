@@ -15,7 +15,7 @@
         <relationship name="commpletedTests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CompletedTest" inverseName="player" inverseEntity="CompletedTest" syncable="YES"/>
         <relationship name="team" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="players" inverseEntity="Team" syncable="YES"/>
     </entity>
-    <entity name="Team" syncable="YES">
+    <entity name="Team" representedClassName="Team" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="teamDescription" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="team" inverseEntity="Player" syncable="YES"/>
@@ -34,7 +34,7 @@
     <elements>
         <element name="CompletedTest" positionX="-792" positionY="-369" width="128" height="133"/>
         <element name="Player" positionX="-578" positionY="-396" width="128" height="118"/>
-        <element name="Team" positionX="-558" positionY="-99" width="128" height="88"/>
+        <element name="Team" positionX="-558" positionY="-99" width="128" height="90"/>
         <element name="TestLevel" positionX="-380" positionY="-207" width="128" height="120"/>
     </elements>
 </model>

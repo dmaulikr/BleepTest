@@ -3,7 +3,7 @@ import CoreData
 
 @objc(Team)
 
-open class Team: NSManagedObject {
+class Team: NSManagedObject {
     
     convenience init(name: String, teamDescription: String? = nil, players: Set<Player>? = nil, entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext!) {
         self.init(entity: entity, insertInto: context)

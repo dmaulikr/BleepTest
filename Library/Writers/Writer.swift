@@ -50,4 +50,22 @@ open class Writer : NSObject {
         defaults.set(player.objectID.uriRepresentation(), forKey: "selectedPlayerID")
     }
     
+    open func createTeam(name: String, description: String, players: Set<Player>? = nil) {
+        self.data.performInNewBackgroundContext { backgroundContext in
+            let entity = NSEntityDescription.entity(forEntityName: "Team", in: backgroundContext)!
+            let object = NSManagedObject(entity: entity, insertInto: backgroundContext)
+            object.setValue(name, forKey: "name")
+            object.setValue(description, forKey: "teamDescription")
+            
+            if(players != nil) {
+                let items = object.mutableSetValue(forKey: "players");
+                for player in players as Set<Player>! {
+                    items.add(player)
+                }
+            }
+            
+            try! backgroundContext.save()
+        }
+    }
+    
 }
